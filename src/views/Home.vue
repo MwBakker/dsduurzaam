@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    
+  <div id="home">
   </div>
 </template>
 
@@ -14,4 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#home {
+  height: 720px;
+}
 </style>

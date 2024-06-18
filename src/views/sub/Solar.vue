@@ -1,17 +1,19 @@
 <template>
-    <div class="home">
-      
-    </div>
-  </template>
-  
-  <script>
-  // @ is an alias to /src
-  
-  export default {
-    name: "Home",
-    components: {},
-  };
-  </script>
-  
-  <style lang="scss" scoped>
-  </style>
+  <div id="solar">
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+
+export default {
+  name: "Solar",
+  components: {},
+};
+</script>
+
+<style lang="scss" scoped>
+#solar {
+  height: 720px;
+}
+</style>

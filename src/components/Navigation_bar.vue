@@ -6,35 +6,32 @@
     <div id="nav-container">
         <nav>
             <div class="branding">
-                <img src="@/assets/logo.png" alt="" />
+                <img @click="route('home')" src="@/assets/logo.png" alt="" />
             </div>
             <ul v-show="!mobile" class="navigation">
-                <li><router-link class="link" :to="{ name: '' }">Warmtepompen</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Airconditioning</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Vloerverwarming</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Zonnepanelen</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Laadpalen</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Isolatie</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Energielabel & advies</router-link></li>
+                <li @click="route('heat-pump')">Warmtepompen</li>
+                <li @click="route('airco')">Airconditioning</li>
+                <li @click="route('floor-heating')">Vloerverwarming</li>
+                <li @click="route('solar')">Zonnepanelen</li>
+                <li @click="route('charge-points')">Laadpalen</li>
+                <li @click="route('isolation')">Isolatie</li>
+                <li @click="route('advice')">Energielabel & advies</li>
                 <li class="link"></li>
                 <li class="link"></li>
-                <li><router-link id="contact-link" :to="{ name: 'contact' }">
-                        <button id="contact-button">Neem contact op</button></router-link>
-                </li>
-
+                <li id="contact-link" @click="route('contact')"><button id="contact-button">Neem contact op</button></li>
             </ul>
             <div class="Icon">
-                <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars"
-                    :class="{ 'icon-active': mobileNav }"></i>
+                <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars" :class="{ 'icon-active': mobileNav }"></i>
             </div>
             <Transition name="mobile-nav">
                 <ul v-show="mobileNav" class="navigation">
-                    <li><router-link class="link" :to="{ name: '' }">Warmtepompen</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Airconditioning</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Vloerverwarming</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Zonnepanelen</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Laadpalen</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Isolatie</router-link></li>
+                    <li @click="route('heat-pump')">Warmtepompen</li>
+                    <li @click="route('airco')">Airconditioning</li>
+                    <li @click="route('floor-heating')">Vloerverwarming</li>
+                    <li @click="route('solar')">Zonnepanelen</li>
+                    <li @click="route('charge-points')">Laadpalen</li>
+                    <li @click="route('isolation')">Isolatie</li>
+                    <li @click="route('advice')">Energielabel & advies</li>
                     <li class="link"></li>
                     <li class="link"></li>
                     <li><router-link class="link" :to="{ name: '' }">Energielabel & advies</router-link></li>
@@ -42,18 +39,51 @@
             </Transition>
         </nav>
     </div>
+    <upper_content_container v-if="!headerHidden" :title=title :description=description :backgroundImage=headerImg />
 </template>
 
+
 <script>
+import upper_content_container from "./Upper_content_container.vue"
+
 export default {
     name: "navigation_bar",
     data() {
         return {
+            headerHidden: false,
             scrollPosition: null,
             mobile: false,
             mobileNav: null,
             windowWidth: null,
+            title: 'DS Duurzaam',
+            headerImg: 'home',
+            description: 'VVVVVVVVVVVVVVVVVVVVVVVVVVVVV',
+            headerText: {
+                'home': ["DS Duurzaam", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+                'heat-pump': ["Wartmepomp", "OOOOOOOOOOOOOOOOOOOOO"],
+                'airco': ["Airconditioning", "XXXXXXXXXXXXXXXXXXXXX"],
+                'floor-heating': ["Vloerverwarming", "UUUUUUUUUUUUUUUUUUUUU"],
+                'solar': ["Zonnepanelen", "PPPPPPPPPPPPPPPPPPPPP"],
+                'charge-points': ["Laadpalen", "GGGGGGGGGGGGGGGGGGGGG"],
+                'isolation': ["Isolatie", "MMMMMMMMMMMMMMMMMMMMM"],
+                'advice': ["Energielabel & advies", "AAAAAAAAAAAAAAAAAAAAA"],
+                'contact': ["Contact", "WWWWWWWWWWWWWWWWWWWWWW"],
+            },
         };
+    },
+    components: {
+        upper_content_container
+    },
+    methods: {
+        route(direction) {
+            var array = this.headerText[direction];
+            this.title = array[0];
+            this.description = array[1];
+            this.headerImg = direction;
+            this.$router.push({
+                name: direction,
+            })
+        }
     }
 };
 </script>
@@ -93,6 +123,8 @@ header {
 }
 
 .branding {
+    cursor: pointer;
+
     display: flex;
     align-items: center;
 
@@ -104,14 +136,12 @@ header {
 }
 
 nav {
+    width: 65%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     padding: 12px 0;
     transition: 0.5s ease all;
-
-    @media (min-width: 1140px) {
-        max-width: 1140px;
-    }
 }
 
 ul,
@@ -123,20 +153,18 @@ ul,
 }
 
 li {
-    padding: 16px;
-    margin-left: 16px;
-}
-
-.link {
-    font-size: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 550;
     -webkit-text-stroke: 0.1px;
     transition: 0.5s ease all;
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
+    padding: 16px;
+    margin-left: 16px;
 
     &:hover {
         color: #fbb536;
-        border-color: #29aadf;
     }
 }
 

@@ -1,19 +1,20 @@
 <template>
   <div class="app">
     <navBar />
-    <upper_content_container/>
     <router-view />
+    <customFooter/>
   </div>
 </template>
 
 <script>
 import navBar from "./components/Navigation_bar.vue"
-import Upper_content_container from "./components/Upper_content_container.vue"
+import customFooter from "./components/Footer.vue"
+
 export default {
   name: "App",
   components:{ 
     navBar,
-    Upper_content_container
+    customFooter,
   }
 };
 </script>
@@ -25,6 +26,11 @@ export default {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
+}
+
+p {
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .app {
