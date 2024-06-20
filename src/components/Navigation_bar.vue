@@ -8,33 +8,33 @@
             <div class="branding">
                 <img @click="route('home')" src="@/assets/logo.png" alt="" />
             </div>
-            <ul v-show="!mobile" class="navigation">
-                <li @click="route('heat-pump')">Warmtepompen</li>
-                <li @click="route('airco')">Airconditioning</li>
-                <li @click="route('floor-heating')">Vloerverwarming</li>
-                <li @click="route('solar')">Zonnepanelen</li>
-                <li @click="route('charge-points')">Laadpalen</li>
-                <li @click="route('isolation')">Isolatie</li>
-                <li @click="route('advice')">Energielabel & advies</li>
-                <li class="link"></li>
-                <li class="link"></li>
-                <li id="contact-link" @click="route('contact')"><button id="contact-button">Neem contact op</button></li>
-            </ul>
+            <div id="nav-elements">
+                <div id="nav-titles">
+                    <ul v-show="!mobile" class="navigation">
+                        <li @click="route('heat-pump')">Warmtepomp</li>
+                        <li @click="route('airco')">Airconditioning</li>
+                        <li @click="route('floor-heating')">Vloerverwarming</li>
+                        <li @click="route('solar')">Zonnepanelen</li>
+                        <li @click="route('charge-points')">Laadpaal</li>
+                        <li @click="route('isolation')">Isolatie</li>
+                        <li @click="route('advice')">Energielabel</li>
+                    </ul>
+                </div>
+                <button id="contact-button" @click="route('contact')">Advies aan huis</button>
+            </div>
             <div class="Icon">
                 <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars" :class="{ 'icon-active': mobileNav }"></i>
             </div>
             <Transition name="mobile-nav">
                 <ul v-show="mobileNav" class="navigation">
-                    <li @click="route('heat-pump')">Warmtepompen</li>
+                    <li @click="route('heat-pump')">Warmtepomp</li>
                     <li @click="route('airco')">Airconditioning</li>
                     <li @click="route('floor-heating')">Vloerverwarming</li>
                     <li @click="route('solar')">Zonnepanelen</li>
-                    <li @click="route('charge-points')">Laadpalen</li>
+                    <li @click="route('charge-points')">Laadpaal</li>
                     <li @click="route('isolation')">Isolatie</li>
-                    <li @click="route('advice')">Energielabel & advies</li>
-                    <li class="link"></li>
-                    <li class="link"></li>
-                    <li><router-link class="link" :to="{ name: '' }">Energielabel & advies</router-link></li>
+                    <li @click="route('advice')">Energielabel</li>
+                    <li><router-link class="link" :to="{ name: '' }">Energielabel</router-link></li>
                 </ul>
             </Transition>
         </nav>
@@ -55,7 +55,7 @@ export default {
             mobile: false,
             mobileNav: null,
             windowWidth: null,
-            title: 'DS Duurzaam',
+            title: 'D&S Duurzame Installaties uw complete verduurzamer.',
             headerImg: 'home',
             description: 'VVVVVVVVVVVVVVVVVVVVVVVVVVVVV',
             headerText: {
@@ -99,7 +99,7 @@ export default {
         font-size: 13px;
         padding-top: 10px;
         color: #fbb536;
-        font-weight: 600;
+        font-weight: 400;
     }
 }
 
@@ -130,13 +130,12 @@ header {
 
     img {
         width: 75px;
-        margin-right: 20px;
         transition: 0.5s ease all;
     }
 }
 
 nav {
-    width: 65%;
+    max-width: 1548px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -144,18 +143,24 @@ nav {
     transition: 0.5s ease all;
 }
 
+#nav-elements {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
 ul,
 .link {
-    font-weight: 550;
-    color: #29aadf;
+    color: #2c5484;
     list-style: none;
     text-decoration: none;
 }
 
 li {
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 550;
+    font-size: 1.1rem;
+    font-weight: 400;
     -webkit-text-stroke: 0.1px;
     transition: 0.5s ease all;
     padding-bottom: 4px;
@@ -164,7 +169,7 @@ li {
     margin-left: 16px;
 
     &:hover {
-        color: #fbb536;
+        color: #dea130;
     }
 }
 
@@ -190,7 +195,7 @@ li {
     cursor: pointer;
 
     &:hover {
-        background-color: #29aadf;
+        background-color: #2c5484;
     }
 
     #contact-link {

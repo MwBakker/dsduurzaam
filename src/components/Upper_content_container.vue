@@ -1,20 +1,23 @@
 <template>
     <div id="container-main">
-        <div id="container-text">
-            <h1>{{ title }}</h1>
-            <p>{{ description }}</p>
-        </div>
-        <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/' + backgroundImage + '.png'})` }"></div>
-        <div id="container-rounded">
-            <div id="container-info">
-                <titleIcon title="+31612345678" icon="telephone" />
-                <div id='address'>
-                    <titleIcon title="Mars" icon="address" />
-                </div>
-                <div id="mail">
-                    <titleIcon title="info@dsduurzaam.nl" icon="mail" />
-                </div>
+        <div id="container-elements">
+            <div id="container-text">
+                <h1>{{ title }}</h1>
+                <p>{{ description }}</p>
             </div>
+            <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/' + backgroundImage + '.png'})` }">
+            </div>
+            <!-- <div id="container-rounded">
+                <div id="container-info">
+                    <titleIcon title="+31612345678" icon="telephone" />
+                    <div id='address'>
+                        <titleIcon title="Mars" icon="address" />
+                    </div>
+                    <div id="mail">
+                        <titleIcon title="info@dsduurzaam.nl" icon="mail" />
+                    </div>
+                </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -46,20 +49,22 @@ export default {
 
 <style lang="scss" scoped>
 #container-main {
+    background-color: #d9e1ea;
+}
+
+#container-elements {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin: 0 auto;
     position: relative;
     height: 640px;
-    background-color: #e4effc;
-    box-shadow: 0px -8px 12px #e4effc;
-    margin-bottom: 72px;
 }
 
 #container-text {
-    width: 35%;
-    margin: 25px;
-    padding-right: 10%;
-    margin-left: 17%;
+    width: 30%;
+    border: 2px solid red;
+    margin: 2% 2.5% 11% 0;
+    padding: 50px;
 
     p {
         text-align: justify;
@@ -74,21 +79,16 @@ export default {
 }
 
 #container-image {
-    position: absolute;
-    right: 0;
     background-size: 100% 100%;
     height: 100%;
-    width: 55%;
+    width: 53.5%;
     -webkit-transition: background-image 0.4s ease-in-out;
-    transition: background-image 0.4s ease-in-out;
-    -webkit-box-shadow: inset 50px 4px 5px 0px #e4effc;
-    -moz-box-shadow: inset 50px 4px 5px 0px #e4effc;
-    box-shadow: inset 50px 4px 5px 0px #e4effc;
 }
 
 #container-rounded {
     border-top-right-radius: 100%;
     bottom: 0;
+    left: -30%;
     outline-color: #f1f1f16e;
     outline-style: solid;
     outline-width: 72px;

@@ -28,7 +28,7 @@ const imageUrl = computed(
         }
         p {
             margin: auto 25px;
-            color: #29aadf;
+            color: #2c5484;
             font-size: 18px;
         }
     }
