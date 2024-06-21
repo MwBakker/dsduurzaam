@@ -59,15 +59,15 @@ export default {
             headerImg: 'home',
             description: 'VVVVVVVVVVVVVVVVVVVVVVVVVVVVV',
             headerText: {
-                'home': ["DS Duurzaam", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
-                'heat-pump': ["Wartmepomp", "OOOOOOOOOOOOOOOOOOOOO"],
-                'airco': ["Airconditioning", "XXXXXXXXXXXXXXXXXXXXX"],
-                'floor-heating': ["Vloerverwarming", "UUUUUUUUUUUUUUUUUUUUU"],
-                'solar': ["Zonnepanelen", "PPPPPPPPPPPPPPPPPPPPP"],
-                'charge-points': ["Laadpalen", "GGGGGGGGGGGGGGGGGGGGG"],
-                'isolation': ["Isolatie", "MMMMMMMMMMMMMMMMMMMMM"],
-                'advice': ["Energielabel & advies", "AAAAAAAAAAAAAAAAAAAAA"],
-                'contact': ["Contact", "WWWWWWWWWWWWWWWWWWWWWW"],
+                'home': ["DS Duurzaam", "Bij D&S Duurzame Installaties zien we de uitdagingen van vandaag als de kansen van morgen. We zijn gepassioneerd over het creëren van een duurzamere toekomst en zijn vastbesloten om onze klanten te helpen bij het realiseren van hun duurzame ambities. Dankzij ons complete aanbod in duurzame technieken zijn wij uw aanspreekpunt voor alles wat met verduurzamen te maken heeft."],
+                'heat-pump': ["Wartmepomp", "Mooi spul"],
+                'airco': ["Airconditioning", "Mooi spul"],
+                'floor-heating': ["Vloerverwarming", "Mooi spul"],
+                'solar': ["Zonnepanelen", "Mooi spul"],
+                'charge-points': ["Laadpalen", "Mooi spul"],
+                'isolation': ["Isolatie", "Warm spul"],
+                'advice': ["Energielabel & advies", "Mooi spul"],
+                'contact': ["Contact", "Durf ons te bellen"],
             },
         };
     },
@@ -167,6 +167,7 @@ li {
     border-bottom: 1px solid transparent;
     padding: 16px;
     margin-left: 16px;
+    font-weight: 550;
 
     &:hover {
         color: #dea130;

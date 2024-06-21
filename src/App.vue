@@ -29,6 +29,10 @@ export default {
   font-size: 1rem;
 }
 
+p {
+  font-family: Manrope, Trebuchet MS, Helvetica, sans-serif
+}
+
 button {
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;

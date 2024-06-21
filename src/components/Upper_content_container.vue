@@ -12,7 +12,7 @@
                 <div id="container-info">
                     <titleIcon title="+31612345678" icon="telephone" />
                     <div id='address'>
-                        <titleIcon title="Mars" icon="address" />
+                        <titleIcon title="Ergens in Ter Apel" icon="address" />
                     </div>
                     <div id="mail">
                         <titleIcon title="info@dsduurzaam.nl" icon="mail" />
@@ -110,13 +110,15 @@ button {
 
 #container-rounded {
     border-top-right-radius: 100%;
+    font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
+    font-weight: 550;
     bottom: 0;
-    left: -20%;
+    left: -30%;
     outline-color: #f1f1f16e;
     outline-style: solid;
     outline-width: 72px;
     background-color: #f1f1f1;
-    width: 68%;
+    width: 78%;
     height: 136px;
     position: absolute;
 }
@@ -124,8 +126,9 @@ button {
 #container-info {
     display: flex;
     flex-direction: column;
-    margin: 38.5px;
-    margin-left: 29.5%;
+    margin: 32px;
+    margin-top: 42px;
+    margin-left: 38.5%;
 }
 
 #address {
