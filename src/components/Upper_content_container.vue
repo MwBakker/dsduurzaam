@@ -1,13 +1,14 @@
 <template>
     <div id="container-main">
+        <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/' + backgroundImage + '.png'})` }">
+        </div>
         <div id="container-elements">
             <div id="container-text">
                 <h1>{{ title }}</h1>
                 <p>{{ description }}</p>
+                <button id="contact-button" @click="route('contact')">Gratis advies ontvangen</button>
             </div>
-            <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/' + backgroundImage + '.png'})` }">
-            </div>
-            <!-- <div id="container-rounded">
+            <div id="container-rounded">
                 <div id="container-info">
                     <titleIcon title="+31612345678" icon="telephone" />
                     <div id='address'>
@@ -17,7 +18,7 @@
                         <titleIcon title="info@dsduurzaam.nl" icon="mail" />
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </template>
@@ -43,27 +44,47 @@ export default {
     },
     components: {
         titleIcon,
+    },
+    methods: {
+        route(direction) {
+            var array = this.headerText[direction];
+            this.title = array[0];
+            this.description = array[1];
+            this.headerImg = direction;
+            this.$router.push({
+                name: direction,
+            })
+        }
     }
 };
 </script>
 
 <style lang="scss" scoped>
 #container-main {
-    background-color: #d9e1ea;
+ //   background-color: #d9e1ea;
+ background-color: #29acdf1a;
+}
+
+button {
+    margin-top: 25px;
+    width: 45%;
 }
 
 #container-elements {
     display: flex;
-    justify-content: flex-end;
+    max-width: 1548px;
     margin: 0 auto;
     position: relative;
     height: 640px;
 }
 
 #container-text {
-    width: 30%;
-    border: 2px solid red;
-    margin: 2% 2.5% 11% 0;
+    width: 48%;
+    height: 360px;
+    border: 4px solid rgb(199, 2, 2);
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
+    margin-top: 50px;
     padding: 50px;
 
     p {
@@ -79,21 +100,23 @@ export default {
 }
 
 #container-image {
+    position: absolute;
+    right: 0;
+    height: 658px;
     background-size: 100% 100%;
-    height: 100%;
-    width: 53.5%;
+    width: 50%;
     -webkit-transition: background-image 0.4s ease-in-out;
 }
 
 #container-rounded {
     border-top-right-radius: 100%;
     bottom: 0;
-    left: -30%;
+    left: -20%;
     outline-color: #f1f1f16e;
     outline-style: solid;
     outline-width: 72px;
     background-color: #f1f1f1;
-    width: 65%;
+    width: 68%;
     height: 136px;
     position: absolute;
 }
@@ -101,11 +124,11 @@ export default {
 #container-info {
     display: flex;
     flex-direction: column;
-    margin: 25px;
-    margin-left: 26.5%;
+    margin: 38.5px;
+    margin-left: 29.5%;
 }
 
 #address {
-    margin-left: 40%;
+    margin-left: 53.5%;
 }
 </style>

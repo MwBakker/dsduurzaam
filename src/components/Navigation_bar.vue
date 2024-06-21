@@ -20,7 +20,7 @@
                         <li @click="route('advice')">Energielabel</li>
                     </ul>
                 </div>
-                <button id="contact-button" @click="route('contact')">Advies aan huis</button>
+                <button @click="route('contact')">Advies aan huis</button>
             </div>
             <div class="Icon">
                 <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars" :class="{ 'icon-active': mobileNav }"></i>
@@ -159,7 +159,7 @@ ul,
 
 li {
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     -webkit-text-stroke: 0.1px;
     transition: 0.5s ease all;
@@ -170,36 +170,6 @@ li {
 
     &:hover {
         color: #dea130;
-    }
-}
-
-#contact-button {
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    background-color: #fbb536;
-    border-radius: 45px;
-    width: 200px;
-    height: 56px;
-    border-color: rgba(0, 0, 0, 0.15);
-    border-width: 1px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 4px 2px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #2c5484;
-    }
-
-    #contact-link {
-        margin-left: 5%;
     }
 }
 </style>

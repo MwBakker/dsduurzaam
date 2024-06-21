@@ -47,8 +47,8 @@ p {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    background-color: #29acdf2f;
-    height: 56px;
+    background-color: #29acdf1a;
+    height: 356px;
 
     #row-1 {
         display: flex;
