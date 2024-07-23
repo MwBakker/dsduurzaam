@@ -75,23 +75,17 @@ export default {
     flex-direction: column;
     justify-content: center;
 }
+
 .contact-form-field {
     width: 90%;
     margin: 32px auto;
-}
-
-.contact-form-field p {
-    font-size: 16px;
-    width: 70%;
-    margin: 0;
-    text-align: left;
 }
 
 .contact-form-field input {
     width: 100%;
     height: 32px;
     margin: auto;
-    border: solid 2px #e0e4e2;
+    border: solid 2px #6b76858f;
     background: none;
     border-radius: 6px;
 }
@@ -103,21 +97,13 @@ input {
 textarea {
     width: 100%;
     padding: 6px;
-    border: solid 2px #e0e4e2;
+    border: solid 2px #6b76858f;
     background: none;
     border-radius: 6px;
 }
 
 #button-send {
-    border-color: rgba(0, 0, 0, 0.15);
-    border-width: 1px;
-    -webkit-text-stroke-width: 0.01px;
-    -webkit-text-stroke-color: black;
-    background-color: #fbb536;
-    color: #FFFF;
-    font-size: 18px;
-    font-weight: 550;
-    cursor: pointer;
-    height: 48px;
+    width: 100%;
+    margin: auto auto;
 }
 </style>

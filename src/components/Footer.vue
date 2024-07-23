@@ -1,8 +1,9 @@
 <template>
     <div id="footer">
         <div id="layer-one">
-            <div id="row-1">
-                <p>Algemene voorwaarden</p>
+            <h1>D&S Duurzame installaties</h1>
+            <!-- <div id="row-1">
+                <p>D&S Duurzame installaties</p>
                 <p>Privacy verklaring</p>
             </div>
             <div id="row-2">
@@ -12,7 +13,7 @@
             <div id='logos'>
                 <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
                 <a href='https://www.instagram.com/dsduurzaam/'><img class='logo' src='../assets/icon/instagram.png' /></a>
-            </div>
+            </div> -->
         </div>
         <img id="branding" src="@/assets/logo.png" alt="" />
         <div id="layer-two"></div>
@@ -29,6 +30,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+    margin-left: 48px;
+    font-size: 1.8rem;
+    color: #2c5484;
+}
+
 p {
     font-weight: 10;
 }
@@ -36,6 +43,8 @@ p {
 #footer {
     display: flex;
     flex-direction: column;
+    box-shadow: inset 0px 8px 6px -6px #d7d7d778;
+    margin-top: 24px;
 
     p {
         margin: 16px 48px;
@@ -44,10 +53,11 @@ p {
 }
 
 #layer-one {
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    background-color: #29acdf1a;
+    background-color: #29acdf05;
     height: 356px;
 
     #row-1 {

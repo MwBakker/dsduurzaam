@@ -18,12 +18,17 @@
                         <li @click="route('charge-points')">Laadpaal</li>
                         <li @click="route('isolation')">Isolatie</li>
                         <li @click="route('advice')">Energielabel</li>
+                        <li @click="route('service')">Service</li>
                     </ul>
                 </div>
-                <button @click="route('contact')">Advies aan huis</button>
+                <div id="button-tech">
+                    <img src="@/assets/tech.png" />
+                    <button @click="route('contact')">Advies aan huis</button>
+                </div>
             </div>
             <div class="Icon">
-                <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars" :class="{ 'icon-active': mobileNav }"></i>
+                <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars"
+                    :class="{ 'icon-active': mobileNav }"></i>
             </div>
             <Transition name="mobile-nav">
                 <ul v-show="mobileNav" class="navigation">
@@ -34,6 +39,7 @@
                     <li @click="route('charge-points')">Laadpaal</li>
                     <li @click="route('isolation')">Isolatie</li>
                     <li @click="route('advice')">Energielabel</li>
+                    <li @click="route('service')">Service</li>
                     <li><router-link class="link" :to="{ name: '' }">Energielabel</router-link></li>
                 </ul>
             </Transition>
@@ -44,10 +50,10 @@
 
 
 <script>
-import upper_content_container from "./Upper_content_container.vue"
+import upper_content_container from "./Upper-content-container.vue"
 
 export default {
-    name: "navigation_bar",
+    name: "navigation-bar",
     data() {
         return {
             headerHidden: false,
@@ -57,9 +63,9 @@ export default {
             windowWidth: null,
             title: 'D&S Duurzame Installaties uw complete verduurzamer.',
             headerImg: 'home',
-            description: 'VVVVVVVVVVVVVVVVVVVVVVVVVVVVV',
+            description: 'Uw partner in verduurzaming van A tot Z',
             headerText: {
-                'home': ["DS Duurzaam", "Bij D&S Duurzame Installaties zien we de uitdagingen van vandaag als de kansen van morgen. We zijn gepassioneerd over het creëren van een duurzamere toekomst en zijn vastbesloten om onze klanten te helpen bij het realiseren van hun duurzame ambities. Dankzij ons complete aanbod in duurzame technieken zijn wij uw aanspreekpunt voor alles wat met verduurzamen te maken heeft."],
+                'home': ["Uw partner in verduurzaming van A tot Z", ""],
                 'heat-pump': ["Wartmepomp", "Mooi spul"],
                 'airco': ["Airconditioning", "Mooi spul"],
                 'floor-heating': ["Vloerverwarming", "Mooi spul"],
@@ -67,6 +73,7 @@ export default {
                 'charge-points': ["Laadpalen", "Mooi spul"],
                 'isolation': ["Isolatie", "Warm spul"],
                 'advice': ["Energielabel & advies", "Mooi spul"],
+                'service:': ["Service", "Ons niet bellen"],
                 'contact': ["Contact", "Durf ons te bellen"],
             },
         };
@@ -96,20 +103,19 @@ export default {
 
     p {
         text-align: center;
-        font-size: 13px;
+        font-size: 0.9rem;
         padding-top: 10px;
-        color: #fbb536;
+        color: #ffffff;
         font-weight: 400;
     }
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.8);
     z-index: 99;
     width: 100%;
     position: fixed;
     transition: 0.5s ease all;
-    color: #fff
+    color: white;
 }
 
 .navigation {
@@ -136,6 +142,7 @@ header {
 
 nav {
     max-width: 1548px;
+    height: 128px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -159,7 +166,7 @@ ul,
 
 li {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     -webkit-text-stroke: 0.1px;
     transition: 0.5s ease all;
@@ -172,5 +179,33 @@ li {
     &:hover {
         color: #dea130;
     }
+}
+
+#button-tech {
+    position: relative;
+
+    img {
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+        height: 86px;
+    }
+}
+
+button {
+    width: 250px;
+    padding-right: 72px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
+    transition: all .2s ease-in;
+    background-color: #fbb536;
+    margin-left: 5%;
+
+    &:hover {
+        background-color: #2c5484;
+    }
+
 }
 </style>

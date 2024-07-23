@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import navBar from "./components/Navigation_bar.vue"
+import navBar from "./components/Navigation-bar.vue"
 import customFooter from "./components/Footer.vue"
 
 export default {
@@ -30,16 +30,13 @@ export default {
 }
 
 p {
-  font-family: Manrope, Trebuchet MS, Helvetica, sans-serif
+  font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
+  color: rgb(107, 107, 107);
 }
 
-button {
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
-  box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
-  transition: all .2s ease-in;
-  background-color: #fbb536;
+button,
+#button-send {
+  background-color: #2c5484;
   border-radius: 45px;
   width: 200px;
   height: 56px;
@@ -54,30 +51,44 @@ button {
   font-weight: 600;
   margin: 4px 2px;
   cursor: pointer;
-
-  &:hover {
-    background-color: #2c5484;
-  }
-
-  #contact-link {
-    margin-left: 5%;
-  }
-
-}
-
-p {
-  color: gray;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .app {
   min-height: 100vh;
   position: relative;
-  background-color: #f1f1f1;
 }
 
 .container {
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.slide-fade-up-enter-active,
+.slide-fade-left-enter-active,
+.slide-fade-right-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-fade-up-leave-active,
+.slide-fade-left-leave-active {
+  transition: all 1s;
+}
+
+.slide-fade-up-enter-from,
+.slide-fade-up-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.slide-fade-left-enter-from,
+.slide-fade-left-leave-to {
+  transform: translateX(80%);
+  opacity: 0;
+}
+
+.slide-fade-right-enter-from,
+.slide-fade-right-leave-to {
+  transform: translateX(-80%);
+  opacity: 0;
 }
 </style>

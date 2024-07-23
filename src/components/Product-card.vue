@@ -15,19 +15,18 @@ const props = defineProps({
 })
 
 const imageUrl = computed(
-    () => new URL(`../assets/${props.image}.png`, import.meta.url).href
+    () => new URL(`../assets/cards/${props.image}.png`, import.meta.url).href
 );
 </script>
 
 <style lang="scss" scoped>
 .card {
-    width: 24.5%;
+    width: 22.5%;
     margin: 16px;
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    //background-color: #2c54842e;
-    background-color: #1c799e14;
+    background-color: #29acdf10;
     border-radius: 24px;
     box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
 

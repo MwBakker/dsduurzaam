@@ -1,10 +1,12 @@
 <template>
   <div id="home">
-    <div id="service-row">
-      <ServiceLine title="Hoge kwaliteit" icon="quality" />
-      <ServiceLine title="Tot 10 jaar garantie" icon="warranty" />
-      <ServiceLine title="Direct leverbaar" icon="delivery" />
-      <ServiceLine title="Binnen 1-3 dagen geplaatst" icon="installation" />
+    <div id="quotes">
+      <QuoteCard title="Subsidie in ons beheer"
+        description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
+      <QuoteCard title="Investering terugverdienen"
+        description="Gemiddeld verdienen hun klanten hun investering binnen 2 tot 5 jaar terug." />
+      <QuoteCard title="Snelle installatie"
+        description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
     </div>
     <div class="product-row">
       <ProductCard @click="route('heat-pump')" title="Warmtepomp" image="heat-pump" />
@@ -24,13 +26,13 @@
 // @ is an alias to /src
 
 import ProductCard from '@/components/Product-card.vue';
-import ServiceLine from '@/components/Service-line.vue';
+import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
   name: "Home",
   components: {
     ProductCard,
-    ServiceLine,
+    QuoteCard,
   },
   methods: {
     route(direction) {
@@ -47,18 +49,22 @@ export default {
 #home {
   margin: 0 auto;
   width: 1548px;
-  height: 1400px;
 }
 
-#service-row {
-  margin: 120px 0 96px 0; 
+#quotes {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 64px 0;
 }
 
 .product-row {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+#second-row {
+  justify-content: flex-start;
 }
 </style>

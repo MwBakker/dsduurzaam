@@ -1,6 +1,6 @@
 <template>
     <div id="container-main">
-        <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/' + backgroundImage + '.png'})` }">
+        <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
         </div>
         <div id="container-elements">
             <div id="container-text">
@@ -8,16 +8,26 @@
                 <p>{{ description }}</p>
                 <button id="contact-button" @click="route('contact')">Gratis advies ontvangen</button>
             </div>
-            <div id="container-rounded">
-                <div id="container-info">
-                    <titleIcon title="+31612345678" icon="telephone" />
-                    <div id='address'>
-                        <titleIcon title="Ergens in Ter Apel" icon="address" />
+            <!-- <div id="container-rounded">
+                <Transition name="slide-fade-up" appear>
+                    <div id="container-info">
+                        <titleIcon title="+31612345678" icon="telephone" />
+                        <div id='address'>
+                            <titleIcon title="Ergens in Ter Apel" icon="address" />
+                        </div>
+                        <div id="mail">
+                            <titleIcon title="info@dsduurzaam.nl" icon="mail" />
+                        </div>
                     </div>
-                    <div id="mail">
-                        <titleIcon title="info@dsduurzaam.nl" icon="mail" />
-                    </div>
-                </div>
+                </Transition>
+            </div> -->
+        </div>
+        <div id="service-row">
+            <div>
+                <ServiceLine title="Hoge kwaliteit" icon="quality" />
+                <ServiceLine title="Tot 10 jaar garantie" icon="warranty" />
+                <ServiceLine title="Direct leverbaar" icon="delivery" />
+                <ServiceLine title="Binnen 1-3 dagen geplaatst" icon="installation" />
             </div>
         </div>
     </div>
@@ -25,6 +35,7 @@
 
 <script>
 import titleIcon from "./Title-icon.vue"
+import ServiceLine from '@/components/Service-line.vue';
 
 export default {
     name: "upper_content_container",
@@ -44,6 +55,7 @@ export default {
     },
     components: {
         titleIcon,
+        ServiceLine,
     },
     methods: {
         route(direction) {
@@ -61,8 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 #container-main {
- //   background-color: #d9e1ea;
- background-color: #29acdf1a;
+    background-color: #29acdf05;
 }
 
 button {
@@ -80,15 +91,13 @@ button {
 
 #container-text {
     width: 48%;
-    height: 360px;
-    border: 4px solid rgb(199, 2, 2);
-    border-radius: 40px;
-    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
+    height: 400px;
     margin-top: 50px;
     padding: 50px;
 
     p {
         text-align: justify;
+        font-size: 1.2rem;
     }
 
     h1 {
@@ -108,21 +117,6 @@ button {
     -webkit-transition: background-image 0.4s ease-in-out;
 }
 
-#container-rounded {
-    border-top-right-radius: 100%;
-    font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
-    font-weight: 550;
-    bottom: 0;
-    left: -30%;
-    outline-color: #f1f1f16e;
-    outline-style: solid;
-    outline-width: 72px;
-    background-color: #f1f1f1;
-    width: 78%;
-    height: 136px;
-    position: absolute;
-}
-
 #container-info {
     display: flex;
     flex-direction: column;
@@ -133,5 +127,19 @@ button {
 
 #address {
     margin-left: 53.5%;
+}
+
+#service-row {
+    height: 142px;
+    border-radius: 50%/100px 100px 0 0;
+    background-color: white;
+    box-shadow: inset 0px 8px 6px -6px #d7d7d778;
+
+    div {
+        margin: 56px auto 0 auto;
+        display: flex;
+        max-width: 1548px;
+        justify-content: space-between;
+    }
 }
 </style>
