@@ -58,7 +58,7 @@ p {
     justify-content: space-between;
     flex-direction: row;
     background-color: #29acdf05;
-    height: 356px;
+    height: 264px;
 
     #row-1 {
         display: flex;

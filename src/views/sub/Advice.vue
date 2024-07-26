@@ -1,19 +1,70 @@
 <template>
   <div id="advice">
+    <div id="quotes">
+      <QuoteCard title="Subsidie in ons beheer"
+        description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
+      <QuoteCard title="Investering terugverdienen"
+        description="Gemiddeld verdienen hun klanten hun investering binnen 2 tot 5 jaar terug." />
+      <QuoteCard title="Snelle installatie"
+        description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
+    </div>
+    <div class="product-row">
+      <ProductCard @click="route('heat-pump')" title="Warmtepomp" image="heat-pump" />
+      <ProductCard @click="route('airco')" title="Airconditioning" image="airco" />
+      <ProductCard @click="route('floor-heating')" title="Vloerverwarming" image="floor-heating" />
+      <ProductCard @click="route('solar')" title="Zonnepanelen" image="solar" />
+    </div>
+    <div id="second-row" class="product-row">
+      <ProductCard @click="route('charge-points')" title="Laadpaal" image="charge-points" />
+      <ProductCard @click="route('isolation')" title="Isolatie" image="isolation" />
+      <ProductCard @click="route('advice')" title="Energielabel" image="advice" />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
+import ProductCard from '@/components/Product-card.vue';
+import QuoteCard from '@/components/Quote-card.vue';
+
 export default {
-  name: "Advice",
-  components: {},
+  name: "Home",
+  components: {
+    ProductCard,
+    QuoteCard,
+  },
+  methods: {
+    route(direction) {
+      // must direct through navigation component
+
+      this.$root.$refs.navBar.routeGo(direction);
+      //this.$root.$refs.A.foo();
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 #advice {
-  height: 720px;
+  margin: 0 auto;
+  width: 1548px;
+}
+
+#quotes {
+  display: flex;
+  justify-content: center;
+  margin: 64px 0;
+}
+
+.product-row {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#second-row {
+  justify-content: flex-start;
 }
 </style>

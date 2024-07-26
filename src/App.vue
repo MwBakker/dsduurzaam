@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <navBar />
+    <navBar ref="navBar"/>
     <router-view />
     <customFooter />
   </div>

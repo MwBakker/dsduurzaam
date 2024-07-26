@@ -11,14 +11,14 @@
             <div id="nav-elements">
                 <div id="nav-titles">
                     <ul v-show="!mobile" class="navigation">
-                        <li @click="route('heat-pump')">Warmtepomp</li>
-                        <li @click="route('airco')">Airconditioning</li>
-                        <li @click="route('floor-heating')">Vloerverwarming</li>
-                        <li @click="route('solar')">Zonnepanelen</li>
-                        <li @click="route('charge-points')">Laadpaal</li>
-                        <li @click="route('isolation')">Isolatie</li>
-                        <li @click="route('advice')">Energielabel</li>
-                        <li @click="route('service')">Service</li>
+                        <li @click="routeGo('heat-pump')">Warmtepomp</li>
+                        <li @click="routeGo('airco')">Airconditioning</li>
+                        <li @click="routeGo('floor-heating')">Vloerverwarming</li>
+                        <li @click="routeGo('solar')">Zonnepanelen</li>
+                        <li @click="routeGo('charge-points')">Laadpaal</li>
+                        <li @click="routeGo('isolation')">Isolatie</li>
+                        <li @click="routeGo('advice')">Energielabel</li>
+                        <li @click="routeGo('service')">Service</li>
                     </ul>
                 </div>
                 <div id="button-tech">
@@ -32,14 +32,14 @@
             </div>
             <Transition name="mobile-nav">
                 <ul v-show="mobileNav" class="navigation">
-                    <li @click="route('heat-pump')">Warmtepomp</li>
-                    <li @click="route('airco')">Airconditioning</li>
-                    <li @click="route('floor-heating')">Vloerverwarming</li>
-                    <li @click="route('solar')">Zonnepanelen</li>
-                    <li @click="route('charge-points')">Laadpaal</li>
-                    <li @click="route('isolation')">Isolatie</li>
-                    <li @click="route('advice')">Energielabel</li>
-                    <li @click="route('service')">Service</li>
+                    <li @click="routeGo('heat-pump')">Warmtepomp</li>
+                    <li @click="routeGo('airco')">Airconditioning</li>
+                    <li @click="routeGo('floor-heating')">Vloerverwarming</li>
+                    <li @click="routeGo('solar')">Zonnepanelen</li>
+                    <li @click="routeGo('charge-points')">Laadpaal</li>
+                    <li @click="routeGo('isolation')">Isolatie</li>
+                    <li @click="routeGo('advice')">Energielabel</li>
+                    <li @click="routeGo('service')">Service</li>
                     <li><router-link class="link" :to="{ name: '' }">Energielabel</router-link></li>
                 </ul>
             </Transition>
@@ -82,7 +82,7 @@ export default {
         upper_content_container
     },
     methods: {
-        route(direction) {
+        routeGo(direction) {
             var array = this.headerText[direction];
             this.title = array[0];
             this.description = array[1];

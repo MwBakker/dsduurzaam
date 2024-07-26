@@ -38,7 +38,7 @@ export default {
     route(direction) {
       // must direct through navigation component
 
-      // this.$root.$refs.navigation_bar.route(direction);
+      this.$root.$refs.navBar.routeGo(direction);
       //this.$root.$refs.A.foo();
     }
   }

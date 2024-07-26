@@ -86,7 +86,7 @@ button {
     max-width: 1548px;
     margin: 0 auto;
     position: relative;
-    height: 640px;
+    height: 500px;
 }
 
 #container-text {
@@ -111,6 +111,7 @@ button {
 #container-image {
     position: absolute;
     right: 0;
+    z-index: -1;
     height: 658px;
     background-size: 100% 100%;
     width: 50%;
