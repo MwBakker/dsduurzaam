@@ -63,6 +63,13 @@ button,
   margin: 0 auto;
 }
 
+.product-row {
+  margin: 14vh 0 45vh 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .slide-fade-up-enter-active,
 .slide-fade-left-enter-active,
 .slide-fade-right-enter-active {

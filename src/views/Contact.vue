@@ -1,12 +1,12 @@
 <template>
   <div id="contact">
-      <Transition name="slide-fade-right" appear>
-        <div class="contact-div">
+    <Transition name="slide-fade-right" appear>
+      <div class="contact-div">
         <CustomForm />
       </div>
     </Transition>
-      <Transition name="slide-fade-left" appear>
-        <div class="contact-div">
+    <Transition name="slide-fade-left" appear>
+      <div class="contact-div">
         <CustomMap id="map" />
       </div>
     </Transition>

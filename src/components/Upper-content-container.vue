@@ -87,7 +87,7 @@ button {
     max-width: 1548px;
     margin: 0 auto;
     position: relative;
-    height: 500px;
+    height: 45vh;
 }
 
 #container-text {
@@ -116,8 +116,9 @@ button {
     //     inset 60px 0 30px -30px white;
     right: 0;
     z-index: -1;
-    height: 56vh;
-    background-size: 100% 85%;
+    height: 32%;
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
     width: 35%;
     -webkit-transition: background-image 0.4s ease-in-out;
 }
@@ -135,8 +136,8 @@ button {
 
 #container-image,
 #opacity-layer {
-    border-top-left-radius: 25vh;
-    border-bottom-left-radius: 32vh;
+    border-top-left-radius: 45%;
+    border-bottom-left-radius: 58%;
 }
 
 #container-info {
@@ -162,6 +163,16 @@ button {
         display: flex;
         max-width: 1548px;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 1024px) {
+    #service-row {
+        height: 84vh;
+
+        div {
+            flex-direction: column;
+        }
     }
 }
 </style>

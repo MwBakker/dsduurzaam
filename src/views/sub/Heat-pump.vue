@@ -1,5 +1,5 @@
 <template>
-  <div id="solar">
+  <div id="heat-pump">
     <div id="quotes">
       <QuoteCard title="Split" description="Bieden een uitstekende balans tussen prestaties en
                                             installatiegemak. Ideaal voor zowel nieuwbouw als renovaties, deze systemen
@@ -19,10 +19,10 @@
                                                   bespaart op energiekosten." />
     </div>
     <div class="product-row">
-      <ProductCard title="Split" image="heat-pump" />
-      <ProductCard title="Hydrosplit" image="heat-pump" />
-      <ProductCard title="Monobloc" image="heat-pump" />
-      <ProductCard title="Warmtepompboilers" image="heat-pump" />
+      <SubProductCard title="Split" amount="2500" image="heat-pump" />
+      <SubProductCard title="Hydrosplit" amount="2500" image="heat-pump" />
+      <SubProductCard title="Monobloc" amount="2500" image="heat-pump" />
+      <SubProductCard title="Warmtepompboilers" amount="2500" image="heat-pump" />
     </div>
   </div>
 </template>
@@ -30,13 +30,13 @@
 <script>
 // @ is an alias to /src
 
-import ProductCard from '@/components/Product-card.vue';
+import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
-  name: "Heatpump",
+  name: "Heat-pump",
   components: {
-    ProductCard,
+    SubProductCard,
     QuoteCard,
   },
   methods: {
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#solar {
+#heat-pump {
   margin: 0 auto;
   width: 1548px;
 }
@@ -63,9 +63,6 @@ export default {
 }
 
 .product-row {
-  margin: 32px 0;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  margin: 16vh 0 33vh 0;
 }
 </style>

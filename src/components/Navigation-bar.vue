@@ -23,7 +23,7 @@
                 </div>
                 <div id="button-tech">
                     <img src="@/assets/tech.png" />
-                    <button @click="route('contact')">Advies aan huis</button>
+                    <button @click="routeGo('contact')">Advies aan huis</button>
                 </div>
             </div>
             <div class="Icon">

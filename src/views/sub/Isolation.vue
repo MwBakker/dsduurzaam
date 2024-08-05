@@ -12,9 +12,9 @@
                                                   dakisolatie kunt u veel energie en kosten besparen." />
     </div>
     <div class="product-row">
-      <ProductCard title="Spouwmuurisolatie" image="isolation" />
-      <ProductCard title="Vloerisolatie" image="isolation" />
-      <ProductCard title="Dakisolatie" image="isolation" />
+      <SubProductCard title="Spouwmuurisolatie" amount="2500" image="isolation" />
+      <SubProductCard title="Vloerisolatie" amount="2500" image="isolation" />
+      <SubProductCard title="Dakisolatie" amount="2500" image="isolation" />
     </div>
   </div>
 </template>
@@ -22,13 +22,13 @@
 <script>
 // @ is an alias to /src
 
-import ProductCard from '@/components/Product-card.vue';
+import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
-  name: "Isolation",
+  name: "Solar",
   components: {
-    ProductCard,
+    SubProductCard,
     QuoteCard,
   },
   methods: {
@@ -52,12 +52,5 @@ export default {
   display: flex;
   justify-content: space-around;
   margin: 64px 0;
-}
-
-.product-row {
-  margin: 32px 0;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 </style>

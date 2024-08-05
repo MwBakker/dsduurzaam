@@ -1,20 +1,23 @@
 <template>
   <div id="solar">
     <div id="quotes">
-      <QuoteCard title="Spouwmuurisolatie" description="Door het vullen van de spouwmuur stijgt de oppervlaktetemperatuur van het
-                                                binnenspouwblad en neemt de tocht in huis af. Daarnaast bespaart u met deze vorm
-                                                van isolatie behoorlijk veel energiekosten." />
-      <QuoteCard title="Vloerisolatie" description="Wanneer er een kruipruimte onder uw woning aanwezig is, kan in de meeste
-                                              gevallen de onderkant van de vloer geïsoleerd worden. Door vloerisolatie voorkomt u
-                                              tocht vanuit de grind in uw woning en verlaagt u uw energiegebruik." />
-      <QuoteCard title="Dakisolatie" description="Een ongeïsoleerd dak is een enorme energieverslinder gemiddeld zit 40% van de
-                                                  kieren in een woning in het dak of in de aansluiting van dak naar de gevel. Met
-                                                  dakisolatie kunt u veel energie en kosten besparen." />
+      <QuoteCard title="Spouwmuurisolatie" description="Een populaire en efficiënte manier om zonne-
+                                                        energie te benutten. Deze panelen worden geïnstalleerd op daken met een
+                                                        hellingshoek, wat verschillende voordelen biedt. Ten eerste vangen schuine daken
+                                                        meer zonlicht gedurende de dag, wat de energieopbrengst maximaliseert. Ten
+                                                        tweede helpt de natuurlijke helling van het dak bij de zelfreiniging van de panelen,
+                                                        aangezien regen en sneeuw gemakkelijker kunnen wegspoelen, waardoor het
+                                                        onderhoud wordt verminderd." />
+      <QuoteCard title="Vloerisolatie" description="Bieden een flexibele en efficiënte manier om zonne-
+                                                    energie te benutten. Deze installaties maken het mogelijk om de panelen onder de
+                                                    optimale hoek en richting te plaatsen, waardoor de energieopbrengst kan worden
+                                                    gemaximaliseerd. Op een plat dak worden de panelen meestal geplaatst in een
+                                                    opstelling met een bepaalde hellingshoek, vaak met behulp van montagesystemen,
+                                                    om de ideale blootstelling aan zonlicht te garanderen." />
     </div>
     <div class="product-row">
-      <ProductCard title="Spouwmuurisolatie" image="isolation" />
-      <ProductCard title="Vloerisolatie" image="isolation" />
-      <ProductCard title="Dakisolatie" image="isolation" />
+      <SubProductCard title="Schuin dak" amount="2500" image="solar" />
+      <SubProductCard title="Pat dak" amount="2500" image="solar" />
     </div>
   </div>
 </template>
@@ -22,13 +25,13 @@
 <script>
 // @ is an alias to /src
 
-import ProductCard from '@/components/Product-card.vue';
+import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
   name: "Solar",
   components: {
-    ProductCard,
+    SubProductCard,
     QuoteCard,
   },
   methods: {
@@ -55,9 +58,6 @@ export default {
 }
 
 .product-row {
-  margin: 32px 0;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+    margin: 16vh 0 33vh 0;
 }
 </style>

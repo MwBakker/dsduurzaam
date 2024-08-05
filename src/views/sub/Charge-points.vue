@@ -1,23 +1,23 @@
 <template>
-  <div id="charge-ports">
+  <div id="charge-points">
     <div id="quotes">
-      <QuoteCard title="Subsidie in ons beheer"
-        description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
-      <QuoteCard title="Investering terugverdienen"
-        description="Gemiddeld verdienen hun klanten hun investering binnen 2 tot 5 jaar terug." />
-      <QuoteCard title="Snelle installatie"
-        description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
+      <QuoteCard title="Jawel" description="Een populaire en efficiënte manier om zonne-
+                                                        energie te benutten. Deze panelen worden geïnstalleerd op daken met een
+                                                        hellingshoek, wat verschillende voordelen biedt. Ten eerste vangen schuine daken
+                                                        meer zonlicht gedurende de dag, wat de energieopbrengst maximaliseert. Ten
+                                                        tweede helpt de natuurlijke helling van het dak bij de zelfreiniging van de panelen,
+                                                        aangezien regen en sneeuw gemakkelijker kunnen wegspoelen, waardoor het
+                                                        onderhoud wordt verminderd." />
+      <QuoteCard title="Niet" description="Bieden een flexibele en efficiënte manier om zonne-
+                                                    energie te benutten. Deze installaties maken het mogelijk om de panelen onder de
+                                                    optimale hoek en richting te plaatsen, waardoor de energieopbrengst kan worden
+                                                    gemaximaliseerd. Op een plat dak worden de panelen meestal geplaatst in een
+                                                    opstelling met een bepaalde hellingshoek, vaak met behulp van montagesystemen,
+                                                    om de ideale blootstelling aan zonlicht te garanderen." />
     </div>
     <div class="product-row">
-      <ProductCard @click="route('heat-pump')" title="Warmtepomp" image="heat-pump" />
-      <ProductCard @click="route('airco')" title="Airconditioning" image="airco" />
-      <ProductCard @click="route('floor-heating')" title="Vloerverwarming" image="floor-heating" />
-      <ProductCard @click="route('solar')" title="Zonnepanelen" image="solar" />
-    </div>
-    <div id="second-row" class="product-row">
-      <ProductCard @click="route('charge-points')" title="Laadpaal" image="charge-points" />
-      <ProductCard @click="route('isolation')" title="Isolatie" image="isolation" />
-      <ProductCard @click="route('advice')" title="Energielabel" image="advice" />
+      <SubProductCard title="Schuin dak" amount="2500" image="solar" />
+      <SubProductCard title="Pat dak" amount="2500" image="solar" />
     </div>
   </div>
 </template>
@@ -25,13 +25,13 @@
 <script>
 // @ is an alias to /src
 
-import ProductCard from '@/components/Product-card.vue';
+import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
-  name: "Home",
+  name: "charge-points",
   components: {
-    ProductCard,
+    SubProductCard,
     QuoteCard,
   },
   methods: {
@@ -46,25 +46,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#charge-ports {
+#charge-points {
   margin: 0 auto;
   width: 1548px;
 }
 
 #quotes {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 64px 0;
 }
 
 .product-row {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#second-row {
-  justify-content: flex-start;
+  margin: 16vh 0 33vh 0;
 }
 </style>

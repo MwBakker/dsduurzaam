@@ -1,31 +1,31 @@
 <template>
     <div id="footer">
-        <div id="layer-one">
-            <h1>D&S Duurzame installaties</h1>
-            <!-- <div id="row-1">
-                <p>D&S Duurzame installaties</p>
-                <p>Privacy verklaring</p>
+        <h1>D&S Duurzame installaties</h1>
+        <div id="container-info">
+            <div id="column-info">
+                <Address id="address"></Address>
+                <Contact id="contact" />
             </div>
-            <div id="row-2">
-                <p>KvK: 0123456789</p>
-                <p>Btw: 012345678910111213</p>
-            </div>
-            <div id='logos'>
+            <CustomMap id="map" />
+            <!-- <div id='logos'>
                 <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
                 <a href='https://www.instagram.com/dsduurzaam/'><img class='logo' src='../assets/icon/instagram.png' /></a>
-            </div> -->
+            </div>  -->
         </div>
+        <CustomMap />
         <img id="branding" src="@/assets/logo.png" alt="" />
         <div id="layer-two"></div>
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Address from '@/components/Address.vue';
+import CustomMap from '@/components/Map.vue'
+import Contact from '@/components/Contact.vue';
 
 export default {
     name: "Home",
-    components: {},
+    components: { Address, Contact, CustomMap },
 };
 </script>
 
@@ -41,8 +41,8 @@ p {
 }
 
 #footer {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    background-color: #29acdf05;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;
     margin-top: 24px;
 
@@ -52,38 +52,30 @@ p {
     }
 }
 
-#layer-one {
-    padding-top: 20px;
+#column-info {
     display: flex;
-    justify-content: space-between;
+    margin: 1vh 0;
+    justify-content: space-evenly;
+}
+
+#map {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 18%;
+    height: 89%;
+    border-left: 5px solid #2c5484;
+    border-bottom: 3px solid #2c5484;
+}
+
+#logos {
+    display: flex;
     flex-direction: row;
-    background-color: #29acdf05;
-    height: 264px;
+    margin-right: 2%;
 
-    #row-1 {
-        display: flex;
-        margin-left: 5%;
-        flex-direction: row;
-    }
-
-    #row-2 {
-        display: flex;
-        flex-direction: column;
-
-        p {
-            margin: 2px 36px;
-        }
-    }
-
-    #logos {
-        display: flex;
-        flex-direction: row;
-        margin-right: 2%;
-
-        img {
-            margin: 6px;
-            height: 42px;
-        }
+    img {
+        margin: 6px;
+        height: 42px;
     }
 }
 

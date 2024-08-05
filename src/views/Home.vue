@@ -67,4 +67,15 @@ export default {
 #second-row {
   justify-content: flex-start;
 }
+
+
+@media (max-width: 1024px) {
+  #quotes {
+    flex-direction: column;
+  }
+
+  .product-row {
+    flex-direction: column;
+  }
+}
 </style>

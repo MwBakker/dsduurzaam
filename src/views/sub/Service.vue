@@ -46,7 +46,7 @@
   </script>
   
   <style lang="scss" scoped>
-  #isolation {
+  #service {
     margin: 0 auto;
     width: 1548px;
   }
