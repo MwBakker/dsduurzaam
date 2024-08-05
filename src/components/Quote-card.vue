@@ -1,6 +1,6 @@
 <template>
     <div class="line">
-        <img :src="imageUrl">
+        <img :src="imageUrl" v-if="checkmark"></img>
         <div>
             <h1>{{ title }}</h1>
             <p>{{ description }}</p>
@@ -14,7 +14,8 @@ import { computed } from 'vue'
 const props = defineProps({
     title: String,
     description: String,
-    icon: String
+    icon: String,
+    checkmark: Boolean
 })
 
 const imageUrl = computed(

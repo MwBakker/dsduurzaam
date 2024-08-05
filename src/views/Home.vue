@@ -1,11 +1,11 @@
 <template>
   <div id="home">
     <div id="quotes">
-      <QuoteCard title="Subsidie in ons beheer"
+      <QuoteCard checkmark=true title="Subsidie in ons beheer"
         description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
-      <QuoteCard title="Investering terugverdienen"
+      <QuoteCard checkmark=true title="Investering terugverdienen"
         description="Gemiddeld verdienen hun klanten hun investering binnen 2 tot 5 jaar terug." />
-      <QuoteCard title="Snelle installatie"
+      <QuoteCard checkmark=true title="Snelle installatie"
         description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
     </div>
     <div class="product-row">

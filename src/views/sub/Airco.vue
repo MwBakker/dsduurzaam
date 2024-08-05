@@ -1,23 +1,25 @@
 <template>
   <div id="airco">
     <div id="quotes">
-      <QuoteCard title="Subsidie in ons beheer"
-        description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
-      <QuoteCard title="Investering terugverdienen"
-        description="Gemiddeld verdienen hun klanten hun investering binnen 2 tot 5 jaar terug." />
-      <QuoteCard title="Snelle installatie"
-        description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
+      <QuoteCard title="LG RAC sets (Single Split)"
+        description="Bieden een perfecte combinatie van modern design en krachtige prestaties. 
+                     Ideaal voor huishoudelijk gebruik, deze units zorgen voor een comfortabele 
+                     warme en koele leefomgeving met minimale geluidsproductie." />
+      <QuoteCard title="LG CAC sets (Casette)"
+        description="Ontworpen voor commerciële en
+                    grotere residentiële ruimtes. Deze units bieden flexibele installatieopties en zorgen
+                    voor een optimale luchtverdeling, wat resulteert in een consistente en aangename
+                    temperatuur in elke hoek van de ruimte."/>
+      <QuoteCard title="LG Multi F (Multi Split)"
+        description="zijn perfect voor grotere woningen of commerciële
+                    gebouwen waar meerdere ruimtes individueel gekoeld moeten worden. Met de
+                    mogelijkheid om meerdere binnenunits aan één buiteneenheid te koppelen, bieden
+                    deze systemen een energiezuinige en ruimtebesparende oplossing." />
     </div>
     <div class="product-row">
-      <ProductCard @click="route('heat-pump')" title="Warmtepomp" image="heat-pump" />
-      <ProductCard @click="route('airco')" title="Airconditioning" image="airco" />
-      <ProductCard @click="route('floor-heating')" title="Vloerverwarming" image="floor-heating" />
-      <ProductCard @click="route('solar')" title="Zonnepanelen" image="solar" />
-    </div>
-    <div id="second-row" class="product-row">
-      <ProductCard @click="route('charge-points')" title="Laadpaal" image="charge-points" />
-      <ProductCard @click="route('isolation')" title="Isolatie" image="isolation" />
-      <ProductCard @click="route('advice')" title="Energielabel" image="advice" />
+      <ProductCard title="LG RAC sets (Single Split)" image="airco" />
+      <ProductCard title="LG CAC sets (Casette)" image="airco" />
+      <ProductCard title="LG Multi F (Multi Split)" image="floor-heating" />
     </div>
   </div>
 </template>
@@ -53,14 +55,14 @@ export default {
 
 #quotes {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 64px 0;
 }
 
 .product-row {
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 

@@ -1,23 +1,20 @@
 <template>
-  <div id="isolation">
+  <div id="solar">
     <div id="quotes">
-      <QuoteCard title="Subsidie in ons beheer"
-        description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
-      <QuoteCard title="Investering terugverdienen"
-        description="Gemiddeld verdienen hun klanten hun investering binnen 2 tot 5 jaar terug." />
-      <QuoteCard title="Snelle installatie"
-        description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
+      <QuoteCard title="Spouwmuurisolatie" description="Door het vullen van de spouwmuur stijgt de oppervlaktetemperatuur van het
+                                                binnenspouwblad en neemt de tocht in huis af. Daarnaast bespaart u met deze vorm
+                                                van isolatie behoorlijk veel energiekosten." />
+      <QuoteCard title="Vloerisolatie" description="Wanneer er een kruipruimte onder uw woning aanwezig is, kan in de meeste
+                                              gevallen de onderkant van de vloer geïsoleerd worden. Door vloerisolatie voorkomt u
+                                              tocht vanuit de grind in uw woning en verlaagt u uw energiegebruik." />
+      <QuoteCard title="Dakisolatie" description="Een ongeïsoleerd dak is een enorme energieverslinder gemiddeld zit 40% van de
+                                                  kieren in een woning in het dak of in de aansluiting van dak naar de gevel. Met
+                                                  dakisolatie kunt u veel energie en kosten besparen." />
     </div>
     <div class="product-row">
-      <ProductCard @click="route('heat-pump')" title="Warmtepomp" image="heat-pump" />
-      <ProductCard @click="route('airco')" title="Airconditioning" image="airco" />
-      <ProductCard @click="route('floor-heating')" title="Vloerverwarming" image="floor-heating" />
-      <ProductCard @click="route('solar')" title="Zonnepanelen" image="solar" />
-    </div>
-    <div id="second-row" class="product-row">
-      <ProductCard @click="route('charge-points')" title="Laadpaal" image="charge-points" />
-      <ProductCard @click="route('isolation')" title="Isolatie" image="isolation" />
-      <ProductCard @click="route('advice')" title="Energielabel" image="advice" />
+      <ProductCard title="Spouwmuurisolatie" image="isolation" />
+      <ProductCard title="Vloerisolatie" image="isolation" />
+      <ProductCard title="Dakisolatie" image="isolation" />
     </div>
   </div>
 </template>
@@ -29,7 +26,7 @@ import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
-  name: "Home",
+  name: "Isolation",
   components: {
     ProductCard,
     QuoteCard,
@@ -46,25 +43,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#isolation {
+#solar {
   margin: 0 auto;
   width: 1548px;
 }
 
 #quotes {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 64px 0;
 }
 
 .product-row {
-  margin: 0 auto;
+  margin: 32px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-}
-
-#second-row {
-  justify-content: flex-start;
 }
 </style>

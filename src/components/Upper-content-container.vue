@@ -1,6 +1,7 @@
 <template>
     <div id="container-main">
         <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
+            <!-- <div id="opacity-layer"></div> -->
         </div>
         <div id="container-elements">
             <div id="container-text">
@@ -110,12 +111,32 @@ button {
 
 #container-image {
     position: absolute;
+    top: 9vh;
+    // box-shadow:
+    //     inset 60px 0 30px -30px white;
     right: 0;
     z-index: -1;
-    height: 658px;
-    background-size: 100% 100%;
-    width: 50%;
+    height: 56vh;
+    background-size: 100% 85%;
+    width: 35%;
     -webkit-transition: background-image 0.4s ease-in-out;
+}
+
+// #opacity-layer {
+//     margin-left: -37%;
+//     width: 43%;
+//     margin-left: 21%;
+//     opacity: 75%;
+//     margin-left: -1%;
+//     border-left: 110px solid white;
+//     /* background-color: #2c5484; */
+//     height: 100%;
+// }
+
+#container-image,
+#opacity-layer {
+    border-top-left-radius: 25vh;
+    border-bottom-left-radius: 32vh;
 }
 
 #container-info {
@@ -132,7 +153,7 @@ button {
 
 #service-row {
     height: 142px;
-    border-radius: 50%/100px 100px 0 0;
+    // border-radius: 50%/100px 100px 0 0;
     background-color: white;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;
 

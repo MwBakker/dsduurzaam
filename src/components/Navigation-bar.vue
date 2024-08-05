@@ -6,7 +6,7 @@
     <div id="nav-container">
         <nav>
             <div class="branding">
-                <img @click="route('home')" src="@/assets/logo.png" alt="" />
+                <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
             </div>
             <div id="nav-elements">
                 <div id="nav-titles">
@@ -40,7 +40,6 @@
                     <li @click="routeGo('isolation')">Isolatie</li>
                     <li @click="routeGo('advice')">Energielabel</li>
                     <li @click="routeGo('service')">Service</li>
-                    <li><router-link class="link" :to="{ name: '' }">Energielabel</router-link></li>
                 </ul>
             </Transition>
         </nav>
@@ -73,7 +72,7 @@ export default {
                 'charge-points': ["Laadpalen", "Mooi spul"],
                 'isolation': ["Isolatie", "Warm spul"],
                 'advice': ["Energielabel & advies", "Mooi spul"],
-                'service:': ["Service", "Ons niet bellen"],
+                'service': ["Service", "Ons gewoon bellen"],
                 'contact': ["Contact", "Durf ons te bellen"],
             },
         };
@@ -108,6 +107,10 @@ export default {
         color: #ffffff;
         font-weight: 400;
     }
+}
+
+#nav-container {
+    background-color: white;
 }
 
 header {
