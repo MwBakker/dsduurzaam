@@ -26,7 +26,6 @@ const imageUrl = computed(
 <style lang="scss" scoped>
 .line {
     width: 30%;
-    margin: 0 84px;
     display: flex;
 
     img {
@@ -49,5 +48,13 @@ const imageUrl = computed(
         font-weight: 700;
         line-height: 1.875rem;
     }
+}
+
+
+@media (max-width: 1548px) {
+  .line {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 </style>

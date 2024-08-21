@@ -1,38 +1,16 @@
 <template>
-    <div id="label-main">
-        <p>Direct uit voorraad leverbaar!</p>
-    </div>
-    <header :class="{ 'scrolled-nav': scrollPosition }"></header>
     <div id="nav-container">
+        <div id="label-main">
+            <p>Direct uit voorraad leverbaar!</p>
+        </div>
         <nav>
             <div class="branding">
                 <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
             </div>
-            <div id="nav-elements">
-                <div id="nav-titles">
-                    <ul v-show="!mobile" class="navigation">
-                        <li @click="routeGo('heat-pump')">Warmtepomp</li>
-                        <li @click="routeGo('airco')">Airconditioning</li>
-                        <li @click="routeGo('floor-heating')">Vloerverwarming</li>
-                        <li @click="routeGo('solar')">Zonnepanelen</li>
-                        <li @click="routeGo('charge-points')">Laadpaal</li>
-                        <li @click="routeGo('isolation')">Isolatie</li>
-                        <li @click="routeGo('advice')">Energielabel</li>
-                        <li @click="routeGo('service')">Service</li>
-                    </ul>
-                </div>
-                <div id="button-tech">
-                    <img src="@/assets/tech.png" />
-                    <button @click="routeGo('contact')">Advies aan huis</button>
-                </div>
-            </div>
-            <div class="Icon">
-                <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars"
-                    :class="{ 'icon-active': mobileNav }"></i>
-            </div>
-            <Transition name="mobile-nav">
-                <ul v-show="mobileNav" class="navigation">
-                    <li @click="routeGo('heat-pump')">Warmtepomp</li>
+            <Transition name="slide-fade-left" appear>
+                <ul v-if="showMenu" id="titles">
+                    <a @click="showMenu = false" class="fa fa-times fa-2x"></a>
+                    <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
                     <li @click="routeGo('airco')">Airconditioning</li>
                     <li @click="routeGo('floor-heating')">Vloerverwarming</li>
                     <li @click="routeGo('solar')">Zonnepanelen</li>
@@ -42,9 +20,14 @@
                     <li @click="routeGo('service')">Service</li>
                 </ul>
             </Transition>
+            <div id="button-tech">
+                <img src="@/assets/tech.png" />
+                <button @click="routeGo('contact')">Advies aan huis</button>
+            </div>
+            <a @click="showMenu = !showMenu" class="fa fa-bars fa-2x"></a>
         </nav>
     </div>
-    <upper_content_container v-if="!headerHidden" :title=title :description=description :backgroundImage=headerImg />
+    <upper_content_container :title=title :description=description :backgroundImage=headerImg />
 </template>
 
 
@@ -55,11 +38,7 @@ export default {
     name: "navigation-bar",
     data() {
         return {
-            headerHidden: false,
-            scrollPosition: null,
-            mobile: false,
-            mobileNav: null,
-            windowWidth: null,
+            showMenu: (window.innerWidth > 1548),
             title: 'D&S Duurzame Installaties uw complete verduurzamer.',
             headerImg: 'home',
             description: 'Uw partner in verduurzaming van A tot Z',
@@ -89,15 +68,29 @@ export default {
             this.$router.push({
                 name: direction,
             })
-        }
+        },
+        toggleMenu() {
+            this.showMenu = window.innerWidth < 1548 ? ref(false) : ref(true);
+        },
     }
 };
 </script>
 
 <style lang="scss" scoped>
+a {
+    cursor: pointer;
+    visibility: hidden;
+    top: 32px;
+    right: 56px;
+}
+
+#nav-container {
+    background-color: white;
+    transition: 0.5s ease all;
+}
+
 #label-main {
     height: 36px;
-    width: 100%;
     background-color: #2c5484;
 
     p {
@@ -109,26 +102,24 @@ export default {
     }
 }
 
-#nav-container {
-    background-color: white;
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1548px;
+    height: 128px;
+    margin: 0 auto;
+    padding: 12px 0;
 }
 
-header {
-    z-index: 99;
-    width: 100%;
-    position: fixed;
-    transition: 0.5s ease all;
-    color: white;
-}
-
-.navigation {
+#titles {
     display: flex;
     align-items: center;
 
     img {
         width: 50px;
-        transition: 0.5s ease all;
     }
+    transition: 0.5s ease all;
 }
 
 .branding {
@@ -139,26 +130,10 @@ header {
 
     img {
         width: 75px;
-        transition: 0.5s ease all;
     }
 }
 
-nav {
-    max-width: 1548px;
-    height: 128px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    padding: 12px 0;
-    transition: 0.5s ease all;
-}
 
-#nav-elements {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
 
 ul,
 .link {
@@ -172,7 +147,6 @@ li {
     font-size: 1.1rem;
     font-weight: 400;
     -webkit-text-stroke: 0.1px;
-    transition: 0.5s ease all;
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
     padding: 16px;
@@ -210,5 +184,45 @@ button {
         background-color: #2c5484;
     }
 
+}
+
+
+@media screen and (max-width: 1548px) {
+    nav {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #button-tech {
+        margin-right: 6%;
+    }
+
+    #titles {
+        width: 50%;
+        top: 36px;
+        z-index: 99;
+        background-color: #f1f1f1;
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 46px 64px 36px 64px;
+        box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
+
+        li {
+            margin: 24px 0;
+        }
+
+        #upper-li {
+            margin-top: 64px;
+        }
+
+        a {
+            float: right;
+        }
+    }
+
+    a {
+        visibility: visible;
+    }
 }
 </style>

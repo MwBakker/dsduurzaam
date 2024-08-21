@@ -23,8 +23,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
@@ -36,10 +34,7 @@ export default {
   },
   methods: {
     route(direction) {
-      // must direct through navigation component
-
       this.$root.$refs.navBar.routeGo(direction);
-      //this.$root.$refs.A.foo();
     }
   }
 };
@@ -53,7 +48,7 @@ export default {
 
 #quotes {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 64px 0;
 }
 
@@ -69,9 +64,14 @@ export default {
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1548px) {
+  #home {
+    width: 100%;
+  }
+
   #quotes {
     flex-direction: column;
+    height: 500px;
   }
 
   .product-row {

@@ -50,4 +50,12 @@ button {
     margin: 0 auto;
     margin-bottom: 48px;
 }
+
+
+@media (max-width: 1548px) {
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div id="service">
+    <div class="product">
       <div id="quotes">
         <QuoteCard title="Subsidie in ons beheer"
           description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
@@ -23,8 +23,6 @@
   </template>
   
   <script>
-  // @ is an alias to /src
-  
   import ProductCard from '@/components/Product-card.vue';
   import QuoteCard from '@/components/Quote-card.vue';
   
@@ -36,35 +34,7 @@
     },
     methods: {
       route(direction) {
-        // must direct through navigation component
-  
-        this.$root.$refs.navBar.routeGo(direction);
-        //this.$root.$refs.A.foo();
-      }
+        this.$root.$refs.navBar.routeGo(direction);      }
     }
   };
   </script>
-  
-  <style lang="scss" scoped>
-  #service {
-    margin: 0 auto;
-    width: 1548px;
-  }
-  
-  #quotes {
-    display: flex;
-    justify-content: center;
-    margin: 64px 0;
-  }
-  
-  .product-row {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  #second-row {
-    justify-content: flex-start;
-  }
-  </style>

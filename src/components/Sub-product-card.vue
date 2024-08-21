@@ -25,9 +25,6 @@
                 <img src="../assets/icon/check.png">
                 <p>Lorem ipsum toestanden</p>
             </div>
-            <!-- <p>{{ statements[0] }}</p>
-            <p>{{ statements[1] }}</p>
-            <p>{{ statements[2] }}</p> -->
         </div>
         <button @click="route('/contact')">Offerte aanvragen</button>
     </div>
@@ -74,7 +71,7 @@ const imageUrl = computed(
 .card-sub-product {
     padding: 24px;
     position: relative;
-    width: 22.5%;
+    width: 400px;
     margin: 16px;
     margin-bottom: 24px;
     background-color: #29acdf05;
@@ -83,9 +80,9 @@ const imageUrl = computed(
 
     img {
         position: absolute;
-        top: -125px;
+        top: -60px;
         left: 10px;
-        height: 180px;
+        height: 146px;
     }
 
     h1 {
@@ -148,5 +145,12 @@ const imageUrl = computed(
 
 button {
     width: 100%;
+}
+
+
+@media (max-width: 1548px) {
+  .card-sub-product {
+    width: 320px;
+  }
 }
 </style>

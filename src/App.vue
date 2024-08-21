@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <navBar ref="navBar"/>
+    <navBar ref="navBar" />
     <router-view />
     <customFooter />
   </div>
@@ -20,18 +20,24 @@ export default {
 </script>
 
 <style lang="scss">
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
+  font-family: Manrope, sans-serif;
   font-weight: 400;
   font-size: 1rem;
 }
 
 p {
-  font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
+  font-family: Roboto, sans-serif;
   color: rgb(107, 107, 107);
+}
+
+h1,
+h2 {
+  font-family: Manrope, sans-serif;
 }
 
 button,
@@ -70,6 +76,47 @@ button,
   flex-wrap: wrap;
 }
 
+#quotes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product {
+  margin: 0 auto;
+  width: 1548px;
+}
+
+.sub-card {
+  margin: 0 5%;
+}
+
+.sub-product {
+  display: flex;
+  justify-content: space-between;
+  margin: 96px 0;
+  align-items: center;
+
+  .sub-product-card {
+    margin: 0 5%;
+  }
+}
+
+hr {
+  margin: 128px 0;
+  border: 0.25px solid #00000013;
+}
+
+.quotes {
+  display: flex;
+  justify-content: space-around;
+  margin: 64px 0;
+}
+
+.product-row {
+  margin: 16vh 0 33vh 0;
+}
+
+
 .slide-fade-up-enter-active,
 .slide-fade-left-enter-active,
 .slide-fade-right-enter-active {
@@ -97,5 +144,14 @@ button,
 .slide-fade-right-leave-to {
   transform: translateX(-80%);
   opacity: 0;
+}
+
+@media (max-width: 1548px) {
+  .product {
+    width: 100%;
+  }
+  .sub-product {
+    flex-direction: column;
+  }
 }
 </style>

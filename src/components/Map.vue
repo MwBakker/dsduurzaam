@@ -1,5 +1,5 @@
 <template>
-    <GoogleMap api-key="AIzaSyBz_YKA-lUBLzqbm4sbLQaFGBKCFSgtby4" :styles=this.styles :center="center" :zoom="12">
+    <GoogleMap api-key="AIzaSyBz_YKA-lUBLzqbm4sbLQaFGBKCFSgtby4" :styles=this.styles :center="center" :zoom="12" :map-type-control="false">
         <Marker :options="{ position: center }" />
     </GoogleMap>
 </template>
@@ -9,7 +9,7 @@ import { GoogleMap, Marker } from 'vue3-google-map';
 
 export default {
     name: "customMap",
-    components: { GoogleMap, Marker },  
+    components: { GoogleMap, Marker },
     setup() {
         const styles = [
             { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
@@ -19,7 +19,7 @@ export default {
                 featureType: 'administrative.locality',
                 elementType: 'labels.text.fill',
                 stylers: [{ color: '#d59563' }]
-            },   
+            },
             {
                 featureType: 'poi',
                 elementType: 'labels.text.fill',
@@ -96,6 +96,3 @@ export default {
     },
 };
 </script>
-
-<style scoped>
-</style>

@@ -1,27 +1,13 @@
 <template>
     <div id="container-main">
-        <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
-            <!-- <div id="opacity-layer"></div> -->
-        </div>
         <div id="container-elements">
             <div id="container-text">
                 <h1>{{ title }}</h1>
                 <p>{{ description }}</p>
                 <button id="contact-button" @click="route('contact')">Gratis advies ontvangen</button>
             </div>
-            <!-- <div id="container-rounded">
-                <Transition name="slide-fade-up" appear>
-                    <div id="container-info">
-                        <titleIcon title="+31612345678" icon="telephone" />
-                        <div id='address'>
-                            <titleIcon title="Ergens in Ter Apel" icon="address" />
-                        </div>
-                        <div id="mail">
-                            <titleIcon title="info@dsduurzaam.nl" icon="mail" />
-                        </div>
-                    </div>
-                </Transition>
-            </div> -->
+        </div>
+        <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
         </div>
         <div id="service-row">
             <div>
@@ -83,18 +69,15 @@ button {
 }
 
 #container-elements {
-    display: flex;
-    max-width: 1548px;
+    max-width: 1450px;
     margin: 0 auto;
     position: relative;
-    height: 45vh;
+    height: 460px;
 }
 
 #container-text {
-    width: 48%;
-    height: 400px;
-    margin-top: 50px;
-    padding: 50px;
+    width: 65%;
+    padding: 115px 50px;
 
     p {
         text-align: justify;
@@ -111,31 +94,19 @@ button {
 
 #container-image {
     position: absolute;
-    top: 9vh;
+    top: 28px;
     // box-shadow:
     //     inset 60px 0 30px -30px white;
     right: 0;
     z-index: -1;
-    height: 32%;
+    height: 956px;
     background-size: 100% 80%;
     background-repeat: no-repeat;
     width: 35%;
     -webkit-transition: background-image 0.4s ease-in-out;
 }
 
-// #opacity-layer {
-//     margin-left: -37%;
-//     width: 43%;
-//     margin-left: 21%;
-//     opacity: 75%;
-//     margin-left: -1%;
-//     border-left: 110px solid white;
-//     /* background-color: #2c5484; */
-//     height: 100%;
-// }
-
-#container-image,
-#opacity-layer {
+#container-image {
     border-top-left-radius: 45%;
     border-bottom-left-radius: 58%;
 }
@@ -166,12 +137,48 @@ button {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1548px) {
+    #container-image {
+        width: auto;
+        inset: auto 0 auto;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 0;
+        background-size: 100% 60%;
+        height: 600px;
+        top: 460px;
+    }
+
+    #container-elements {
+        text-align: center;
+        height: 600px;
+    }
+
+    #container-text {
+        width: 75%;
+        margin: auto;
+        padding: 0;
+        p {
+            text-align: center;
+        }
+    }
+    
+    button {
+        position: absolute;
+        bottom: 18px;
+        height: 72px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
     #service-row {
-        height: 84vh;
+        height: 74vh;
 
         div {
             flex-direction: column;
+            margin-top: 0px;
+            padding-top: 40px;
         }
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="floor-heating">
+  <div class="product" id="floor-heating">
     <div id="quotes">
       <QuoteCard title="Ok" description="Bieden een uitstekende balans tussen prestaties en
                                             installatiegemak. Ideaal voor zowel nieuwbouw als renovaties, deze systemen
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
@@ -31,28 +30,8 @@ export default {
   },
   methods: {
     route(direction) {
-      // must direct through navigation component
-
       this.$root.$refs.navBar.routeGo(direction);
-      //this.$root.$refs.A.foo();
     }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-#floor-heating {
-  margin: 0 auto;
-  width: 1548px;
-}
-
-#quotes {
-  display: flex;
-  justify-content: space-around;
-  margin: 64px 0;
-}
-
-.product-row {
-  margin: 16vh 0 33vh 0;
-}
-</style>

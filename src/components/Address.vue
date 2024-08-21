@@ -1,20 +1,27 @@
 <template>
     <div id="address">
         <h1>Adres</h1>
-        <h2>Hoofdstraat 4</h2>
-        <h2>9561 JA</h2>
-        <h2>Ter Apel</h2>
+        <p>Hoofdstraat 4</p>
+        <p>9561 JA</p>
+        <p>Ter Apel</p>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-h1 {
-    font-size: 1.4rem;
-    color: #2c5484;
+h1, 
+p {
+    color: white;
 }
 
-h2 {
+
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
     margin: 6px 0;
 }
 </style>

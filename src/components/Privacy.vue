@@ -1,10 +1,8 @@
 <template>
-    <div id="contact">
-        <h1>Contact</h1>
-        <p>088-7155733</p>
-        <p>info@duureco.nl</p>
-        <p>KvK: 12345 6789 101112</p>
-        <p>Btw: 12345 6789 101112</p>
+    <div id="privacy">
+        <h1>Beleid</h1>
+        <p>Privacyverklaring</p>
+        <p>Disclaimer</p>
     </div>
 </template>
 

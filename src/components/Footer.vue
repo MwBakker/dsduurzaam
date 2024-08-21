@@ -3,75 +3,85 @@
         <h1>D&S Duurzame installaties</h1>
         <div id="container-info">
             <div id="column-info">
-                <Address id="address"></Address>
-                <Contact id="contact" />
+                <div id="address-map">
+                    <Address class="address"></Address>
+                    <CustomMap id="map" />
+                </div>
+                <Contact class="contact" />
+                <Privacy class="privacy" />
             </div>
-            <CustomMap id="map" />
-            <!-- <div id='logos'>
-                <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
-                <a href='https://www.instagram.com/dsduurzaam/'><img class='logo' src='../assets/icon/instagram.png' /></a>
-            </div>  -->
+            <div id='logos'>
+                <a href='https://www.facebook.com/dsduurzaam/'><img class='logo'
+                        src='../assets/icon/facebook.png' /></a>
+                <a href='https://www.instagram.com/dsduurzaam/'><img class='logo'
+                        src='../assets/icon/instagram.png' /></a>
+            </div>
         </div>
-        <CustomMap />
-        <img id="branding" src="@/assets/logo.png" alt="" />
-        <div id="layer-two"></div>
     </div>
 </template>
 
-<script>
+<script setup>
 import Address from '@/components/Address.vue';
 import CustomMap from '@/components/Map.vue'
 import Contact from '@/components/Contact.vue';
-
-export default {
-    name: "Home",
-    components: { Address, Contact, CustomMap },
-};
+import Privacy from './Privacy.vue';
 </script>
 
 <style lang="scss" scoped>
+#footer {
+    height: 400px;
+    background-color: #2c5484;
+    box-shadow: inset 0px 8px 6px -6px #d7d7d778;
+}
+
 h1 {
-    margin-left: 48px;
+    padding: 32px;
     font-size: 1.8rem;
-    color: #2c5484;
+    color: white;
 }
 
 p {
-    font-weight: 10;
-}
-
-#footer {
-    position: relative;
-    background-color: #29acdf05;
-    box-shadow: inset 0px 8px 6px -6px #d7d7d778;
-    margin-top: 24px;
-
-    p {
-        margin: 16px 48px;
-        font-size: 18px;
-    }
+    font-weight: 1rem;
+    color: white;
+    margin: 16px 48px;
+    font-size: 18px;
 }
 
 #column-info {
     display: flex;
     margin: 1vh 0;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 20%;
+}
+
+#address-map {
+    display: flex;
+    align-items: flex-start;
 }
 
 #map {
-    position: absolute;
-    top: 2px;
-    right: 0;
-    width: 18%;
-    height: 89%;
-    border-left: 5px solid #2c5484;
-    border-bottom: 3px solid #2c5484;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 56px;
+    border-radius: 200px;
+    width: 250px;
+    height: 250px;
+    -moz-border-radius: 200px;
+    -webkit-mask-border-radius: 50%;
+}
+
+.address,
+.contact,
+.privacy {
+    margin-top: 48px;
 }
 
 #logos {
     display: flex;
-    flex-direction: row;
-    margin-right: 2%;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 12px;
+    right: 24px;
 
     img {
         margin: 6px;
@@ -89,5 +99,25 @@ p {
 #layer-two {
     height: 24px;
     background-color: #2c5484;
+}
+
+
+@media (max-width: 1548px) {
+    #footer {
+        height: 1000px;
+        text-align: center;
+        margin-top: 64px;
+    }
+
+    #column-info {
+        flex-direction: column;
+    }
+
+    #address-map {
+        height: 450px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 </style>

@@ -39,7 +39,7 @@ const imageUrl = computed(
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1548px) {
     .line {
         img {
             height: 9vh;
