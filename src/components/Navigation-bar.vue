@@ -201,12 +201,12 @@ button {
         width: 50%;
         top: 36px;
         z-index: 99;
-        background-color: #f1f1f1;
+        background-color: #f4f4f4;
         display: block;
         position: absolute;
         right: 0;
-        padding: 46px 64px 36px 64px;
-        box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
+        padding: 36px 64px 9px 64px;
+        // box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
 
         li {
             margin: 24px 0;

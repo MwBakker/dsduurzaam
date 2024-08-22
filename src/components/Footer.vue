@@ -29,6 +29,7 @@ import Privacy from './Privacy.vue';
 
 <style lang="scss" scoped>
 #footer {
+    position: relative;
     height: 400px;
     background-color: #2c5484;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;

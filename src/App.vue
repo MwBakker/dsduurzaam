@@ -1,9 +1,7 @@
 <template>
-  <div class="app">
-    <navBar ref="navBar" />
-    <router-view />
-    <customFooter />
-  </div>
+  <navBar ref="navBar" />
+  <router-view />
+  <customFooter />
 </template>
 
 <script>
@@ -20,7 +18,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 * {
   padding: 0;
   margin: 0;
@@ -150,6 +147,7 @@ hr {
   .product {
     width: 100%;
   }
+
   .sub-product {
     flex-direction: column;
   }
