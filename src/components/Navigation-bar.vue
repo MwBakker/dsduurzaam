@@ -9,7 +9,7 @@
             </div>
             <Transition name="slide-fade-left" appear>
                 <ul v-if="showMenu" id="titles">
-                    <a @click="showMenu = false" class="fa fa-times fa-2x"></a>
+                    <a @click="showMenu = false" class="fa fa-times fa-3x"></a>
                     <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
                     <li @click="routeGo('airco')">Airconditioning</li>
                     <li @click="routeGo('floor-heating')">Vloerverwarming</li>
@@ -43,7 +43,7 @@ export default {
             headerImg: 'home',
             description: 'Uw partner in verduurzaming van A tot Z',
             headerText: {
-                'home': ["Uw partner in verduurzaming van A tot Z", ""],
+                'home': ["D&S Duurzame Installaties uw complete verduurzamer", "Uw partner in verduurzaming van A tot Z"],
                 'heat-pump': ["Wartmepomp", "Mooi spul"],
                 'airco': ["Airconditioning", "Mooi spul"],
                 'floor-heating': ["Vloerverwarming", "Mooi spul"],
@@ -67,7 +67,10 @@ export default {
             this.headerImg = direction;
             this.$router.push({
                 name: direction,
-            })
+            });
+            if (window.innerWidth < 1548) {
+                this.showMenu = false;
+            } 
         },
         toggleMenu() {
             this.showMenu = window.innerWidth < 1548 ? ref(false) : ref(true);
@@ -95,7 +98,6 @@ a {
 
     p {
         text-align: center;
-        font-size: 0.9rem;
         padding-top: 10px;
         color: #ffffff;
         font-weight: 400;
@@ -119,17 +121,16 @@ nav {
     img {
         width: 50px;
     }
+
     transition: 0.5s ease all;
 }
 
 .branding {
     cursor: pointer;
 
-    display: flex;
-    align-items: center;
-
     img {
-        width: 75px;
+        width: 64px;
+        margin-left: 24px;
     }
 }
 
@@ -144,8 +145,8 @@ ul,
 
 li {
     cursor: pointer;
-    font-size: 1.1rem;
     font-weight: 400;
+    font-size: 1.075rem;
     -webkit-text-stroke: 0.1px;
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
@@ -160,17 +161,19 @@ li {
 
 #button-tech {
     position: relative;
+    margin-left: 40px;
 
     img {
         position: absolute;
         right: 0;
         bottom: 4px;
-        height: 86px;
+        height: 76px;
     }
 }
 
 button {
-    width: 250px;
+    width: 230px;
+    height: 50px;
     padding-right: 72px;
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
@@ -193,23 +196,27 @@ button {
         align-items: center;
     }
 
+    .branding img {
+        margin: 0;
+    }
+
     #button-tech {
-        margin-right: 6%;
+        margin: 0 6% 0 0;
     }
 
     #titles {
-        width: 50%;
+        width: 320px;
         top: 36px;
         z-index: 99;
-        background-color: #f4f4f4;
+        background-color: #f9f9f9;
         display: block;
         position: absolute;
         right: 0;
-        padding: 36px 64px 9px 64px;
+        padding: 32px 64px 12px 64px;
         // box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
 
         li {
-            margin: 24px 0;
+            margin: 13.7px 0;
         }
 
         #upper-li {

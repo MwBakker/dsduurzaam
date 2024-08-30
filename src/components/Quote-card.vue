@@ -55,6 +55,10 @@ const imageUrl = computed(
   .line {
     width: 90%;
     margin: 0 auto;
+
+    p {
+        margin-bottom: 48px;
+    }
   }
 }
 </style>

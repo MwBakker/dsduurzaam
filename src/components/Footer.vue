@@ -105,9 +105,13 @@ p {
 
 @media (max-width: 1548px) {
     #footer {
-        height: 1000px;
+        height: 760px;
         text-align: center;
         margin-top: 64px;
+    }
+
+    #map{
+        display: none;
     }
 
     #column-info {
@@ -115,7 +119,7 @@ p {
     }
 
     #address-map {
-        height: 450px;
+        height: initial;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;

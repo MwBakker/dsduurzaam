@@ -22,7 +22,7 @@ const imageUrl = computed(
 
 <style lang="scss" scoped>
 .card {
-    width: 22.5%;
+    width: 20%;
     margin: 16px;
     margin-bottom: 24px;
     display: flex;
@@ -42,7 +42,7 @@ const imageUrl = computed(
         color: #2c5484;
         font-size: 1.4rem;
         font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
-    font-weight: 550;
+        font-weight: 550;
     }
 }
 
@@ -53,9 +53,9 @@ button {
 
 
 @media (max-width: 1548px) {
-  .card {
-    width: 90%;
-    margin: 0 auto;
-  }
+    .card {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 </style>

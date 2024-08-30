@@ -60,7 +60,7 @@ export default {
 }
 
 #second-row {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 

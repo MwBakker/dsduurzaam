@@ -10,11 +10,15 @@
         <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
         </div>
         <div id="service-row">
-            <div>
-                <ServiceLine title="Hoge kwaliteit" icon="quality" />
-                <ServiceLine title="Tot 10 jaar garantie" icon="warranty" />
-                <ServiceLine title="Direct leverbaar" icon="delivery" />
-                <ServiceLine title="Binnen 1-3 dagen geplaatst" icon="installation" />
+            <div id="service-content">
+                <div class="service-lines">
+                    <ServiceLine title="Hoge kwaliteit" icon="quality" />
+                    <ServiceLine title="Tot 10 jaar garantie" icon="warranty" />
+                </div>
+                <div class="service-lines">
+                    <ServiceLine title="Direct leverbaar" icon="delivery" />
+                    <ServiceLine title="Binnen 1-3 dagen geplaatst" icon="installation" />
+                </div>
             </div>
         </div>
     </div>
@@ -76,7 +80,7 @@ button {
 }
 
 #container-text {
-    width: 65%;
+    width: 55%;
     padding: 115px 50px;
 
     p {
@@ -86,7 +90,7 @@ button {
 
     h1 {
         margin-bottom: 28px;
-        font-size: 48px;
+        font-size: 42px;
         color: #2c5484;
         font-weight: 550;
     }
@@ -94,15 +98,13 @@ button {
 
 #container-image {
     position: absolute;
-    top: 28px;
-    // box-shadow:
-    //     inset 60px 0 30px -30px white;
+    top: -7px;
     right: 0;
     z-index: -1;
-    height: 956px;
+    height: 1032px;
     background-size: 100% 80%;
     background-repeat: no-repeat;
-    width: 35%;
+    width: 38%;
     -webkit-transition: background-image 0.4s ease-in-out;
 }
 
@@ -125,44 +127,55 @@ button {
 
 #service-row {
     height: 142px;
-    // border-radius: 50%/100px 100px 0 0;
     background-color: white;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;
 
-    div {
-        margin: 56px auto 0 auto;
+    #service-content {
         display: flex;
+        margin: 56px auto 0 auto;
+        padding-top: 40px;
         max-width: 1548px;
         justify-content: space-between;
+    }
+
+    .service-lines {
+        display: flex;
+        align-items: center;
     }
 }
 
 @media (max-width: 1548px) {
+    #container-elements {
+        text-align: center;
+        bottom: 0;
+        height: 500px;
+    }
+
     #container-image {
         width: auto;
         inset: auto 0 auto;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
         border-bottom-left-radius: 0;
-        background-size: 100% 60%;
-        height: 600px;
-        top: 460px;
-    }
-
-    #container-elements {
-        text-align: center;
-        height: 600px;
+        background-size: 100% 75%;
+        height: 420px;
+        top: 380px;
     }
 
     #container-text {
-        width: 75%;
+        width: 97.5%;
         margin: auto;
         padding: 0;
+
+        h1 {
+            font-size: 28px;
+        }
+
         p {
             text-align: center;
         }
     }
-    
+
     button {
         position: absolute;
         bottom: 18px;
@@ -173,12 +186,21 @@ button {
     }
 
     #service-row {
-        height: 74vh;
+        height: 300px;
+        padding: 0 16px;
 
-        div {
-            flex-direction: column;
-            margin-top: 0px;
-            padding-top: 40px;
+        #service-content {
+            margin: 0;
+            justify-content: space-evenly;
+
+            .service-lines {
+                flex-direction: column;
+            }
+
+            .line {
+                flex-direction: column;
+                margin: 18px 0;
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ export default {
   box-sizing: border-box;
   font-family: Manrope, sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.925rem;
 }
 
 p {

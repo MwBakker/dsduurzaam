@@ -41,9 +41,11 @@ const imageUrl = computed(
 
 @media (max-width: 1548px) {
     .line {
+        align-items: center;
         img {
-            height: 9vh;
-            margin: 0 56px;
+            width: 56px;
+            height: 56px;
+            margin: 6px 56px;
         }
     }
 }
