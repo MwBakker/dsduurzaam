@@ -31,9 +31,8 @@ const imageUrl = computed(
     p {
         margin: auto 0;
         color: #2c5484;
-        font-size: 1rem;
-        font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
-        font-weight: 700;
+        font-size: 1.05rem;
+        font-weight: 600;
         text-align: center;
         line-height: 1.875rem;
     }

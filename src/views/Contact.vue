@@ -1,15 +1,9 @@
 <template>
   <div id="contact">
-    <Transition name="slide-fade-right" appear>
-      <div class="contact-div">
-        <CustomForm />
-      </div>
+    <Transition name="slide-fade-up" appear>
+      <CustomForm id="form" />
     </Transition>
-    <Transition name="slide-fade-left" appear>
-      <div class="contact-div">
-        <CustomMap id="map" />
-      </div>
-    </Transition>
+    <CustomMap id="map" />
   </div>
 </template>
 
@@ -30,27 +24,29 @@ export default {
 
 <style lang="scss" scoped>
 #contact {
-  width: 65%;
-  margin: auto auto;
+  position: relative;
+  margin-bottom: 40px;
   height: 800px;
-  display: flex;
-  flex-direction: row;
 
   #map {
-    height: 100%;
-    border-radius: 72px;
+    position: absolute;
+    bottom: 0;
+    height: 400px;
+    width: 100%;
     -webkit-transform: translate3d(0px, 0px, 0px);
     -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
 }
 
-.contact-div {
-  border-radius: 72px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #2c5484;
-  width: 46%;
+#form {
+  position: absolute;
+  width: 50%;
+  background: white;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  left: 0;
+  right: 0;
   margin: 0 auto;
-  height: 720px;
+  top: -256px;
+  height: 600px;
 }
 </style>

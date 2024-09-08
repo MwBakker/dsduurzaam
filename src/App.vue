@@ -1,17 +1,25 @@
 <template>
-  <navBar ref="navBar" />
+  <navBar v-if="windowWidth > 1548" ref="navBar" />
+  <navBarMobile v-else ref="navBar" />
   <router-view />
   <customFooter />
 </template>
 
 <script>
-import navBar from "./components/Navigation-bar.vue"
+import navBar from "./components/nav/Navi.vue"
+import navBarMobile from "./components/nav/Navi-mobile.vue"
 import customFooter from "./components/Footer.vue"
 
 export default {
   name: "App",
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    }
+  },
   components: {
     navBar,
+    navBarMobile,
     customFooter,
   }
 };
@@ -28,11 +36,29 @@ export default {
 }
 
 p {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto';
   color: rgb(107, 107, 107);
 }
 
-h1,
+li {
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: 1.05em;
+  padding-bottom: 4px;
+  padding: 32px;
+
+  &:hover {
+    color: #dea130;
+  }
+}
+
+h1 {
+  font-family: 'Roboto';
+  font-size: 38px;
+  font-weight: 550;
+}
+
 h2 {
   font-family: Manrope, sans-serif;
 }

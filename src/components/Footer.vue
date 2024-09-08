@@ -1,28 +1,23 @@
 <template>
     <div id="footer">
-        <h1>D&S Duurzame installaties</h1>
-        <div id="container-info">
-            <div id="column-info">
-                <div id="address-map">
-                    <Address class="address"></Address>
-                    <CustomMap id="map" />
-                </div>
-                <Contact class="contact" />
-                <Privacy class="privacy" />
-            </div>
-            <div id='logos'>
-                <a href='https://www.facebook.com/dsduurzaam/'><img class='logo'
-                        src='../assets/icon/facebook.png' /></a>
-                <a href='https://www.instagram.com/dsduurzaam/'><img class='logo'
-                        src='../assets/icon/instagram.png' /></a>
-            </div>
+        <img id='brand' src='../assets/logo.png' />
+        <div id="column-info">
+            <!-- <div id="address-map"> -->
+                <!-- <CustomMap id="map" /> -->
+            <!-- </div> -->
+            <Address class="address"></Address>
+            <Contact class="contact" />
+            <Privacy class="privacy" />
+        </div>
+        <div id='logos'>
+            <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
+            <a href='https://www.instagram.com/dsduurzaam/'><img class='logo' src='../assets/icon/linkedin.png' /></a>
         </div>
     </div>
 </template>
 
 <script setup>
 import Address from '@/components/Address.vue';
-import CustomMap from '@/components/Map.vue'
 import Contact from '@/components/Contact.vue';
 import Privacy from './Privacy.vue';
 </script>
@@ -30,9 +25,16 @@ import Privacy from './Privacy.vue';
 <style lang="scss" scoped>
 #footer {
     position: relative;
-    height: 400px;
+    height: 240px;
     background-color: #2c5484;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;
+}
+
+#brand {
+    position: absolute;
+    height: 72px;
+    top: -31px;
+    left: 16px;
 }
 
 h1 {
@@ -60,16 +62,16 @@ p {
     align-items: flex-start;
 }
 
-#map {
-    z-index: 1;
-    overflow: hidden;
-    margin: 0 56px;
-    border-radius: 200px;
-    width: 250px;
-    height: 250px;
-    -moz-border-radius: 200px;
-    -webkit-mask-border-radius: 50%;
-}
+// #map {
+//     z-index: 1;
+//     overflow: hidden;
+//     margin: 0 56px;
+//     border-radius: 200px;
+//     width: 250px;
+//     height: 250px;
+//     -moz-border-radius: 200px;
+//     -webkit-mask-border-radius: 50%;
+// }
 
 .address,
 .contact,
@@ -110,19 +112,15 @@ p {
         margin-top: 64px;
     }
 
-    #map{
-        display: none;
-    }
-
     #column-info {
         flex-direction: column;
     }
 
-    #address-map {
-        height: initial;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
+    // #address-map {
+    //     height: initial;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: space-between;
+    // }
 }
 </style>

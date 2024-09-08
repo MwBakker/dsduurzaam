@@ -44,8 +44,7 @@ const imageUrl = computed(
         color: #2c5484;
         // color: #2c54849c;
         font-size: 1rem;
-        font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
-        font-weight: 700;
+        font-weight: 100;
         line-height: 1.875rem;
     }
 }

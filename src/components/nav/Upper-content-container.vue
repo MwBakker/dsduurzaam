@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import titleIcon from "./Title-icon.vue"
+import titleIcon from "../Title-icon.vue"
 import ServiceLine from '@/components/Service-line.vue';
 
 export default {
@@ -64,6 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 #container-main {
+    padding-top: 160px;
     background-color: #29acdf05;
 }
 
@@ -85,32 +86,32 @@ button {
 
     p {
         text-align: justify;
-        font-size: 1.2rem;
+        font-weight: 600;
+        font-size: 1.05rem;
     }
 
     h1 {
         margin-bottom: 28px;
-        font-size: 42px;
         color: #2c5484;
-        font-weight: 550;
+        font-weight: 600;
     }
 }
 
 #container-image {
     position: absolute;
-    top: -7px;
+    top: 72px;
     right: 0;
     z-index: -1;
-    height: 1032px;
-    background-size: 100% 80%;
+    height: 732px;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 38%;
     -webkit-transition: background-image 0.4s ease-in-out;
 }
 
 #container-image {
-    border-top-left-radius: 45%;
-    border-bottom-left-radius: 58%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
 }
 
 #container-info {
@@ -135,7 +136,7 @@ button {
         margin: 56px auto 0 auto;
         padding-top: 40px;
         max-width: 1548px;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .service-lines {
@@ -183,6 +184,10 @@ button {
         left: 0;
         right: 0;
         margin: auto;
+    }
+
+    #contact-button {
+        display: none;
     }
 
     #service-row {

@@ -7,9 +7,9 @@
             <div class="branding">
                 <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
             </div>
-            <Transition name="slide-fade-left" appear>
-                <ul v-if="showMenu" id="titles">
-                    <a @click="showMenu = false" class="fa fa-times fa-3x"></a>
+            <Transition name="slide-fade-right" appear>
+                <ul v-if="showNav" id="titles">
+                    <a id="exit-menu" @click="showNav = false" class="fa fa-times fa-2x"></a>
                     <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
                     <li @click="routeGo('airco')">Airconditioning</li>
                     <li @click="routeGo('floor-heating')">Vloerverwarming</li>
@@ -24,7 +24,7 @@
                 <img src="@/assets/tech.png" />
                 <button @click="routeGo('contact')">Advies aan huis</button>
             </div>
-            <a @click="showMenu = !showMenu" class="fa fa-bars fa-2x"></a>
+            <a @click="showNav = true" class="fa fa-bars fa-2x"></a>
         </nav>
     </div>
     <upper_content_container :title=title :description=description :backgroundImage=headerImg />
@@ -38,12 +38,12 @@ export default {
     name: "navigation-bar",
     data() {
         return {
-            showMenu: (window.innerWidth > 1548),
+            showNav: false,
             title: 'D&S Duurzame Installaties uw complete verduurzamer.',
             headerImg: 'home',
             description: 'Uw partner in verduurzaming van A tot Z',
             headerText: {
-                'home': ["D&S Duurzame Installaties uw complete verduurzamer", "Uw partner in verduurzaming van A tot Z"],
+                'home': ["Uw partner in verduurzaming van A tot Z", ""],
                 'heat-pump': ["Wartmepomp", "Mooi spul"],
                 'airco': ["Airconditioning", "Mooi spul"],
                 'floor-heating': ["Vloerverwarming", "Mooi spul"],
@@ -67,13 +67,7 @@ export default {
             this.headerImg = direction;
             this.$router.push({
                 name: direction,
-            });
-            if (window.innerWidth < 1548) {
-                this.showMenu = false;
-            } 
-        },
-        toggleMenu() {
-            this.showMenu = window.innerWidth < 1548 ? ref(false) : ref(true);
+            })
         },
     }
 };
@@ -82,14 +76,19 @@ export default {
 <style lang="scss" scoped>
 a {
     cursor: pointer;
-    visibility: hidden;
+    float: left;
     top: 32px;
     right: 56px;
 }
 
+// #exit-menu {
+//     position: absolute;
+//     right: 64px;
+//     top: 0;
+// }
+
 #nav-container {
-    background-color: white;
-    transition: 0.5s ease all;
+    transition: 2s ease all;
 }
 
 #label-main {
@@ -98,6 +97,7 @@ a {
 
     p {
         text-align: center;
+        font-size: 0.9rem;
         padding-top: 10px;
         color: #ffffff;
         font-weight: 400;
@@ -106,35 +106,41 @@ a {
 
 nav {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
     max-width: 1548px;
     height: 128px;
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
     padding: 12px 0;
 }
 
 #titles {
+    position: absolute;
+    padding-top: 700px;
+    z-index: 99;
+    width: 100%;
+    background-color: #f4f4f4;
     display: flex;
+    flex-direction: column;
     align-items: center;
 
     img {
         width: 50px;
     }
 
-    transition: 0.5s ease all;
+    transition: 0s ease all;
 }
 
 .branding {
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+
     img {
-        width: 64px;
-        margin-left: 24px;
+        width: 75px;
     }
 }
-
-
 
 ul,
 .link {
@@ -143,37 +149,42 @@ ul,
     text-decoration: none;
 }
 
-li {
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 1.075rem;
-    -webkit-text-stroke: 0.1px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid transparent;
-    padding: 16px;
-    margin-left: 16px;
-    font-weight: 550;
+// li {
+//     cursor: pointer;
+//     width: 100%;
+//     font-size: 1.1rem;
+//     border-bottom: 0.5px solid #2c54843f;
+//     font-weight: 400;
+//     -webkit-text-stroke: 0.1px;
+//     padding-bottom: 4px;
+//     padding: 16px;
+//     margin: 24px 0;
+//     font-weight: 550;
 
-    &:hover {
-        color: #dea130;
-    }
-}
+//     &:hover {
+//         color: #dea130;
+//     }
+// }
+
+// #upper-li {
+//     margin-top: 64px;
+
+// }
 
 #button-tech {
     position: relative;
-    margin-left: 40px;
+    margin-right: 7.5%;
 
     img {
         position: absolute;
         right: 0;
         bottom: 4px;
-        height: 76px;
+        height: 86px;
     }
 }
 
 button {
-    width: 230px;
-    height: 50px;
+    width: 250px;
     padding-right: 72px;
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
@@ -187,49 +198,5 @@ button {
         background-color: #2c5484;
     }
 
-}
-
-
-@media screen and (max-width: 1548px) {
-    nav {
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .branding img {
-        margin: 0;
-    }
-
-    #button-tech {
-        margin: 0 6% 0 0;
-    }
-
-    #titles {
-        width: 320px;
-        top: 36px;
-        z-index: 99;
-        background-color: #f9f9f9;
-        display: block;
-        position: absolute;
-        right: 0;
-        padding: 32px 64px 12px 64px;
-        // box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
-
-        li {
-            margin: 13.7px 0;
-        }
-
-        #upper-li {
-            margin-top: 64px;
-        }
-
-        a {
-            float: right;
-        }
-    }
-
-    a {
-        visibility: visible;
-    }
 }
 </style>
