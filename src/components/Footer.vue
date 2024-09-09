@@ -2,12 +2,24 @@
     <div id="footer">
         <img id='brand' src='../assets/logo.png' />
         <div id="column-info">
-            <!-- <div id="address-map"> -->
-                <!-- <CustomMap id="map" /> -->
-            <!-- </div> -->
-            <Address class="address"></Address>
-            <Contact class="contact" />
-            <Privacy class="privacy" />
+            <div id="address">
+                <h1>Adres</h1>
+                <p>Hoofdstraat 4</p>
+                <p>9561 JA</p>
+                <p>Ter Apel</p>
+            </div>
+            <div id="contact">
+                <h1>Contact</h1>
+                <p>088-7155733</p>
+                <p>info@duureco.nl</p>
+                <p>KvK: 12345 6789 101112</p>
+                <p>Btw: 12345 6789 101112</p>
+            </div>
+            <div id="privacy">
+                <h1>Beleid</h1>
+                <p>Privacyverklaring</p>
+                <p>Disclaimer</p>
+            </div>
         </div>
         <div id='logos'>
             <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
@@ -17,15 +29,12 @@
 </template>
 
 <script setup>
-import Address from '@/components/Address.vue';
-import Contact from '@/components/Contact.vue';
-import Privacy from './Privacy.vue';
 </script>
 
 <style lang="scss" scoped>
 #footer {
     position: relative;
-    height: 240px;
+    height: 186px;
     background-color: #2c5484;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;
 }
@@ -38,16 +47,17 @@ import Privacy from './Privacy.vue';
 }
 
 h1 {
-    padding: 32px;
-    font-size: 1.8rem;
     color: white;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 32px 0 18px 0;
 }
 
 p {
-    font-weight: 1rem;
     color: white;
-    margin: 16px 48px;
-    font-size: 18px;
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 6px 0;
 }
 
 #column-info {
@@ -61,17 +71,6 @@ p {
     display: flex;
     align-items: flex-start;
 }
-
-// #map {
-//     z-index: 1;
-//     overflow: hidden;
-//     margin: 0 56px;
-//     border-radius: 200px;
-//     width: 250px;
-//     height: 250px;
-//     -moz-border-radius: 200px;
-//     -webkit-mask-border-radius: 50%;
-// }
 
 .address,
 .contact,
@@ -115,12 +114,5 @@ p {
     #column-info {
         flex-direction: column;
     }
-
-    // #address-map {
-    //     height: initial;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: space-between;
-    // }
 }
 </style>

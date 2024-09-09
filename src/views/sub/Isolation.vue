@@ -20,18 +20,21 @@
                                                   dakisolatie kunt u veel energie en kosten besparen." />
       <SubProductCard title="Dakisolatie" amount="2500" image="isolation" />
     </div>
+    <Banner />
   </div>
 </template>
 
 <script>
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   name: "Solar",
   components: {
     SubProductCard,
     QuoteCard,
+    Banner,
   },
   methods: {
     route(direction) {

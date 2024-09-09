@@ -2,14 +2,16 @@
     <div id="container-main">
         <div id="container-elements">
             <div id="container-text">
-                <h1>{{ title }}</h1>
+                <h1 v-if="backgroundImage != 'home'">{{ title }}</h1>
+                <slot v-else></slot>
                 <p>{{ description }}</p>
-                <button id="contact-button" @click="route('contact')">Gratis advies ontvangen</button>
+                <button v-if="backgroundImage != 'contact'" id=" contact-button" @click="route('contact')">Gratis
+                    advies ontvangen</button>
             </div>
         </div>
         <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
         </div>
-        <div id="service-row">
+        <div v-if="backgroundImage != 'contact'" id="service-row">
             <div id="service-content">
                 <div class="service-lines">
                     <ServiceLine title="Hoge kwaliteit" icon="quality" />
@@ -50,13 +52,7 @@ export default {
     },
     methods: {
         route(direction) {
-            var array = this.headerText[direction];
-            this.title = array[0];
-            this.description = array[1];
-            this.headerImg = direction;
-            this.$router.push({
-                name: direction,
-            })
+            this.$root.$refs.navBar.routeGo(direction);
         }
     }
 };

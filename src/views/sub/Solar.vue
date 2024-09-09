@@ -19,18 +19,21 @@
       <SubProductCard title="Schuin dak" amount="2500" image="solar" />
       <SubProductCard title="Pat dak" amount="2500" image="solar" />
     </div>
+    <Banner />
   </div>
 </template>
 
 <script>
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   name: "Solar",
   components: {
     SubProductCard,
     QuoteCard,
+    Banner,
   },
   methods: {
     route(direction) {

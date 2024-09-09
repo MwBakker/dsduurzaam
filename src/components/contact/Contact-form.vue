@@ -1,6 +1,13 @@
 <template>
     <div id="contact-form">
-        <form class="vue-form" @submit.prevent="submit">
+        <div id="info">
+            <infoLine icon="phone" title="Bel ons" text="0599 580 218" />
+            <hr>
+            <infoLine icon="mail" title="Stuur ons een mail" text="info@insteco.nl" />
+            <hr>
+            <infoLine icon="map" title="Kom langs" text="Ergens op mars" />
+        </div>
+        <form id="vue-form" @submit.prevent="submit">
             <div class="contact-form-field">
                 <p>Uw naam</p>
                 <input v-model="name">
@@ -34,6 +41,7 @@
 <script>
 
 import axios from 'axios';
+import infoLine from './Info-line.vue';
 
 export default {
     name: "form",
@@ -64,16 +72,39 @@ export default {
             });
         },
     },
-
+    components: {
+        infoLine,
+    }
 };
 </script>
 
 <style scoped>
 #contact-form {
+    position: absolute;
     display: flex;
+    width: 50%;
     height: 100%;
-    flex-direction: column;
     justify-content: center;
+    background: white;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0px;
+    height: 600px;
+}
+
+#info {
+    margin: 32px auto;
+    width: 40%;
+
+    hr {
+        margin: 16px 16px;
+    }
+}
+
+#vue-form {
+    width: 70%;
 }
 
 .contact-form-field {
@@ -105,5 +136,18 @@ textarea {
 #button-send {
     width: 100%;
     margin: auto auto;
+}
+
+@media (max-width: 1548px) {
+    #contact-form {
+        width: 96%;
+        height: 1056px;
+        flex-direction: column
+    }
+
+    #info,
+    #vue-form {
+        width: 100%;
+    }
 }
 </style>

@@ -23,7 +23,13 @@
             </div>
         </nav>
     </div>
-    <upper_content_container :title=title :description=description :backgroundImage=headerImg />
+    <upper_content_container :title=title :description=description :backgroundImage=headerImg>
+        <h1 id="lol">Insteco B.V. Uw partner in <span class="light">energiebesparing</span> met <span
+                class="light">persoonlijk
+                advies</span> en <span class="light">maatwerkinstallaties</span> voor een
+            <span class="light">energiezuiniger</span> leven en werken.
+        </h1>
+    </upper_content_container>
 </template>
 
 
@@ -34,11 +40,11 @@ export default {
     name: "navigation-bar",
     data() {
         return {
-            title: 'Insteco B.V. Uw partner in energiebesparing met persoonlijk advies en maatwerkinstallaties voor een energiezuiniger leven en werken.',
+            title: '',
             headerImg: 'home',
             description: '',
             headerText: {
-                'home': ["Insteco B.V. Uw partner in energiebesparing met persoonlijk advies en maatwerkinstallaties voor een energiezuiniger leven en werken.", ""],
+                'home': ["", ""],
                 'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie met op maat gemaakte oplossingen die uw comfort verhogen en uw energiekosten verlagen. Onze experts bieden persoonlijk advies en professionele installatie, zodat u verzekerd bent van optimale prestaties en maximale besparingen. Maak vandaag nog de stap naar een groenere, efficiëntere manier van verwarmen en koelen!"],
                 'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar extra met zonnepanelen. Onze op maat gemaakte oplossingen combineren efficiënte temperatuurregeling met slimme energiebesparing. Profiteer van persoonlijk advies en deskundige installatie voor het beste resultaat, het hele jaar door. Maak vandaag nog de overstap naar duurzaam en kostenbesparend klimaatbeheer!"],
                 'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer met onze op maat gemaakte oplossingen, in combinatie met de juiste warmtepomp. Onze deskundigen bieden persoonlijk advies en professionele installatie, zodat u profiteert van energie-efficiëntie en optimaal comfort, het hele jaar door. Transformeer uw ruimte in een warme, gezellige omgeving, ongeacht het seizoen!"],
@@ -47,7 +53,7 @@ export default {
                 'isolation': ["Isolatie", "Warm spul"],
                 'advice': ["Energielabel & advies", "Mooi spul"],
                 'service': ["Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud aan uw installaties, met een korte responsietijd en inspecties wanneer nodig. Onze experts zorgen ervoor dat alles optimaal blijft functioneren, zodat u kunt vertrouwen op een probleemloze werking. Kies voor betrouwbare service en houd uw installaties in topconditie, altijd klaar voor gebruik."],
-                'contact': ["Contact", ""],
+                'contact': ["Contact", "Heeft u een vraag over onze diensten of wilt u een offerte? Bel ons, of stuur ons een e-mail via het contactformulier"],
             },
         };
     },
@@ -129,8 +135,6 @@ nav {
     }
 }
 
-
-
 ul,
 .link {
     color: #2c5484;
@@ -168,5 +172,16 @@ button {
         background-color: #2c5484;
     }
 
+}
+
+h1, 
+.light {
+    margin-bottom: 28px;
+    color: #2c5484;
+    font-weight: 600;
+}
+
+.light {
+    color: #a3b9d5;
 }
 </style>

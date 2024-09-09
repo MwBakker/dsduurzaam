@@ -1,8 +1,8 @@
 <template>
     <div class="card">
-        <p>{{ title }}</p>
+        <h2>{{ title }}</h2>
         <img :src="imageUrl">
-        <button>Meer informatie</button>
+        <button @click="route()">Meer informatie</button>
     </div>
 </template>
 
@@ -14,6 +14,10 @@ const props = defineProps({
     image: String,
     route: String,
 })
+
+function route() {
+    this.$root.$refs.navBar.routeGo(route);
+}
 
 const imageUrl = computed(
     () => new URL(`../assets/cards/${props.image}.png`, import.meta.url).href
@@ -36,13 +40,11 @@ const imageUrl = computed(
         height: 320px;
     }
 
-    p {
+    h2 {
         margin: 0 auto;
         padding-top: 48px;
         color: #2c5484;
-        font-size: 1.4rem;
-        font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
-        font-weight: 550;
+        font-weight: 600;
     }
 }
 

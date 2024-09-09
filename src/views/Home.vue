@@ -9,28 +9,31 @@
         description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
     </div>
     <div class="product-row">
-      <ProductCard @click="route('heat-pump')" title="Warmtepomp" image="heat-pump" />
-      <ProductCard @click="route('airco')" title="Airconditioning" image="airco" />
-      <ProductCard @click="route('floor-heating')" title="Vloerverwarming" image="floor-heating" />
-      <ProductCard @click="route('solar')" title="Zonnepanelen" image="solar" />
+      <ProductCard route='heat-pump' title="Warmtepomp" image="heat-pump" />
+      <ProductCard route='airco' title="Airconditioning" image="airco" />
+      <ProductCard route='floor-heating' title="Vloerverwarming" image="floor-heating" />
+      <ProductCard route='solar' title="Zonnepanelen" image="solar" />
     </div>
     <div id="second-row" class="product-row">
-      <ProductCard @click="route('charge-points')" title="Laadpaal" image="charge-points" />
-      <ProductCard @click="route('isolation')" title="Isolatie" image="isolation" />
-      <ProductCard @click="route('advice')" title="Energielabel" image="advice" />
+      <ProductCard route="charge-points" title="Laadpaal" image="charge-points" />
+      <ProductCard route='isolation' title="Isolatie" image="isolation" />
+      <ProductCard route='advice' title="Energielabel" image="advice" />
     </div>
+    <Banner />
   </div>
 </template>
 
 <script>
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   name: "Home",
   components: {
     ProductCard,
     QuoteCard,
+    Banner,
   },
   methods: {
     route(direction) {

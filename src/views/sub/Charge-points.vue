@@ -20,6 +20,7 @@
                                                     opstelling met een bepaalde hellingshoek, vaak met behulp van montagesystemen,
                                                     om de ideale blootstelling aan zonlicht te garanderen." />
     </div>
+    <Banner />
   </div>
 </template>
 
@@ -27,12 +28,15 @@
 
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import Banner from '@/components/Banner.vue';
+
 
 export default {
   name: "advice",
   components: {
     SubProductCard,
     QuoteCard,
+    Banner,
   },
   methods: {
     route(direction) {

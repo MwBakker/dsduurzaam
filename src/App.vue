@@ -53,14 +53,16 @@ li {
   }
 }
 
-h1 {
+h1,
+.light,
+h2 {
   font-family: 'Roboto';
   font-size: 38px;
   font-weight: 550;
 }
 
 h2 {
-  font-family: Manrope, sans-serif;
+  font-size: 1.05rem;
 }
 
 button,

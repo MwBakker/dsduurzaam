@@ -14,6 +14,7 @@
       <SubProductCard title="Split" amount="2500" image="heat-pump" />
       <SubProductCard title="Hydrosplit" amount="2500" image="heat-pump" />
     </div>
+    <Banner />
   </div>
 </template>
 
@@ -21,12 +22,14 @@
 
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   name: "floor-heating",
   components: {
     SubProductCard,
     QuoteCard,
+    Banner,
   },
   methods: {
     route(direction) {
