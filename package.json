@@ -9,11 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chenfengyuan/vue-carousel": "^2.0.0",
     "axios": "^1.7.2",
+    "slick-carousel": "^1.8.1",
     "vue": "^3.4.21",
+    "vue-carousel": "^0.18.0",
     "vue-router": "^4.3.0",
+    "vue-slick-carousel": "^1.0.6",
     "vue3-google-map": "^0.20.0",
-    "vuex": "^4.1.0"
+    "vue3-slick-carousel": "^1.0.6",
+    "vuex": "^4.1.0",
+    "wiper": "^1.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

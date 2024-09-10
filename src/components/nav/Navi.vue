@@ -18,8 +18,10 @@
                 <li @click="routeGo('service')">Service</li>
             </ul>
             <div id="button-tech">
-                <img src="@/assets/tech.png" />
-                <button @click="routeGo('contact')">Advies aan huis</button>
+                <button class="advice-button" @click="routeGo('contact')">
+                    <span class="advice-button-text">Advies aan huis</span>
+                </button>
+                <img src="@/assets/tech.png" alt="Technisch icoon" />
             </div>
         </nav>
     </div>
@@ -70,6 +72,20 @@ export default {
                 name: direction,
             })
         },
+        handleScroll() {
+            const button = document.querySelector('#button-tech button');
+            if (window.scrollY > 100) { // Pas deze waarde aan voor het gewenste scroll-initiëringspunt
+                button.classList.add('pulsate');
+            } else {
+                button.classList.remove('pulsate');
+            }
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 };
 </script>
@@ -92,7 +108,7 @@ a {
 
 #label-main {
     height: 36px;
-    background-color: #2c5484;
+    background-color: #3eaf3c;
 
     p {
         text-align: center;
@@ -108,20 +124,28 @@ nav {
     align-items: center;
     justify-content: space-between;
     max-width: 1548px;
-    height: 128px;
-    margin: 0 auto;
-    padding: 12px 0;
+    margin: 0 auto; /* Zorgt dat de navigatiebalk in het midden staat */
+    padding: 0 20px; /* Voeg padding toe om logo van de zijkant weg te houden */
+    padding-top: 20px;
 }
+
 
 #titles {
     display: flex;
     align-items: center;
+    margin: 0; /* Verwijder eventuele marges die het uitlijnen kunnen beïnvloeden */
+    padding: 0; /* Verwijder eventuele padding die het uitlijnen kan beïnvloeden */
+    list-style: none; /* Verwijder standaard lijst-stijlen */
+    flex-grow: 1; /* Laat de ul uitbreiden om de beschikbare ruimte te vullen */
+}
 
-    img {
-        width: 50px;
-    }
+#titles li {
+    margin-right: 10px; /* Verminder de ruimte tussen menu-items */
+    cursor: pointer;
+}
 
-    transition: 0s ease all;
+#titles li:first-child {
+    margin-left: 20px; /* Voeg extra marge toe aan het eerste item */
 }
 
 .branding {
@@ -132,6 +156,7 @@ nav {
 
     img {
         width: 75px;
+        margin-left: 0px; /* Zorg ervoor dat het logo wat ruimte heeft van de zijkant */
     }
 }
 
@@ -154,24 +179,79 @@ ul,
     }
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(62, 175, 60, 0.4); /* Groene schaduw bij start */
+    }
+    50% {
+        transform: scale(1.03); /* Subtiele schaalverandering */
+        box-shadow: 0 0 0 6px rgba(62, 175, 60, 0.25); /* Grotere groene schaduw met meer doorzichtigheid */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(62, 175, 60, 0); /* Terug naar origineel zonder schaduw */
+    }
+}
+
+#button-tech {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Knop uitlijnen aan de rechterkant */
+    margin-right: 0; /* Geen marge aan de rechterkant */
+}
+
+#button-tech img {
+    position: absolute;
+    right: 10px; /* Verhoog de waarde om de afbeelding verder naar rechts te verplaatsen */
+    top: -20px; /* Laat de afbeelding boven de knop uitsteken */
+    height: 80px; /* Vergroot de hoogte van de afbeelding */
+    z-index: 2; /* Zorg ervoor dat de afbeelding boven de knop staat */
+}
+
+
 button {
     width: 250px;
     font-family: 'Roboto';
     font-weight: 600;
     font-size: 1.05em;
-    padding-right: 72px;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
+    padding-right: 80px; /* Zorg voor ruimte aan de rechterkant van de knop voor de afbeelding */
     box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
-    transition: all .2s ease-in;
-    background-color: #fbb536;
+    background-color: #3eaf3c;
     margin-left: 5%;
+    transition: all .3s ease-in-out;
+    position: relative; /* Zorg ervoor dat de knop correct gepositioneerd is voor animatie */
+    z-index: 1; /* Zorg ervoor dat de knop onder de afbeelding staat */
+    animation: pulse 3s infinite; /* Langzaam en vloeiend pulsatie-effect */
+}
 
-    &:hover {
-        background-color: #2c5484;
-    }
+#button-tech .advice-button {
+    background-color: #3eaf3c; /* Achtergrondkleur van de knop */
+    border-radius: 45px;
+    width: 200px; /* Breedte van de knop */
+    height: 56px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: white;
+    padding: 8px 16px; /* Padding van de knop */
+    padding-left: 22px; /* Verhoogde padding-left voor tekst uitlijning naar rechts */
+    text-align: left; /* Zorg ervoor dat de tekst naar links is uitgelijnd */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative; /* Zorg ervoor dat de knop correct gepositioneerd is voor animatie */
+}
 
+.advice-button {
+    /* Zorg ervoor dat hier geen extra marges/padding aan de rechterzijde zijn */
+    margin-right: 0; /* Verwijder eventuele marges aan de rechterzijde */
+}
+
+#button-tech .advice-button-text {
+    font-weight: 600; /* Tekst vetgedrukt met een gewicht van 600 */
+    font-size: 0.85em;
 }
 
 h1, 

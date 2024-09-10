@@ -104,7 +104,7 @@ p {
 }
 
 
-@media (max-width: 1548px) {
+@media (max-width: 1024px) {
     #footer {
         height: 760px;
         text-align: center;

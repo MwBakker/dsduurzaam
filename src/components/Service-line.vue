@@ -20,7 +20,6 @@ const imageUrl = computed(
 
 <style lang="scss" scoped>
 .line {
-    margin: 0 84px;
     display: flex;
 
     img {
@@ -38,7 +37,7 @@ const imageUrl = computed(
     }
 }
 
-@media (max-width: 1548px) {
+@media (max-width: 1024px) {
     .line {
         align-items: center;
         img {

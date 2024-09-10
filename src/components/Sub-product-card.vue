@@ -148,7 +148,7 @@ button {
 }
 
 
-@media (max-width: 1548px) {
+@media (max-width: 1024px) {
   .card-sub-product {
     width: 320px;
   }
