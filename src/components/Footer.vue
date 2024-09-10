@@ -1,6 +1,7 @@
 <template>
     <div id="footer">
         <div id="footer-content">
+            <Banner />
             <hr>
             <div id="section-address">
                 <div>

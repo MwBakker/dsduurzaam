@@ -1,6 +1,6 @@
 <template>
     <div class="line">
-        <img :src="imageUrl" v-if="checkmark"></img>
+        <img :src="imageUrl" v-if="checkmark == '1'"></img>
         <div>
             <h1>{{ title }}</h1>
             <p>{{ description }}</p>
@@ -15,7 +15,7 @@ const props = defineProps({
     title: String,
     description: String,
     icon: String,
-    checkmark: Boolean
+    checkmark: String
 })
 
 const imageUrl = computed(

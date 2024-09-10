@@ -1,5 +1,5 @@
 <template>
-  <navBar v-if="windowWidth > 1548" ref="navBar" />
+  <navBar v-if="windowWidth > 1024" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
   <router-view />
   <customFooter />
@@ -109,23 +109,27 @@ button,
   width: 1548px;
 }
 
-.sub-card {
-  margin: 0 5%;
+.sub-product-content {
+  width: 1548px;
+  margin: 0 auto;
+}
+
+.sub-product-quote {
+  margin-right: 5%;
 }
 
 .sub-product {
   display: flex;
-  justify-content: space-between;
-  margin: 96px 0;
-  align-items: center;
+  margin-top: 120px;
 
-  .sub-product-card {
-    margin: 0 5%;
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 hr {
-  margin: 128px 0;
+  margin: 0;
   border: 0.25px solid #00000013;
 }
 

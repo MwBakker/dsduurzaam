@@ -10,11 +10,11 @@
       <ProductCard route='advice' title="Energielabel" image="advice" />
     </div>
     <div id="quotes">
-      <QuoteCard checkmark=true title="Subsidie in ons beheer"
+      <QuoteCard checkmark=1 title="Subsidie in ons beheer"
         description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
-      <QuoteCard checkmark=true title="Snel terugverdiend"
+      <QuoteCard checkmark=1 title="Snel terugverdiend"
         description="Klanten verdienen hun investering gemiddeld binnen 2 tot 5 jaar terug." />
-      <QuoteCard checkmark=true title="Snelle installatie"
+      <QuoteCard checkmark=1 title="Snelle installatie"
         description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
     </div>
   </div>

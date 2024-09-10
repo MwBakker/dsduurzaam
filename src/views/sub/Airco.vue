@@ -1,43 +1,41 @@
 <template>
-  <div class="product">
-    <h1>Een pakkende titel</h1>
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-      aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-      enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-      ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-      adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-      voluptatem.</p>
-    <div class="sub-product">
-      <QuoteCard title="LG RAC sets (Single Split)" description="Bieden een perfecte combinatie van modern design en krachtige prestaties. 
-                     Ideaal voor huishoudelijk gebruik, deze units zorgen voor een comfortabele 
-                     warme en koele leefomgeving met minimale geluidsproductie." />
-      <SubProductCard class="sub-card" title="LG RAC sets (Single Split)" amount="2500" image="airco" />
+  <SubProduct>
+    <div class="sub-product-content">
+      <div class="sub-product">
+        <QuoteCard class="sub-product-quote" title="Ok dan" description="Een populaire en efficiënte manier om zonne-
+                                                        energie te benutten. Deze panelen worden geïnstalleerd op daken met een
+                                                        hellingshoek, wat verschillende voordelen biedt. Ten eerste vangen schuine daken
+                                                        meer zonlicht gedurende de dag, wat de energieopbrengst maximaliseert. Ten
+                                                        tweede helpt de natuurlijke helling van het dak bij de zelfreiniging van de panelen,
+                                                        aangezien regen en sneeuw gemakkelijker kunnen wegspoelen, waardoor het
+                                                        onderhoud wordt verminderd." />
+        <SubProductCard title="Schuin dak" amount="2500" image="solar" />
+      </div>
+      <hr>
+      <div class="sub-product">
+        <QuoteCard class="sub-product-quote" title="Ah toe maar" description="Bieden een flexibele en efficiënte manier om zonne-
+                                                    energie te benutten. Deze installaties maken het mogelijk om de panelen onder de
+                                                    optimale hoek en richting te plaatsen, waardoor de energieopbrengst kan worden
+                                                    gemaximaliseerd. Op een plat dak worden de panelen meestal geplaatst in een
+                                                    opstelling met een bepaalde hellingshoek, vaak met behulp van montagesystemen,
+                                                    om de ideale blootstelling aan zonlicht te garanderen." />
+        <SubProductCard title="Warmtepompboilers" amount="2500" image="heat-pump" />
+
+      </div>
     </div>
-    <hr>
-    <div class="sub-product">
-      <SubProductCard class="sub-card" title="LG CAC sets (Casette)" amount="2500" image="airco" />
-      <QuoteCard title="LG CAC sets (Casette)" description="Ontworpen voor commerciële en
-                    grotere residentiële ruimtes. Deze units bieden flexibele installatieopties en zorgen
-                    voor een optimale luchtverdeling, wat resulteert in een consistente en aangename
-                    temperatuur in elke hoek van de ruimte." />
-    </div>
-    <div class="sub-product">
-      <QuoteCard title="LG CAC sets (Casette)" description="Ontworpen voor commerciële en
-                    grotere residentiële ruimtes. Deze units bieden flexibele installatieopties en zorgen
-                    voor een optimale luchtverdeling, wat resulteert in een consistente en aangename
-                    temperatuur in elke hoek van de ruimte." />
-      <SubProductCard class="sub-card" title="LG RAC sets (Single Split)" amount="2500" image="airco" />
-    </div>
-  </div>
+  </SubProduct>
 </template>
 
 <script>
+
+import SubProduct from './Sub-product.vue';
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
   name: "Heat-pump",
   components: {
+    SubProduct,
     SubProductCard,
     QuoteCard,
   },

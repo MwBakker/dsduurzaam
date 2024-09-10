@@ -72,8 +72,8 @@ const imageUrl = computed(
     padding: 24px;
     position: relative;
     width: 400px;
-    margin: 16px;
-    margin-bottom: 24px;
+    margin: 0 16px;
+    margin-bottom: 96px;
     background-color: #29acdf05;
     border-radius: 24px;
     box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
@@ -149,8 +149,8 @@ button {
 
 
 @media (max-width: 1024px) {
-  .card-sub-product {
-    width: 320px;
-  }
+    .card-sub-product {
+        width: 320px;
+    }
 }
 </style>
