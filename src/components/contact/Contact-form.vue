@@ -138,7 +138,7 @@ textarea {
     margin: auto auto;
 }
 
-@media (max-width: 1548px) {
+@media (max-width: 1024px) {
     #contact-form {
         width: 96%;
         height: 1056px;

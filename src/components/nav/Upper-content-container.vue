@@ -5,26 +5,30 @@
                 <h1 v-if="backgroundImage != 'home'">{{ title }}</h1>
                 <slot v-else></slot>
                 <p>{{ description }}</p>
-                <button v-if="backgroundImage != 'contact'" id=" contact-button" @click="route('contact')">Gratis
-                    advies ontvangen</button>
+                <button v-if="backgroundImage != 'contact'" id="contact-button" @click="route('contact')">Gratis advies ontvangen</button>
             </div>
         </div>
         <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
         </div>
         <div v-if="backgroundImage != 'contact'" id="service-row">
             <div id="service-content">
-                <div class="service-lines">
+                <div class="service-line-wrapper">
                     <ServiceLine title="Hoge kwaliteit" icon="quality" />
+                </div>
+                <div class="service-line-wrapper">
                     <ServiceLine title="Tot 10 jaar garantie" icon="warranty" />
                 </div>
-                <div class="service-lines">
+                <div class="service-line-wrapper">
                     <ServiceLine title="Direct leverbaar" icon="delivery" />
-                    <ServiceLine title="Binnen 1-3 dagen geplaatst" icon="installation" />
+                </div>
+                <div class="service-line-wrapper">
+                    <ServiceLine title="Snelle installatie" icon="installation" />
                 </div>
             </div>
         </div>
     </div>
 </template>
+
 
 <script>
 import titleIcon from "../Title-icon.vue"
@@ -103,9 +107,6 @@ button {
     background-repeat: no-repeat;
     width: 38%;
     -webkit-transition: background-image 0.4s ease-in-out;
-}
-
-#container-image {
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
 }
@@ -126,22 +127,29 @@ button {
     height: 142px;
     background-color: white;
     box-shadow: inset 0px 8px 6px -6px #d7d7d778;
-
-    #service-content {
-        display: flex;
-        margin: 56px auto 0 auto;
-        padding-top: 40px;
-        max-width: 1548px;
-        justify-content: center;
-    }
-
-    .service-lines {
-        display: flex;
-        align-items: center;
-    }
 }
 
-@media (max-width: 1548px) {
+#service-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1548px;
+    margin: 56px auto 0 auto;
+    padding-top: 40px;
+    width: 100%;
+}
+
+.service-line-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the service line within its wrapper */
+}
+
+.service-line-wrapper:not(:last-child) {
+    margin-right: 20px; /* Adjust this value to control spacing between the lines */
+}
+
+@media (max-width: 1024px) {
     #container-elements {
         text-align: center;
         bottom: 0;
@@ -194,11 +202,7 @@ button {
             margin: 0;
             justify-content: space-evenly;
 
-            .service-lines {
-                flex-direction: column;
-            }
-
-            .line {
+            .service-line-wrapper {
                 flex-direction: column;
                 margin: 18px 0;
             }

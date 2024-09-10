@@ -38,7 +38,7 @@ export default {
   }
 }
 
-@media (max-width: 1548px) {
+@media (max-width: 1024px) {
   #contact {
     height: 1525px;
   }

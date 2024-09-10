@@ -30,7 +30,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Manrope, sans-serif;
+  font-family: Robotoo, sans-serif;
   font-weight: 400;
   font-size: 0.925rem;
 }
@@ -43,10 +43,11 @@ p {
 li {
   cursor: pointer;
   font-family: 'Roboto';
-  font-weight: 600;
-  font-size: 1.05em;
+  font-weight: 0;
+  font-size: 1em;
   padding-bottom: 4px;
-  padding: 32px;
+  padding: 10px;
+  color: #2c5484;
 
   &:hover {
     color: #dea130;
@@ -171,7 +172,7 @@ hr {
   opacity: 0;
 }
 
-@media (max-width: 1548px) {
+@media (max-width: 1024px) {
   .product {
     width: 100%;
   }
