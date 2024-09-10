@@ -15,8 +15,8 @@
                     <li @click="routeGo('floor-heating')">Vloerverwarming</li>
                     <li @click="routeGo('solar')">Zonnepanelen</li>
                     <li @click="routeGo('charge-points')">Laadpaal</li>
-                    <li @click="routeGo('isolation')">Isolatie</li>
-                    <li @click="routeGo('advice')">Energielabel</li>
+                    <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
+                    <!-- <li @click="routeGo('advice')">Energielabel</li> -->
                     <li @click="routeGo('service')">Service</li>
                 </ul>
             </Transition>

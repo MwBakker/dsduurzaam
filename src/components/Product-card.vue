@@ -32,7 +32,7 @@
   
   <style lang="scss" scoped>
   .card {
-    width: 30%; /* Adjusted to handle max 3 cards in a row */
+    min-width: 372px; /* Adjusted to handle max 3 cards in a row */
     margin: 16px;
     margin-bottom: 24px;
     display: flex;

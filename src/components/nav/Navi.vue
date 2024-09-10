@@ -13,8 +13,8 @@
                 <li @click="routeGo('floor-heating')">Vloerverwarming</li>
                 <li @click="routeGo('solar')">Zonnepanelen</li>
                 <li @click="routeGo('charge-points')">Laadpaal</li>
-                <li @click="routeGo('isolation')">Isolatie</li>
-                <li @click="routeGo('advice')">Energielabel</li>
+                <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
+                <!-- <li @click="routeGo('advice')">Energielabel</li> -->
                 <li @click="routeGo('service')">Service</li>
             </ul>
             <div id="button-tech">
@@ -138,13 +138,14 @@ nav {
     display: flex;
     align-items: center;
     margin: 0; /* Verwijder eventuele marges die het uitlijnen kunnen beïnvloeden */
+    margin-left: 48px;
     padding: 0; /* Verwijder eventuele padding die het uitlijnen kan beïnvloeden */
     list-style: none; /* Verwijder standaard lijst-stijlen */
     flex-grow: 1; /* Laat de ul uitbreiden om de beschikbare ruimte te vullen */
 }
 
 #titles li {
-    margin-right: 10px; /* Verminder de ruimte tussen menu-items */
+    margin-right: 24px; /* Verminder de ruimte tussen menu-items */
     cursor: pointer;
 }
 
@@ -160,7 +161,6 @@ nav {
 
     img {
         width: 75px;
-        margin-left: 0px; /* Zorg ervoor dat het logo wat ruimte heeft van de zijkant */
     }
 }
 
