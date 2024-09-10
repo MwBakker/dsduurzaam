@@ -1,14 +1,6 @@
 <template>
     <div id="footer">
         <div id="footer-content">
-            <Banner text="Ontvang onze brochure voor meer informatie"></Banner>
-            <div id="footer-quote">
-                <h1>Een aangename temperatuur in iedere ruimte?</h1>
-                <div>
-                    <button>Adviesgesprek</button>
-                    <button>Contact</button>
-                </div>
-            </div>
             <hr>
             <div id="section-address">
                 <div>
@@ -77,7 +69,7 @@ import Banner from './Banner.vue';
 
 h1 {
     color: white;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin: 32px 0 18px 0;
 }
@@ -85,7 +77,7 @@ h1 {
 
 p {
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 100;
     margin: 6px 0;
 }
@@ -156,7 +148,7 @@ p {
 
 #section-light {
     height: 78px;
-    background-color: rgba(41, 172, 223, 0.0196078431);
+    background-color: rgba(191, 203, 218, 0.3215686275);
 
     #section-light-content {
         display: flex;
@@ -186,7 +178,6 @@ p {
     height: 16px;
     background-color: #2c5484;
 }
-
 
 
 @media (max-width: 1024px) {

@@ -32,7 +32,7 @@ export default {
   box-sizing: border-box;
   font-family: Robotoo, sans-serif;
   font-weight: 400;
-  font-size: 0.925rem;
+  font-size: 0.9rem;
 }
 
 p {
@@ -48,7 +48,7 @@ li {
   cursor: pointer;
   font-family: 'Roboto';
   font-weight: 0;
-  font-size: 1em;
+  font-size: 0.9em;
   padding-bottom: 4px;
   padding: 10px;
   color: #2c5484;
@@ -67,12 +67,12 @@ h2 {
 }
 
 h2 {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
 }
 
 button,
 #button-send {
-  background-color: #2c5484;
+  background-color: #5178a5;
   border-radius: 45px;
   width: 200px;
   height: 56px;

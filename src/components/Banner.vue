@@ -43,16 +43,17 @@ const props = defineProps({
 
     p {
         color: white;
-        font-size: 18px;
+        font-size: 1.25rem;
         line-height: 1.6;
         margin: 12px auto 24px auto;
         font-weight: 600;
     }
 
     button {
-        background-color: #fbb536;
+        background-color: #ffffff;
         padding: 0;
         height: 50px;
+        color: #2c5484;
     }
 }
 

@@ -35,15 +35,16 @@ const imageUrl = computed(
 
     h1 {
         color: #284c78;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin-bottom: 8px;
+        font-weight: 600;
     }
 
     p {
         margin: auto 0;
         color: #2c5484;
         // color: #2c54849c;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 100;
         line-height: 1.875rem;
     }

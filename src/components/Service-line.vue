@@ -30,7 +30,7 @@ const imageUrl = computed(
     p {
         margin: auto 0;
         color: #2c5484;
-        font-size: 1.05rem;
+        font-size: 0.9rem;
         font-weight: 600;
         text-align: center;
         line-height: 1.875rem;

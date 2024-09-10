@@ -26,11 +26,14 @@
         </nav>
     </div>
     <upper_content_container :title=title :description=description :backgroundImage=headerImg>
+        <!-- 
         <h1 id="lol">Insteco B.V. Uw partner in <span class="light">energiebesparing</span> met <span
                 class="light">persoonlijk
                 advies</span> en <span class="light">maatwerkinstallaties</span> voor een
-            <span class="light">energiezuiniger</span> leven en werken.
-        </h1>
+        <span class="light">energiezuiniger</span> leven en werken.
+        </h1>-->
+        <h1 id="lol">Ontdek je voordeel!</h1>
+        <h1 id="lol">Vraag nu vrijblijvend een offerte aan en zie hoeveel je kunt besparen.</h1>
     </upper_content_container>
 </template>
 
@@ -108,7 +111,7 @@ a {
 
 #label-main {
     height: 36px;
-    background-color: #3eaf3c;
+    background-color: #2c5484;
 
     p {
         text-align: center;
@@ -127,6 +130,7 @@ nav {
     margin: 0 auto; /* Zorgt dat de navigatiebalk in het midden staat */
     padding: 0 20px; /* Voeg padding toe om logo van de zijkant weg te houden */
     padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 
