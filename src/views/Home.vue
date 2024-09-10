@@ -17,21 +17,18 @@
       <QuoteCard checkmark=true title="Snelle installatie"
         description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
     </div>
-    <Banner />
   </div>
 </template>
 
 <script>
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
-import Banner from '@/components/Banner.vue';
 
 export default {
   name: "Home",
   components: {
     ProductCard,
     QuoteCard,
-    Banner,
   },
   methods: {
     route(direction) {

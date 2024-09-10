@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <div id="footer-content">
-            <Banner text="Ontvang onze brochure voor meer informatie" height="240px"></Banner>
+            <Banner text="Ontvang onze brochure voor meer informatie"></Banner>
             <div id="footer-quote">
                 <h1>Een aangename temperatuur in iedere ruimte?</h1>
                 <div>
@@ -16,11 +16,17 @@
                     <p>Hoofdstraat 4</p>
                     <p>9561 JA</p>
                     <p>Ter Apel</p>
-                </div>
-                <div>
-                    <h1>Contact</h1>
                     <p>088-7155733</p>
                     <p>info@duureco.nl</p>
+                </div>
+                <div id="services">
+                    <h1>Diensten</h1>
+                    <p @click="route('heat-pump')">Waterpomp</p>
+                    <p @click="route('airco')">Airco</p>
+                    <p @click="route('isolation')">Vloerverwarming</p>
+                    <p @click="route('solar')">Zonnepanelen</p>
+                    <p @click="route('charge-point')">Laadpalen</p>
+                    <p @click="route('charge-point')">Service</p>
                 </div>
                 <div id='logos'>
                     <a href='https://www.facebook.com/dsduurzaam/'><img class='logo'
@@ -65,7 +71,7 @@ import Banner from './Banner.vue';
 }
 
 #footer-content {
-    width: 60%;
+    width: 1548px;
     margin: 0 auto;
 }
 
@@ -82,6 +88,12 @@ p {
     font-size: 1rem;
     font-weight: 100;
     margin: 6px 0;
+}
+
+#services {
+    p {
+        cursor: pointer;
+    }
 }
 
 hr {
@@ -112,7 +124,7 @@ hr {
     display: flex;
     margin: 1vh 0;
     justify-content: space-around;
-    padding:  12px 0 24px 0;
+    padding: 12px 0 24px 0;
 }
 
 h1,
