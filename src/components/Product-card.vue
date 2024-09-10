@@ -37,9 +37,8 @@
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    background-color: #29acdf05;
-    border-radius: 24px;
-    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
+    background-color: #bfcbda52 ;
+    border-radius: 10px;
   
     img {
       padding: 32px;

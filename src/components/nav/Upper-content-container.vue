@@ -5,7 +5,8 @@
                 <h1 v-if="backgroundImage != 'home'">{{ title }}</h1>
                 <slot v-else></slot>
                 <p>{{ description }}</p>
-                <button v-if="backgroundImage != 'contact'" id="contact-button" @click="route('contact')">Gratis advies ontvangen</button>
+                <button v-if="backgroundImage != 'contact'" id="contact-button" @click="route('contact')">Offerte aanvragen</button>
+                
             </div>
         </div>
         <div id="container-image" :style="{ backgroundImage: `url(${'src/assets/tabs/' + backgroundImage + '.png'})` }">
@@ -13,7 +14,7 @@
         <div v-if="backgroundImage != 'contact'" id="service-row">
             <div id="service-content">
                 <div class="service-line-wrapper">
-                    <ServiceLine title="Hoge kwaliteit" icon="quality" />
+                    <ServiceLine title="Topkwaliteit" icon="quality" />
                 </div>
                 <div class="service-line-wrapper">
                     <ServiceLine title="Tot 10 jaar garantie" icon="warranty" />
@@ -65,12 +66,22 @@ export default {
 <style lang="scss" scoped>
 #container-main {
     padding-top: 160px;
-    background-color: #29acdf05;
+    background-color: #bfcbda52;
 }
 
 button {
     margin-top: 25px;
     width: 45%;
+}
+
+#contact-button {
+    background-color: rgb(255, 255, 255);
+    color: #2c5484; /* Optioneel */
+    border: none;
+    padding: 0;
+    border-radius: 45px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 15);
 }
 
 #container-elements {
@@ -191,7 +202,7 @@ button {
     }
 
     #contact-button {
-        display: none;
+        display: block; /* Zorg ervoor dat de knop zichtbaar is */
     }
 
     #service-row {
@@ -210,3 +221,4 @@ button {
     }
 }
 </style>
+
