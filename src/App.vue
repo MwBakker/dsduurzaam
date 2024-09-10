@@ -40,6 +40,10 @@ p {
   color: rgb(107, 107, 107);
 }
 
+a {
+  text-decoration: none;
+}
+
 li {
   cursor: pointer;
   font-family: 'Roboto';
@@ -95,13 +99,6 @@ button,
   margin: 0 auto;
 }
 
-.product-row {
-  margin: 14vh 0 45vh 0;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
 #quotes {
   display: flex;
   justify-content: space-around;
@@ -138,8 +135,16 @@ hr {
   margin: 64px 0;
 }
 
-.product-row {
-  margin: 16vh 0 33vh 0;
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c5484;
 }
 
 

@@ -103,7 +103,7 @@ button {
     right: 0;
     z-index: -1;
     height: 732px;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 38%;
     -webkit-transition: background-image 0.4s ease-in-out;

@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 #contact {
+  background-color: white;
   position: relative;
   margin-bottom: 40px;
   height: 1080px;

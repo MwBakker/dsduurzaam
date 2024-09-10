@@ -47,30 +47,27 @@ export default {
   width: 1548px;
 }
 
+.product-row {
+  margin: 1vh 0;
+  display: flex;
+  justify-content: space-around;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+}
+
 #quotes {
   display: flex;
   justify-content: space-between;
-  margin: 64px 0;
+  margin: 12vh 0;
 }
 
-.product-row {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between; /* Zorgt voor gelijke ruimte tussen kaarten */
-  flex-wrap: wrap;
-}
-
-.product-row > * {
-  flex: 1 1 calc(32% - 20px); /* Zorgt ervoor dat kaarten niet breder zijn dan 32% van de container breedte */
-  margin: 10px; /* Ruimte tussen de kaarten */
-  box-sizing: border-box; /* Zorgt ervoor dat padding/margin geen invloed heeft op de breedte */
-}
-
-/* Zorg ervoor dat de laatste rij met 1 kaart niet over de hele breedte gaat */
-.product-row:last-child > * {
-  flex: 1 1 calc(32% - 20px); /* Zorgt ervoor dat de laatste kaart dezelfde breedte heeft als de andere kaarten */
-  margin: 10px; /* Ruimte tussen de kaarten */
-}
 
 /* Mobiele aanpassingen */
 @media (max-width: 1024px) {
@@ -88,9 +85,5 @@ export default {
     justify-content: center;
   }
 
-  .product-row > * {
-    flex: 1 1 90%; /* Zorgt ervoor dat kaarten op mobiele schermen bijna de volledige breedte hebben */
-    margin: 20px auto; /* Center de kaarten op mobiel */
-  }
 }
 </style>

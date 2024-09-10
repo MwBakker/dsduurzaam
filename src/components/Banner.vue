@@ -1,9 +1,10 @@
 <template>
-    <div id="banner">
+    <div id="banner" :style="{ height: height }">
         <div id="content">
-            <p>Weten wat u kan besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die het beste
-                bij u
-                past.</p>
+            <p :style="{ fontSize: fontSize }" v-if="text != null">{{ text }}</p>
+            <p v-else>Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die
+                het beste
+                bij u past.</p>
             <button @click="route('/contact')">Maak een afspraak</button>
         </div>
         <img src=" ../assets/tabs/contact.png" />
@@ -16,6 +17,13 @@ function route(direction) {
     this.$root.$refs.navBar.routeGo(direction);
 }
 
+
+const props = defineProps({
+    text: String,
+    fontSize: String,
+    height: String,
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -27,12 +35,10 @@ function route(direction) {
     border-radius: 12px;
     margin: 32px auto;
     background-color: #2c5484;
-    // background-color: #fbb536;
 }
 
 #content {
     width: 40%;
-    height: 200px;
     margin: auto;
 
     p {
@@ -53,8 +59,8 @@ function route(direction) {
 img {
     background-image: url('../assets/tabs/contact.png');
     border-radius: 240px 0 0 240px;
-    width: 45%;
-    margin-top: -120px;
+    width: 40%;
+    margin-top: -60px;
     height: 480px;
 }
 </style>

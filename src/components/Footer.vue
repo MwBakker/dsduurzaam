@@ -1,49 +1,72 @@
 <template>
     <div id="footer">
-        <img id='brand' src='../assets/logo.png' />
-        <div id="column-info">
-            <div id="address">
-                <h1>Adres</h1>
-                <p>Hoofdstraat 4</p>
-                <p>9561 JA</p>
-                <p>Ter Apel</p>
+        <div id="footer-content">
+            <Banner text="Ontvang onze brochure voor meer informatie" height="240px"></Banner>
+            <div id="footer-quote">
+                <h1>Een aangename temperatuur in iedere ruimte?</h1>
+                <div>
+                    <button>Adviesgesprek</button>
+                    <button>Contact</button>
+                </div>
             </div>
-            <div id="contact">
-                <h1>Contact</h1>
-                <p>088-7155733</p>
-                <p>info@duureco.nl</p>
-                <p>KvK: 12345 6789 101112</p>
-                <p>Btw: 12345 6789 101112</p>
-            </div>
-            <div id="privacy">
-                <h1>Beleid</h1>
-                <p>Privacyverklaring</p>
-                <p>Disclaimer</p>
+            <hr>
+            <div id="section-address">
+                <div>
+                    <h1>Adres</h1>
+                    <p>Hoofdstraat 4</p>
+                    <p>9561 JA</p>
+                    <p>Ter Apel</p>
+                </div>
+                <div>
+                    <h1>Contact</h1>
+                    <p>088-7155733</p>
+                    <p>info@duureco.nl</p>
+                </div>
+                <div id='logos'>
+                    <a href='https://www.facebook.com/dsduurzaam/'><img class='logo'
+                            src='../assets/icon/facebook.png' /></a>
+                    <a href='https://www.instagram.com/dsduurzaam/'><img class='logo'
+                            src='../assets/icon/linkedin.png' /></a>
+                </div>
             </div>
         </div>
-        <div id='logos'>
-            <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
-            <a href='https://www.instagram.com/dsduurzaam/'><img class='logo' src='../assets/icon/linkedin.png' /></a>
+        <div id="section-light">
+            <div id="section-light-content">
+                <div class="info">
+                    <a href='https://www.facebook.com/dsduurzaam/'>
+                        <p>Privacy verklaring</p>
+                    </a>
+                    <a href='https://www.instagram.com/dsduurzaam/'>
+                        <p>Disclaimer</p>
+                    </a>
+                </div>
+                <div class="info">
+                    <p>KVK 012345678910</p>
+                    <p>BTW 012345678910</p>
+                </div>
+            </div>
+        </div>
+        <div id="section-dark">
+            <img id='brand' src='../assets/logo.png' />
         </div>
     </div>
 </template>
 
 <script setup>
+
+import Banner from './Banner.vue';
+
 </script>
 
 <style lang="scss" scoped>
 #footer {
+    width: 100%;
     position: relative;
-    height: 186px;
-    background-color: #2c5484;
-    box-shadow: inset 0px 8px 6px -6px #d7d7d778;
 }
 
-#brand {
-    position: absolute;
-    height: 72px;
-    top: -31px;
-    left: 16px;
+#footer-content {
+    width: 60%;
+    margin: 0 auto;
 }
 
 h1 {
@@ -53,6 +76,7 @@ h1 {
     margin: 32px 0 18px 0;
 }
 
+
 p {
     color: white;
     font-size: 1rem;
@@ -60,30 +84,45 @@ p {
     margin: 6px 0;
 }
 
-#column-info {
+hr {
+    margin: 16px 0 0 0;
+}
+
+#footer-quote {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+    }
+
+    button {
+        margin: 0 12px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+}
+
+
+#section-address {
     display: flex;
     margin: 1vh 0;
-    justify-content: space-between;
-    padding: 0 20%;
+    justify-content: space-around;
+    padding:  12px 0 24px 0;
 }
 
-#address-map {
-    display: flex;
-    align-items: flex-start;
-}
-
-.address,
-.contact,
-.privacy {
-    margin-top: 48px;
+h1,
+p {
+    color: #2c5484;
 }
 
 #logos {
     display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    bottom: 12px;
-    right: 24px;
+    align-items: center;
 
     img {
         margin: 6px;
@@ -102,6 +141,40 @@ p {
     height: 24px;
     background-color: #2c5484;
 }
+
+#section-light {
+    height: 78px;
+    background-color: rgba(41, 172, 223, 0.0196078431);
+
+    #section-light-content {
+        display: flex;
+        width: 60%;
+        height: 100%;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+#brand {
+    position: absolute;
+    height: 56px;
+    bottom: 2px;
+    left: 16px;
+}
+
+#section-dark {
+    position: relative;
+    height: 16px;
+    background-color: #2c5484;
+}
+
 
 
 @media (max-width: 1024px) {
