@@ -110,7 +110,7 @@ button,
 }
 
 .sub-product-content {
-  width: 1548px;
+  max-width: 1548px;
   margin: 0 auto;
 }
 
@@ -187,7 +187,11 @@ hr {
   }
 
   .sub-product {
+    margin: 0;
+    margin-top: 64px;
+    text-align: center;
     flex-direction: column;
+    align-items: center;
   }
 }
 </style>
