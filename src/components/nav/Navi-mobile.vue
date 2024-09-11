@@ -7,24 +7,39 @@
             <div class="branding">
                 <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
             </div>
-            <Transition name="slide-fade-right" appear>
-                <ul v-if="showNav" id="titles">
-                    <a id="exit-menu" @click="showNav = false" class="fa fa-times fa-2x"></a>
-                    <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
-                    <li @click="routeGo('airco')">Airconditioning</li>
-                    <li @click="routeGo('floor-heating')">Vloerverwarming</li>
-                    <li @click="routeGo('solar')">Zonnepanelen</li>
-                    <li @click="routeGo('charge-points')">Laadpaal</li>
-                    <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
-                    <!-- <li @click="routeGo('advice')">Energielabel</li> -->
-                    <li @click="routeGo('service')">Service</li>
-                </ul>
-            </Transition>
-            <div id="button-tech">
-                <img src="@/assets/tech.png" />
+            <div id="button-menu">
+                <Transition name="slide-fade-right" appear>
+                    <ul v-if="showNav" id="titles">
+                        <div id="titles-img">
+                            <div id="exit"><a @click="showNav = false" class="fa fa-arrow-left fa-2x"></a></div>
+                        </div>
+                        <li id="upper-li" @click="routeGo('heat-pump')">
+                            Warmtepomp
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </li>
+                        <li @click="routeGo('airco')">Airconditioning
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </li>
+                        <li @click="routeGo('floor-heating')">Vloerverwarming
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </li>
+                        <li @click="routeGo('solar')">Zonnepanelen
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </li>
+                        <li @click="routeGo('charge-points')">Laadpaal
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </li>
+                        <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
+                        <!-- <li @click="routeGo('advice')">Energielabel</li> -->
+                        <li @click="routeGo('service')">Service
+                            <span class="fa fa-angle-right fa-2x"></span>
+                        </li>
+                        <button>Offerte aanvragen</button>
+                    </ul>
+                </Transition>
                 <button @click="routeGo('contact')">Advies aan huis</button>
+                <a @click="showNav = true" class="fa fa-bars fa-2x"></a>
             </div>
-            <a @click="showNav = true" class="fa fa-bars fa-2x"></a>
         </nav>
     </div>
     <upper_content_container :title=title :description=description :backgroundImage=headerImg />
@@ -81,12 +96,6 @@ a {
     right: 56px;
 }
 
-// #exit-menu {
-//     position: absolute;
-//     right: 64px;
-//     top: 0;
-// }
-
 #nav-container {
     transition: 2s ease all;
 }
@@ -106,36 +115,74 @@ a {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1548px;
-    height: 128px;
-    margin: 0 auto 32px auto;
+    height: 106px;
     padding: 12px 0;
 }
 
-#titles {
-    position: absolute;
-    padding-top: 700px;
-    z-index: 99;
-    width: 100%;
-    background-color: #f4f4f4;
+#button-menu {
+    width: 40%;
+    margin: 0 5%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
 
-    img {
-        width: 50px;
+#titles {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: #f4f4f4;
+    transition: 0.5s ease all;
+
+    li {
+        border-bottom: 1px solid rgb(220, 220, 220);
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    transition: 0s ease all;
+    button {
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+#titles-img {
+    position: relative;
+    width: 100%;
+    height: 175px;
+    background-image: url('@/assets/tabs/service.png');
+    background-size: cover;
+
+    #exit {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 12px;
+        right: 24px;
+        border-radius: 25px;
+        background-color: #fbb536;
+
+        a {
+            margin: auto;
+        }
+    }
 }
 
 .branding {
     cursor: pointer;
-
-    display: flex;
-    align-items: center;
+    text-align: center;
+    margin: 0 7.5%;
 
     img {
         width: 75px;
@@ -147,56 +194,5 @@ ul,
     color: #2c5484;
     list-style: none;
     text-decoration: none;
-}
-
-// li {
-//     cursor: pointer;
-//     width: 100%;
-//     font-size: 1.1rem;
-//     border-bottom: 0.5px solid #2c54843f;
-//     font-weight: 400;
-//     -webkit-text-stroke: 0.1px;
-//     padding-bottom: 4px;
-//     padding: 16px;
-//     margin: 24px 0;
-//     font-weight: 550;
-
-//     &:hover {
-//         color: #dea130;
-//     }
-// }
-
-// #upper-li {
-//     margin-top: 64px;
-
-// }
-
-#button-tech {
-    position: relative;
-    margin-right: 7.5%;
-
-    img {
-        position: absolute;
-        right: 0;
-        bottom: 4px;
-        height: 86px;
-    }
-}
-
-button {
-    width: 250px;
-    padding-right: 72px;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
-    transition: all .2s ease-in;
-    background-color: #fbb536;
-    margin-left: 5%;
-
-    &:hover {
-        background-color: #2c5484;
-    }
-
 }
 </style>

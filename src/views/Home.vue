@@ -17,6 +17,9 @@
       <QuoteCard checkmark=1 title="Snelle installatie"
         description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
     </div>
+    <Banner
+      text="Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die het beste bij u past."
+      />
   </div>
 </template>
 
@@ -24,12 +27,14 @@
 <script>
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   name: "Home",
   components: {
     ProductCard,
     QuoteCard,
+    Banner,
   },
   data() {
     return {
@@ -77,23 +82,28 @@ export default {
 <style lang="scss" scoped>
 #home {
   margin: 0 auto;
-  width: 1548px;
+  max-width: 1548px;
 }
 
 .product-row {
   margin: 1vh 0;
   display: flex;
-  overflow-x: hidden; /* Verberg de horizontale scrollbar */
-  white-space: nowrap; /* Zorg ervoor dat de items niet op de volgende regel worden geplaatst */
+  overflow-x: hidden;
+  /* Verberg de horizontale scrollbar */
+  white-space: nowrap;
+  /* Zorg ervoor dat de items niet op de volgende regel worden geplaatst */
 }
 
-.product-row > * {
-  flex: 0 0 auto; /* Zorg ervoor dat de kinderen niet worden ingedrukt */
-  width: calc(100% / 3); /* Zorg ervoor dat elke kaart 1/3 van de container breedte is */
+.product-row>* {
+  flex: 0 0 auto;
+  /* Zorg ervoor dat de kinderen niet worden ingedrukt */
+  width: calc(100% / 3);
+  /* Zorg ervoor dat elke kaart 1/3 van de container breedte is */
 }
 
 ::-webkit-scrollbar {
-  height: 0; /* Verberg de scrollbar */
+  height: 0;
+  /* Verberg de scrollbar */
 }
 
 #quotes {
@@ -116,12 +126,15 @@ export default {
   .product-row {
     flex-direction: column;
     justify-content: center;
-    overflow-x: scroll; /* Scrollbaar op kleinere schermen */
-    white-space: normal; /* Sta toe dat de producten in de kolom worden geplaatst */
+    overflow-x: scroll;
+    /* Scrollbaar op kleinere schermen */
+    white-space: normal;
+    /* Sta toe dat de producten in de kolom worden geplaatst */
   }
 
-  .product-row > * {
-    width: 100%; /* Zorg ervoor dat de kaarten de volle breedte innemen op mobiele schermen */
+  .product-row>* {
+    width: 100%;
+    /* Zorg ervoor dat de kaarten de volle breedte innemen op mobiele schermen */
   }
 }
 </style>

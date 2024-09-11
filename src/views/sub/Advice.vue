@@ -20,7 +20,6 @@
                                                     opstelling met een bepaalde hellingshoek, vaak met behulp van montagesystemen,
                                                     om de ideale blootstelling aan zonlicht te garanderen." />
         <SubProductCard title="Warmtepompboilers" amount="2500" image="heat-pump" />
-
       </div>
     </div>
   </SubProduct>
