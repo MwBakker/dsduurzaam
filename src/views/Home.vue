@@ -25,10 +25,12 @@
     imageAlt="Home"
     height="400px"
   />
+  <Banner></Banner>
   </div>
 </template>
 
 <script>
+import Banner from '@/components/Banner.vue';
 import ParagraphCard from '@/components/Paragraph-card.vue';
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
