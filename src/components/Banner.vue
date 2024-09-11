@@ -1,10 +1,7 @@
 <template>
-    <div id="banner" :style="{ height: height }">
+    <div id="banner">
         <div id="content">
-            <p :style="{ fontSize: fontSize }" v-if="text != null">{{ text }}</p>
-            <p v-else>Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die
-                het beste
-                bij u past.</p>
+            <p>{{ text }}</p>
             <button @click="route('/contact')">Maak een afspraak</button>
         </div>
         <img src=" ../assets/tabs/contact.png" />
@@ -20,8 +17,6 @@ function route(direction) {
 
 const props = defineProps({
     text: String,
-    fontSize: String,
-    height: String,
 })
 
 </script>

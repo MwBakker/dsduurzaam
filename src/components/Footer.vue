@@ -52,7 +52,6 @@
 
 <script setup>
 
-import Banner from './Banner.vue';
 
 </script>
 
@@ -63,7 +62,6 @@ import Banner from './Banner.vue';
 }
 
 #footer-content {
-    width: 1548px;
     margin: 0 auto;
 }
 
@@ -181,14 +179,46 @@ p {
 
 
 @media (max-width: 1024px) {
-    #footer {
-        height: 760px;
-        text-align: center;
-        margin-top: 64px;
+
+    #section-address {
+        display: none;
     }
 
-    #column-info {
-        flex-direction: column;
+    #footer {
+        text-align: center;
     }
+
+    // #footer {
+    //     text-align: center;
+    //     margin-top: 64px;
+    // }
+
+    // #section-address {
+    //     flex-direction: column;
+    //     margin: 0;
+    // }
+
+    #section-light {
+        height: initial;
+    }
+
+    #section-light-content {
+        flex-direction: column;
+
+        .info {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 24px 0;
+        }
+    }
+
+    // #logos {
+    //     justify-content: center;
+    //     margin-top: 24px;
+    // }
 }
 </style>
