@@ -1,7 +1,6 @@
 <template>
     <div id="footer">
         <div id="footer-content">
-            <Banner />
             <hr>
             <div id="section-address">
                 <div>
@@ -149,7 +148,7 @@ p {
 
 #section-light {
     height: 78px;
-    background-color: rgba(191, 203, 218, 0.3215686275);
+    background-color: #eaeef3;
 
     #section-light-content {
         display: flex;

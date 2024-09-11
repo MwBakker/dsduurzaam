@@ -54,7 +54,7 @@ li {
   color: #2c5484;
 
   &:hover {
-    color: #dea130;
+    color: #fbb536;
   }
 }
 
