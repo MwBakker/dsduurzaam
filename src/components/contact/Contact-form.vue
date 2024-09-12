@@ -1,45 +1,48 @@
 <template>
     <div id="contact-form">
         <div id="info">
-            <infoLine icon="phone" title="Bel ons" text="0599 580 218" />
+            <infoLine icon="phone" title="Bel ons" text="0599 - 585 010" />
             <hr>
-            <infoLine icon="mail" title="Stuur ons een mail" text="info@insteco.nl" />
+            <infoLine icon="mail" title="Mail ons" text="info@insteco.nl" />
             <hr>
-            <infoLine icon="map" title="Kom langs" text="Ergens op mars" />
+            <infoLine icon="map" title="Bezoek ons" text="Straatnaam 1" additional-text="9999 XX Dorpnaam" />
         </div>
         <form id="vue-form" @submit.prevent="submit">
-            <div class="contact-form-field">
-                <p>Uw naam</p>
-                <input v-model="name">
+            <div class="contact-form-field double-field">
+                <div class="input-wrapper">
+                    <input v-model="firstName" placeholder="Voornaam" />
+                </div>
+                <div class="input-wrapper">
+                    <input v-model="lastName" placeholder="Achternaam" />
+                </div>
             </div>
             <div class="contact-form-field">
-                <p>Uw email adres</p>
-                <input v-model="email">
+                <input v-model="email" placeholder="Email">
             </div>
             <div class="contact-form-field">
-                <p>Uw telefoonnummer (optioneel)</p>
-                <input v-model="phone">
+                <input v-model="phone" placeholder="Telefoonnummer (optioneel)">
             </div>
             <div class="contact-form-field">
-                <p>Onderwerp</p>
-                <input v-model="subject">
+                <input v-model="subject" placeholder="Onderwerp">
             </div>
             <div class="contact-form-field">
-                <p>Beschrijving</p>
-                <textarea v-model="description" cols="40" rows="5"></textarea>
+                <textarea v-model="description" placeholder="Hoe kunnen wij u van dienst zijn?" cols="40" rows="5"></textarea>
+            </div>
+            <div class="contact-form-field privacy-field">
+                <input type="checkbox" id="privacy-checkbox" v-model="isPrivacyChecked" />
+                <label for="privacy-checkbox" class="privacy-label">Ik heb de privacyverklaring gelezen</label>
             </div>
             <div v-if="!sent" class="contact-form-field">
-                <input id="button-send" type="submit" value="Verzenden">
+                <input id="button-send" type="submit" value="Verzenden" :disabled="!isPrivacyChecked" />
             </div>
             <div v-if="sent" class="contact-form-field">
-                <p>Uw bericht is verzonden</p>
+                <p>Uw vraag is verzonden</p>
             </div>
         </form>
     </div>
 </template>
 
 <script>
-
 import axios from 'axios';
 import infoLine from './Info-line.vue';
 
@@ -47,18 +50,21 @@ export default {
     name: "form",
     data() {
         return {
-            name: '',
+            firstName: '',
+            lastName: '',
             email: '',
             phone: '',
             subject: '',
             description: '',
             sent: false,
+            isPrivacyChecked: false,
         };
     },
     methods: {
         submit: function () {
             let form = {};
-            form.name = this.name;
+            form.firstName = this.firstName;
+            form.lastName = this.lastName;
             form.subject = this.subject;
             form.email = this.email;
             form.phone = this.phone;
@@ -112,41 +118,79 @@ export default {
     margin: 32px auto;
 }
 
-.contact-form-field input {
-    width: 100%;
-    height: 32px;
-    margin: auto;
+.double-field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-wrapper {
+    width: 48%;
+}
+
+.contact-form-field input,
+.contact-form-field textarea {
+    padding: 6px;
     border: solid 2px #6b76858f;
     background: none;
-    border-radius: 6px;
+    margin-top: 5px;
 }
 
-input {
-    padding: 6px;
+input[type="checkbox"] {
+    margin-right: 8px;
+    /* Voeg extra ruimte toe om de checkbox rechts van de tekst te plaatsen */
 }
 
+input,
 textarea {
-    width: 100%;
-    padding: 6px;
-    border: solid 2px #6b76858f;
-    background: none;
-    border-radius: 6px;
+    width: 100%; /* Zorgt ervoor dat de invoervelden 100% breed zijn */
 }
 
 #button-send {
-    width: 100%;
-    margin: auto auto;
+    width: 50%;
+    margin: auto;
+    background-color: #2c5484;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#button-send:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.privacy-field {
+    display: flex;
+    align-items: center;
+    margin: 32px auto;
+    width: 90%;
+}
+
+.privacy-label {
+    color: #2c5484;
+    font-size: 0.9rem;
+    font-weight: 100;
 }
 
 @media (max-width: 1024px) {
     #contact-form {
         width: 96%;
         height: 1056px;
-        flex-direction: column
+        flex-direction: column;
     }
 
     #info,
     #vue-form {
+        width: 100%;
+    }
+
+    .double-field {
+        flex-direction: column;
+    }
+
+    .input-wrapper {
         width: 100%;
     }
 }

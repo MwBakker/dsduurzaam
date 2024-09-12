@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/Home.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,7 +54,11 @@ const router = createRouter({
       name: 'contact',
       component: () => import('../views/Contact.vue')
     }
-  ]
-})
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    // Altijd scroll naar boven bij navigeren naar een nieuwe pagina
+    return { top: 0 };
+  }
+});
 
-export default router
+export default router;
