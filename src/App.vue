@@ -1,26 +1,55 @@
 <template>
-  <navBar v-if="windowWidth > 1024" ref="navBar" />
-  <navBarMobile v-else ref="navBar" />
-  <router-view />
-  <customFooter />
+  <div class="app">
+    <navBar v-if="windowWidth > 1024" ref="navBar" />
+    <navBarMobile v-else ref="navBar" />
+    <router-view />
+    <customFooter ref="footer" />
+  </div>
 </template>
 
 <script>
-import navBar from "./components/nav/Navi.vue"
-import navBarMobile from "./components/nav/Navi-mobile.vue"
-import customFooter from "./components/Footer.vue"
+import navBar from "./components/nav/Navi.vue";
+import navBarMobile from "./components/nav/Navi-mobile.vue";
+import customFooter from "./components/Footer.vue";
 
 export default {
   name: "App",
   data() {
     return {
       windowWidth: window.innerWidth
-    }
+    };
   },
   components: {
     navBar,
     navBarMobile,
     customFooter,
+  },
+  methods: {
+    scrollToFooter() {
+      const footer = this.$refs.footer;
+      if (footer) {
+        footer.$el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  },
+  mounted() {
+    // Event listener voor venstergrootte wijziging
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeUnmount() {
+    // Verwijder de event listener om geheugenlekken te voorkomen
+    window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    },
+    scrollToFooter() {
+      const footer = this.$refs.footer;
+      if (footer) {
+        footer.$el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 };
 </script>
@@ -30,7 +59,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Robotoo, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 0.9rem;
 }
@@ -73,7 +102,7 @@ h2 {
 button,
 #button-send {
   background-color: #5178a5;
-  border-radius: 45px;
+  border-radius: 0px;
   width: 200px;
   height: 56px;
   border-color: rgba(0, 0, 0, 0.15);
@@ -101,7 +130,10 @@ button,
 
 #quotes {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  background-color: #eaeef3;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .product {
@@ -151,7 +183,6 @@ hr {
   background: #2c5484;
 }
 
-
 .slide-fade-up-enter-active,
 .slide-fade-left-enter-active,
 .slide-fade-right-enter-active {
@@ -193,5 +224,22 @@ hr {
     flex-direction: column;
     align-items: center;
   }
+}
+
+#scroll-button {
+  position: fixed; /* Zorg ervoor dat de knop altijd zichtbaar is */
+  bottom: 20px; /* Plaats de knop 20px vanaf de onderkant van het scherm */
+  right: 20px; /* Plaats de knop 20px vanaf de rechterkant van het scherm */
+  background-color: #5178a5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#scroll-button:hover {
+  background-color: #3e5b7a;
 }
 </style>

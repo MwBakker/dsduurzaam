@@ -1,97 +1,101 @@
 <template>
     <div id="nav-container">
-        <div id="label-main">
-            <p>Direct uit voorraad leverbaar!</p>
+      <div id="label-main">
+        <p>Direct uit voorraad leverbaar!</p>
+      </div>
+      <nav>
+        <div class="branding">
+          <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
         </div>
-        <nav>
-            <div class="branding">
-                <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
-            </div>
-            <ul id="titles">
-                <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
-                <li @click="routeGo('airco')">Airconditioning</li>
-                <li @click="routeGo('floor-heating')">Vloerverwarming</li>
-                <li @click="routeGo('solar')">Zonnepanelen</li>
-                <li @click="routeGo('charge-points')">Laadpaal</li>
-                <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
-                <!-- <li @click="routeGo('advice')">Energielabel</li> -->
-                <li @click="routeGo('service')">Service</li>
-            </ul>
-            <div id="button-tech">
-                <button class="advice-button" @click="routeGo('contact')">
-                    <span class="advice-button-text">Advies aan huis</span>
-                </button>
-                <img src="@/assets/tech.png" alt="Technisch icoon" />
-            </div>
-        </nav>
+        <ul id="titles">
+          <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
+          <li @click="routeGo('airco')">Airconditioning</li>
+          <li @click="routeGo('floor-heating')">Vloerverwarming</li>
+          <li @click="routeGo('solar')">Zonnepanelen</li>
+          <li @click="routeGo('charge-points')">Laadpaal</li>
+          <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
+          <!-- <li @click="routeGo('advice')">Energielabel</li> -->
+          <li @click="routeGo('service')">Service</li>
+        </ul>
+        <div id="button-tech">
+          <button class="advice-button" @click="handleAdviceButtonClick">
+            <span class="advice-button-text">Advies aan huis</span>
+          </button>
+          <img src="@/assets/tech.png" alt="Technisch icoon" />
+        </div>
+      </nav>
     </div>
-    <upper_content_container :title=title :description=description :backgroundImage=headerImg>
-        <!-- 
-        <h1 id="lol">Insteco B.V. Uw partner in <span class="light">energiebesparing</span> met <span
-                class="light">persoonlijk
-                advies</span> en <span class="light">maatwerkinstallaties</span> voor een
-        <span class="light">energiezuiniger</span> leven en werken.
-        </h1>-->
-        <h1 id="lol">Ontdek je voordeel!</h1>
-        <h1 id="lol">Vraag nu vrijblijvend een offerte aan en zie hoeveel je kunt besparen.</h1>
+    <upper_content_container :title="title" :description="description" :backgroundImage="headerImg">
+      <h1 id="lol">Subsidie op al onze systemen! Laat ons uw voordeel berekenen!</h1>
     </upper_content_container>
-</template>
-
-
-<script>
-import upper_content_container from "./Upper-content-container.vue"
-
-export default {
+  </template>
+  
+  <script>
+  import upper_content_container from "./Upper-content-container.vue"
+  
+  export default {
     name: "navigation-bar",
     data() {
-        return {
-            title: '',
-            headerImg: 'home',
-            description: '',
-            headerText: {
-                'home': ["", ""],
-                'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie met op maat gemaakte oplossingen die uw comfort verhogen en uw energiekosten verlagen. Onze experts bieden persoonlijk advies en professionele installatie, zodat u verzekerd bent van optimale prestaties en maximale besparingen. Maak vandaag nog de stap naar een groenere, efficiëntere manier van verwarmen en koelen!"],
-                'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar extra met zonnepanelen. Onze op maat gemaakte oplossingen combineren efficiënte temperatuurregeling met slimme energiebesparing. Profiteer van persoonlijk advies en deskundige installatie voor het beste resultaat, het hele jaar door. Maak vandaag nog de overstap naar duurzaam en kostenbesparend klimaatbeheer!"],
-                'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer met onze op maat gemaakte oplossingen, in combinatie met de juiste warmtepomp. Onze deskundigen bieden persoonlijk advies en professionele installatie, zodat u profiteert van energie-efficiëntie en optimaal comfort, het hele jaar door. Transformeer uw ruimte in een warme, gezellige omgeving, ongeacht het seizoen!"],
-                'solar': ["Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties zoals warmtepompen en vloerverwarming voor extra rendement en lagere energiekosten. Onze experts bieden persoonlijk advies en deskundige installatie om uw systeem optimaal af te stemmen. Stap vandaag nog over op een groene toekomst en geniet van maximale efficiëntie en financieel voordeel, het hele jaar door."],
-                'charge-points': ["Laad uw elektrische voertuig gemakkelijk op met onze laadpalen aan huis!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading, direct vanuit uw eigen  oplaadpunt. Profiteer van persoonlijk advies en professionele installatie, en maak uw woning klaar voor de toekomst van elektrisch rijden. Kies voor gemak en efficiëntie, en laad altijd met vertrouwen op."],
-                'isolation': ["Isolatie", "Warm spul"],
-                'advice': ["Energielabel & advies", "Mooi spul"],
-                'service': ["Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud aan uw installaties, met een korte responsietijd en inspecties wanneer nodig. Onze experts zorgen ervoor dat alles optimaal blijft functioneren, zodat u kunt vertrouwen op een probleemloze werking. Kies voor betrouwbare service en houd uw installaties in topconditie, altijd klaar voor gebruik."],
-                'contact': ["Contact", "Heeft u een vraag over onze diensten of wilt u een offerte? Bel ons, of stuur ons een e-mail via het contactformulier"],
-            },
-        };
+      return {
+        title: '',
+        headerImg: 'home',
+        description: '',
+        headerText: {
+          'home': ["", ""],
+          'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie met op maat gemaakte oplossingen die uw comfort verhogen en uw energiekosten verlagen. Onze experts bieden persoonlijk advies en professionele installatie, zodat u verzekerd bent van optimale prestaties en maximale besparingen. Maak vandaag nog de stap naar een groenere, efficiëntere manier van verwarmen en koelen!"],
+          'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar extra met zonnepanelen. Onze op maat gemaakte oplossingen combineren efficiënte temperatuurregeling met slimme energiebesparing. Profiteer van persoonlijk advies en deskundige installatie voor het beste resultaat, het hele jaar door. Maak vandaag nog de overstap naar duurzaam en kostenbesparend klimaatbeheer!"],
+          'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer met onze op maat gemaakte oplossingen, in combinatie met de juiste warmtepomp. Onze deskundigen bieden persoonlijk advies en professionele installatie, zodat u profiteert van energie-efficiëntie en optimaal comfort, het hele jaar door. Transformeer uw ruimte in een warme, gezellige omgeving, ongeacht het seizoen!"],
+          'solar': ["Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties zoals warmtepompen en vloerverwarming voor extra rendement en lagere energiekosten. Onze experts bieden persoonlijk advies en deskundige installatie om uw systeem optimaal af te stemmen. Stap vandaag nog over op een groene toekomst en geniet van maximale efficiëntie en financieel voordeel, het hele jaar door."],
+          'charge-points': ["Laad uw elektrische voertuig gemakkelijk op met onze laadpalen aan huis!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading, direct vanuit uw eigen  oplaadpunt. Profiteer van persoonlijk advies en professionele installatie, en maak uw woning klaar voor de toekomst van elektrisch rijden. Kies voor gemak en efficiëntie, en laad altijd met vertrouwen op."],
+          'isolation': ["Isolatie", "Warm spul"],
+          'advice': ["Energielabel & advies", "Mooi spul"],
+          'service': ["Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud aan uw installaties, met een korte responsietijd en inspecties wanneer nodig. Onze experts zorgen ervoor dat alles optimaal blijft functioneren, zodat u kunt vertrouwen op een probleemloze werking. Kies voor betrouwbare service en houd uw installaties in topconditie, altijd klaar voor gebruik."],
+          'contact': ["Contact", "Heeft u een vraag over onze diensten of wilt u een offerte? Bel ons, of stuur ons een e-mail via het contactformulier"],
+        },
+      };
     },
     components: {
-        upper_content_container
+      upper_content_container
     },
     methods: {
-        routeGo(direction) {
-            var array = this.headerText[direction];
-            this.title = array[0];
-            this.description = array[1];
-            this.headerImg = direction;
-            this.$router.push({
-                name: direction,
-            })
-        },
-        handleScroll() {
-            const button = document.querySelector('#button-tech button');
-            if (window.scrollY > 100) { // Pas deze waarde aan voor het gewenste scroll-initiëringspunt
-                button.classList.add('pulsate');
-            } else {
-                button.classList.remove('pulsate');
-            }
-        }
-    },
-    mounted() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    beforeDestroy() {
-        window.removeEventListener('scroll', this.handleScroll);
+  routeGo(direction) {
+    var array = this.headerText[direction];
+    this.title = array[0];
+    this.description = array[1];
+    this.headerImg = direction;
+    this.$router.push({
+      name: direction,
+    });
+  },
+  handleAdviceButtonClick() {
+    // Debugging statement
+    console.log("Advice button clicked");
+
+    const footer = this.$root.$refs.footer;
+    if (footer) {
+      console.log("Footer found, scrolling into view");
+      footer.$el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.log("Footer not found");
     }
-};
-</script>
+  },
+  handleScroll() {
+    const button = document.querySelector('#button-tech button');
+    if (window.scrollY > 100) { // Pas deze waarde aan voor het gewenste scroll-initiëringspunt
+      button.classList.add('pulsate');
+    } else {
+      button.classList.remove('pulsate');
+    }
+  }
+},
+mounted() {
+  window.addEventListener('scroll', this.handleScroll);
+},
+beforeDestroy() {
+  window.removeEventListener('scroll', this.handleScroll);
+}
+  };
+  </script>
 
 <style lang="scss" scoped>
 a {
@@ -232,7 +236,7 @@ button {
 
 #button-tech .advice-button {
     background-color: #3eaf3c; /* Achtergrondkleur van de knop */
-    border-radius: 45px;
+    border-radius: 0px;
     width: 200px; /* Breedte van de knop */
     height: 56px;
     border: 1px solid rgba(0, 0, 0, 0.15);

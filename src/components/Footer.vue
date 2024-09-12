@@ -32,7 +32,7 @@
             <div id="section-light-content">
                 <div class="info">
                     <a href='https://www.facebook.com/dsduurzaam/'>
-                        <p>Privacy verklaring</p>
+                        <p>Privacyverklaring</p>
                     </a>
                     <a href='https://www.instagram.com/dsduurzaam/'>
                         <p>Disclaimer</p>

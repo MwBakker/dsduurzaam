@@ -53,26 +53,27 @@ function stopAnimation() {
 .product-card {
   display: flex;
   flex-direction: column;
-  background-color: #bfcbda52;
-  border-radius: 5px;
+  background-color: #eaeef3;
+  border-radius: 0px;
   overflow: hidden;
   cursor: pointer; /* Change cursor to pointer on hover */
-  position: relative; /* Maak het mogelijk om absolute positioning te gebruiken voor de gloed */
-  
+  position: relative; /* Enable absolute positioning for the glow */
+
   .card-image {
     flex: 1;
-    overflow: hidden; /* Zorg ervoor dat de zoom niet uit de kaart steekt */
+    overflow: hidden; /* Ensure that the zoom effect doesn't spill out of the card */
     position: relative;
-    transition: transform 0.3s ease; /* Maak de transformatie soepel */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
     
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the container */
       display: block;
-      transition: transform 0.3s ease; /* Maak de transformatie soepel */
+      transition: transform 0.3s ease; /* Smooth transition for transform */
     }
     
-    /* Voeg de blauwe gloed toe met een ::before pseudo-element */
+    /* Add the blue glow with a ::before pseudo-element */
     &::before {
       content: "";
       position: absolute;
@@ -80,10 +81,10 @@ function stopAnimation() {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0); /* Blauwe gloed met transparantie */
-      z-index: 1; /* Zorg ervoor dat de gloed boven de afbeelding zit */
-      transition: opacity 0.3s ease; /* Maak de transitie van de gloed soepel */
-      opacity: 1; /* Altijd zichtbare gloed */
+      background: rgba(255, 255, 255, 0); /* Blue glow with transparency */
+      z-index: 1; /* Ensure the glow is above the image */
+      transition: opacity 0.3s ease; /* Smooth transition for the glow */
+      opacity: 1; /* Always visible glow */
     }
   }
 
@@ -92,33 +93,33 @@ function stopAnimation() {
     align-items: center;
     justify-content: space-between;
     padding: 8px;
-    background-color: #ffffff; /* Achtergrondkleur van de tekst/pijl sectie */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Licht schaduw om de tekst sectie te accentueren */
-    position: relative; /* Zorgt ervoor dat de animatie relatief is */
-    transition: background-color 0.3s ease; /* Maak de achtergrondkleurtransitie soepel */
-    z-index: 2; /* Zorg ervoor dat de tekst en pijltje boven de gloed staan */
+    background-color: #eaeef3; /* Background color of the text/arrow section */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow to accentuate the text section */
+    position: relative; /* Ensures the animation is relative */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    z-index: 2; /* Ensure text and arrow are above the glow */
 
     h2 {
       color: #2c5484;
       font-size: 1rem;
       font-weight: 600;
-      margin: 0; /* Verwijder standaard marge om spacing consistent te houden */
+      margin: 0; /* Remove default margin to keep spacing consistent */
     }
 
     i {
       font-size: 1rem;
-      color: #2c5484; /* Dezelfde kleur als de tekst */
-      transition: transform 0.3s ease; /* Maak de transformatie soepel */
+      color: #2c5484; /* Same color as the text */
+      transition: transform 0.3s ease; /* Smooth transition for transform */
     }
   }
 
   &:hover .card-image img {
-    transform: scale(1.1); /* Vergroot de afbeelding lichtjes bij hover */
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
   }
 
   &:hover .card-info i {
-    animation: bounce 1s ease; /* Voeg de stuiter-animatie toe bij hover */
-    animation-iteration-count: 1; /* Herhaal de animatie slechts één keer */
+    animation: bounce 1s ease; /* Add bounce animation on hover */
+    animation-iteration-count: 1; /* Repeat animation only once */
   }
 
   @keyframes bounce {
@@ -140,5 +141,3 @@ function stopAnimation() {
   }
 }
 </style>
-
-

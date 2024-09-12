@@ -4,12 +4,15 @@
       <h1 class="title">{{ title }}</h1>
       <h2 class="subtitle">{{ subtitle }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
-      <div class="card-info" @mouseover="isHovered = true" @mouseleave="isHovered = false" @click="route(contactLink)">
+      <div class="card-info" 
+           @mouseover="isHovered = true" 
+           @mouseleave="isHovered = false" 
+           @click="route(contactLink)">
         <span class="info-text">{{ buttonText }}</span>
         <i class="fas fa-arrow-right"></i>
       </div>
     </div>
-    <div class="image-wrapper">
+    <div class="image-wrapper" @click="route(contactLink)">
       <img :src="imageUrl" :alt="imageAlt" :class="{ zoomed: isHovered }">
     </div>
   </div>
@@ -53,36 +56,34 @@ const imageUrl = computed(() => {
 #paragraphcard {
   display: flex;
   width: 100%;
-  height: 350px;
-  border-radius: 12px;
+  height: 350px; /* Stel hier je gewenste hoogte in */
   margin: 32px auto;
   position: relative;
   overflow: hidden;
 }
 
 #content {
-  width: 70%;
-  height: 100%;
-  padding: 20px;
+  width: 50%; /* Zorg ervoor dat dit gedeelte 50% van de breedte is */
+  height: 100%; /* Zorg ervoor dat de hoogte van de inhoud gelijk is aan de hoogte van de kaart */
   position: relative;
-  background-color: #eaeef3;
+  background-color: #0a63cf00; /* Volledig transparant */
   z-index: 2;
-  clip-path: polygon(0 0, 100% 0%, 72% 100%, 0% 100%);
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start; /* Begin de inhoud bovenaan */
+  align-items: flex-start; /* Begin de inhoud aan de linkerkant */
 }
 
 .title {
-  color: #3eaf3c;
+  color: #2c5484;
   font-size: 2rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .subtitle {
-  color: #fbb536;
+  color: #3eaf3c;
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -93,7 +94,7 @@ const imageUrl = computed(() => {
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  margin-right: 200px;
+  width: 100%; /* Maak de tekstbreedte 100% van de beschikbare breedte */
 }
 
 .card-info {
@@ -101,48 +102,95 @@ const imageUrl = computed(() => {
   align-items: center;
   cursor: pointer;
   color: #2c5484;
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .card-info .info-text {
   margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .card-info i {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c5484;
   transition: transform 0.3s ease;
 }
 
+/* Voeg animatie toe bij hover voor ParagraphCard */
 .card-info:hover i {
-  animation: bounce 0.5s infinite;
+  animation: bounce 1s ease; /* Pas de duur van de animatie aan zoals in ProductCard */
+  animation-iteration-count: 1; /* Zorg ervoor dat de animatie maar één keer herhaald wordt */
 }
 
-/* Stijlen voor de afbeelding */
+/* Stijlen voor de afbeelding met schuine uitsnijding */
 .image-wrapper {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
+  width: 50%; /* Zorg ervoor dat de afbeelding 50% van de breedte is */
+  height: 100%; /* Zorg ervoor dat de afbeelding de volledige hoogte benut */
   overflow: hidden;
   z-index: 1;
+  position: relative;
+  cursor: pointer; /* Zorg ervoor dat de cursor verandert bij hover op de afbeelding */
+}
+
+/* Voeg een schuine uitsnijding toe aan de afbeelding */
+.image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Breedte van de uitsnijding */
+  height: 100%; /* Hoogte van de uitsnijding */
+  clip-path: polygon(0 0, 20% 0, 0 30%); /* Schuine uitsnijding in de bovenhoek */
+  background: transparent; /* Maak de achtergrond transparant */
+  z-index: 2;
+}
+
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* Achtergrondkleur die overeenkomt met je achtergrond om het uitsnijdingsgebied onzichtbaar te maken */
+  clip-path: polygon(0 0, 20% 0, 0 30%); /* Schuine uitsnijding in de bovenhoek */
+  z-index: 1; /* Zorg ervoor dat deze laag onder de afbeelding staat */
 }
 
 .image-wrapper img {
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
+  position: absolute; /* Verander naar absolute positionering */
+  bottom: 0; /* Uitlijning aan de onderkant */
+  left: 0;
+  width: 100%;
+  height: 99%; /* Zorg ervoor dat de afbeelding iets korter is dan de container */
+  object-fit: cover; /* Zorg ervoor dat de afbeelding wordt bijgesneden en niet vervormd */
   transition: transform 0.5s ease;
-  /* Overgang voor zoom */
 }
 
 /* Voeg de zoomed class toe als isHovered true is */
 .image-wrapper img.zoomed {
   transform: scale(1.1);
   /* Zoom de afbeelding in */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-15px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
 }
 </style>
