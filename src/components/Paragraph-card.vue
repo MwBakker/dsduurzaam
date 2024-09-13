@@ -3,6 +3,7 @@
     <div id="content">
       <h1 class="title">{{ title }}</h1>
       <h2 class="subtitle">{{ subtitle }}</h2>
+      <h2 class="subtitle2">{{ subtitle2 }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
       <div class="card-info" 
            @mouseover="isHovered = true" 
@@ -28,6 +29,7 @@ const isHovered = ref(false);
 const props = defineProps({
   title: String,
   subtitle: String,
+  subtitle2: String,
   paragraphText: String,
   buttonText: String,
   contactLink: String,
@@ -77,7 +79,7 @@ const imageUrl = computed(() => {
 
 .title {
   color: #2c5484;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
@@ -85,7 +87,14 @@ const imageUrl = computed(() => {
 .subtitle {
   color: #3eaf3c;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle2 {
+  color: #3eaf3c;
+  font-weight: 600;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
@@ -143,7 +152,7 @@ const imageUrl = computed(() => {
   left: 0;
   width: 100%; /* Breedte van de uitsnijding */
   height: 100%; /* Hoogte van de uitsnijding */
-  clip-path: polygon(0 0, 20% 0, 0 30%); /* Schuine uitsnijding in de bovenhoek */
+  clip-path: polygon(0 0, 20% 0, 0 35%); /* Schuine uitsnijding in de bovenhoek */
   background: transparent; /* Maak de achtergrond transparant */
   z-index: 2;
 }
@@ -156,7 +165,7 @@ const imageUrl = computed(() => {
   width: 100%;
   height: 100%;
   background: #fff; /* Achtergrondkleur die overeenkomt met je achtergrond om het uitsnijdingsgebied onzichtbaar te maken */
-  clip-path: polygon(0 0, 20% 0, 0 30%); /* Schuine uitsnijding in de bovenhoek */
+  clip-path: polygon(0 0, 20% 0, 0 35%); /* Schuine uitsnijding in de bovenhoek */
   z-index: 1; /* Zorg ervoor dat deze laag onder de afbeelding staat */
 }
 

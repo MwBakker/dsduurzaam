@@ -1,9 +1,16 @@
 <template>
     <div id="footer">
         <div id="footer-content">
-            <hr>
-            <div id="section-address">
-                <div>
+            <div class="footer-inner">
+                <div id="section-aboutus">
+                    <h1>Insteco</h1>
+                    <p>Over ons</p>
+                    <p>Service</p>
+                    <p>Herroepingsformulier</p>
+                    <p>Privacyverklaring</p>
+                    <p>Disclaimer</p>
+                </div>
+                <div id="section-address">
                     <h1>Adres</h1>
                     <p>Hoofdstraat 4</p>
                     <p>9561 JA</p>
@@ -18,26 +25,38 @@
                     <p @click="route('isolation')">Vloerverwarming</p>
                     <p @click="route('solar')">Zonnepanelen</p>
                     <p @click="route('charge-point')">Laadpalen</p>
-                    <p @click="route('charge-point')">Service</p>
                 </div>
+
+                <div id="certification-logos">
+                    <h1>Gegarandeerde kwaliteit</h1>
+                    <div id="certification-logos-content">
+                        <a href="#" class="cert-logo-container">
+                            <img class='cert-logo' src='../assets/icon/installq.png' alt="Certificering 1" />
+                        </a>
+                        <a href="#" class="cert-logo-container">
+                            <img class='cert-logo' src='../assets/icon/technieknederland1.png' alt="Certificering 2" />
+                        </a>
+                        <a href="#" class="cert-logo-container">
+                            <img class='cert-logo' src='../assets/icon/vca.png' alt="Certificering 3" />
+                        </a>
+                        <a href="#" class="cert-logo-container">
+                            <img class='cert-logo' src='../assets/icon/stek.png' alt="Certificering 4" />
+                        </a>
+                    </div>
+                </div>
+
                 <div id='logos'>
-                    <a href='https://www.facebook.com/dsduurzaam/'><img class='logo'
-                            src='../assets/icon/facebook.png' /></a>
-                    <a href='https://www.instagram.com/dsduurzaam/'><img class='logo'
-                            src='../assets/icon/linkedin.png' /></a>
+                    <h1>Insteco media</h1>
+                    <div id="logos-content">
+                        <a href='https://www.facebook.com/dsduurzaam/'><img class='logo' src='../assets/icon/facebook.png' /></a>
+                        <a href='https://www.instagram.com/dsduurzaam/'><img class='logo' src='../assets/icon/linkedin.png' /></a>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div id="section-light">
             <div id="section-light-content">
-                <div class="info">
-                    <a href='https://www.facebook.com/dsduurzaam/'>
-                        <p>Privacyverklaring</p>
-                    </a>
-                    <a href='https://www.instagram.com/dsduurzaam/'>
-                        <p>Disclaimer</p>
-                    </a>
-                </div>
                 <div class="info">
                     <p>KVK 012345678910</p>
                     <p>BTW 012345678910</p>
@@ -51,8 +70,6 @@
 </template>
 
 <script setup>
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -62,22 +79,56 @@
 }
 
 #footer-content {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Centreer de footer-inner container */
+    padding: 0 10px; /* Voeg wat padding toe om te voorkomen dat secties tegen de randen aan plakken */
+    width: 100%; /* Zorg ervoor dat de footer-content de volledige breedte benut */
+    max-width: 1548px; /* Stel de max-width in op 1548px */
+    margin: 0 auto; /* Centreer de footer-content binnen de pagina */
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between; /* Zorgt ervoor dat de secties voldoende ruimte krijgen tussen hen */
+    flex-wrap: wrap; /* Zorgt ervoor dat secties naar een nieuwe regel verhuizen indien nodig */
+    width: 100%; /* Zorg ervoor dat de footer-inner de volledige breedte benut */
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+
+#section-address, #services, #logos, #certification-logos, #section-aboutus {
+    flex: 1 1 200px; /* Flex-grow en flex-shrink instellen met een basis breedte van 200px */
+    margin: 0 10px; /* Zorg voor ruimte tussen de secties */
+    min-width: 150px; /* Zorg ervoor dat secties niet te smal worden */
+    display: flex; /* Voeg flex toe voor alignment binnen deze secties */
+    flex-direction: column; /* Zorg ervoor dat de items verticaal gestapeld worden */
+    align-items: flex-start; /* Uitlijnen van de inhoud naar links */
+}
+
+#section-address h1, #section-aboutus h1, #services h1, #certification-logos h1, #logos h1 {
+    text-align: left; /* Align de h1 tekst naar links */
+}
+
+#section-address p, #section-aboutus p, #services p, #certification-logos p, #logos p {
+    text-align: left; /* Align de p tekst naar links */
+}
+
+#section-address, #section-aboutus, #services, #logos, #certification-logos {
+    color: #2c5484; /* Stel kleur in voor alle tekstuele elementen in de footer */
 }
 
 h1 {
-    color: white;
     font-size: 1.25rem;
     font-weight: 600;
     margin: 32px 0 18px 0;
+    text-align: left; /* Align de h1 tekst naar links */
 }
 
-
 p {
-    color: white;
     font-size: 0.9rem;
     font-weight: 100;
     margin: 6px 0;
+    text-align: left; /* Align de p tekst naar links */
 }
 
 #services {
@@ -90,78 +141,64 @@ hr {
     margin: 16px 0 0 0;
 }
 
-#footer-quote {
+#logos, #certification-logos {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    div {
-        display: flex;
-    }
-
-    button {
-        margin: 0 12px;
-    }
-
-    h1 {
-        font-size: 1.7rem;
-        font-weight: 600;
-    }
+    flex-direction: column; /* Zorg ervoor dat de h1 boven de knoppen en logo's staat */
+    align-items: flex-start; /* Uitlijnen van de inhoud naar links */
 }
 
-
-#section-address {
-    display: flex;
-    margin: 1vh 0;
-    justify-content: space-around;
-    padding: 12px 0 24px 0;
+#logos-content, #certification-logos-content {
+    display: grid; /* Gebruik grid voor het layouten van logo's */
+    grid-template-columns: repeat(2, 1fr); /* Twee kolommen */
+    gap: 10px; /* Ruimte tussen de logo's */
+    width: 100%; /* Zorg ervoor dat de grid de volledige breedte benut */
+    justify-items: start; /* Zorg ervoor dat de logo's links uitgelijnd zijn */
 }
 
-h1,
-p {
-    color: #2c5484;
+#certification-logos {
+    margin-top: 0; /* Verwijder eventuele extra margin boven de #certification-logos sectie */
 }
 
-#logos {
+#certification-logos h1 {
+    margin-bottom: 10px; /* Verlaag de marge onder de h1 naar 10px in de #certification-logos sectie */
+}
+
+.cert-logo-container, .logo-container {
     display: flex;
     align-items: center;
 
-    img {
-        margin: 6px;
-        height: 42px;
-    }
+    width: 100%; /* Zorg ervoor dat de container de volledige breedte benut */
+    height: 75px; /* Verklein de hoogte met 25% van 100px */
+    box-sizing: border-box; /* Zorg ervoor dat padding wordt meegerekend in de breedte en hoogte */
+    overflow: hidden; /* Zorg ervoor dat geen delen van de afbeelding buiten de container zichtbaar zijn */
 }
 
-#branding {
-    margin-left: 24px;
-    height: 52px;
-    position: absolute;
-    bottom: 0;
-}
-
-#layer-two {
-    height: 24px;
-    background-color: #2c5484;
+.cert-logo, .logo {
+    width: 60%; /* Verklein de breedte met 25% van 80% */
+    height: 60%; /* Verklein de hoogte met 25% van 80% */
+    object-fit: contain; /* Zorg ervoor dat de afbeelding wordt geschaald zodat deze binnen de container past zonder afgesneden te worden */
 }
 
 #section-light {
-    height: 78px;
     background-color: #eaeef3;
+    padding: 15px 0; /* Voeg wat padding toe boven en onder de inhoud */
+    width: 100%; /* Zorg ervoor dat de section-light de volledige breedte benut */
+}
 
-    #section-light-content {
-        display: flex;
-        width: 60%;
-        height: 100%;
-        margin: auto;
-        justify-content: space-between;
-        align-items: center;
-    }
+#section-light-content {
+    display: flex;
+    justify-content: center; /* Centreer de inhoud horizontaal binnen de sectie */
+    align-items: center; /* Centreer de inhoud verticaal binnen de sectie */
+    width: 100%; /* Zorg ervoor dat de section-light-content de volledige breedte benut */
+    max-width: 1548px; /* Maximaliseer de breedte van de inhoud binnen section-light */
+    margin: 0 auto; /* Centreer de inhoud binnen deze sectie */
 }
 
 .info {
     display: flex;
-    justify-content: space-around;
-    width: 30%;
+    flex-direction: row; /* Zet de items naast elkaar */
+    justify-content: center; /* Centreer de items horizontaal binnen .info */
+    gap: 20px; /* Voeg ruimte toe tussen de items */
 }
 
 #brand {
@@ -175,31 +212,40 @@ p {
     position: relative;
     height: 16px;
     background-color: #2c5484;
+    width: 100%; /* Zorg ervoor dat de section-dark de volledige breedte benut */
 }
 
+#logos-content {
+    display: flex; /* Zorg ervoor dat de logo's naast elkaar worden weergegeven */
+    gap: 15px; /* Voeg ruimte toe tussen de logo's */
+    align-items: center; /* Zorg ervoor dat de logo's verticaal uitgelijnd zijn */
+    justify-content: flex-start; /* Zorg ervoor dat de logo's links uitgelijnd zijn */
+    padding: 10px 0; /* Voeg wat padding toe boven en onder de logo's */
+}
+
+.logo {
+    width: 40px; /* Pas de breedte van de logo's aan */
+    height: 40px; /* Pas de hoogte van de logo's aan */
+    object-fit: contain; /* Zorg ervoor dat de logo's binnen hun container passen zonder vervorming */
+}
 
 @media (max-width: 1024px) {
-
-    #section-address {
-        display: none;
+    #footer-content {
+        flex-direction: column; /* Zet secties onder elkaar op kleinere schermen */
+        align-items: center;
     }
 
-    #footer {
-        text-align: center;
+    .footer-inner {
+        width: 100%; /* Zorg ervoor dat de inner container 100% breed is op kleinere schermen */
     }
 
-    // #footer {
-    //     text-align: center;
-    //     margin-top: 64px;
-    // }
-
-    // #section-address {
-    //     flex-direction: column;
-    //     margin: 0;
-    // }
+    #section-address, #services, #logos, #certification-logos, #section-aboutus {
+        margin: 10px 0; /* Voeg ruimte toe tussen de secties op kleinere schermen */
+        min-width: unset; /* Verwijder minimum breedte op kleinere schermen */
+    }
 
     #section-light {
-        height: initial;
+        padding: 15px 0; /* Voeg padding toe voor consistentie */
     }
 
     #section-light-content {
@@ -208,6 +254,7 @@ p {
         .info {
             flex-direction: column;
             width: 100%;
+            align-items: center; /* Centreer de items binnen de info sectie */
         }
 
         p {
@@ -215,10 +262,5 @@ p {
             margin: 24px 0;
         }
     }
-
-    // #logos {
-    //     justify-content: center;
-    //     margin-top: 24px;
-    // }
 }
 </style>
