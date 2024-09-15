@@ -26,7 +26,9 @@
                 <p>Lorem ipsum toestanden</p>
             </div>
         </div>
-        <button @click="route('/contact')">Offerte aanvragen</button>
+        <div id="button-invoice">
+            <button @click="route('/contact')">Offerte aanvragen</button>
+        </div>
     </div>
 </template>
 
@@ -143,10 +145,10 @@ const imageUrl = computed(
     }
 }
 
-button {
+#button-invoice {
     width: 100%;
+    text-align: center;
 }
-
 
 @media (max-width: 1024px) {
     .card-sub-product {

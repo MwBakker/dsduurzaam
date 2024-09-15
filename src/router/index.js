@@ -49,11 +49,6 @@ const router = createRouter({
       name: 'service',
       component: () => import('../views/sub/Service.vue')
     },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: () => import('../views/Contact.vue')
-    }
   ],
   scrollBehavior(to, from, savedPosition) {
     // Altijd scroll naar boven bij navigeren naar een nieuwe pagina

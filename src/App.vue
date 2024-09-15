@@ -3,7 +3,7 @@
     <navBar v-if="windowWidth > 1024" ref="navBar" />
     <navBarMobile v-else ref="navBar" />
     <router-view />
-    <customFooter ref="footer" />
+    <customFooter />
   </div>
 </template>
 
@@ -25,32 +25,16 @@ export default {
     customFooter,
   },
   methods: {
-    scrollToFooter() {
-      const footer = this.$refs.footer;
-      if (footer) {
-        footer.$el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  },
-  mounted() {
-    // Event listener voor venstergrootte wijziging
-    window.addEventListener('resize', this.handleResize);
-  },
-  beforeUnmount() {
-    // Verwijder de event listener om geheugenlekken te voorkomen
-    window.removeEventListener('resize', this.handleResize);
-  },
-  methods: {
-    handleResize() {
-      this.windowWidth = window.innerWidth;
+    mounted() {
+      // Event listener voor venstergrootte wijziging
+      window.addEventListener('resize', this.handleResize);
     },
-    scrollToFooter() {
-      const footer = this.$refs.footer;
-      if (footer) {
-        footer.$el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
+    beforeUnmount() {
+      // Verwijder de event listener om geheugenlekken te voorkomen
+      window.removeEventListener('resize', this.handleResize);
+    },
+  },
+
 };
 </script>
 
@@ -101,9 +85,10 @@ h2 {
 
 button,
 #button-send {
+  width: 250px;
   background-color: #5178a5;
   border-radius: 0px;
-  width: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   height: 56px;
   border-color: rgba(0, 0, 0, 0.15);
   border-width: 1px;
@@ -114,6 +99,7 @@ button,
   display: inline-block;
   font-size: 16px;
   font-weight: 600;
+  box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
   margin: 4px 2px;
   cursor: pointer;
 }
@@ -227,9 +213,12 @@ hr {
 }
 
 #scroll-button {
-  position: fixed; /* Zorg ervoor dat de knop altijd zichtbaar is */
-  bottom: 20px; /* Plaats de knop 20px vanaf de onderkant van het scherm */
-  right: 20px; /* Plaats de knop 20px vanaf de rechterkant van het scherm */
+  position: fixed;
+  /* Zorg ervoor dat de knop altijd zichtbaar is */
+  bottom: 20px;
+  /* Plaats de knop 20px vanaf de onderkant van het scherm */
+  right: 20px;
+  /* Plaats de knop 20px vanaf de rechterkant van het scherm */
   background-color: #5178a5;
   color: white;
   border: none;
