@@ -21,7 +21,8 @@
       <div class="product-container">
         <ParagraphCard
         title="Een hybride warmtepomp."
-        subtitle="Eenvoudig verduurzamen. Direct besparen."
+        subtitle="Eenvoudig verduurzamen."
+        subtitle2="Direct besparen."
         paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
         buttonText="Meer info en producten "
         contactLink="/contact"
@@ -46,7 +47,8 @@
       <div class="product-container">
         <ParagraphCard
         title="Een hybride warmtepomp."
-        subtitle="Eenvoudig verduurzamen. Direct besparen."
+        subtitle="Eenvoudig verduurzamen."
+        subtitle2="Direct besparen."
         paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
         buttonText="Meer info en producten "
         contactLink="/contact"
