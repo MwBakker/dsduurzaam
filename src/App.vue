@@ -24,17 +24,6 @@ export default {
     navBarMobile,
     customFooter,
   },
-  methods: {
-    mounted() {
-      // Event listener voor venstergrootte wijziging
-      window.addEventListener('resize', this.handleResize);
-    },
-    beforeUnmount() {
-      // Verwijder de event listener om geheugenlekken te voorkomen
-      window.removeEventListener('resize', this.handleResize);
-    },
-  },
-
 };
 </script>
 
@@ -112,14 +101,6 @@ button,
 .container {
   padding: 0 20px;
   margin: 0 auto;
-}
-
-#quotes {
-  display: flex;
-  justify-content: center;
-  background-color: #eaeef3;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .product {

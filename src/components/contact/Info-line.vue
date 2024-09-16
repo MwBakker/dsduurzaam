@@ -64,4 +64,12 @@ h1 {
     font-size: 0.9rem;
     font-weight: 100;
 }
+
+@media (max-width: 1024px) {
+   #info-line {
+        width: 80%;
+        margin: 0 auto;
+        padding: initial;
+   }
+}
 </style>

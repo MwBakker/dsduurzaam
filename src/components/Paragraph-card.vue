@@ -202,4 +202,22 @@ const imageUrl = computed(() => {
     transform: translateX(2px);
   }
 }
+
+@media (max-width: 1024px) {
+  #paragaphcard {
+    margin: 12px 0;
+  }
+  
+  #content {
+    width: initial;
+    
+    h1,h2,h3 {
+      margin: 8px 0;
+    }
+    
+    p {
+      margin: 12px auto;
+    }
+  }
+}
 </style>

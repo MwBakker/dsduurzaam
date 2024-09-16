@@ -288,6 +288,15 @@ hr {
         flex-direction: column;
         /* Zet secties onder elkaar op kleinere schermen */
         align-items: center;
+        margin: 0 auto;
+    }
+
+    #logos {
+        flex: 0;
+    }
+
+    #contact-form-container {
+        height: 860px;
     }
 
     .footer-inner {

@@ -174,14 +174,23 @@ textarea {
 
 @media (max-width: 1024px) {
     #contact-form {
+        height: 1200px;
+        bottom: initial;
+        top: 24px;
         width: 96%;
-        height: 1056px;
+        height: 820px;
         flex-direction: column;
+    }
+
+    .contact-form-field {
+        width: 95%;
+        margin: 8px auto;
     }
 
     #info,
     #vue-form {
         width: 100%;
+        margin: 12px 0;
     }
 
     .double-field {

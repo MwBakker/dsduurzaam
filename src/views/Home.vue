@@ -17,8 +17,7 @@
         paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
         buttonText="Meer info en producten " contactLink="/contact" image="home" imageAlt="Home" height="400px" />
     </div>
-    <div class="product-container">
-      <div id="quotes">
+      <div id="quotes" class="product-container">
         <QuoteCard checkmark=1 title="Subsidie in ons beheer"
           description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
         <QuoteCard checkmark=1 title="Snel terugverdiend"
@@ -26,7 +25,6 @@
         <QuoteCard checkmark=1 title="Snelle installatie"
           description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
       </div>
-    </div>
     <div class="product-container">
       <ParagraphCard title="Een hybride warmtepomp." subtitle="Eenvoudig verduurzamen." subtitle2="Direct besparen."
         paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
@@ -38,7 +36,6 @@
 
 
 <script>
-import Banner from '@/components/Banner.vue';
 import ParagraphCardSmall from '@/components/Paragraph-card-small.vue';
 import ParagraphCard from '@/components/Paragraph-card.vue';
 import ParagraphCardRight from '@/components/Paragraph-card-right.vue';
@@ -94,6 +91,13 @@ export default {
   padding: 20px;
 }
 
+#quotes {
+  display: flex;
+  width: 78.8%;
+  justify-content: center;
+  background-color: #eaeef3;
+}
+
 /* Voeg een specifieke achtergrondkleur toe voor ParagraphCards */
 .background-wrapper.paragraph-container .product-container {
   background-color: #eaeef3;
@@ -116,12 +120,6 @@ export default {
     padding: 0 10px;
     /* Zorg voor wat padding aan de zijkanten op kleinere schermen */
   }
-
-  .background-wrapper {
-    padding: 20px 0;
-    /* Voeg padding toe om ruimte aan de boven- en onderkant toe te voegen */
-  }
-
   .product-container {
     flex-direction: column;
     gap: 10px;
@@ -133,6 +131,10 @@ export default {
   .product-container>* {
     width: 100%;
     /* Op mobiele schermen vult elke kaart de volle breedte */
+  }
+
+  #quotes {
+    width: 100%;
   }
 }
 </style>

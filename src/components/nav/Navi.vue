@@ -17,7 +17,7 @@
         <!-- <li @click="routeGo('advice')">Energielabel</li> -->
         <li @click="routeGo('service')">Service</li>
       </ul>
-      <div id="button-tech" @click="scrollToElement">
+      <div id="button-tech" @click="scrollToContactForm">
         <button>Advies aan huis</button>
         <img src="@/assets/tech.png" alt="Technisch icoon" />
       </div>
@@ -30,13 +30,12 @@
 
 <script>
 import upper_content_container from "./Upper-content-container.vue";
-import { ref } from 'vue';
 
 export default {
   name: "navigation-bar",
   data() {
     return {
-      title: 'Inteco B.V.',
+      title: 'Insteco B.V.',
       headerImg: 'home',
       description: 'Uw absolute partner voor een energiezuiniger leven en werken!',
       headerText: {
@@ -67,17 +66,8 @@ export default {
       this.title = array[0];
       this.description = array[1];
       this.headerImg = direction;
-      this.$router.push({
-        name: direction,
-      });
+      this.$router.push({name: direction});
     },
-    scrollToElement() {
-      const elementToScrollTo = document.getElementById('contact-form-container');
-      elementToScrollTo.scrollIntoView({
-        behavior: 'smooth', block:
-          'nearest',
-      });
-    }
   },
 };
 </script>

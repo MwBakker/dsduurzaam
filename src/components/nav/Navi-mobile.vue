@@ -54,20 +54,19 @@ export default {
     data() {
         return {
             showNav: false,
-            title: 'D&S Duurzame Installaties uw complete verduurzamer.',
+            title: 'Insteco B.V.',
             headerImg: 'home',
-            description: 'Uw partner in verduurzaming van A tot Z',
+            description: 'Uw absolute partner voor een energiezuiniger leven en werken!',
             headerText: {
-                'home': ["Uw partner in verduurzaming van A tot Z", ""],
-                'heat-pump': ["Wartmepomp", "Mooi spul"],
-                'airco': ["Airconditioning", "Mooi spul"],
-                'floor-heating': ["Vloerverwarming", "Mooi spul"],
-                'solar': ["Zonnepanelen", "Mooi spul"],
-                'charge-points': ["Laadpalen", "Mooi spul"],
+                'home': ["Insteco B.V.", "Uw asbolute partner voor een energiezuiniger leven en werken!"],
+                'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie."],
+                'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar."],
+                'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer."],
+                'solar': ["Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties."],
+                'charge-points': ["Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading."],
                 'isolation': ["Isolatie", "Warm spul"],
                 'advice': ["Energielabel & advies", "Mooi spul"],
-                'service': ["Service", "Ons gewoon bellen"],
-                'contact': ["Contact", "Durf ons te bellen"],
+                'service': ["Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud."],
             },
         };
     },
@@ -122,7 +121,7 @@ nav {
 }
 
 #button-menu {
-    width: 40%;
+    width: 60%;
     margin: 0 5%;
     display: flex;
     align-items: center;

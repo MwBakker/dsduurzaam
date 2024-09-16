@@ -5,7 +5,7 @@
             <p v-else>Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die
                 het beste
                 bij u past.</p>
-            <button @click="route('/contact')">Maak een afspraak</button>
+            <button @click=scrollToContactForm>Maak een afspraak</button>
         </div>
         <img src=" ../assets/tabs/contact.png" />
     </div>
