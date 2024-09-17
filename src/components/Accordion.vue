@@ -44,6 +44,7 @@ export default {
 .accordion {
   display: flex;
   flex-direction: column; /* Zorgt ervoor dat de items onder elkaar staan */
-  max-width: 50%; /* Maximaliseert de breedte van de accordion tot 50% van de container */
+  max-width: 100%; /* Maximaliseert de breedte van de accordion tot 50% van de container */
+  margin-bottom: 50px;
 }
 </style>

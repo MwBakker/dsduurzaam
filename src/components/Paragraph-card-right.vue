@@ -1,19 +1,26 @@
 <template>
-  <div id="paragraphcard" :style="{ height: height }">
-    <div class="image-wrapper">
+  <div id="paragraphcard-right" :style="{ height: height }">
+    <div class="image-wrapper" @click="route(contactLink)">
       <img :src="imageUrl" :alt="imageAlt" :class="{ zoomed: isHovered }">
     </div>
     <div id="content">
       <h1 class="title">{{ title }}</h1>
       <h2 class="subtitle">{{ subtitle }}</h2>
+      <h2 class="subtitle2">{{ subtitle2 }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
-      <div class="card-info" @mouseover="isHovered = true" @mouseleave="isHovered = false" @click="route(contactLink)">
+      
+      <!-- Conditie om de knop alleen te tonen als showButton waar is -->
+      <div v-if="showButton" class="card-info" 
+           @mouseover="isHovered = true" 
+           @mouseleave="isHovered = false" 
+           @click="route(contactLink)">
         <span class="info-text">{{ buttonText }}</span>
         <i class="fas fa-arrow-right"></i>
       </div>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, computed } from 'vue';
@@ -25,12 +32,17 @@ const isHovered = ref(false);
 const props = defineProps({
   title: String,
   subtitle: String,
+  subtitle2: String,
   paragraphText: String,
   buttonText: String,
   contactLink: String,
   image: String, // e.g., "home"
   imageAlt: String,
   height: String,
+  showButton: {
+    type: Boolean,
+    default: true, // standaard wordt de knop getoond
+  }
 });
 
 const router = useRouter();
@@ -50,39 +62,48 @@ const imageUrl = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-#paragraphcard {
+#paragraphcard-right {
   display: flex;
   width: 100%;
-  height: 350px;
-  border-radius: 12px;
+  height: 350px; /* Zorg voor een consistente hoogte */
   margin: 32px auto;
   position: relative;
   overflow: hidden;
+  margin-bottom: 75px;
 }
 
 #content {
-  width: 60%;
-  height: 100%;
-  padding: 20px;
-  background-color: #006ff7;
+  width: 50%; /* 50% van de breedte om ruimte te geven aan de afbeelding */
+  height: 100%; /* Volledige hoogte van de kaart */
+  position: relative;
+  background-color: #0a63cf00; /* Transparante achtergrond */
   z-index: 2;
+  padding: 20px; /* Voeg padding toe om consistente afstand te krijgen */
+  box-sizing: border-box; /* Zorg ervoor dat padding en border worden meegerekend in de totale breedte/hoogte */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end; /* Uitlijnen aan de rechterkant */
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .title {
-  color: #3eaf3c;
-  font-size: 2rem;
+  color: #2c5484;
+  font-size: 2.5rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .subtitle {
-  color: #fbb536;
+  color: #3eaf3c;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle2 {
+  color: #3eaf3c;
+  font-weight: 600;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
@@ -91,7 +112,7 @@ const imageUrl = computed(() => {
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  margin-right: 0; /* Verwijder extra marges aan de rechterkant */
+  width: 100%; /* Volledige breedte van de beschikbare ruimte */
 }
 
 .card-info {
@@ -101,7 +122,7 @@ const imageUrl = computed(() => {
   color: #2c5484;
   font-size: 1rem;
   font-weight: 600;
-  margin-right: 0; /* Zorg ervoor dat de card-info ook niet verschuift */
+  margin-top: auto; /* Zorg ervoor dat de knop onderaan staat */
 }
 
 .card-info .info-text {
@@ -113,24 +134,59 @@ const imageUrl = computed(() => {
 .card-info i {
   font-size: 1rem;
   font-weight: 600;
+  color: #2c5484;
   transition: transform 0.3s ease;
 }
 
+/* Animatie bij hover voor ParagraphCard */
 .card-info:hover i {
-  animation: bounce 0.5s infinite;
+  animation: bounce 1s ease;
+  animation-iteration-count: 1;
 }
 
-/* Stijlen voor de afbeelding */
+/* Stijlen voor de afbeelding met schuine uitsnijding */
 .image-wrapper {
-  width: 50%;
-  height: 100%;
+  width: 50%; /* 50% van de breedte om ruimte te geven aan de tekst */
+  height: 100%; /* Volledige hoogte van de kaart */
   overflow: hidden;
+  z-index: 1;
+  position: relative;
+  cursor: pointer; /* Cursor verandert bij hover */
+  padding-left: 20px; /* Zorg voor een afstand tussen de afbeelding en de tekst */
+  box-sizing: border-box; /* Padding wordt meegerekend in de breedte/hoogte */
+}
+
+/* Voeg een schuine uitsnijding toe aan de afbeelding in de rechterbovenhoek */
+.image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0; /* Verplaats naar de rechterbovenhoek */
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 0, 80% 0, 100% 35%); /* Schuine uitsnijding in de rechterbovenhoek */
+  background: transparent;
+  z-index: 2;
+}
+
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0; /* Verplaats naar de rechterbovenhoek */
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(100% 0, 80% 0, 100% 35%); /* Schuine uitsnijding in de rechterbovenhoek */
   z-index: 1;
 }
 
 .image-wrapper img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 99%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -138,5 +194,43 @@ const imageUrl = computed(() => {
 /* Voeg de zoomed class toe als isHovered true is */
 .image-wrapper img.zoomed {
   transform: scale(1.1);
+  /* Zoom de afbeelding in */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-15px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@media (max-width: 1024px) {
+  #paragraphcard-right {
+    margin: 12px 0;
+  }
+  
+  #content {
+    width: initial;
+    padding: 10px; /* Zorg voor een kleinere padding op kleinere schermen */
+    
+    h1, h2, h3 {
+      margin: 8px 0;
+    }
+    
+    p {
+      margin: 12px auto;
+    }
+  }
 }
 </style>

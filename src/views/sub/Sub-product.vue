@@ -3,7 +3,10 @@
         <div id="product-description">
         </div>
         <slot></slot>
+        <!--
         <Banner :text=bannerText></Banner>
+        -->
+
     </div>
 </template>
 

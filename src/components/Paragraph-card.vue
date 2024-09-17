@@ -5,7 +5,9 @@
       <h2 class="subtitle">{{ subtitle }}</h2>
       <h2 class="subtitle2">{{ subtitle2 }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
-      <div class="card-info" 
+      
+      <!-- Conditie om de knop alleen te tonen als showButton waar is -->
+      <div v-if="showButton" class="card-info" 
            @mouseover="isHovered = true" 
            @mouseleave="isHovered = false" 
            @click="route(contactLink)">
@@ -18,6 +20,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, computed } from 'vue';
@@ -36,6 +39,10 @@ const props = defineProps({
   image: String, // e.g., "home"
   imageAlt: String,
   height: String,
+  showButton: {
+    type: Boolean,
+    default: true, // standaard wordt de knop getoond
+  }
 });
 
 const router = useRouter();
@@ -62,6 +69,7 @@ const imageUrl = computed(() => {
   margin: 32px auto;
   position: relative;
   overflow: hidden;
+  margin-bottom: 75px;
 }
 
 #content {

@@ -32,9 +32,9 @@ const props = defineProps({
     display: flex;
     width: 100%;
     height: 350px;
-    border-radius: 12px;
     margin: 32px auto;
-    background-color: #2c5484;
+    background-color: #3eaf3c;
+    margin-bottom: 75px;
 }
 
 #content {

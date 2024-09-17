@@ -73,6 +73,8 @@ export default {
   padding: 20px 0;
   /* Voeg padding toe om ruimte aan de boven- en onderkant toe te voegen */
   box-sizing: border-box;
+
+  margin-bottom: 50px;
 }
 
 .product-container {
@@ -96,6 +98,7 @@ export default {
   width: 78.8%;
   justify-content: center;
   background-color: #eaeef3;
+  margin-bottom: 50px;
 }
 
 /* Voeg een specifieke achtergrondkleur toe voor ParagraphCards */
