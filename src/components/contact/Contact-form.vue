@@ -30,8 +30,8 @@
                     rows="5"></textarea>
             </div>
             <div id="privacy-field">
-                <label for="privacy-checkbox" id="privacy-label">Ik heb de privacyverklaring gelezen</label>
                 <input type="checkbox" id="privacy-checkbox" v-model="isPrivacyChecked" />
+                <label for="privacy-checkbox" id="privacy-label">Ik heb de privacyverklaring gelezen</label>
             </div>
             <div v-if="!sent" class="contact-form-field">
                 <input id="button-send" type="submit" value="Verzenden" :disabled="!isPrivacyChecked" />
@@ -143,24 +143,12 @@ textarea {
     /* Zorgt ervoor dat de invoervelden 100% breed zijn */
 }
 
-#button-send {
-    background-color: #2c5484;
-    color: white;
-    border: none;
-}
-
-#button-send:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
 #privacy-field {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 90%;
 
     #privacy-label {
+        margin-left: 16px;
         color: #2c5484;
         font-size: 0.9rem;
         font-weight: 100;
@@ -170,6 +158,17 @@ textarea {
         height: 24px;
         width: 24px;
     }
+}
+
+#button-send {
+    background-color: #2c5484;
+    color: white;
+    border: none;
+}
+
+#button-send:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
 @media (max-width: 1024px) {

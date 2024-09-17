@@ -5,7 +5,9 @@
                 <CustomForm />
             </Transition>
         </div>
-        <CustomMap id="map" />
+        <div id="black-white">
+            <CustomMap id="map" />
+        </div>
         <div id="footer-content">
             <div id="section-aboutus">
                 <h1>Insteco</h1>
@@ -154,6 +156,10 @@ p {
 
 hr {
     margin: 16px 0 0 0;
+}
+
+#black-white {
+    filter: brightness(100%) contrast(100%) saturate(0%) blur(0px) hue-rotate(0deg);
 }
 
 #logos,
