@@ -15,7 +15,7 @@
     <div class="product-container">
       <ParagraphCard title="Een hybride warmtepomp." subtitle="Eenvoudig verduurzamen." subtitle2="Direct besparen."
         paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
-        buttonText="Meer info en producten " contactLink="/contact" image="home" imageAlt="Home" height="400px" />
+        buttonText="Meer info en producten " scrollId="product-reason" image="home" imageAlt="Home" height="400px" />
     </div>
       <div id="quotes" class="product-container">
         <QuoteCard checkmark=1 title="Subsidie in ons beheer"
@@ -25,7 +25,7 @@
         <QuoteCard checkmark=1 title="Snelle installatie"
           description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
       </div>
-    <div class="product-container">
+    <div class="product-container" id="product-reason">
       <ParagraphCard title="Een hybride warmtepomp." subtitle="Eenvoudig verduurzamen." subtitle2="Direct besparen."
         paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
         buttonText="Meer info en producten " contactLink="/contact" image="home" imageAlt="Home" height="400px" />
@@ -38,7 +38,6 @@
 <script>
 import ParagraphCardSmall from '@/components/Paragraph-card-small.vue';
 import ParagraphCard from '@/components/Paragraph-card.vue';
-import ParagraphCardRight from '@/components/Paragraph-card-right.vue';
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
@@ -48,7 +47,6 @@ export default {
     ProductCard,
     QuoteCard,
     ParagraphCard,
-    ParagraphCardRight,
     ParagraphCardSmall,
   }
 };

@@ -5,7 +5,7 @@
             <p v-else>Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die
                 het beste
                 bij u past.</p>
-            <button @click=scrollToContactForm>Maak een afspraak</button>
+            <button @click="scrollTo('contact-form-container')">Maak een afspraak</button>
         </div>
         <img src=" ../assets/tabs/contact.png" />
     </div>
@@ -63,5 +63,27 @@ img {
     width: 40%;
     margin-top: -60px;
     height: 480px;
+}
+
+@media (max-width: 1024px) {
+    #banner {
+        display: block;
+        text-align: center;
+    }
+
+   img,
+   #content {
+    width: 100%;
+   }
+
+   #content {
+    padding: 0 16px;
+   }
+
+   img {
+    height: 200px;
+    border-radius: initial;
+    border-radius: 50% 50% 0 0;
+   }
 }
 </style>

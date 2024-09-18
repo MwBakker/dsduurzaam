@@ -27,7 +27,7 @@
             </div>
         </div>
         <div id="button-invoice">
-            <button @click=scrollToContactForm>Offerte aanvragen</button>
+            <button @click="scrollTo('contact-form-container')">Offerte aanvragen</button>
         </div>
     </div>
 </template>

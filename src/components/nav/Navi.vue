@@ -17,7 +17,7 @@
         <!-- <li @click="routeGo('advice')">Energielabel</li> -->
         <li @click="routeGo('service')">Service</li>
       </ul>
-      <div id="button-tech" @click="scrollToContactForm">
+      <div id="button-tech" @click="scrollTo('contact-form-container')">
         <button>Advies aan huis</button>
         <img src="@/assets/tech.png" alt="Technisch icoon" />
       </div>
@@ -66,7 +66,7 @@ export default {
       this.title = array[0];
       this.description = array[1];
       this.headerImg = direction;
-      this.$router.push({name: direction});
+      this.$router.push({ name: direction });
     },
   },
 };
@@ -130,9 +130,14 @@ nav {
 }
 
 #titles li {
+  cursor: pointer;
   margin-right: 24px;
   /* Verminder de ruimte tussen menu-items */
   cursor: pointer;
+
+  &:hover {
+    color: #fbb536;
+  }
 }
 
 #titles li:first-child {

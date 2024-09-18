@@ -8,8 +8,8 @@ export default {
             // Verwijder de event listener om geheugenlekken te voorkomen
             window.removeEventListener('resize', this.handleResize);
         },
-        scrollToContactForm() {
-            const elementToScrollTo = document.getElementById('contact-form-container');
+        scrollTo(id) {
+            const elementToScrollTo = document.getElementById(id);
             elementToScrollTo.scrollIntoView({
                 behavior: 'smooth', block:
                     'nearest',

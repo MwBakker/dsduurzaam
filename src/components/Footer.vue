@@ -9,15 +9,15 @@
             <CustomMap id="map" />
         </div>
         <div id="footer-content">
-            <div id="section-aboutus">
+            <div class="section-info">
                 <h1>Insteco</h1>
                 <p>Over ons</p>
                 <p>Service</p>
-                <p>Herroepingsformulier</p>
-                <p>Privacyverklaring</p>
-                <p>Disclaimer</p>
+                <p><a href="./statements/heroepingsformulier.pdf">Herroepingsformulier</a></p>
+                <p><a href="./statements/privacyverklaring.pdf">Privacyverklaring</a></p>
+                <p><a href="./statements/disclaimer.pdf">Disclaimer</a></p>
             </div>
-            <div id="section-address">
+            <div class="section-info">
                 <h1>Adres</h1>
                 <p>Hoofdstraat 4</p>
                 <p>9561 JA</p>
@@ -25,7 +25,7 @@
                 <p>088-7155733</p>
                 <p>info@duureco.nl</p>
             </div>
-            <div id="services">
+            <div id="services" class="section-info">
                 <h1>Diensten</h1>
                 <p @click="route('heat-pump')">Waterpomp</p>
                 <p @click="route('airco')">Airco</p>
@@ -33,22 +33,14 @@
                 <p @click="route('solar')">Zonnepanelen</p>
                 <p @click="route('charge-point')">Laadpalen</p>
             </div>
-
             <div id="certification-logos">
                 <h1>Gegarandeerde kwaliteit</h1>
                 <div id="certification-logos-content">
-                    <a href="#" class="cert-logo-container">
-                        <img class='cert-logo' src='../assets/icon/installq.png' alt="Certificering 1" />
-                    </a>
-                    <a href="#" class="cert-logo-container">
-                        <img class='cert-logo' src='../assets/icon/technieknederland1.png' alt="Certificering 2" />
-                    </a>
-                    <a href="#" class="cert-logo-container">
-                        <img class='cert-logo' src='../assets/icon/vca.png' alt="Certificering 3" />
-                    </a>
-                    <a href="#" class="cert-logo-container">
-                        <img class='cert-logo' src='../assets/icon/stek.png' alt="Certificering 4" />
-                    </a>
+                    <a href="#"><img class='cert-logo' src='../assets/icon/installq.png' alt="Certificering 1" /></a>
+                    <a href="#"><img class='cert-logo' src='../assets/icon/technieknederland1.png'
+                            alt="Certificering 2" /></a>
+                    <a href="#"><img class='cert-logo' src='../assets/icon/vca.png' alt="Certificering 3" /></a>
+                    <a href="#"><img class='cert-logo' src='../assets/icon/stek.png' alt="Certificering 4" /></a>
                 </div>
             </div>
             <div id='logos'>
@@ -117,11 +109,9 @@ import CustomMap from '../components/Map.vue';
     /* Centreer de footer-content binnen de pagina */
 }
 
-#section-address,
-#services,
+.section-info,
 #logos,
-#certification-logos,
-#section-aboutus {
+#certification-logos {
     flex: 1 1 200px;
     /* Flex-grow en flex-shrink instellen met een basis breedte van 200px */
     margin: 0 10px;
@@ -152,10 +142,6 @@ p {
     p {
         cursor: pointer;
     }
-}
-
-hr {
-    margin: 16px 0 0 0;
 }
 
 #black-white {
@@ -195,26 +181,11 @@ hr {
     /* Verlaag de marge onder de h1 naar 10px in de #certification-logos sectie */
 }
 
-.cert-logo-container,
-.logo-container {
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    /* Zorg ervoor dat de container de volledige breedte benut */
-    height: 75px;
-    /* Verklein de hoogte met 25% van 100px */
-    box-sizing: border-box;
-    /* Zorg ervoor dat padding wordt meegerekend in de breedte en hoogte */
-    overflow: hidden;
-    /* Zorg ervoor dat geen delen van de afbeelding buiten de container zichtbaar zijn */
-}
-
 .cert-logo,
 .logo {
     width: 60%;
     /* Verklein de breedte met 25% van 80% */
-    height: 60%;
+    height: 74px;
     /* Verklein de hoogte met 25% van 80% */
     object-fit: contain;
     /* Zorg ervoor dat de afbeelding wordt geschaald zodat deze binnen de container past zonder afgesneden te worden */
@@ -297,38 +268,34 @@ hr {
         margin: 0 auto;
     }
 
-    #logos {
-        flex: 0;
-    }
-
     #contact-form-container {
-        height: 860px;
+        height: 836px;
     }
 
-    .footer-inner {
-        width: 100%;
-        /* Zorg ervoor dat de inner container 100% breed is op kleinere schermen */
+    .section-info,
+    #logos {
+        align-items: center;
+        display: block;
+        text-align: center;
     }
 
-    #section-light {
-        padding: 15px 0;
-        /* Voeg padding toe voor consistentie */
-    }
+    #logos-content {
+        display: block;
 
-    #section-light-content {
-        flex-direction: column;
-
-        .info {
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-            /* Centreer de items binnen de info sectie */
+        .logo {
+            margin: 0 12px;
         }
+    }
 
-        p {
-            font-size: 1.1rem;
-            margin: 24px 0;
-        }
+    #certification-logos {
+        text-align: center;
+        display: block;
+    }
+
+    .section-info,
+    #logos,
+    #certification-logos {
+        flex: 0;
     }
 }
 </style>

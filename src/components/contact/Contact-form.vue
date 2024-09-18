@@ -1,5 +1,5 @@
 <template>
-    <div id="contact-form" ref="contactForm">
+    <div id="contact-form">
         <div id="info">
             <infoLine icon="phone" title="Bel ons" text="0599 - 585 010" />
             <hr>
@@ -129,8 +129,9 @@ export default {
     width: 48%;
 }
 
-.contact-form-field input,
-.contact-form-field textarea {
+input,
+textarea,
+label {
     padding: 6px;
     border: solid 2px #6b76858f;
     background: none;
@@ -141,6 +142,10 @@ input,
 textarea {
     width: 100%;
     /* Zorgt ervoor dat de invoervelden 100% breed zijn */
+}
+
+label {
+    border: initial;
 }
 
 #privacy-field {
@@ -173,11 +178,10 @@ textarea {
 
 @media (max-width: 1024px) {
     #contact-form {
-        height: 1200px;
         bottom: initial;
+        height: 786px;
         top: 24px;
         width: 96%;
-        height: 820px;
         flex-direction: column;
     }
 
@@ -198,6 +202,10 @@ textarea {
 
     .input-wrapper {
         width: 100%;
+    }
+
+    #privacy-field {
+        justify-content: center;
     }
 }
 </style>

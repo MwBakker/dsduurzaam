@@ -18,7 +18,10 @@
             <div class="right-section">
               <h2 class="section-title">Voor- en nadelen</h2>
               <ul>
-                <li v-for="(voordeel, index) in voordelen" :key="index">{{ voordeel }}</li>
+                <li v-for="(voordeel, index) in voordelen" :key="index">
+                  <img src="../assets/icon/check.png">
+                  {{ voordeel }}
+                </li>
               </ul>
             </div>
           </div>
@@ -84,37 +87,46 @@ export default {
 <style scoped>
 .accordion-item {
   margin-bottom: 15px;
-  background-color: #eaeef3; /* Standaard achtergrondkleur voor gesloten toestand */
-  border: 1px solid rgba(40, 76, 120, 0.3); /* Border met opacity 0.3 */
+  background-color: #eaeef3;
+  /* Standaard achtergrondkleur voor gesloten toestand */
+  border: 1px solid rgba(40, 76, 120, 0.3);
+  /* Border met opacity 0.3 */
   overflow: hidden;
-  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transition voor border-color */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* Transition voor border-color */
 }
 
 /* Als het accordion-item geopend is, stel de borderkleur in op transparant */
 .accordion-item:not(.closed) {
-  border-color: transparent; /* Border wordt onzichtbaar voor geopende toestand */
+  border-color: transparent;
+  /* Border wordt onzichtbaar voor geopende toestand */
 }
 
 /* Achtergrondkleur bij hover voor gesloten accordion-items */
 .accordion-item.closed:hover {
-  background-color: #eaeef3; /* Achtergrondkleur bij hover voor gesloten toestand */
+  background-color: #eaeef3;
+  /* Achtergrondkleur bij hover voor gesloten toestand */
 }
 
 /* Als het accordion-item gesloten is */
 .accordion-item.closed {
-  background-color: #fff; /* Achtergrondkleur wit voor gesloten toestand */
+  background-color: #fff;
+  /* Achtergrondkleur wit voor gesloten toestand */
 }
 
 /* Tijdens de animatie, pas border-color aan */
-.accordion-enter-active, .accordion-leave-active {
+.accordion-enter-active,
+.accordion-leave-active {
   transition: max-height 0.5s ease, opacity 0.5s ease, border-color 0.5s ease;
 }
 
 /* Bij binnenkomst en vertrek, pas border-color aan */
-.accordion-enter, .accordion-leave-to {
+.accordion-enter,
+.accordion-leave-to {
   max-height: 0;
   opacity: 0;
-  border-color: transparent; /* Zorg ervoor dat de border niet zichtbaar is tijdens de animatie */
+  border-color: transparent;
+  /* Zorg ervoor dat de border niet zichtbaar is tijdens de animatie */
 }
 
 .accordion-header {
@@ -128,27 +140,34 @@ export default {
 
 /* Als het accordion-item gesloten is, pas stijl toe op de header */
 .accordion-item.closed .accordion-header {
-  opacity: 0.3; /* Zorg ervoor dat de opacity goed wordt toegepast */
+  opacity: 0.3;
+  /* Zorg ervoor dat de opacity goed wordt toegepast */
 }
 
 .accordion-header h3 {
   margin: 0;
-  color: #284c78; /* Kleur voor geopende toestand */
+  color: #284c78;
+  /* Kleur voor geopende toestand */
   font-size: 2rem;
   font-weight: 600;
-  transition: color 0.3s ease, opacity 0.5s ease; /* Voeg overgang toe voor kleur en opacity */
+  transition: color 0.3s ease, opacity 0.5s ease;
+  /* Voeg overgang toe voor kleur en opacity */
 }
 
 .accordion-icon {
   font-size: 2.5rem;
-  color: #284c78; /* Kleur voor geopende toestand */
-  transition: color 0.3s ease, opacity 0.5s ease; /* Voeg overgang toe voor kleur en opacity */
+  color: #284c78;
+  /* Kleur voor geopende toestand */
+  transition: color 0.3s ease, opacity 0.5s ease;
+  /* Voeg overgang toe voor kleur en opacity */
 }
 
 /* Icoon kleur zwart en opacity 0.5 als de header gesloten is */
 .accordion-item.closed .accordion-header .accordion-icon {
-  color: #284c78; /* Kleur zwart voor gesloten toestand */
-  opacity: 0.5; /* Zorg ervoor dat de opacity correct is */
+  color: #284c78;
+  /* Kleur zwart voor gesloten toestand */
+  opacity: 0.5;
+  /* Zorg ervoor dat de opacity correct is */
 }
 
 .accordion-content-wrapper {
@@ -170,7 +189,8 @@ export default {
   min-height: 150px;
 }
 
-.left-section, .right-section {
+.left-section,
+.right-section {
   width: 50%;
 }
 
@@ -195,7 +215,8 @@ export default {
   font-size: 1.25rem;
   color: #284c78;
   font-weight: 600;
-  margin: 0 0 10px 0; /* Ruimte onder de <h2> */
+  margin: 0 0 10px 0;
+  /* Ruimte onder de <h2> */
 }
 
 /* Styling voor de paragrafen */
@@ -215,7 +236,47 @@ export default {
   color: #2c5484;
   font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: 8px; /* Ruimte tussen de lijstitems */
+  margin-bottom: 8px;
+  /* Ruimte tussen de lijstitems */
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+
+  }
+}
+
+@media (max-width: 1024px) {
+  #accordion-content-wrapper {
+    max-height: initial;
+  }
+  
+  .content-sections {
+    display: block;
+    text-align: center;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .right-section {
+    margin-top: 36px
+  }
+
+  li {
+    display: block;
+  }
 }
 </style>
-

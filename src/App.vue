@@ -37,27 +37,24 @@ export default {
   font-size: 0.9rem;
 }
 
-p {
+p,
+a {
   font-family: 'Roboto';
   color: rgb(107, 107, 107);
 }
 
 a {
   text-decoration: none;
+  font-weight: 100;
 }
 
 li {
-  cursor: pointer;
   font-family: 'Roboto';
   font-weight: 0;
   font-size: 0.9em;
   padding-bottom: 4px;
   padding: 10px;
   color: #2c5484;
-
-  &:hover {
-    color: #fbb536;
-  }
 }
 
 h1,
