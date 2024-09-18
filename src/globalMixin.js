@@ -12,7 +12,7 @@ export default {
             const elementToScrollTo = document.getElementById(id);
             elementToScrollTo.scrollIntoView({
                 behavior: 'smooth', block:
-                    'nearest',
+                    'center',
             });
         }
     },

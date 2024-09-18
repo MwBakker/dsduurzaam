@@ -3,8 +3,8 @@
     <div class="sub-product-content">
       <ParagraphCard title="Wat is een warmtepomp?" subtitle="Eenvoudig verduurzamen." subtitle2="Direct besparen."
         paragraphText="Een warmtepomp is een duurzame en slimme manier om je woning te verwarmen en koelen. In plaats van gas gebruikt de warmtepomp warmte uit de buitenlucht, grond of het grondwater, wat je energiekosten verlaagt en je CO2-uitstoot vermindert. Zelfs op koude dagen werkt een warmtepomp efficiënt en zorgt het voor een comfortabel binnenklimaat. In combinatie met duurzame installaties zoals vloerverwarming en zonnepanelen wordt het rendement nog hoger, waardoor je energieverbruik verder daalt. Stap over op een warmtepomp en maak je huis klaar voor een energiezuinige toekomst!"
-        buttonText="Waarom nu overstappen?" contactLink="/contact" image="home" imageAlt="Home" height="400px"
-        :showButton="true" />
+        buttonText="Waarom nu overstappen?" scrollId="paragraphcard-right" contactLink="/contact" image="home"
+        imageAlt="Home" height="400px" :showButton="true" />
 
       <h1 class="accordion-title">Welke soorten warmtepompen zijn er?</h1>
       <div class="accordion-container">
@@ -70,6 +70,7 @@ import QuoteCard from '@/components/Quote-card.vue';
 import Accordion from "@/components/Accordion.vue";
 import AccordionItem from '@/components/Accordion-item.vue';
 import ParagraphCard from '@/components/Paragraph-card.vue';
+import ParagraphCardRight from '@/components/Paragraph-card-right.vue';
 import Banner from '@/components/Banner.vue';
 
 export default {
@@ -81,6 +82,7 @@ export default {
     Accordion,
     AccordionItem,
     ParagraphCard,
+    ParagraphCardRight,
     Banner,
   }, data() {
     return {
