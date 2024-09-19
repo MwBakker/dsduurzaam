@@ -35,11 +35,11 @@ export default {
   name: "navigation-bar",
   data() {
     return {
-      title: 'Insteco B.V.',
+      title: 'Ontdek wat bij je huis past',
       headerImg: 'home',
-      description: 'Uw absolute partner voor een energiezuiniger leven en werken!',
+      description: 'Heb je een koophuis en overweeg je een warmtepomp? Laat je gegevens achter en kom in contact met één van onze experts. Zij helpen je met een advies op maat en een offerte. Je ontvangt tot € 500,-- korting op je warmtepomp. ',
       headerText: {
-        'home': ["Insteco B.V.", "Uw asbolute partner voor een energiezuiniger leven en werken!"],
+        'home': ["Ontdek wat bij je huis past", "Uw asbolute partner voor een energiezuiniger leven en werken!"],
         'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie."],
         'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar."],
         'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer."],
@@ -73,13 +73,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
-  cursor: pointer;
-  visibility: hidden;
-  top: 32px;
-  right: 56px;
-}
-
 #nav-container {
   width: 100%;
   z-index: 999;
@@ -90,7 +83,7 @@ a {
 
 #label-main {
   height: 36px;
-  background-color: #2c5484;
+  background-color: #222222;
 
   p {
     text-align: center;
@@ -107,47 +100,40 @@ nav {
   justify-content: space-between;
   max-width: 1548px;
   margin: 0 auto;
-  /* Zorgt dat de navigatiebalk in het midden staat */
   padding: 0 20px;
-  /* Voeg padding toe om logo van de zijkant weg te houden */
   padding-top: 20px;
   padding-bottom: 10px;
 }
-
 
 #titles {
   display: flex;
   align-items: center;
   margin: 0;
-  /* Verwijder eventuele marges die het uitlijnen kunnen beïnvloeden */
   margin-left: 48px;
   padding: 0;
-  /* Verwijder eventuele padding die het uitlijnen kan beïnvloeden */
   list-style: none;
-  /* Verwijder standaard lijst-stijlen */
   flex-grow: 1;
-  /* Laat de ul uitbreiden om de beschikbare ruimte te vullen */
 }
 
 #titles li {
   cursor: pointer;
-  margin-right: 24px;
-  /* Verminder de ruimte tussen menu-items */
-  cursor: pointer;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: #222222; /* Standaard kleur #222222 */
 
   &:hover {
-    color: #fbb536;
+    color: #2071b5; /* Verander naar #2071b5 bij hover */
   }
 }
 
 #titles li:first-child {
   margin-left: 20px;
-  /* Voeg extra marge toe aan het eerste item */
 }
 
 .branding {
   cursor: pointer;
-
   display: flex;
   align-items: center;
 
@@ -158,7 +144,7 @@ nav {
 
 ul,
 .link {
-  color: #2c5484;
+  color: #222222;
   list-style: none;
   text-decoration: none;
 }
@@ -186,9 +172,6 @@ ul,
 }
 
 #button-tech:hover {
-  -webkit-animation: pulse 1s infinite;
-  -moz-animation: pulse 1s infinite;
-  -o-animation: pulse 1s infinite;
   animation: pulse 1s infinite;
 }
 
@@ -196,31 +179,28 @@ ul,
   0% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(62, 175, 60, 0.4);
-    /* Groene schaduw bij start */
   }
 
   50% {
     transform: scale(1.03);
-    /* Subtiele schaalverandering */
     box-shadow: 0 0 0 6px rgba(62, 175, 60, 0.25);
-    /* Grotere groene schaduw met meer doorzichtigheid */
   }
 
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(62, 175, 60, 0);
-    /* Terug naar origineel zonder schaduw */
   }
 }
 
 h1,
 .light {
   margin-bottom: 28px;
-  color: #2c5484;
+  color: #222222;
   font-weight: 600;
 }
 
 .light {
   color: #a3b9d5;
 }
+
 </style>

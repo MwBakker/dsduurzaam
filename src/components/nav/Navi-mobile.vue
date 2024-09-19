@@ -101,7 +101,7 @@ a {
 
 #label-main {
     height: 36px;
-    background-color: #2c5484;
+    background-color: #222222;
 
     p {
         text-align: center;
@@ -190,7 +190,7 @@ nav {
 
 ul,
 .link {
-    color: #2c5484;
+    color: #222222;
     list-style: none;
     text-decoration: none;
 }

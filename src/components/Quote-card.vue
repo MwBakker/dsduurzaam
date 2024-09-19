@@ -42,7 +42,7 @@ const imageUrl = computed(
 
     p {
         margin: auto 0;
-        color: #2c5484;
+        color: #222222;
         // color: #2c54849c;
         font-size: 0.9rem;
         font-weight: 100;

@@ -83,7 +83,7 @@ const imageUrl = computed(() => {
 }
 
 .title {
-  color: #2c5484;
+  color: #222222;
   font-size: 2.5rem;
   margin-bottom: 10px;
   font-weight: 600;
@@ -104,7 +104,7 @@ const imageUrl = computed(() => {
 }
 
 .paragraph {
-  color: #2c5484;
+  color: #222222;
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -116,7 +116,7 @@ const imageUrl = computed(() => {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #2c5484;
+  color: #222222;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -130,7 +130,7 @@ const imageUrl = computed(() => {
 .card-info i {
   font-size: 1rem;
   font-weight: 600;
-  color: #2c5484;
+  color: #222222;
   transition: transform 0.3s ease;
 }
 

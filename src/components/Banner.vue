@@ -53,13 +53,12 @@ const props = defineProps({
         background-color: #ffffff;
         padding: 0;
         height: 50px;
-        color: #2c5484;
+        color: #222222;
     }
 }
 
 img {
     background-image: url('../assets/tabs/contact.png');
-    border-radius: 240px 0 0 240px;
     width: 40%;
     margin-top: -60px;
     height: 480px;

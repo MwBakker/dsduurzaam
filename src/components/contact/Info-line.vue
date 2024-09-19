@@ -45,14 +45,14 @@ img {
 h1 {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #2c5484;
+    color: #222222;
     margin: 0; /* Verwijder eventuele standaard marges */
 }
 
 .primary-text {
     margin: 0; /* Verwijder eventuele standaard marges */
     padding-top: 15px; /* Voeg wat ruimte toe boven de paragraaf om deze naar beneden te verplaatsen */
-    color: #2c5484;
+    color: #222222;
     font-size: 0.9rem;
     font-weight: 100;
 }
@@ -60,7 +60,7 @@ h1 {
 .secondary-text {
     margin: 0; /* Verwijder eventuele standaard marges */
     padding-top: 0; /* Geen extra ruimte boven de tweede paragraaf */
-    color: #2c5484;
+    color: #222222;
     font-size: 0.9rem;
     font-weight: 100;
 }

@@ -55,15 +55,13 @@
         </div>
     </div>
     <div id="section-light">
+        <img id='brand' src='../assets/logo.png' />
         <div id="section-light-content">
             <div class="info">
                 <p>KVK 012345678910</p>
                 <p>BTW 012345678910</p>
             </div>
         </div>
-    </div>
-    <div id="section-dark">
-        <img id='brand' src='../assets/logo.png' />
     </div>
 </template>
 
@@ -78,13 +76,13 @@ import CustomMap from '../components/Map.vue';
 #footer {
     width: 100%;
     position: relative;
-    color: #2c5484;
+    color: #222222;
 }
 
 #contact-form-container {
     position: relative;
     width: 100%;
-    background-color: #2c5484;
+    background-color: #edf1f6;
     height: 760px;
 }
 
@@ -134,7 +132,7 @@ h1 {
 
 p {
     font-size: 0.9rem;
-    font-weight: 100;
+    font-weight: 600;
     margin: 6px 0;
 }
 
@@ -192,7 +190,7 @@ p {
 }
 
 #section-light {
-    background-color: #eaeef3;
+    background-color: #edf1f6;
     padding: 15px 0;
     /* Voeg wat padding toe boven en onder de inhoud */
     width: 100%;
@@ -225,15 +223,15 @@ p {
 
 #brand {
     position: absolute;
-    height: 56px;
+    height: 50px;
     bottom: 2px;
-    left: 16px;
+    left: 25px;
 }
 
 #section-dark {
     position: relative;
     height: 16px;
-    background-color: #2c5484;
+    background-color: #222222;
     width: 100%;
     /* Zorg ervoor dat de section-dark de volledige breedte benut */
 }
@@ -297,5 +295,15 @@ p {
     #certification-logos {
         flex: 0;
     }
+}
+
+a {
+  color: #222222; /* Standaard tekstkleur van de links */
+  text-decoration: none; /* Verwijder de standaard onderstreping van links */
+}
+
+a:hover {
+  color: #2071b5; /* Kleur bij hover */
+  text-decoration: none; /* Verwijder de onderstreping bij hover */
 }
 </style>
