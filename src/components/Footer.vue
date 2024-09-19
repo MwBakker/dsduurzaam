@@ -93,7 +93,6 @@ import CustomMap from '../components/Map.vue';
 
 #footer-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     /* Centreer de footer-inner container */
     padding: 0 10px;
@@ -135,6 +134,16 @@ p {
     font-weight: 600;
     margin: 6px 0;
 }
+
+a {
+    color: #222222;
+    text-decoration: none;
+
+    &:hover {
+        color: #2071b5;
+    }
+}
+
 
 #services {
     p {
@@ -295,15 +304,5 @@ p {
     #certification-logos {
         flex: 0;
     }
-}
-
-a {
-  color: #222222; /* Standaard tekstkleur van de links */
-  text-decoration: none; /* Verwijder de standaard onderstreping van links */
-}
-
-a:hover {
-  color: #2071b5; /* Kleur bij hover */
-  text-decoration: none; /* Verwijder de onderstreping bij hover */
 }
 </style>

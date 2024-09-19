@@ -5,7 +5,6 @@
       <h2 class="subtitle">{{ subtitle }}</h2>
       <h2 class="subtitle2">{{ subtitle2 }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
-
       <!-- Conditie om de knop alleen te tonen als showButton waar is -->
       <div v-if="showButton" class="card-info" @mouseover="isHovered = true" @mouseleave="isHovered = false"
         @click="scrollTo(scrollId)">

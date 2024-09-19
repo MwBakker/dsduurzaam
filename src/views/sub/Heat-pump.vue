@@ -67,10 +67,10 @@
 import SubProduct from './Sub-product.vue';
 import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
-import Accordion from "@/components/Accordion.vue";
-import AccordionItem from '@/components/Accordion-item.vue';
-import ParagraphCard from '@/components/Paragraph-card.vue';
-import ParagraphCardRight from '@/components/Paragraph-card-right.vue';
+import Accordion from "@/components/accordion/Accordion.vue";
+import AccordionItem from '@/components/accordion/Accordion-item.vue';
+import ParagraphCard from '@/components/paragraph-card/Paragraph-card.vue';
+import ParagraphCardRight from '@/components/paragraph-card/Paragraph-card-right.vue';
 import Banner from '@/components/Banner.vue';
 
 export default {

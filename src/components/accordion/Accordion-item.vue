@@ -3,37 +3,13 @@
     <div class="accordion-header" @click="toggle">
       <h3 :class="{ 'open': isOpen }">{{ title }}</h3>
       <span class="accordion-icon">
-        <svg
-          v-if="isOpen"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          />
+        <svg v-if="isOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
         </svg>
-        <svg
-          v-else
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 15l7-7 7 7"
-          />
+        <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </span>
     </div>
@@ -104,7 +80,8 @@ export default {
   max-width: 1548px;
   margin: 0 auto;
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.082); /* Alleen een border onderaan */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+  /* Alleen een border onderaan */
   overflow: hidden;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -128,8 +105,10 @@ export default {
 }
 
 .accordion-header:hover h3 {
-  font-weight: 700; /* Zelfde font-weight als wanneer geopend */
-  color: #2071b5; /* Verander kleur naar blauw bij hover */
+  font-weight: 700;
+  /* Zelfde font-weight als wanneer geopend */
+  color: #2071b5;
+  /* Verander kleur naar blauw bij hover */
 }
 
 .accordion-icon svg {
@@ -146,13 +125,15 @@ export default {
 }
 
 .accordion-content {
-  padding: 20px 30px; /* Padding blijft, zodat het niet geanimeerd wordt */
+  padding: 20px 30px;
+  /* Padding blijft, zodat het niet geanimeerd wordt */
   opacity: 1;
   transition: opacity 0.5s ease;
 }
 
 .left-section {
-  width: 100%; /* De left-section beslaat nu de volledige breedte */
+  width: 100%;
+  /* De left-section beslaat nu de volledige breedte */
 }
 
 .paragraph-text {
@@ -162,50 +143,60 @@ export default {
 }
 
 .accordion-header:hover .accordion-icon svg {
-  stroke: #2071b5; /* Verander de kleur van het pijlicoon naar blauw bij hover */
+  stroke: #2071b5;
+  /* Verander de kleur van het pijlicoon naar blauw bij hover */
 }
 
 /* Responsieve Media Queries */
 @media (max-width: 1024px) {
   .accordion-item {
-    width: 100%; /* Versmallen naar 80% breedte op kleinere schermen */
+    width: 100%;
+    /* Versmallen naar 80% breedte op kleinere schermen */
   }
 
   .accordion-header h3 {
-    font-size: 2rem; /* Verklein de tekstgrootte */
+    font-size: 2rem;
+    /* Verklein de tekstgrootte */
   }
 
   .accordion-content {
-    padding: 15px 20px; /* Verminder padding op kleinere schermen */
+    padding: 15px 20px;
+    /* Verminder padding op kleinere schermen */
   }
 
   .accordion-icon svg {
     width: 20px;
-    height: 20px; /* Maak de iconen iets kleiner */
+    height: 20px;
+    /* Maak de iconen iets kleiner */
   }
 }
 
 @media (max-width: 768px) {
   .accordion-item {
-    width: 100%; /* Gebruik volledige breedte op nog kleinere schermen */
+    width: 100%;
+    /* Gebruik volledige breedte op nog kleinere schermen */
   }
 
   .accordion-header h3 {
-    font-size: 1.2rem; /* Nog iets kleinere tekst voor compactere schermen */
+    font-size: 1.2rem;
+    /* Nog iets kleinere tekst voor compactere schermen */
   }
 
   .accordion-content {
-    padding: 10px 15px; /* Verder verlagen van de padding */
+    padding: 10px 15px;
+    /* Verder verlagen van de padding */
   }
 }
 
 @media (max-width: 480px) {
   .accordion-header {
-    padding: 10px 15px; /* Compactere padding voor kleinere schermen */
+    padding: 10px 15px;
+    /* Compactere padding voor kleinere schermen */
   }
 
   .accordion-header h3 {
-    font-size: 1.1rem; /* Pas de grootte verder aan voor mobiel */
+    font-size: 1.1rem;
+    /* Pas de grootte verder aan voor mobiel */
   }
 
   .accordion-content {
@@ -215,8 +206,8 @@ export default {
 
   .accordion-icon svg {
     width: 18px;
-    height: 18px; /* Kleiner icoon voor kleine schermen */
+    height: 18px;
+    /* Kleiner icoon voor kleine schermen */
   }
 }
-
 </style>

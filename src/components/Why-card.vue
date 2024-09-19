@@ -1,7 +1,7 @@
 <template>
   <div class="why-card">
     <div class="why-card-icon">
-      <img :src="icon" alt="icon" />
+      <img :src="'src/assets/icon/' + icon + '.png'" alt="icon" />
     </div>
     <div class="why-card-content">
       <h3>{{ title }}</h3>

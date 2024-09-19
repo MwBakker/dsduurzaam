@@ -55,22 +55,22 @@
       <WhyCard
         title="Duurzaam totaaladvies"
         description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-        icon="@/assets/icons/sustainable.svg"
+        icon="sustainable"
       />
       <WhyCard
         title="Gecertificeerd"
         description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
-        icon="@/assets/icons/certified.svg"
+        icon="certified"
       />
       <WhyCard
         title="Hoge kwaliteit en garantie"
         description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
-        icon="@/assets/icons/sustainable.svg"
+        icon="quality"
       />
       <WhyCard
         title="Direct leverbaar"
         description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-        icon="@/assets/icons/sustainable.svg"
+        icon="delivery"
       />
     </div>
   </div>
@@ -95,13 +95,13 @@
 </template>
 
 <script>
-import ParagraphCardSmall from '@/components/Paragraph-card-small.vue';
-import ParagraphCard from '@/components/Paragraph-card.vue';
+import ParagraphCardSmall from '@/components/paragraph-card/Paragraph-card-small.vue';
+import ParagraphCard from '@/components/paragraph-card/Paragraph-card.vue';
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 import ContentCardOne from '@/components/Content-card-one.vue';
-import Accordion from '@/components/Accordion.vue';
-import AccordionItem from '@/components/Accordion-item.vue';
+import Accordion from '@/components/accordion/Accordion.vue';
+import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/Why-card.vue';
 
 export default {
