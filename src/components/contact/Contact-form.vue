@@ -154,7 +154,7 @@ label {
 
     #privacy-label {
         margin-left: 16px;
-        color: #2c5484;
+        color: #222222;
         font-size: 0.9rem;
         font-weight: 100;
     }
@@ -166,7 +166,7 @@ label {
 }
 
 #button-send {
-    background-color: #2c5484;
+    background-color: #222222;
     color: white;
     border: none;
 }

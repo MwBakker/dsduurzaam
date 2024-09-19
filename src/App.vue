@@ -32,41 +32,47 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-family: 'Exo 2', sans-serif !important;
+  word-spacing: 0px !important;
+  /*font-weight: 600;*/
 }
 
-p,
-a {
-  font-family: 'Roboto';
-  color: rgb(107, 107, 107);
+p {
+  font-family: 'Exo 2', sans-serif;
+  color: #222222;
+  word-spacing: 0px !important;
 }
 
 a {
   text-decoration: none;
-  font-weight: 100;
 }
 
 li {
-  font-family: 'Roboto';
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  word-spacing: 0px !important;
   font-weight: 0;
   font-size: 0.9em;
   padding-bottom: 4px;
   padding: 10px;
-  color: #2c5484;
+  color: #222222;
+
+  &:hover {
+    color: #fbb536;
+  }
 }
 
 h1,
 .light,
 h2 {
-  font-family: 'Roboto';
+  font-family: 'Alexandria', sans-serif;
   font-size: 38px;
   font-weight: 550;
+  word-spacing: 0px !important;
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 button,
@@ -144,7 +150,7 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2c5484;
+  background: #222222;
 }
 
 .slide-fade-up-enter-active,
@@ -201,7 +207,6 @@ hr {
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
 }

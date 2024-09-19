@@ -97,7 +97,7 @@ export default {
 .accordion-title {
   text-align: center;
   /* Centreert de H1 */
-  color: #284c78;
+  color: #222222;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 40px;

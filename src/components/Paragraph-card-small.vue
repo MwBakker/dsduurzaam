@@ -53,7 +53,6 @@ const imageUrl = computed(() => {
   display: flex;
   width: 50%; /* Kaart breedte is 50% van de container */
   height: 350px; /* Pas de hoogte aan naar wens */
-  border-radius: 12px;
   margin: 32px auto; /* Centreer de kaart horizontaal */
   position: relative;
   overflow: hidden;
@@ -90,7 +89,7 @@ const imageUrl = computed(() => {
 }
 
 .paragraph {
-  color: #2c5484;
+  color: #222222;
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -101,7 +100,7 @@ const imageUrl = computed(() => {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #2c5484;
+  color: #222222;
   font-size: 1rem;  /* Pas font-size aan voor de gehele card-info */
   font-weight: 600; /* Pas font-weight aan voor de gehele card-info */
 }

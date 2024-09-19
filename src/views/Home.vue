@@ -1,45 +1,108 @@
+
 <template>
   <div id="home">
     <div class="background-wrapper">
-      <div class="product-container">
-        <ProductCard route='heat-pump' title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric" />
-        <ProductCard route='airco' title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen" />
-        <ProductCard route='floor-heating' title="Vloerverwarming" image="floor-heating"
-          subtitle="Nog duurzamer in combinatie met een warmtepomp" />
-        <ProductCard route='solar' title="Zonnepanelen" image="solar"
-          subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" />
-        <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
-          subtitle="Je auto opladen met eigen opgewerkte energie" />
+      <div class="product-cards-container">
+        <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric." buttonText="Lees meer" />
+        <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen" buttonText="Ontdek meer" />
+        <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating" subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Bekijk opties" />
+        <ProductCard route="solar" title="Zonnepanelen" image="solar" subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Meer informatie" />
+        <ProductCard route="charge-points" title="Laadpaal" image="charge-points" subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
       </div>
     </div>
-    <div class="product-container">
-      <ParagraphCard title="Een hybride warmtepomp." subtitle="Eenvoudig verduurzamen." subtitle2="Direct besparen."
-        paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
-        buttonText="Meer info en producten " scrollId="product-reason" image="home" imageAlt="Home" height="400px" />
+
+    <!-- Nieuwe container met content (zoals afbeelding) -->
+    <ContentCardOne
+      title="Daarom een warmtepomp via Insteco"
+      :listItems="[ 
+        'Je krijgt gratis advies en een offerte op maat',
+        'Installatie door vakbekwame en volledig gecertificeerde experts', 
+        'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt', 
+        'Wij handelen het gehele subsidietraject voor je af' 
+      ]"
+      buttonText="Vraag adviesgesprek aan"
+      imageSrc="charge-points.png"
+      linkUrl="heat-pump"
+      linkText="Lees meer"
+    />
+
+    <div class="background-wrapper-white">
+      <Accordion title="Alles wat je moet weten">
+          <template v-slot="{ currentOpen, setOpen, refs }">
+            <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Hybride warmtepomp"
+              paragraphText="Een hybride warmtepomp combineert een warmtepomp met een bestaande verwarmingsketel op gas. Dit systeem schakelt automatisch tussen de warmtepomp en de ketel op basis van de buitentemperatuur."
+              :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+            <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Elektrische warmtepomp"
+              paragraphText="Een volledig elektrische warmtepomp zorgt voor zowel het opwarmen van uw huis als voor warm water. Dit betekent dat u geen gasaansluiting meer nodig heeft."
+              :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+            <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/water-warmtepomp"
+              paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+              :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+            <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/lucht-warmtepomp"
+              paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+              :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+            <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Water/water-warmtepomp"
+              paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+              :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          </template>
+      </Accordion>
     </div>
-      <div id="quotes" class="product-container">
-        <QuoteCard checkmark=1 title="Subsidie in ons beheer"
-          description="Bij de meeste van onze duurzame installaties komt u in aanmerking voor subsidie. Wij verzorgen het volledige aanvraag- en afhandelingsproces, zodat u zich daar geen zorgen over hoeft te maken" />
-        <QuoteCard checkmark=1 title="Snel terugverdiend"
-          description="Klanten verdienen hun investering gemiddeld binnen 2 tot 5 jaar terug." />
-        <QuoteCard checkmark=1 title="Snelle installatie"
-          description="Direct leverbaar uit voorraad en geïnstalleerd door onze vakkundige en gecertificeerde installateurs." />
-      </div>
-    <div class="product-container" id="product-reason">
-      <ParagraphCard title="Een hybride warmtepomp." subtitle="Eenvoudig verduurzamen." subtitle2="Direct besparen."
-        paragraphText="De snelste manier om duurzamer te gaan wonen is het combineren van je cv-ketel met een warmtepomp. Je start dan direct met verduurzamen én kan tot wel 70% op gas besparen. Omdat bij een hybride warmtepomp de cv-ketel zorgt voor het warme tapwater en de warmtepomp helpt om tijdens koude dagen je huis op temperatuur te houden, heb je hetzelfde comfort én een lagere energierekening. Benieuwd wat jij kan besparen?"
-        buttonText="Meer info en producten " contactLink="/contact" image="home" imageAlt="Home" height="400px" />
+
+    <div class="background-wrapper">
+      <div class="why-cards-container">
+    <h2>Waarom kiest u voor Insteco?</h2>
+    <div class="why-cards">
+      <WhyCard
+        title="Duurzaam totaaladvies"
+        description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+        icon="@/assets/icons/sustainable.svg"
+      />
+      <WhyCard
+        title="Gecertificeerd"
+        description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
+        icon="@/assets/icons/certified.svg"
+      />
+      <WhyCard
+        title="Hoge kwaliteit en garantie"
+        description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
+        icon="@/assets/icons/sustainable.svg"
+      />
+      <WhyCard
+        title="Direct leverbaar"
+        description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+        icon="@/assets/icons/sustainable.svg"
+      />
     </div>
   </div>
+    </div>
+
+
+        <ContentCardOne
+      title="Daarom een warmtepomp via Insteco"
+      :listItems="[ 
+        'Je krijgt gratis advies en een offerte op maat',
+        'Installatie door vakbekwame en volledig gecertificeerde experts', 
+        'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt', 
+        'Wij handelen het gehele subsidietraject voor je af' 
+      ]"
+      buttonText="Vraag adviesgesprek aan"
+      imageSrc="charge-points.png"
+      linkUrl="heat-pump"
+      linkText="Lees meer"
+    />
+    
+  </div>
 </template>
-
-
 
 <script>
 import ParagraphCardSmall from '@/components/Paragraph-card-small.vue';
 import ParagraphCard from '@/components/Paragraph-card.vue';
 import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
+import ContentCardOne from '@/components/Content-card-one.vue';
+import Accordion from '@/components/Accordion.vue';
+import AccordionItem from '@/components/Accordion-item.vue';
+import WhyCard from '@/components/Why-card.vue';
 
 export default {
   name: "Home",
@@ -48,46 +111,96 @@ export default {
     QuoteCard,
     ParagraphCard,
     ParagraphCardSmall,
+    ContentCardOne,
+    Accordion,
+    AccordionItem,
+    WhyCard
   }
 };
-
 </script>
 
 <style lang="scss" scoped>
 #home {
   margin: 0 auto;
   width: 100%;
+  padding-top: 20px;
 }
 
 .background-wrapper {
   display: flex;
   justify-content: center;
-  /* Horizontaal centreren */
   align-items: center;
-  /* Verticaal centreren (optioneel) */
-  width: 100%;
-  background-color: #eaeef3;
-  /* Achtergrondkleur instellen */
+  width: calc(100% - 40px);
+  background-color: #edf1f6;
   padding: 20px 0;
-  /* Voeg padding toe om ruimte aan de boven- en onderkant toe te voegen */
   box-sizing: border-box;
+  margin: 0 auto 50px;
+  position: relative;
+}
 
-  margin-bottom: 50px;
+.background-wrapper-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 40px);
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+.product-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  justify-content: space-between;
+  max-width: 1548px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  align-items: stretch;
+}
+
+.product-cards-container > * {
+  flex: 1 1 calc(19.5% - 2px);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding: 0;
+  position: relative;
+  top: -150px;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-cards-container .card-image {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.product-cards-container .button {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .product-container {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  /* Ruimte tussen de kaarten */
   justify-content: space-between;
-  /* Zorg ervoor dat de kaarten gelijkmatig verdeeld zijn */
   max-width: 1548px;
-  /* Beperk de breedte van de product-container */
   width: 100%;
-  /* Zorg ervoor dat de container de beschikbare breedte benut tot aan max-width */
   margin: 0 auto;
-  /* Centreer de product-container binnen de background-wrapper */
   padding: 20px;
 }
 
@@ -99,43 +212,65 @@ export default {
   margin-bottom: 50px;
 }
 
-/* Voeg een specifieke achtergrondkleur toe voor ParagraphCards */
-.background-wrapper.paragraph-container .product-container {
-  background-color: #eaeef3;
-  /* Achtergrondkleur instellen */
+/* Media queries voor verschillende schermgroottes */
+@media (max-width: 1920px) {
+  .product-cards-container {
+  max-width: 1548px;
+  width: 100%;
+}
 }
 
-/* Zorg ervoor dat de kaarten nog steeds goed worden weergegeven */
-.product-container>* {
-  flex: 1 1 calc(20% - 8px);
-  /* 5 kaarten naast elkaar met een gap van 8px */
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  /* Ruimte onder elke kaart */
+@media (max-width: 1750px) {
+  .product-cards-container {
+  max-width: 1548px;
+  width: 100%;
+}
 }
 
-/* Mobiele aanpassingen */
+@media (max-width: 1600px) {
+  .product-cards-container {
+  max-width: 1548px;
+  width: 85%;
+}
+}
+
+@media (max-width: 1380px) {
+  .product-cards-container {
+  width: 85%;
+}
+}
+
+@media (max-width: 1280px) {
+}
+
+
 @media (max-width: 1024px) {
-  #home {
-    width: 100%;
-    padding: 0 10px;
-    /* Zorg voor wat padding aan de zijkanten op kleinere schermen */
-  }
-  .product-container {
-    flex-direction: column;
-    gap: 10px;
-    /* Verminder de ruimte tussen de kaarten op mobiele schermen */
-    margin: 0;
-    /* Verwijder negatieve marge op mobiele schermen */
-  }
 
-  .product-container>* {
-    width: 100%;
-    /* Op mobiele schermen vult elke kaart de volle breedte */
-  }
-
-  #quotes {
-    width: 100%;
-  }
 }
+
+@media (max-width: 768px) {
+  
+}
+
+.why-cards-container {
+  background-color: #edf1f6;
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.why-cards-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 40px;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 </style>

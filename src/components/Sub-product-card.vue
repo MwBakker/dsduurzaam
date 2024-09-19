@@ -90,10 +90,11 @@ const imageUrl = computed(
     h1 {
         margin: 12px auto 32px auto;
         padding-top: 48px;
-        color: #2c5484;
+        color: #222222;
         font-size: 1.4rem;
-        font-family: Manrope, Trebuchet MS, Helvetica, sans-serif;
+        font-family: 'Alexandria', sans-serif;
         font-weight: 550;
+        word-spacing: 0px !important;
     }
 }
 
@@ -108,7 +109,7 @@ const imageUrl = computed(
     position: absolute;
     right: 20px;
     top: -45px;
-    background-color: #2c5484;
+    background-color: #222222;
     height: 110px;
     width: 110px;
     border-radius: 70px;

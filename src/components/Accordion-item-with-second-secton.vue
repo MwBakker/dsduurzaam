@@ -40,8 +40,20 @@
     <transition name="accordion" @before-enter="beforeEnter" @enter="enter" @leave="leave">
       <div v-show="isOpen" class="accordion-content-wrapper">
         <div class="accordion-content">
-          <div class="left-section">
-            <p v-if="paragraphText" class="paragraph-text">{{ paragraphText }}</p>
+          <div class="content-sections">
+            <div class="left-section">
+              <h2 class="section-title">Algemene beschrijving</h2>
+              <p v-if="paragraphText" class="paragraph-text">{{ paragraphText }}</p>
+            </div>
+            <div class="right-section">
+              <h2 class="section-title">Voor- en nadelen</h2>
+              <ul>
+                <li v-for="(voordeel, index) in voordelen" :key="index">
+                  <img src="../assets/icon/check.png">
+                  {{ voordeel }}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -64,6 +76,10 @@ export default {
     paragraphText: {
       type: String,
       default: ''
+    },
+    voordelen: {
+      type: Array,
+      default: () => []
     }
   },
   inject: ['registerItem'],
@@ -101,7 +117,7 @@ export default {
 <style scoped>
 .accordion-item {
   width: 60%;
-  max-width: 1548px;
+  max-width: 1548px; /* Limiteer de breedte van elke accordion-item tot 1548px */
   margin: 0 auto;
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.082); /* Alleen een border onderaan */
@@ -117,21 +133,6 @@ export default {
   align-items: center;
 }
 
-.accordion-header h3 {
-  font-size: 1.5rem;
-  color: #222222;
-  font-weight: 500;
-}
-
-.accordion-header h3.open {
-  font-weight: 700;
-}
-
-.accordion-header:hover h3 {
-  font-weight: 700; /* Zelfde font-weight als wanneer geopend */
-  color: #2071b5; /* Verander kleur naar blauw bij hover */
-}
-
 .accordion-icon svg {
   width: 24px;
   height: 24px;
@@ -141,82 +142,51 @@ export default {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
 .accordion-content {
-  padding: 20px 30px; /* Padding blijft, zodat het niet geanimeerd wordt */
+  padding: 20px 30px; /* Padding staat hier zodat de padding niet geanimeerd wordt */
   opacity: 1;
   transition: opacity 0.5s ease;
 }
 
-.left-section {
-  width: 100%; /* De left-section beslaat nu de volledige breedte */
+.content-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 150px;
 }
 
-.paragraph-text {
-  font-size: 1.2rem;
-  font-weight: 500;
+.left-section,
+.right-section {
+  width: 50%;
+}
+
+.right-section {
+  padding: 0px 30px;
+}
+
+.section-title {
+  font-size: 1.25rem;
   color: #222222;
+  font-weight: 600;
+  margin: 0 0 10px 0;
 }
 
-.accordion-header:hover .accordion-icon svg {
-  stroke: #2071b5; /* Verander de kleur van het pijlicoon naar blauw bij hover */
+ul {
+  list-style-type: none;
 }
 
-/* Responsieve Media Queries */
-@media (max-width: 1024px) {
-  .accordion-item {
-    width: 100%; /* Versmallen naar 80% breedte op kleinere schermen */
-  }
+li {
+  display: flex;
+  align-items: center;
 
-  .accordion-header h3 {
-    font-size: 2rem; /* Verklein de tekstgrootte */
-  }
-
-  .accordion-content {
-    padding: 15px 20px; /* Verminder padding op kleinere schermen */
-  }
-
-  .accordion-icon svg {
-    width: 20px;
-    height: 20px; /* Maak de iconen iets kleiner */
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
   }
 }
-
-@media (max-width: 768px) {
-  .accordion-item {
-    width: 100%; /* Gebruik volledige breedte op nog kleinere schermen */
-  }
-
-  .accordion-header h3 {
-    font-size: 1.2rem; /* Nog iets kleinere tekst voor compactere schermen */
-  }
-
-  .accordion-content {
-    padding: 10px 15px; /* Verder verlagen van de padding */
-  }
-}
-
-@media (max-width: 480px) {
-  .accordion-header {
-    padding: 10px 15px; /* Compactere padding voor kleinere schermen */
-  }
-
-  .accordion-header h3 {
-    font-size: 1.1rem; /* Pas de grootte verder aan voor mobiel */
-  }
-
-  .accordion-content {
-    font-size: 1rem;
-    padding: 8px 10px;
-  }
-
-  .accordion-icon svg {
-    width: 18px;
-    height: 18px; /* Kleiner icoon voor kleine schermen */
-  }
-}
-
 </style>

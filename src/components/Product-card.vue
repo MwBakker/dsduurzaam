@@ -1,52 +1,57 @@
 <template>
-  <div class="product-card" @mouseenter="startAnimation" @mouseleave="stopAnimation" @click="route">
+  <div class="product-card" @click="route">
+    <!-- Titel -->
+    <div class="card-title">
+      <h2>{{ title }}</h2>
+    </div>
+
+    <!-- Subtitle -->
+    <div class="card-subtitle">
+      <p>{{ subtitle }}</p>
+    </div>
+
+    <!-- Knop met pijl en dynamische tekst -->
+    <div class="card-button">
+      <span @click.stop="route" class="btn-link">
+        <!-- SVG pijl met horizontaal streepje -->
+        <span class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span> 
+        {{ buttonText }}
+      </span>
+    </div>
+
+    <!-- Afbeelding -->
     <div class="card-image">
       <img :src="imageUrl" alt="Product image">
-    </div>
-    <div class="card-info">
-      <h2>{{ title }}</h2>
-      <i class="fas fa-arrow-right" :class="{ 'bounce': isBouncing }"></i>
     </div>
   </div>
 </template>
 
-
 <script setup>
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router'; // Import Vue Router
+import { useRouter } from 'vue-router';
 
+// Props definiëren
 const props = defineProps({
   title: String,
   image: String,
   route: String,
-  subtitle: String, // Nieuwe prop voor de tekst boven de kaart
+  subtitle: String,
+  buttonText: String, // Nieuw attribuut voor de knoptekst
 });
 
-// Router instance
 const router = useRouter();
 
-// Function to handle routing
 function route() {
-  router.push({ path: props.route }); // Navigate to the route passed via props
+  router.push({ path: props.route });
 }
 
-// Compute the image URL
 const imageUrl = computed(() => {
   return new URL(`../assets/cards/${props.image}.png`, import.meta.url).href;
 });
-
-const isBouncing = ref(false);
-
-function startAnimation() {
-  isBouncing.value = true;
-}
-
-function stopAnimation() {
-  // Remove the class after animation ends
-  setTimeout(() => {
-    isBouncing.value = false;
-  }, 1000); // 1 second, match the duration of the animation
-}
 </script>
 
 <style lang="scss" scoped>
@@ -56,88 +61,134 @@ function stopAnimation() {
   background-color: #eaeef3;
   border-radius: 0px;
   overflow: hidden;
-  cursor: pointer; /* Change cursor to pointer on hover */
-  position: relative; /* Enable absolute positioning for the glow */
+  cursor: pointer;
+  position: relative;
+  margin: 4px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  .card-image {
-    flex: 1;
-    overflow: hidden; /* Ensure that the zoom effect doesn't spill out of the card */
-    position: relative;
-    transition: transform 0.3s ease; /* Smooth transition for transform */
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensure the image covers the container */
-      display: block;
-      transition: transform 0.3s ease; /* Smooth transition for transform */
-    }
-    
-    /* Add the blue glow with a ::before pseudo-element */
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0); /* Blue glow with transparency */
-      z-index: 1; /* Ensure the glow is above the image */
-      transition: opacity 0.3s ease; /* Smooth transition for the glow */
-      opacity: 1; /* Always visible glow */
-    }
+  /* Maak de kaarten iets smaller zodat er 5 naast elkaar passen */
+  flex: 1 1 calc(19% - 10px); /* Zorgt ervoor dat er 5 kaarten naast elkaar passen */
+}
+
+.card-title, .card-subtitle, .card-button {
+  text-align: left;
+}
+
+.card-title {
+  padding: 12px;
+  background-color: #fff;
+
+  h2 {
+    color: #222222;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    min-height: 50px;
   }
+}
 
-  .card-info {
-    display: flex;
+.card-subtitle {
+  padding: 12px;
+  flex-grow: 1;
+
+  p {
+    color: #222222;
+    font-size: 1.2rem;
+    font-weight: 500;
+    min-height: 50px;
+  }
+}
+
+.card-button {
+  background-color: #fff;
+  padding: 12px;
+  margin-top: auto;
+
+  .btn-link {
+    background-color: transparent;
+    color: #222222;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.25rem;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 8px;
-    background-color: #eaeef3; /* Background color of the text/arrow section */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow to accentuate the text section */
-    position: relative; /* Ensures the animation is relative */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-    z-index: 2; /* Ensure text and arrow are above the glow */
-
-    h2 {
-      color: #2c5484;
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 0; /* Remove default margin to keep spacing consistent */
-    }
-
-    i {
-      font-size: 1rem;
-      color: #2c5484; /* Same color as the text */
-      transition: transform 0.3s ease; /* Smooth transition for transform */
-    }
+    transition: color 0.3s ease;
   }
 
-  &:hover .card-image img {
-    transform: scale(1.1); /* Slightly enlarge the image on hover */
+  .btn-link:hover {
+    color: #2071b5;
   }
 
-  &:hover .card-info i {
-    animation: bounce 1s ease; /* Add bounce animation on hover */
-    animation-iteration-count: 1; /* Repeat animation only once */
-  }
+  .arrow {
+    margin-right: 8px;
+    color: #2071b5;
 
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    20% {
-      transform: translateX(-15px);
-    }
-    40% {
-      transform: translateX(10px);
-    }
-    60% {
-      transform: translateX(-5px);
-    }
-    80% {
-      transform: translateX(2px);
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
     }
   }
 }
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  position: relative;
+  transition: transform 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Voor schermen kleiner dan 1280px */
+@media (max-width: 1600px) {
+  .product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeef3;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 4px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Maak de kaarten iets smaller zodat er 5 naast elkaar passen */
+  flex: 1 1 calc(19% - 10px); /* Zorgt ervoor dat er 5 kaarten naast elkaar passen */
+  max-width: 19%;
+}
+}
+
+/* Voor schermen kleiner dan 1280px */
+@media (max-width: 1280px) {
+
+}
+
+/* Voor schermen kleiner dan 1024px */
+@media (max-width: 1024px) {
+
+}
+
+/* Voor schermen kleiner dan 768px (mobiel) */
+@media (max-width: 768px) {
+
+}
+
 </style>
