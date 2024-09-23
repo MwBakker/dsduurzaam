@@ -177,6 +177,26 @@ export default {
   /* Wordt zichtbaar */
 }
 
+@media (max-width: 1280px) {
+  #header-content {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    padding: 0;
+  }
+
+  #titles {
+    margin: 0;
+    width: 80%;
+  }
+
+  #overlay-square {
+    width: 80%;
+    margin: 0;
+  }
+}
+
 // /* Styling voor de link met pijl */
 // #container-main #container-elements .link-with-arrow {
 //   display: inline-flex;
