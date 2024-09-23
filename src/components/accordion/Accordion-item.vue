@@ -114,6 +114,7 @@ export default {
 .accordion-icon svg {
   width: 24px;
   height: 24px;
+  stroke: #222222 !important;
 }
 
 .accordion-content-wrapper {
@@ -143,7 +144,7 @@ export default {
 }
 
 .accordion-header:hover .accordion-icon svg {
-  stroke: #2071b5;
+  stroke: #2071b5 !important;
   /* Verander de kleur van het pijlicoon naar blauw bij hover */
 }
 

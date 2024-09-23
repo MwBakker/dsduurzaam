@@ -6,11 +6,11 @@
       <span class="overlay-text">verwarmen</span>
       <span class="overlay-text">met een</span>
       <span class="overlay-text">warmtepomp</span>
-      <a href="#" class="link-with-arrow" :style="{ fontSize: '1.25rem', fontWeight: 600 }">
+      <a href="#" title="Lees meer over warmtepompen" class="link-with-arrow" :style="{ fontSize: '1.25rem', fontWeight: 600 }">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
-        <p>Lees meer</p>
+        <p>Lees meer over warmtepompen</p>
       </a>
     </div>
     <div id="overlay-square">
@@ -71,7 +71,6 @@ export default {
   background-position: bottom;
 }
 
-/* de 4 titels + link onder elkaar */
 #titles-header {
   margin: 24px 0 0 10.5%;
   display: flex;
@@ -94,18 +93,18 @@ export default {
     display: flex;
   }
 
-  // lees meer
+  // lees meer tekst
   p {
     color: white;
     margin-left: 12px;
   }
 
-  svg {
+  // SVG pijl wit maken
+  a svg {
     height: 24px;
+    stroke: white; /* Maakt het icoon wit */
   }
 }
-
-
 /* Blauwe box */
 #overlay-square {
   display: flex;
@@ -194,6 +193,10 @@ export default {
     width: 80%;
     margin: 0;
   }
+}
+
+#cta-button .button-arrow {
+    stroke: #222222 !important; /* Zorg ervoor dat de pijl zwart wordt */
 }
 
 // /* Styling voor de link met pijl */

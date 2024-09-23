@@ -12,10 +12,15 @@
             Of u nu een zakelijke of particuliere klant bent. Het voordeel voor u? De hoogste 
             kwaliteit en één vast aanspreekpunt.
           </p>
-          <p>
+          <p class="extra-margin">
             Benieuwd wat we allemaal doen? We vertellen u graag over onze diensten.
           </p>
-          <button class="cta-button">Bekijk onze diensten ➔</button>
+          <button class="cta-button">
+            <span>Vraag adviesgesprek aan</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="button-arrow">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         <!-- Productkaarten sectie (60% breedte) -->
@@ -150,7 +155,19 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #edf1f6;
+  background-color: #edf1f6ad;
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+.background-wrapper-grey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 40px);
+  background-color: #edf1f6ad;
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -160,7 +177,6 @@ export default {
 .content-container {
   display: flex;
   justify-content: space-between;
-  max-width: 1548px;
   width: 100%;
 }
 
@@ -185,8 +201,11 @@ export default {
 }
 
 .text-container {
-  width: 40%; /* Zorgt ervoor dat de tekstcontainer 40% breed is */
-  padding-right: 20px; /* Ruimte tussen tekst en kaarten */
+  width: 50%; /* Zorgt ervoor dat de tekstcontainer 40% breed is */
+  padding-top: 50px;
+  padding-left: 170px;
+  padding-right: 100px;
+  line-height: 1.6;
 }
 
 .product-card {
@@ -226,7 +245,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 kolommen */
   grid-gap: 20px; /* Ruimte tussen kaarten */
-  width: 60%; /* Zorg ervoor dat de kaartencontainer 60% breed is */
+  width: 50%; /* Zorg ervoor dat de kaartencontainer 60% breed is */
+  padding-right: 20px; /* Voeg dezelfde padding toe als de bovenkant en onderkant */
 }
 
 .product-cards-container > * {
@@ -301,11 +321,60 @@ export default {
   margin-bottom: 50px;
 }
 
+.cta-button {
+  background-color: #ffda00;
+  color: #222222;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden; /* Verberg wat buiten de knop valt */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Zorg ervoor dat de tekst gecentreerd is */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  width: 400px;
+}
+
+.cta-button span {
+  position: relative;
+}
+
+.cta-button:hover {
+  background-color: #ffe967; /* Pas de achtergrondkleur aan bij hover */
+}
+
+/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
+.button-arrow {
+  position: absolute;
+  right: 30px;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-30px); /* Start buiten de knop */
+}
+
+/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
+.cta-button:hover .button-arrow {
+  transform: translateX(0); /* Schuift naar binnen */
+  opacity: 1; /* Wordt zichtbaar */
+}
+
+
 /* Media queries voor verschillende schermgroottes */
 @media (max-width: 1920px) {
   .product-cards-container {
   max-width: 1548px;
-  width: 85%;
+  width: 200px;
+}
+
+.cta-button {
+  width: 400px;
 }
 }
 
@@ -314,6 +383,10 @@ export default {
   max-width: 1548px;
   width: 85%;
 }
+
+.cta-button {
+  width: 400px;
+}
 }
 
 @media (max-width: 1600px) {
@@ -321,16 +394,29 @@ export default {
   max-width: 1548px;
   width: 85%;
 }
+
+.cta-button {
+  width: 350px;
+}
 }
 
 @media (max-width: 1380px) {
   .product-cards-container {
   width: 85%;
 }
+
+.cta-button {
+  width: 100%; /* Standaard vaste breedte */
+} 
+}
+
+@media (max-width: 1280px) {
+.cta-button {
+  font-size: 1.2rem;
+} 
 }
 
 .why-cards-container {
-  background-color: #edf1f6;
   padding: 40px 20px;
   text-align: center;
   max-width: 90%;
@@ -350,20 +436,6 @@ export default {
   flex-wrap: wrap;
 }
 
-.cta-button {
-  background-color: #2071b5;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #10568c;
-}
-
 .card-button .btn-link {
   display: inline-flex;
   align-items: center;
@@ -381,6 +453,7 @@ export default {
   font-size: 2.5rem;
   font-weight: 800;
   color: #222222;
+  margin-bottom: 20px;
 }
 
 .text-container p {
@@ -389,5 +462,12 @@ export default {
   color: #222222;
 }
 
+.extra-margin {
+  margin-top: 40px; /* Verhoog de waarde als je meer ruimte wilt */
+}
+
+.cta-button .button-arrow {
+    stroke: #222222 !important; /* Zorg ervoor dat de pijl zwart wordt */
+}
 
 </style>

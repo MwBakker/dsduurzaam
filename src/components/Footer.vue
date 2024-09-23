@@ -91,7 +91,7 @@ function emitRoute(direction) {
 #contact-form-container {
     position: relative;
     width: 100%;
-    background-color: #edf1f6;
+    background-color: #edf1f6ad;
     height: 760px;
 }
 
@@ -106,7 +106,7 @@ function emitRoute(direction) {
     /* Centreer de footer-inner container */
     padding: 0 10px;
     /* Voeg wat padding toe om te voorkomen dat secties tegen de randen aan plakken */
-    width: 72.5%;
+    width: 75%;
     /* Zorg ervoor dat de footer-content de volledige breedte benut */
     max-width: 1548px;
     /* Stel de max-width in op 1548px */
@@ -208,7 +208,7 @@ a {
 }
 
 #section-light {
-    background-color: #edf1f6;
+    background-color: #edf1f6ad;
     padding: 15px 0;
     /* Voeg wat padding toe boven en onder de inhoud */
     width: 100%;

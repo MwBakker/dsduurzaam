@@ -100,7 +100,7 @@ export default {
   left: 0;
   height: 100%;
   width: 60%;
-  background-color: #edf1f6;
+  background-color: #edf1f6ad;
   z-index: 0;
 }
 
@@ -181,7 +181,7 @@ ul {
   font-weight: 800;
   text-align: center;
   margin-top: 20px;
-  width: 60%; /* Zorg ervoor dat de knop 60% van de breedte inneemt */
+  width: 400px;
   position: relative;
   overflow: hidden; /* Verberg wat buiten de knop valt */
   display: inline-flex;
@@ -215,6 +215,11 @@ ul {
   opacity: 1; /* Wordt zichtbaar */
 }
 
+/* Forceer de pijl naar zwart */
+.cta-button .button-arrow {
+    stroke: #222222 !important; /* Zorg ervoor dat de pijl zwart wordt */
+}
+
 .content-image {
   flex-basis: 45%; /* Gebruik percentage voor flex-basis */
   position: relative;
@@ -237,18 +242,36 @@ ul {
   .content-image {
     margin-top: -200px; /* Voor schermen kleiner dan 1920px */
   }
+
+  .cta-button {
+  width: 400px; /* Standaard vaste breedte */
+}
+}
+
+@media (max-width: 1750) {
+  .cta-button {
+  width: 400px; /* Standaard vaste breedte */
+}
 }
 
 @media (max-width: 1600px) {
   .content-image {
     margin-top: -325px; /* Voor schermen kleiner dan 1600px */
   }
+
+  .cta-button {
+  width: 350px; /* Standaard vaste breedte */
+}
 }
 
 @media (max-width: 1380px) {
   .content-image {
     margin-top: -375px; /* Voor schermen kleiner dan 1600px */
   }
+
+  .cta-button {
+  width: 100%; /* Standaard vaste breedte */
+}
 }
 
 @media (max-width: 1280px) {
@@ -269,7 +292,7 @@ ul {
 
   .cta-button {
     font-size: 1.2rem;
-    width: 80%; /* Zorg ervoor dat de knop iets smaller is */
+    width: 100%; /* Zorg ervoor dat de knop iets smaller is */
   }
 
   .content-wrapper {
