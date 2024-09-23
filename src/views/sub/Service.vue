@@ -40,7 +40,7 @@
 <script>
 
 import SubProduct from './Sub-product.vue';
-import ProductCard from '@/components/product-card/Product-card.vue';
+import ProductCard from '@/components/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {

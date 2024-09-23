@@ -65,7 +65,7 @@
 
 <script>
 import SubProduct from './Sub-product.vue';
-import SubProductCard from '@/components/product-card/Sub-product-card.vue';
+import SubProductCard from '@/components/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 import Accordion from "@/components/accordion/Accordion.vue";
 import AccordionItem from '@/components/accordion/Accordion-item.vue';

@@ -46,7 +46,7 @@ function emitMyEvent() {
 };
 
 const imageUrl = computed(() => {
-  return new URL(`../../assets/cards/${props.image}.png`, import.meta.url).href;
+  return new URL(`../assets/cards/${props.image}.png`, import.meta.url).href;
 });
 </script>
 
