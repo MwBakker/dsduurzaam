@@ -4,23 +4,95 @@
       <p>Direct uit voorraad leverbaar!</p>
     </div>
     <nav>
-      <div class="branding">
-        <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
-      </div>
       <ul id="titles">
-        <li id="upper-li" @click="routeGo('heat-pump')">Warmtepomp</li>
-        <li @click="routeGo('airco')">Airconditioning</li>
-        <li @click="routeGo('floor-heating')">Vloerverwarming</li>
-        <li @click="routeGo('solar')">Zonnepanelen</li>
-        <li @click="routeGo('charge-points')">Laadpaal</li>
-        <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
-        <!-- <li @click="routeGo('advice')">Energielabel</li> -->
-        <li @click="routeGo('service')">Service</li>
+        <!-- Home item -->
+        <li :class="{ active: activePage === 'home' }" @click="routeGo('home')">
+          <template v-if="activePage === 'home'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+              <rect width="12" height="12" />
+            </svg>
+          </template>
+          Home
+        </li>
+
+        <!-- Dropdown voor "Onze producten" -->
+        <li :class="{ active: isProductActive }" id="dropdown-toggle">
+          <template v-if="isProductActive">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+              <rect width="12" height="12" />
+            </svg>
+          </template>
+          Onze producten
+          <ul class="dropdown-menu">
+            <li :class="{ active: activePage === 'heat-pump' }" @click="routeGo('heat-pump')">
+              <template v-if="activePage === 'heat-pump'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+                  <rect width="12" height="12" />
+                </svg>
+              </template>
+              Warmtepomp
+            </li>
+            <li :class="{ active: activePage === 'airco' }" @click="routeGo('airco')">
+              <template v-if="activePage === 'airco'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+                  <rect width="12" height="12" />
+                </svg>
+              </template>
+              Airconditioning
+            </li>
+            <li :class="{ active: activePage === 'floor-heating' }" @click="routeGo('floor-heating')">
+              <template v-if="activePage === 'floor-heating'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+                  <rect width="12" height="12" />
+                </svg>
+              </template>
+              Vloerverwarming
+            </li>
+            <li :class="{ active: activePage === 'solar' }" @click="routeGo('solar')">
+              <template v-if="activePage === 'solar'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+                  <rect width="12" height="12" />
+                </svg>
+              </template>
+              Zonnepanelen
+            </li>
+            <li :class="{ active: activePage === 'charge-points' }" @click="routeGo('charge-points')">
+              <template v-if="activePage === 'charge-points'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+                  <rect width="12" height="12" />
+                </svg>
+              </template>
+              Laadpaal
+            </li>
+          </ul>
+        </li>
+
+        <!-- Andere items -->
+        <li :class="{ active: activePage === 'about' }" @click="routeGo('about')">
+          <template v-if="activePage === 'about'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+              <rect width="12" height="12" />
+            </svg>
+          </template>
+          Over ons
+        </li>
+        <li :class="{ active: activePage === 'jobs' }" @click="routeGo('jobs')">
+          <template v-if="activePage === 'jobs'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+              <rect width="12" height="12" />
+            </svg>
+          </template>
+          Werken bij
+        </li>
+        <li :class="{ active: activePage === 'service' }" @click="routeGo('service')">
+          <template v-if="activePage === 'service'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ffda00" viewBox="0 0 24 24">
+              <rect width="12" height="12" />
+            </svg>
+          </template>
+          Service
+        </li>
       </ul>
-      <div id="button-tech" @click="scrollTo('contact-form-container')">
-        <button>Advies aan huis</button>
-        <img src="@/assets/tech.png" alt="Technisch icoon" />
-      </div>
     </nav>
   </div>
   <upper_content_container :title="title" :description="description" :backgroundImage="headerImg">
@@ -35,24 +107,29 @@ export default {
   name: "navigation-bar",
   data() {
     return {
+      activePage: "home", // Begin met 'home' als standaard actieve pagina
       title: 'Ontdek wat bij je huis past',
       headerImg: 'home',
-      description: 'Heb je een koophuis en overweeg je een warmtepomp? Laat je gegevens achter en kom in contact met één van onze experts. Zij helpen je met een advies op maat en een offerte. Je ontvangt tot € 500,-- korting op je warmtepomp. ',
+      description: 'Heb je een koophuis en overweeg je een warmtepomp? Laat je gegevens achter en kom in contact met één van onze experts. Zij helpen je met een advies op maat en een offerte. Je ontvangt tot € 500,-- korting op je warmtepomp.',
       headerText: {
-        'home': ["Ontdek wat bij je huis past", "Uw asbolute partner voor een energiezuiniger leven en werken!"],
+        'home': ["Ontdek wat bij je huis past", "Uw absolute partner voor een energiezuiniger leven en werken!"],
         'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie."],
         'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar."],
         'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer."],
         'solar': ["Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties."],
         'charge-points': ["Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading."],
-        'isolation': ["Isolatie", "Warm spul"],
-        'advice': ["Energielabel & advies", "Mooi spul"],
         'service': ["Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud."],
       },
     };
   },
   components: {
     upper_content_container
+  },
+  computed: {
+    isProductActive() {
+      // Controleer of een van de productpagina's actief is
+      return ['heat-pump', 'airco', 'floor-heating', 'solar', 'charge-points'].includes(this.activePage);
+    }
   },
   methods: {
     mounted() {
@@ -61,18 +138,19 @@ export default {
     beforeDestroy() {
       window.removeEventListener('scroll', this.handleScroll);
     },
-    routeGo(direction) {
-      var array = this.headerText[direction];
+    routeGo(page) {
+      this.activePage = page; // Update de actieve pagina
+      var array = this.headerText[page];
       this.title = array[0];
       this.description = array[1];
-      this.headerImg = direction;
-      this.$router.push({ name: direction });
+      this.headerImg = page;
+      this.$router.push({ name: page });
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #nav-container {
   width: 100%;
   z-index: 999;
@@ -97,8 +175,9 @@ export default {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* Zorg ervoor dat alle items links beginnen */
   max-width: 1548px;
+  width: 75%; /* Zorg ervoor dat de navigatiebalk 100% breed is */
   margin: 0 auto;
   padding: 0 20px;
   padding-top: 20px;
@@ -108,99 +187,65 @@ nav {
 #titles {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Zorg ervoor dat de items in de ul aan de linkerkant staan */
   margin: 0;
-  margin-left: 48px;
   padding: 0;
   list-style: none;
   flex-grow: 1;
+  margin-left: 0; /* Verwijder eventuele extra marge aan de linkerkant */
 }
 
 #titles li {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   margin-right: 10px;
   font-weight: 600;
   font-size: 1.2rem;
   line-height: 1.5rem;
-  color: #222222; /* Standaard kleur #222222 */
+  color: #222222;
 
   &:hover {
-    color: #2071b5; /* Verander naar #2071b5 bij hover */
+    color: #2071b5;
   }
 }
 
-#titles li:first-child {
-  margin-left: 20px;
+/* Styling voor de actieve link */
+#titles li.active {
+  color: #2071b5; /* Blauw voor actieve pagina */
 }
 
-.branding {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 75px;
-  }
+/* Voor dropdown-menu-items */
+.dropdown-menu li.active {
+  color: #2071b5; /* Blauw voor actieve dropdown-item */
 }
 
-ul,
-.link {
-  color: #222222;
+#dropdown-toggle {
+  position: relative; /* Zorg ervoor dat de dropdown ten opzichte van dit element is gepositioneerd */
+}
+
+.dropdown-menu {
+  display: none; /* Verberg standaard de dropdown */
+  position: absolute; /* Positioneer de dropdown absoluut ten opzichte van de ouder */
+  top: 100%; /* Plaats de dropdown direct onder het menu-item */
+  left: 0;
+  z-index: 999; /* Zorg ervoor dat de dropdown boven andere elementen wordt weergegeven */
+  background-color: white;
+  padding: 10px 0;
   list-style: none;
-  text-decoration: none;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Voeg schaduw toe voor zichtbaarheid */
 }
 
-#button-tech {
-  position: relative;
-  width: 240px;
-  background-color: #3eaf3c;
-  box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
-
-  button {
-    background-color: initial;
-    transition: all .3s ease-in-out;
-    box-shadow: none;
-    border: transparent;
-    margin-left: -36px;
-  }
-
-  img {
-    position: absolute;
-    right: 12px;
-    bottom: 0;
-    height: 86px;
-  }
+/* Toon de dropdown bij hover */
+#dropdown-toggle:hover .dropdown-menu {
+  display: block; /* Toon de dropdown wanneer er over het menu-item wordt gehoverd */
 }
 
-#button-tech:hover {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(62, 175, 60, 0.4);
-  }
-
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 0 0 6px rgba(62, 175, 60, 0.25);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(62, 175, 60, 0);
-  }
-}
-
-h1,
-.light {
-  margin-bottom: 28px;
-  color: #222222;
-  font-weight: 600;
-}
-
-.light {
-  color: #a3b9d5;
+.dropdown-menu li {
+  padding: 10px 20px;
+  white-space: nowrap; /* Zorg ervoor dat de tekst niet afbreekt */
+  text-align: left; /* Uitlijning van de tekst naar links */
 }
 
 </style>

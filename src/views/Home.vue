@@ -2,12 +2,31 @@
 <template>
   <div id="home">
     <div class="background-wrapper">
-      <div class="product-cards-container">
-        <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric." buttonText="Lees meer" />
-        <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen" buttonText="Ontdek meer" />
-        <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating" subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Bekijk opties" />
-        <ProductCard route="solar" title="Zonnepanelen" image="solar" subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Meer informatie" />
-        <ProductCard route="charge-points" title="Laadpaal" image="charge-points" subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
+      <!-- Container voor de twee secties -->
+      <div class="content-container">
+        <!-- Tekst sectie (40% breedte) -->
+        <div class="text-container">
+          <h2>Onze diensten</h2>
+          <p>
+            Onze professionals ontzorgen u volledig in het verduurzamen van uw woning. 
+            Of u nu een zakelijke of particuliere klant bent. Het voordeel voor u? De hoogste 
+            kwaliteit en één vast aanspreekpunt.
+          </p>
+          <p>
+            Benieuwd wat we allemaal doen? We vertellen u graag over onze diensten.
+          </p>
+          <button class="cta-button">Bekijk onze diensten ➔</button>
+        </div>
+
+        <!-- Productkaarten sectie (60% breedte) -->
+        <div class="cards-container">
+          <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric." buttonText="Lees meer" />
+          <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen" buttonText="Ontdek meer" />
+          <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating" subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Bekijk opties" />
+          <ProductCard route="solar" title="Zonnepanelen" image="solar" subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Meer informatie" />
+          <ProductCard route="charge-points" title="Laadpaal" image="charge-points" subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
+          <ProductCard route="charge-points" title="Laadpaal" image="charge-points" subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
+        </div>
       </div>
     </div>
 
@@ -138,6 +157,13 @@ export default {
   position: relative;
 }
 
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1548px;
+  width: 100%;
+}
+
 .background-wrapper-white {
   display: flex;
   justify-content: center;
@@ -152,16 +178,55 @@ export default {
 
 .product-cards-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
   justify-content: space-between;
-  max-width: 1548px;
-  width: 100%;
+  max-width: 1548px; /* Maximale breedte van de product-cards-container */
+  width: 75%; /* Zorg ervoor dat de breedte 75% van de beschikbare ruimte is */
   margin: 0 auto;
-  padding: 10px;
+}
+
+.text-container {
+  width: 40%; /* Zorgt ervoor dat de tekstcontainer 40% breed is */
+  padding-right: 20px; /* Ruimte tussen tekst en kaarten */
+}
+
+.product-card {
   position: relative;
-  z-index: 1;
-  align-items: stretch;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 1 / 1; /* Zorg ervoor dat de kaart vierkant blijft */
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Zorg ervoor dat de inhoud netjes gestapeld wordt */
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-cards-container .card-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-cards-container .button {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-title h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolommen */
+  grid-gap: 20px; /* Ruimte tussen kaarten */
+  width: 60%; /* Zorg ervoor dat de kaartencontainer 60% breed is */
 }
 
 .product-cards-container > * {
@@ -174,7 +239,6 @@ export default {
   height: auto;
   padding: 0;
   position: relative;
-  top: -150px;
   z-index: 10;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -188,9 +252,34 @@ export default {
   display: block;
 }
 
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Zorg ervoor dat de afbeelding zich aanpast aan de container */
+}
+
 .product-cards-container .button {
   display: flex;
   justify-content: flex-start;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparante zwarte achtergrond */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-container {
@@ -216,14 +305,14 @@ export default {
 @media (max-width: 1920px) {
   .product-cards-container {
   max-width: 1548px;
-  width: 100%;
+  width: 85%;
 }
 }
 
 @media (max-width: 1750px) {
   .product-cards-container {
   max-width: 1548px;
-  width: 100%;
+  width: 85%;
 }
 }
 
@@ -272,5 +361,45 @@ export default {
   gap: 20px;
   flex-wrap: wrap;
 }
+
+.cta-button {
+  background-color: #2071b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #10568c;
+}
+
+.card-button .btn-link {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #ffda00; /* Kleur bij hover */
+}
+
+.text-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222222;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #222222;
+}
+
 
 </style>
