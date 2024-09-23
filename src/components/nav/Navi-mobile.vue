@@ -37,7 +37,7 @@
                         <button>Offerte aanvragen</button>
                     </ul>
                 </Transition>
-                <button @click="routeGo('contact')">Advies aan huis</button>
+                <button @click="routeGo('contact')">Neem contact op</button>
                 <a @click="showNav = true" class="fa fa-bars fa-2x"></a>
             </div>
         </nav>

@@ -57,7 +57,7 @@ export default {
 <style lang="scss" scoped>
 #header-content {
   height: 845px;
-  padding-top: 296px;
+  padding-top: 0px;
   display: flex;
   justify-content: space-around;
   width: 98%;

@@ -42,6 +42,7 @@ export default {
   max-width: 350px; /* Verhoog de maximale breedte van de kaart */
   min-height: 350px; /* Voeg een minimale hoogte toe om de kaart hoger te maken */
   margin: 15px; /* Voeg iets meer marge toe rondom de kaarten */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Maak transformatie en schaduw soepeler */
 }
 
 .why-card-icon {
@@ -68,6 +69,11 @@ export default {
   font-size: 1.2rem;
   color: #222222;
   font-weight: 500;
+}
+
+.why-card:hover {
+  transform: scale(1.05); /* Vergroot de kaart met 5% bij hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Voeg een schaduw toe bij hover */
 }
 
 
