@@ -329,18 +329,6 @@ export default {
 }
 }
 
-@media (max-width: 1280px) {
-}
-
-
-@media (max-width: 1024px) {
-
-}
-
-@media (max-width: 768px) {
-  
-}
-
 .why-cards-container {
   background-color: #edf1f6;
   padding: 40px 20px;

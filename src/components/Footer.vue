@@ -27,11 +27,11 @@
             </div>
             <div id="services" class="section-info">
                 <h1>Diensten</h1>
-                <p @click="route('heat-pump')">Waterpomp</p>
-                <p @click="route('airco')">Airco</p>
-                <p @click="route('isolation')">Vloerverwarming</p>
-                <p @click="route('solar')">Zonnepanelen</p>
-                <p @click="route('charge-point')">Laadpalen</p>
+                <p @click="emitRoute('heat-pump')">Waterpomp</p>
+                <p @click="emitRoute('airco')">Airco</p>
+                <p @click="emitRoute('isolation')">Vloerverwarming</p>
+                <p @click="emitRoute('solar')">Zonnepanelen</p>
+                <p @click="emitRoute('charge-point')">Laadpalen</p>
             </div>
             <div id="certification-logos">
                 <h1>Gegarandeerde kwaliteit</h1>
@@ -69,6 +69,15 @@
 
 import CustomForm from '../components/contact/Contact-form.vue';
 import CustomMap from '../components/Map.vue';
+import { getCurrentInstance } from 'vue';
+
+const internalInstance = getCurrentInstance();
+// get the emitter from the instance
+const emitter = internalInstance.appContext.config.globalProperties.emitter;
+
+function emitRoute(direction) {
+    emitter.emit('my-event', { 'direction': direction });
+};
 
 </script>
 
