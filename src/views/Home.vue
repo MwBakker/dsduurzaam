@@ -97,7 +97,7 @@
 <script>
 import ParagraphCardSmall from '@/components/paragraph-card/Paragraph-card-small.vue';
 import ParagraphCard from '@/components/paragraph-card/Paragraph-card.vue';
-import ProductCard from '@/components/Product-card.vue';
+import ProductCard from '@/components/product-card/Product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 import ContentCardOne from '@/components/Content-card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
@@ -238,18 +238,6 @@ export default {
   .product-cards-container {
   width: 85%;
 }
-}
-
-@media (max-width: 1280px) {
-}
-
-
-@media (max-width: 1024px) {
-
-}
-
-@media (max-width: 768px) {
-  
 }
 
 .why-cards-container {

@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <navBar v-if="windowWidth > 1024" ref="navBar" />
+    <navBar v-if="windowWidth > 1280" ref="navBar" />
     <navBarMobile v-else ref="navBar" />
     <router-view />
     <customFooter />

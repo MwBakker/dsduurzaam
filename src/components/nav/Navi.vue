@@ -13,8 +13,6 @@
         <li @click="routeGo('floor-heating')">Vloerverwarming</li>
         <li @click="routeGo('solar')">Zonnepanelen</li>
         <li @click="routeGo('charge-points')">Laadpaal</li>
-        <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
-        <!-- <li @click="routeGo('advice')">Energielabel</li> -->
         <li @click="routeGo('service')">Service</li>
       </ul>
       <div id="button-tech" @click="scrollTo('contact-form-container')">
@@ -24,15 +22,19 @@
     </nav>
   </div>
   <upper_content_container :title="title" :description="description" :backgroundImage="headerImg">
-    <h1 id="lol">Subsidie op al onze systemen! Laat ons uw voordeel berekenen!</h1>
+    <h1>Subsidie op al onze systemen! Laat ons uw voordeel berekenen!</h1>
   </upper_content_container>
 </template>
 
 <script>
 import upper_content_container from "./Upper-content-container.vue";
-
 export default {
   name: "navigation-bar",
+  created() {
+    this.emitter.on('my-event', (evt) => {
+      this.routeGo(evt.direction);
+    })
+  },
   data() {
     return {
       title: 'Ontdek wat bij je huis past',
@@ -62,6 +64,9 @@ export default {
       window.removeEventListener('scroll', this.handleScroll);
     },
     routeGo(direction) {
+      this.emitter.on('my-event', (evt) => {
+        console.log("YOOOOO");
+      });
       var array = this.headerText[direction];
       this.title = array[0];
       this.description = array[1];
@@ -121,10 +126,12 @@ nav {
   font-weight: 600;
   font-size: 1.2rem;
   line-height: 1.5rem;
-  color: #222222; /* Standaard kleur #222222 */
+  color: #222222;
+  /* Standaard kleur #222222 */
 
   &:hover {
-    color: #2071b5; /* Verander naar #2071b5 bij hover */
+    color: #2071b5;
+    /* Verander naar #2071b5 bij hover */
   }
 }
 
@@ -202,5 +209,4 @@ h1,
 .light {
   color: #a3b9d5;
 }
-
 </style>

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import SubProductCard from '@/components/Sub-product-card.vue';
+import SubProductCard from '@/components/product-card/Sub-product-card.vue';
 import QuoteCard from '@/components/Quote-card.vue';
 
 export default {
