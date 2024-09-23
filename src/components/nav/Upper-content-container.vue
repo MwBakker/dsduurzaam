@@ -1,7 +1,7 @@
 <template>
   <!-- Container-main voor de bestaande content -->
   <div id="header-content">
-    <div id="titles">
+    <div id="titles-header">
       <span class="overlay-text">Je huis</span>
       <span class="overlay-text">verwarmen</span>
       <span class="overlay-text">met een</span>
@@ -57,7 +57,7 @@ export default {
 <style lang="scss" scoped>
 #header-content {
   height: 845px;
-  padding-top: 0px;
+  padding-top: 245px;
   display: flex;
   justify-content: space-around;
   width: 98%;
@@ -67,17 +67,16 @@ export default {
   background: rgba(0, 0, 0, 0.2) url('src/assets/tabs/home.png');
   background-blend-mode: darken;
   background-repeat: no-repeat;
-  background-size: 100% 700px;
+  background-size: 100% 740px;
   background-position: bottom;
 }
 
 /* de 4 titels + link onder elkaar */
-#titles {
+#titles-header {
   margin: 24px 0 0 10.5%;
   display: flex;
   flex-direction: column;
   width: 30vw;
-  background-color: transparent;
   color: white;
 
   // titles

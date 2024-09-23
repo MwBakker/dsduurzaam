@@ -66,7 +66,6 @@
             </li>
           </ul>
         </li>
-
         <!-- Andere items -->
         <li :class="{ active: activePage === 'about' }" @click="routeGo('about')">
           <template v-if="activePage === 'about'">
@@ -105,6 +104,11 @@ import upper_content_container from "./Upper-content-container.vue";
 
 export default {
   name: "navigation-bar",
+  created() {
+    this.emitter.on('my-event', (evt) => {
+      this.routeGo(evt.direction);
+    })
+  },
   data() {
     return {
       activePage: "home", // Begin met 'home' als standaard actieve pagina

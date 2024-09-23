@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card" @click="route">
+  <div class="product-card" @click="emitRouteGo">
     <div class="card-image">
       <img :src="imageUrl" alt="Product image">
       <div class="overlay">
@@ -22,8 +22,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { computed } from 'vue';
+import { getCurrentInstance } from 'vue';
 
 const props = defineProps({
   title: String,
@@ -31,11 +31,13 @@ const props = defineProps({
   route: String,
 });
 
-const router = useRouter();
+const internalInstance = getCurrentInstance();
+// get the emitter from the instance
+const emitter = internalInstance.appContext.config.globalProperties.emitter;
 
-function route() {
-  router.push({ path: props.route });
-}
+function emitRouteGo() {
+  emitter.emit('my-event', { 'direction': props.route });
+};
 
 const imageUrl = computed(() => {
   return new URL(`../assets/cards/${props.image}.png`, import.meta.url).href;
