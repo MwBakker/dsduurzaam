@@ -102,17 +102,8 @@ function emitRoute(direction) {
 
 #footer-content {
     display: flex;
-    justify-content: center;
-    /* Centreer de footer-inner container */
-    padding: 0 10px;
-    /* Voeg wat padding toe om te voorkomen dat secties tegen de randen aan plakken */
     width: 75%;
-    /* Zorg ervoor dat de footer-content de volledige breedte benut */
-    max-width: 1548px;
-    /* Stel de max-width in op 1548px */
     margin: 32px auto 24px auto;
-    margin-left: 17.5%;
-    /* Centreer de footer-content binnen de pagina */
 }
 
 .section-info,
@@ -128,8 +119,11 @@ function emitRoute(direction) {
     /* Voeg flex toe voor alignment binnen deze secties */
     flex-direction: column;
     /* Zorg ervoor dat de items verticaal gestapeld worden */
-    align-items: flex-start;
-    /* Uitlijnen van de inhoud naar links */
+}
+
+#logos {
+    flex: 0;
+    margin-left: 2.5%;
 }
 
 h1 {

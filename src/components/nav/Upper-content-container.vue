@@ -1,21 +1,22 @@
 <template>
   <!-- Container-main voor de bestaande content -->
-  <div id="header-content">
+  <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
     <div id="titles-header">
+      <!-- DIT MOET EEN SLOT ELEMENT WORDEN WAAR EEN GEHELE DIV WORDT MEEGEVOERD -->
       <span class="overlay-text">Je huis</span>
       <span class="overlay-text">verwarmen</span>
       <span class="overlay-text">met een</span>
       <span class="overlay-text">warmtepomp</span>
-      <a href="#" title="Lees meer over warmtepompen" class="link-with-arrow" :style="{ fontSize: '1.25rem', fontWeight: 600 }">
+      <a href="#" class="link-with-arrow" :style="{ fontSize: '1.25rem', fontWeight: 600 }">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
-        <p>Lees meer over warmtepompen</p>
+        <p>Lees meer</p>
       </a>
     </div>
-    <div id="overlay-square">
-      <h1>{{ title }}</h1>
-      <p>{{ description }}</p>
+    <div id="overlay-square" v-if="showBoxx == 1">
+      <h1>{{ boxTitlee }}</h1>
+      <p>{{ boxDescriptionn }}</p>
       <button id="cta-button">
         <span> Klik hier </span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -34,15 +35,19 @@ import ServiceLine from "@/components/Service-line.vue";
 export default {
   name: "upper_content_container",
   props: {
-    title: {
+    showBoxx: {
+      type: Number,
+      required: true,
+    },
+    boxTitlee: {
       type: String,
       required: true,
     },
-    description: {
+    boxDescriptionn: {
       type: String,
       required: true,
     },
-    backgroundImage: {
+    mainImg: {
       type: String,
       required: true,
     },
@@ -64,13 +69,14 @@ export default {
   margin: 0 auto;
   position: relative;
   // maakt de afbeelding donkerder
-  background: rgba(0, 0, 0, 0.2) url('src/assets/tabs/home.png');
+  background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: darken;
   background-repeat: no-repeat;
   background-size: 100% 740px;
   background-position: bottom;
 }
 
+/* de 4 titels + link onder elkaar */
 #titles-header {
   margin: 24px 0 0 10.5%;
   display: flex;
@@ -93,18 +99,18 @@ export default {
     display: flex;
   }
 
-  // lees meer tekst
+  // lees meer
   p {
     color: white;
     margin-left: 12px;
   }
 
-  // SVG pijl wit maken
-  a svg {
+  svg {
     height: 24px;
-    stroke: white; /* Maakt het icoon wit */
   }
 }
+
+
 /* Blauwe box */
 #overlay-square {
   display: flex;
@@ -193,10 +199,6 @@ export default {
     width: 80%;
     margin: 0;
   }
-}
-
-#cta-button .button-arrow {
-    stroke: #222222 !important; /* Zorg ervoor dat de pijl zwart wordt */
 }
 
 // /* Styling voor de link met pijl */

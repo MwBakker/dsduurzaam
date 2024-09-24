@@ -5,49 +5,49 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: HomeView
     },
     {
-      path: '/heat-pump',
+      path: '/producten/heat-pump',
       name: 'heat-pump',
-      component: () => import('../views/sub/Heat-pump.vue')
+      component: () => import('../views/product/Heat-pump.vue')
     },
     {
-      path: '/airconditioning',
+      path: '/producten/airconditioning',
       name: 'airco',
-      component: () => import('../views/sub/Airco.vue')
+      component: () => import('../views/product/Airco.vue')
     },
     {
-      path: '/vloerverwarming',
+      path: '/producten/vloerverwarming',
       name: 'floor-heating',
-      component: () => import('../views/sub/Floor-heating.vue')
+      component: () => import('../views/product/Floor-heating.vue')
     },
     {
-      path: '/zonnepanelen',
+      path: '/producten/zonnepanelen',
       name: 'solar',
-      component: () => import('../views/sub/Solar.vue')
+      component: () => import('../views/product/Solar.vue')
     },
     {
-      path: '/laadpalen',
+      path: '/producten/laadpalen',
       name: 'charge-points',
-      component: () => import('../views/sub/Charge-points.vue')
+      component: () => import('../views/product/Charge-points.vue')
     },
     {
-      path: '/isolatie',
-      name: 'isolation',
-      component: () => import('../views/sub/Isolation.vue')
+      path: '/over-ons',
+      name: 'about',
+      component: () => import('../views/About.vue')
     },
     {
-      path: '/energielabel-en-advies',
-      name: 'advice',
-      component: () => import('../views/sub/Advice.vue')
+      path: '/werken-bij',
+      name: 'jobs',
+      component: () => import('../views/Jobs.vue')
     },
     {
       path: '/service',
       name: 'service',
-      component: () => import('../views/sub/Service.vue')
+      component: () => import('../views/Service.vue')
     },
   ],
   scrollBehavior(to, from, savedPosition) {

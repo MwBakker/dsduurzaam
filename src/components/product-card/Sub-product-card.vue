@@ -65,7 +65,7 @@ function route(direction) {
 }
 
 const imageUrl = computed(
-    () => new URL(`../assets/cards/${props.image}.png`, import.meta.url).href
+    () => new URL(`../../assets/cards/${props.image}.png`, import.meta.url).href
 );
 </script>
 

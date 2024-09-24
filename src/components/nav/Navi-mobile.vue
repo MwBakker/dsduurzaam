@@ -51,39 +51,9 @@ import upper_content_container from "./Upper-content-container.vue"
 
 export default {
     name: "navigation-bar",
-    data() {
-        return {
-            showNav: false,
-            title: 'Insteco B.V.',
-            headerImg: 'home',
-            description: 'Uw absolute partner voor een energiezuiniger leven en werken!',
-            headerText: {
-                'home': ["Insteco B.V.", "Uw asbolute partner voor een energiezuiniger leven en werken!"],
-                'heat-pump': ["Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie."],
-                'airco': ["Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar."],
-                'floor-heating': ["Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer."],
-                'solar': ["Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties."],
-                'charge-points': ["Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading."],
-                'isolation': ["Isolatie", "Warm spul"],
-                'advice': ["Energielabel & advies", "Mooi spul"],
-                'service': ["Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud."],
-            },
-        };
-    },
     components: {
         upper_content_container
     },
-    methods: {
-        routeGo(direction) {
-            var array = this.headerText[direction];
-            this.title = array[0];
-            this.description = array[1];
-            this.headerImg = direction;
-            this.$router.push({
-                name: direction,
-            })
-        },
-    }
 };
 </script>
 

@@ -9,16 +9,15 @@
             <img :src="checkIconUrl" alt="Check" class="check-icon" /> {{ item }}
           </li>
         </ul>
-
         <!-- CTA Button with Arrow -->
         <button class="cta-button">
           <span>{{ buttonText }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="button-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </button>
       </div>
-
       <!-- Afbeeldinggedeelte -->
       <div class="content-image">
         <img :src="imageUrl" :alt="imageAlt" class="content-card-image" />
@@ -75,9 +74,12 @@ export default {
 
 <style lang="scss" scoped>
 .container-content-card-one {
-  width: 75%; /* Beperk de breedte tot 75% van het scherm */
-  max-width: 1548px; /* Blijf een maximum breedte hebben */
-  margin: 0 auto; /* Centreer de container */
+  width: 75%;
+  /* Beperk de breedte tot 75% van het scherm */
+  max-width: 1548px;
+  /* Blijf een maximum breedte hebben */
+  margin: 0 auto;
+  /* Centreer de container */
   display: flex;
   justify-content: center;
   padding: 0 20px;
@@ -147,7 +149,8 @@ ul {
 
 .arrow-link {
   text-decoration: none;
-  color: #222222; /* Standaard tekstkleur */
+  color: #222222;
+  /* Standaard tekstkleur */
   font-weight: 600;
   font-size: 1.2rem;
   display: inline-flex;
@@ -156,17 +159,20 @@ ul {
 }
 
 .arrow-link:hover {
-  color: #2071b5; /* Verander de tekstkleur bij hover */
+  color: #2071b5;
+  /* Verander de tekstkleur bij hover */
 }
 
 .arrow {
   margin-right: 8px;
-  color: #2071b5; /* Pijl heeft altijd deze kleur */
+  color: #2071b5;
+  /* Pijl heeft altijd deze kleur */
   display: inline-flex;
   align-items: center;
 
   svg {
-    width: 1.25rem; /* Zorg dat de pijl even groot is als de tekst */
+    width: 1.25rem;
+    /* Zorg dat de pijl even groot is als de tekst */
     height: 1.25rem;
   }
 }
@@ -183,10 +189,12 @@ ul {
   margin-top: 20px;
   width: 400px;
   position: relative;
-  overflow: hidden; /* Verberg wat buiten de knop valt */
+  overflow: hidden;
+  /* Verberg wat buiten de knop valt */
   display: inline-flex;
   align-items: center;
-  justify-content: center; /* Zorg ervoor dat de tekst gecentreerd is */
+  justify-content: center;
+  /* Zorg ervoor dat de tekst gecentreerd is */
   transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
@@ -195,7 +203,8 @@ ul {
 }
 
 .cta-button:hover {
-  background-color: #ffe967; /* Pas de achtergrondkleur aan bij hover */
+  background-color: #ffe967;
+  /* Pas de achtergrondkleur aan bij hover */
 }
 
 /* Zorg dat de pijl start buiten zicht, aan de rechterkant */
@@ -206,28 +215,34 @@ ul {
   height: 1.5rem;
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateX(-30px); /* Start buiten de knop */
+  transform: translateX(-30px);
+  /* Start buiten de knop */
 }
 
 /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
 .cta-button:hover .button-arrow {
-  transform: translateX(0); /* Schuift naar binnen */
-  opacity: 1; /* Wordt zichtbaar */
+  transform: translateX(0);
+  /* Schuift naar binnen */
+  opacity: 1;
+  /* Wordt zichtbaar */
 }
 
 /* Forceer de pijl naar zwart */
 .cta-button .button-arrow {
-    stroke: #222222 !important; /* Zorg ervoor dat de pijl zwart wordt */
+  stroke: #222222 !important;
+  /* Zorg ervoor dat de pijl zwart wordt */
 }
 
 .content-image {
-  flex-basis: 45%; /* Gebruik percentage voor flex-basis */
+  flex-basis: 45%;
+  /* Gebruik percentage voor flex-basis */
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   z-index: 2;
-  margin-top: -150px; /* Dit zorgt ervoor dat de afbeelding naar boven verschuift, altijd van toepassing */
+  margin-top: -150px;
+  /* Dit zorgt ervoor dat de afbeelding naar boven verschuift, altijd van toepassing */
 }
 
 .content-card-image {
@@ -240,50 +255,64 @@ ul {
 /* Media queries voor verschillende schermgroottes */
 @media (max-width: 1920px) {
   .content-image {
-    margin-top: -200px; /* Voor schermen kleiner dan 1920px */
+    margin-top: -200px;
+    /* Voor schermen kleiner dan 1920px */
   }
 
   .cta-button {
-  width: 400px; /* Standaard vaste breedte */
-}
+    width: 400px;
+    /* Standaard vaste breedte */
+  }
 }
 
 @media (max-width: 1750) {
   .cta-button {
-  width: 400px; /* Standaard vaste breedte */
-}
+    width: 400px;
+    /* Standaard vaste breedte */
+  }
 }
 
 @media (max-width: 1600px) {
   .content-image {
-    margin-top: -325px; /* Voor schermen kleiner dan 1600px */
+    margin-top: -325px;
+    /* Voor schermen kleiner dan 1600px */
   }
 
   .cta-button {
-  width: 350px; /* Standaard vaste breedte */
-}
+    width: 350px;
+    /* Standaard vaste breedte */
+  }
 }
 
 @media (max-width: 1380px) {
   .content-image {
-    margin-top: -375px; /* Voor schermen kleiner dan 1600px */
+    margin-top: -375px;
+    /* Voor schermen kleiner dan 1600px */
   }
 
   .cta-button {
-  width: 100%; /* Standaard vaste breedte */
-}
+    width: 100%;
+    /* Standaard vaste breedte */
+  }
 }
 
 @media (max-width: 1280px) {
   .container-content-card-one {
-    width: 100%; /* Gebruik de volledige breedte */
-    max-width: 100%; /* Zorg ervoor dat de maximale breedte ook 100% is */
+    width: 100%;
+    /* Gebruik de volledige breedte */
+    max-width: 100%;
+    /* Zorg ervoor dat de maximale breedte ook 100% is */
     display: flex;
-    justify-content: center; /* Horizontale centrering */
-    align-items: center; /* Verticale centrering */
-    flex-direction: column; /* Stapel de inhoud verticaal */
-    padding: 20px; /* Voeg wat padding toe rond de container */
-    margin: 0 auto; /* Centreer de container horizontaal */
+    justify-content: center;
+    /* Horizontale centrering */
+    align-items: center;
+    /* Verticale centrering */
+    flex-direction: column;
+    /* Stapel de inhoud verticaal */
+    padding: 20px;
+    /* Voeg wat padding toe rond de container */
+    margin: 0 auto;
+    /* Centreer de container horizontaal */
   }
 
   h2 {
@@ -292,22 +321,29 @@ ul {
 
   .cta-button {
     font-size: 1.2rem;
-    width: 100%; /* Zorg ervoor dat de knop iets smaller is */
+    width: 100%;
+    /* Zorg ervoor dat de knop iets smaller is */
   }
 
   .content-wrapper {
-    flex-direction: column; /* Stapel de tekst en afbeelding onder elkaar */
-    width: 100%; /* Zorg ervoor dat de wrapper 100% breed is */
-    justify-content: center; /* Centreer de inhoud verticaal */
-    align-items: center; /* Centreer de inhoud horizontaal */
+    flex-direction: column;
+    /* Stapel de tekst en afbeelding onder elkaar */
+    width: 100%;
+    /* Zorg ervoor dat de wrapper 100% breed is */
+    justify-content: center;
+    /* Centreer de inhoud verticaal */
+    align-items: center;
+    /* Centreer de inhoud horizontaal */
   }
 
   .content-wrapper::before {
-    width: 100%; /* Zorg ervoor dat het pseudo-element 100% breed is op kleinere schermen */
+    width: 100%;
+    /* Zorg ervoor dat het pseudo-element 100% breed is op kleinere schermen */
   }
 
   .content-image {
-    display: none; /* Verberg de afbeelding onder de 1280px */
+    display: none;
+    /* Verberg de afbeelding onder de 1280px */
   }
 }
 
@@ -319,11 +355,13 @@ ul {
 
   .cta-button {
     font-size: 1.2rem;
-    width: 90%; /* Vergroot de breedte van de knop op kleinere schermen */
+    width: 90%;
+    /* Vergroot de breedte van de knop op kleinere schermen */
   }
 
   .content-image {
-    margin-top: -150px; /* Voor schermen kleiner dan 1024px */
+    margin-top: -150px;
+    /* Voor schermen kleiner dan 1024px */
   }
 }
 
@@ -339,7 +377,8 @@ ul {
   }
 
   .content-image {
-    margin-top: -150px; /* Geen negatieve margin-top meer op kleinere schermen */
+    margin-top: -150px;
+    /* Geen negatieve margin-top meer op kleinere schermen */
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card" @click="emitRouteGo">
+  <div class="product-card" @click="routeGo(route)">
     <div class="card-image">
       <img :src="imageUrl" alt="Product image">
       <div class="overlay">
@@ -10,11 +10,12 @@
           <span class="btn-link">
             Lees meer
             <span class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
+              </svg>
             </span>
+          </span>
         </div>
       </div>
     </div>
@@ -23,7 +24,6 @@
 
 <script setup>
 import { computed } from 'vue';
-import { getCurrentInstance } from 'vue';
 
 const props = defineProps({
   title: String,
@@ -31,16 +31,8 @@ const props = defineProps({
   route: String,
 });
 
-const internalInstance = getCurrentInstance();
-// get the emitter from the instance
-const emitter = internalInstance.appContext.config.globalProperties.emitter;
-
-function emitRouteGo() {
-  emitter.emit('my-event', { 'direction': props.route });
-};
-
 const imageUrl = computed(() => {
-  return new URL(`../assets/cards/${props.image}.png`, import.meta.url).href;
+  return new URL(`../../assets/cards/${props.image}.png`, import.meta.url).href;
 });
 </script>
 
@@ -49,8 +41,10 @@ const imageUrl = computed(() => {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  width: 100%;  /* Zorg dat de breedte van de kaart 100% is binnen zijn container */
-  aspect-ratio: 1 / 1; /* Houd de kaarten vierkant */
+  width: 100%;
+  /* Zorg dat de breedte van de kaart 100% is binnen zijn container */
+  aspect-ratio: 1 / 1;
+  /* Houd de kaarten vierkant */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
   max-height: 250px;
@@ -65,20 +59,23 @@ const imageUrl = computed(() => {
   position: relative;
   width: 100%;
   height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    /* Zorg dat de afbeelding de volledige kaart vult */
+    object-fit: cover;
+    /* Behoud de verhoudingen van de afbeelding */
+  }
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%; /* Zorg dat de afbeelding de volledige kaart vult */
-  object-fit: cover; /* Behoud de verhoudingen van de afbeelding */
-}
-
-.overlay {
+.card-image .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Gradient van zwart naar transparant */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  /* Gradient van zwart naar transparant */
   color: white;
   padding: 20px;
   display: flex;
@@ -97,15 +94,18 @@ const imageUrl = computed(() => {
 .card-button {
   .btn-link {
     display: inline-flex;
-    align-items: center; /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
+    align-items: center;
+    /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
     color: white;
     font-weight: 600;
     font-size: 1.1rem;
     transition: color 0.3s ease;
 
     .arrow {
-      margin-left: 5px; /* Verhoog de marge om meer ruimte te geven */
+      margin-left: 5px;
+      /* Verhoog de marge om meer ruimte te geven */
       display: inline-flex;
+
       svg {
         width: 1.25rem;
         height: 1.25rem;
@@ -116,5 +116,4 @@ const imageUrl = computed(() => {
   }
 
 }
-
 </style>
