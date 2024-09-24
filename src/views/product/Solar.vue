@@ -1,47 +1,5 @@
 <template>
   <div id="solar">
-    <div class="background-wrapper">
-      <!-- Container voor de twee secties -->
-      <div class="content-container">
-        <!-- Tekst sectie (40% breedte) -->
-        <div class="text-container">
-          <h2>Onze diensten</h2>
-          <p>
-            Onze professionals ontzorgen u volledig in het verduurzamen van uw woning.
-            Of u nu een zakelijke of particuliere klant bent. Het voordeel voor u? De hoogste
-            kwaliteit en één vast aanspreekpunt.
-          </p>
-          <p class="extra-margin">
-            Benieuwd wat we allemaal doen? We vertellen u graag over onze diensten.
-          </p>
-          <button class="cta-button">
-            <span>Vraag adviesgesprek aan</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              class="button-arrow">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Productkaarten sectie (60% breedte) -->
-        <div class="cards-container">
-          <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric."
-            buttonText="Lees meer" />
-          <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen"
-            buttonText="Ontdek meer" />
-          <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating"
-            subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Bekijk opties" />
-          <ProductCard route="solar" title="Zonnepanelen" image="solar"
-            subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie"
-            buttonText="Meer informatie" />
-          <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
-            subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
-          <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
-            subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
-        </div>
-      </div>
-    </div>
-
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',

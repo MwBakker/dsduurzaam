@@ -1,6 +1,16 @@
 
 <template>
   <div id="home">
+
+    <IntroductionCard
+      title1="Uw duurzame installatie, ons vakmanschap – met persoonlijke service en maatwerk vanaf de eerste stap"
+      text1=""
+      title2="Wat wij doen"
+      text2="We leveren en installeren duurzame installaties, afgestemd op de specifieke wensen van onze klanten. Van zonnepanelen tot warmtepompen, wij bieden maatwerkoplossingen die voldoen aan de hoogste normen voor energiezuinigheid en functionaliteit."
+      title3="Waar wij voor staan"
+      text3="We geloven in de kracht van duurzaamheid en maatwerk. Onze missie is om klanten oplossingen te bieden die bijdragen aan een beter milieu en volledig aansluiten op hun behoeften. Als betrouwbare partner streven we altijd naar de beste resultaten."
+    />
+
     <div class="background-wrapper">
       <!-- Container voor de twee secties -->
       <div class="content-container">
@@ -30,7 +40,7 @@
           <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating" subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Bekijk opties" />
           <ProductCard route="solar" title="Zonnepanelen" image="solar" subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Meer informatie" />
           <ProductCard route="charge-points" title="Laadpaal" image="charge-points" subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
-          <ProductCard route="charge-points" title="Laadpaal" image="charge-points" subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
+          <ProductCard route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar" buttonText="Lees meer" />
         </div>
       </div>
     </div>
@@ -127,6 +137,7 @@ import ContentCardOne from '@/components/Content-card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/Why-card.vue';
+import IntroductionCard from '@/components/Introduction-card.vue';
 
 export default {
   name: "Home",
@@ -138,7 +149,8 @@ export default {
     ContentCardOne,
     Accordion,
     AccordionItem,
-    WhyCard
+    WhyCard,
+    IntroductionCard
   }
 };
 </script>
