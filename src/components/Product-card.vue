@@ -78,7 +78,7 @@ const imageUrl = computed(() => {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparante zwarte achtergrond */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Gradient van zwart naar transparant */
   color: white;
   padding: 20px;
   display: flex;
@@ -97,24 +97,24 @@ const imageUrl = computed(() => {
 .card-button {
   .btn-link {
     display: inline-flex;
-    align-items: center;
+    align-items: center; /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
     color: white;
     font-weight: 600;
     font-size: 1.1rem;
     transition: color 0.3s ease;
 
     .arrow {
-      margin-left: 8px;
+      margin-left: 5px; /* Verhoog de marge om meer ruimte te geven */
+      display: inline-flex;
       svg {
         width: 1.25rem;
         height: 1.25rem;
         stroke: white;
+        vertical-align: middle;
       }
     }
   }
 
-  .btn-link:hover {
-    color: #ffda00;
-  }
 }
+
 </style>

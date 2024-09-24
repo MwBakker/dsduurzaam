@@ -32,13 +32,13 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Exo 2', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
   word-spacing: 0px !important;
   /*font-weight: 600;*/
 }
 
 p {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   color: #222222;
   word-spacing: 0px !important;
 }
@@ -49,7 +49,7 @@ a {
 
 li {
   cursor: pointer;
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   word-spacing: 0px !important;
   font-weight: 0;
   font-size: 0.9em;
@@ -65,7 +65,7 @@ li {
 h1,
 .light,
 h2 {
-  font-family: 'Alexandria', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 38px;
   font-weight: 550;
   word-spacing: 0px !important;
@@ -213,5 +213,9 @@ hr {
 
 #scroll-button:hover {
   background-color: #3e5b7a;
+}
+
+a {
+  position: relative; /* Zorg ervoor dat de tooltip relatief is aan de link */
 }
 </style>
