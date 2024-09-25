@@ -52,13 +52,13 @@ const imageUrl = computed(
 
 
 @media (max-width: 1024px) {
-  .line {
-    width: 90%;
-    margin: 0 auto;
+    .line {
+        width: 90%;
+        margin: 0 auto;
 
-    p {
-        margin-bottom: 48px;
+        p {
+            margin-bottom: 48px;
+        }
     }
-  }
 }
 </style>

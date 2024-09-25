@@ -1,10 +1,8 @@
 <template>
-  <div class="app">
     <navBar v-if="windowWidth > 1280" ref="navBar" />
     <navBarMobile v-else ref="navBar" />
     <router-view />
     <customFooter />
-  </div>
 </template>
 
 <script>
@@ -96,7 +94,7 @@ button,
   cursor: pointer;
 }
 
-.app {
+#app {
   min-height: 100vh;
   position: relative;
 }

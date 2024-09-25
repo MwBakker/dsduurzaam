@@ -29,8 +29,8 @@
 <script>
 
 import SubProduct from './template.vue';
-import SubProductCard from '@/components/product-card/Sub-product-card.vue';
-import QuoteCard from '@/components/Quote-card.vue';
+import SubProductCard from '@/components/cards/product/Sub.vue';
+import QuoteCard from '@/components/cards/Quote.vue';
 
 export default {
     name: "Heat-pump",

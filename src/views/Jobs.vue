@@ -6,8 +6,8 @@
             'Installatie door vakbekwame en volledig gecertificeerde experts',
             'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
             'Wij handelen het gehele subsidietraject voor je af'
-        ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
-
+        ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump"
+            linkText="Lees meer" />
         <div class="background-wrapper-white">
             <Accordion title="Alles wat je moet weten">
                 <template v-slot="{ currentOpen, setOpen, refs }">
@@ -33,7 +33,6 @@
                 </template>
             </Accordion>
         </div>
-
         <div class="background-wrapper">
             <div class="why-cards-container">
                 <h2>Waarom kiest u voor Insteco?</h2>
@@ -53,27 +52,25 @@
                 </div>
             </div>
         </div>
-
-
         <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
             'Je krijgt gratis advies en een offerte op maat',
             'Installatie door vakbekwame en volledig gecertificeerde experts',
             'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
             'Wij handelen het gehele subsidietraject voor je af'
-        ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
-
+        ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump"
+            linkText="Lees meer" />
     </div>
 </template>
 
 <script>
-import ParagraphCardSmall from '@/components/paragraph-card/Paragraph-card-small.vue';
-import ParagraphCard from '@/components/paragraph-card/Paragraph-card.vue';
-import ProductCard from '@/components/product-card/Product-card.vue';
-import QuoteCard from '@/components/Quote-card.vue';
-import ContentCardOne from '@/components/Content-card-one.vue';
+import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
+import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
+import ProductCard from '@/components/cards/product/Regular.vue';
+import QuoteCard from '@/components/cards/Quote.vue';
+import ContentCardOne from '@/components/cards/Content-card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
-import WhyCard from '@/components/Why-card.vue';
+import WhyCard from '@/components/cards/Why-card.vue';
 
 export default {
     name: "Jobs",

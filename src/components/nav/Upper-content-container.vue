@@ -2,23 +2,19 @@
   <!-- Container-main voor de bestaande content -->
   <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
     <div id="titles-header">
-      <!-- DIT MOET EEN SLOT ELEMENT WORDEN WAAR EEN GEHELE DIV WORDT MEEGEVOERD -->
-      <span class="overlay-text">Je huis</span>
-      <span class="overlay-text">verwarmen</span>
-      <span class="overlay-text">met een</span>
-      <span class="overlay-text">warmtepomp</span>
-      <a href="#" class="link-with-arrow" :style="{ fontSize: '1.25rem', fontWeight: 600 }">
+      <h2>{{ mainTitle }}</h2>
+      <span id="link-with-arrow" @click="routeGoo(mainUrl)">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
         <p>Lees meer</p>
-      </a>
+      </span>
     </div>
-    <div id="overlay-square" v-if="showBoxx == 1">
-      <h1>{{ boxTitlee }}</h1>
-      <p>{{ boxDescriptionn }}</p>
-      <button id="cta-button">
-        <span> Klik hier </span>
+    <div id="overlay-square" v-if="showBox == 1">
+      <h1>{{ boxTitle }}</h1>
+      <p>{{ boxDescription }}</p>
+      <button @click="routeGoo(boxUrl)">
+        Klik hier
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           class="button-arrow">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
@@ -35,27 +31,46 @@ import ServiceLine from "@/components/Service-line.vue";
 export default {
   name: "upper_content_container",
   props: {
-    showBoxx: {
-      type: Number,
-      required: true,
-    },
-    boxTitlee: {
-      type: String,
-      required: true,
-    },
-    boxDescriptionn: {
-      type: String,
-      required: true,
-    },
     mainImg: {
       type: String,
       required: true,
     },
+    mainTitle: {
+      type: String,
+      required: true
+    },
+    mainUrl: {
+      type: String,
+      required: true
+    },
+    showBox: {
+      type: Number,
+      required: true,
+    },
+    boxTitle: {
+      type: String,
+      required: true,
+    },
+    boxDescription: {
+      type: String,
+      required: true,
+    },
+    boxUrl: {
+      type: String,
+      required: true
+    }
   },
   components: {
     titleIcon,
     ServiceLine,
   },
+  methods: {
+    routeGoo(url) {
+      console.log("yoooo");
+      this.routeGo(url);
+      this.$forceUpdate();
+    }
+  }
 };
 </script>
 
@@ -76,6 +91,11 @@ export default {
   background-position: bottom;
 }
 
+p,
+h1 {
+  color: white;
+}
+
 /* de 4 titels + link onder elkaar */
 #titles-header {
   margin: 24px 0 0 10.5%;
@@ -85,24 +105,17 @@ export default {
   color: white;
 
   // titles
-  .overlay-text {
+  h2 {
+    width: 50%;
     font-size: 60px;
     font-weight: 800;
     margin-bottom: 5px;
     text-align: left;
   }
 
-  // totale link
-  a {
-    padding-top: 20px;
-    color: white;
-    display: flex;
-  }
-
   // lees meer
   p {
-    color: white;
-    margin-left: 12px;
+    margin-left: 20px;
   }
 
   svg {
@@ -110,6 +123,12 @@ export default {
   }
 }
 
+#link-with-arrow {
+  cursor: pointer;
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
 
 /* Blauwe box */
 #overlay-square {
@@ -129,7 +148,6 @@ export default {
   // title in box
   h1 {
     font-weight: 800;
-    color: white;
     margin-bottom: 20px;
   }
 
@@ -137,27 +155,23 @@ export default {
   p {
     font-size: 1.2rem;
     font-weight: 500;
-    color: white;
     margin-bottom: 20px;
   }
 
+  button {
+    background-color: #ffda00;
+    color: #222222;
+    font-size: 1.2em;
+    font-weight: 800;
+    position: relative;
+    /* Zorg ervoor dat de tekst gecentreerd is */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 
-}
-
-#overlay-square #cta-button {
-  background-color: #ffda00;
-  color: #222222;
-  font-size: 1.2em;
-  font-weight: 800;
-  position: relative;
-  /* Zorg ervoor dat de tekst gecentreerd is */
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-
-  &:hover {
-    background-color: #ffe967;
+    &:hover {
+      background-color: #ffe967;
+    }
   }
 }
-
 
 /* Zorg dat de pijl start buiten zicht, aan de linkerkant */
 .button-arrow {
@@ -174,7 +188,7 @@ export default {
 }
 
 /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-#cta-button:hover .button-arrow {
+button:hover .button-arrow {
   transform: translateX(0);
   /* Schuift naar binnen */
   opacity: 1;
@@ -200,28 +214,4 @@ export default {
     margin: 0;
   }
 }
-
-// /* Styling voor de link met pijl */
-// #container-main #container-elements .link-with-arrow {
-//   display: inline-flex;
-//   align-items: center;
-//   font-size: 1.25rem !important;
-//   font-weight: 600 !important;
-//   color: #ffffff !important;
-//   text-decoration: none;
-//   transition: color 0.3s ease;
-//   margin-top: 10px;
-
-//   svg {
-//     margin-right: 8px;
-//     width: 1.25rem;
-//     /* Zet de breedte van het pijl-icoon */
-//     height: 1.25rem;
-//     /* Zet de hoogte van het pijl-icoon */
-//     stroke: #ffffff !important;
-//   }
-
-//   &:hover {
-//     color: #f0f0f0;
-//   }
-// }</style>
+</style>

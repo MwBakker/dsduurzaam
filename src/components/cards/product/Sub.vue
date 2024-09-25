@@ -32,22 +32,6 @@
     </div>
 </template>
 
-<!-- <script>
-
-export default {
-    name: "sub-product-card",
-    props: ['title', 'image', 'amount', 'brand', 'statements', 'route'],
-    methods: {
-        route(direction) {
-            // must direct through navigation component
-
-            this.$root.$refs.navBar.routeGo(direction);
-            //this.$root.$refs.A.foo();
-        }
-    }
-}; -->
-
-
 <script setup>
 import { computed } from 'vue'
 
@@ -60,12 +44,8 @@ const props = defineProps({
     route: String,
 })
 
-function route(direction) {
-    this.$root.$refs.navBar.routeGo(direction);
-}
-
 const imageUrl = computed(
-    () => new URL(`../../assets/cards/${props.image}.png`, import.meta.url).href
+    () => new URL(`../../../assets/cards/${props.image}.png`, import.meta.url).href
 );
 </script>
 
