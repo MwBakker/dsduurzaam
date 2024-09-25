@@ -30,25 +30,11 @@
       <ul id="titles">
         <li :class="{ active: activePage === 'home' }" @click="routeGo('home')">Home</li>
         <!-- Dropdown voor "Onze producten" -->
-        <li
-          :class="{ active: isProductActive }"
-          id="dropdown-toggle"
-        >
+        <li :class="{ active: isProductActive }" id="dropdown-toggle">
           Onze producten
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </li>
 
@@ -72,6 +58,8 @@
   <upper_content_container :mainImg="headerImg" :mainTitle="headerTitle" :mainUrl="headerMainUrl"
     :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
   </upper_content_container>
+
+</template>
 
 
 
@@ -257,18 +245,19 @@ nav {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 999;
-  display: none; /* Verberg de dropdown standaard */
+  display: none;
+  /* Verberg de dropdown standaard */
   justify-content: space-around;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
-  display:none !important;
+  display: none !important;
 }
 
 /* Toon de mega-dropdown bij hover over #dropdown-toggle of .mega-dropdown */
 #dropdown-toggle:hover .mega-dropdown,
-#dropdown-toggle:hover + #mega-dropdown,
+#dropdown-toggle:hover+#mega-dropdown,
 #mega-dropdown:hover {
   display: flex;
 }
@@ -310,5 +299,4 @@ nav {
 .mega-dropdown li:nth-child(5) {
   transition-delay: 0.3s;
 }
-
 </style>
