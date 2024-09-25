@@ -42,12 +42,7 @@ const props = defineProps({
 });
 
 const imageUrl = computed(() => {
-  if (!props.image) {
-    console.error('No image prop provided.');
-    return '';
-  }
-  const imagePath = `../assets/cards/${props.image}.png`;
-  return new URL(imagePath, import.meta.url).href;
+  return new URL(`../../../assets/cards/${props.image}.png`, import.meta.url).href;
 });
 </script>
 

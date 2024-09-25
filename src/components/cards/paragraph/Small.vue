@@ -4,7 +4,8 @@
       <h1 class="title">{{ title }}</h1>
       <h2 class="subtitle">{{ subtitle }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
-      <div class="card-info" @mouseover="isHovered = true" @mouseleave="isHovered = false" @click="route(contactLink)">
+      <div class="card-info" @mouseover="isHovered = true" @mouseleave="isHovered = false"
+        @click="routeGo(contactLink)">
         <span class="info-text">{{ buttonText }}</span>
         <i class="fas fa-arrow-right"></i>
       </div>
@@ -17,7 +18,6 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
 
 const isHovered = ref(false);
 
@@ -32,35 +32,30 @@ const props = defineProps({
   height: String,
 });
 
-const router = useRouter();
-
-function route(link) {
-  router.push({ path: link });
-}
-
 const imageUrl = computed(() => {
-  if (!props.image) {
-    console.error('No image prop provided.');
-    return '';
-  }
-  const imagePath = `../assets/cards/${props.image}.png`;
-  return new URL(imagePath, import.meta.url).href;
+  return new URL(`../../../assets/cards/${props.image}.png`, import.meta.url).href;
 });
 </script>
 
 <style lang="scss" scoped>
 #paragraphcard {
   display: flex;
-  width: 50%; /* Kaart breedte is 50% van de container */
-  height: 350px; /* Pas de hoogte aan naar wens */
-  margin: 32px auto; /* Centreer de kaart horizontaal */
+  width: 50%;
+  /* Kaart breedte is 50% van de container */
+  height: 350px;
+  /* Pas de hoogte aan naar wens */
+  margin: 32px auto;
+  /* Centreer de kaart horizontaal */
   position: relative;
   overflow: hidden;
 }
 
-#content, .image-wrapper {
-  width: 50%; /* Beide secties nemen elk 50% van de breedte in */
-  height: 100%; /* Zorg ervoor dat beide secties de volledige hoogte innemen */
+#content,
+.image-wrapper {
+  width: 50%;
+  /* Beide secties nemen elk 50% van de breedte in */
+  height: 100%;
+  /* Zorg ervoor dat beide secties de volledige hoogte innemen */
 }
 
 #content {
@@ -71,7 +66,8 @@ const imageUrl = computed(() => {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  overflow: auto; /* Zorg ervoor dat de inhoud niet buiten de sectie valt */
+  overflow: auto;
+  /* Zorg ervoor dat de inhoud niet buiten de sectie valt */
 }
 
 .title {
@@ -93,7 +89,8 @@ const imageUrl = computed(() => {
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  margin-right: 20px; /* Verander dit naar een kleiner getal als de tekst niet past */
+  margin-right: 20px;
+  /* Verander dit naar een kleiner getal als de tekst niet past */
 }
 
 .card-info {
@@ -101,19 +98,25 @@ const imageUrl = computed(() => {
   align-items: center;
   cursor: pointer;
   color: #222222;
-  font-size: 1rem;  /* Pas font-size aan voor de gehele card-info */
-  font-weight: 600; /* Pas font-weight aan voor de gehele card-info */
+  font-size: 1rem;
+  /* Pas font-size aan voor de gehele card-info */
+  font-weight: 600;
+  /* Pas font-weight aan voor de gehele card-info */
 }
 
 .card-info .info-text {
   margin-right: 10px;
-  font-size: 1rem;  /* Specifieke font-size voor tekst */
-  font-weight: 600; /* Specifieke font-weight voor tekst */
+  font-size: 1rem;
+  /* Specifieke font-size voor tekst */
+  font-weight: 600;
+  /* Specifieke font-weight voor tekst */
 }
 
 .card-info i {
-  font-size: 1rem;  /* Specifieke font-size voor het icoon */
-  font-weight: 600; /* Specifieke font-weight voor het icoon (indien van toepassing) */
+  font-size: 1rem;
+  /* Specifieke font-size voor het icoon */
+  font-weight: 600;
+  /* Specifieke font-weight voor het icoon (indien van toepassing) */
   transition: transform 0.3s ease;
 }
 
@@ -129,14 +132,16 @@ const imageUrl = computed(() => {
 
 .image-wrapper img {
   width: 100%;
-  height: 100%; /* Zorg ervoor dat de afbeelding de volledige hoogte van de sectie bedekt */
-  object-fit: cover; /* Zorg ervoor dat de afbeelding de sectie volledig bedekt */
+  height: 100%;
+  /* Zorg ervoor dat de afbeelding de volledige hoogte van de sectie bedekt */
+  object-fit: cover;
+  /* Zorg ervoor dat de afbeelding de sectie volledig bedekt */
   transition: transform 0.5s ease;
 }
 
 /* Voeg de zoomed class toe als isHovered true is */
 .image-wrapper img.zoomed {
-  transform: scale(1.05); /* Verminder de zoom factor indien nodig */
+  transform: scale(1.05);
+  /* Verminder de zoom factor indien nodig */
 }
-
 </style>

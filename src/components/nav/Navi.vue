@@ -92,8 +92,8 @@
       </ul>
     </nav>
   </div>
-  <upper_content_container :boxTitlee="boxTitle" :boxDescriptionn="boxDescription" :mainImg="headerImg" :showBoxx=showBox>
-    <template v:slot:activePage></template>
+  <upper_content_container :mainImg="headerImg" :mainTitle="headerTitle" :mainUrl="headerMainUrl"
+    :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
   </upper_content_container>
 </template>
 
