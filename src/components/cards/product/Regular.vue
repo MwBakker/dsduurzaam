@@ -8,10 +8,9 @@
         </div>
         <div class="card-button">
           <span class="btn-link">
-            Lees meer
+            {{ buttonText }} <!-- Dynamische tekst -->
             <span class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </span>
@@ -29,6 +28,10 @@ const props = defineProps({
   title: String,
   image: String,
   route: String,
+  buttonText: {
+    type: String,
+    default: 'Lees meer' // Standaardtekst voor de knop
+  }
 });
 
 const imageUrl = computed(() => {
@@ -114,6 +117,5 @@ const imageUrl = computed(() => {
       }
     }
   }
-
 }
 </style>

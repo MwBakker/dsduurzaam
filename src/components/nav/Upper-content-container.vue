@@ -106,11 +106,12 @@ h1 {
 
   // titles
   h2 {
-    width: 50%;
+    width: 75%;
     font-size: 60px;
     font-weight: 800;
     margin-bottom: 5px;
     text-align: left;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Donkere schaduw voor meer contrast */
   }
 
   // lees meer

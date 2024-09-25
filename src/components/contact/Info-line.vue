@@ -22,16 +22,27 @@
   // Dynamische afbeelding URL op basis van de icon-prop
   const imageUrl = computed(() => new URL(`../../assets/icon/${props.icon}.png`, import.meta.url).href)
   
-  // Methode om te bepalen of het om een 'phone' of 'mail' gaat en de juiste actie uit te voeren
   const handleClick = () => {
-    if (props.icon === 'phone') {
-      // Verwijder spaties en zorg dat tel-link werkt
-      window.location.href = `tel:${props.text.replace(/\s+/g, '')}`;
-    } else if (props.icon === 'mail') {
-      // mailto-link met het e-mailadres
-      window.location.href = `mailto:${props.text}`;
+  if (props.icon === 'phone') {
+    // Verwijder spaties en zorg dat tel-link werkt
+    window.open(`tel:${props.text.replace(/\s+/g, '')}`, '_self'); // Voor telefoons in hetzelfde tabblad
+  } else if (props.icon === 'mail') {
+    // mailto-link met het e-mailadres
+    window.open(`mailto:${props.text}`, '_self'); // Voor e-mails in hetzelfde tabblad
+  } else if (props.icon === 'map') {
+    // Google Maps-link met het adres en eventuele extra informatie
+    let query = encodeURIComponent(props.text);
+    
+    // Voeg additionalText toe als het bestaat
+    if (props.additionalText) {
+      query += `%20${encodeURIComponent(props.additionalText)}`; // Voeg extra tekst toe met spatie (%20)
     }
-  };
+    
+    // Open Google Maps in een nieuw tabblad
+    window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+  }
+};
+
   </script>
   
   <style lang="scss" scoped>
