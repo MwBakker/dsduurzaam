@@ -36,7 +36,7 @@ export default {
             boxTitle: 'Ontdek wat bij je huis past',
             boxDescription: 'Heb je een koophuis en overweeg je een warmtepomp? Laat je gegevens achter en kom in contact met één van onze experts. Zij helpen je met een advies op maat en een offerte. Je ontvangt tot € 500,-- korting op je warmtepomp.',
             headerBoxContent: {
-                'home': [1, "Ontdek wat bij je huis past", "Uw absolute partner voor een energiezuiniger leven en werken!"],
+                'home': [0, "Ontdek wat bij je huis past", "Uw absolute partner voor een energiezuiniger leven en werken!"],
                 'heat-pump': [1, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie."],
                 'airco': [0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar."],
                 'floor-heating': [0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer."],
