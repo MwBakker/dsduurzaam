@@ -8,7 +8,6 @@
           <span>Uw partner voor duurzame installaties</span>
         </div>
         <div class="right-content">
-          <!-- Telefoonnummer met tel-functionaliteit -->
           <span>
             <a href="tel:0599585010">
               <svgIcon
@@ -16,7 +15,6 @@
               0599 585010
             </a>
           </span>
-          <!-- E-mailadres met mailto-functionaliteit -->
           <span>
             <a href="mailto:info@insteco.nl">
               <svgIcon
@@ -30,99 +28,84 @@
 
     <nav>
       <ul id="titles">
-        <!-- Home item -->
-        <li :class="{ active: activePage === 'home' }" @click="routeGo('home')">
-          <direction-icon v-if="activePage === 'home'" />
-          Home
-        </li>
+        <li :class="{ active: activePage === 'home' }" @click="routeGo('home')">Home</li>
         <!-- Dropdown voor "Onze producten" -->
-        <li :class="{ active: isProductActive }" id="dropdown-toggle">
-          <direction-icon v-if="isProductActive" />
+        <li
+          :class="{ active: isProductActive }"
+          id="dropdown-toggle"
+        >
           Onze producten
-          <ul class="dropdown-menu">
-            <li :class="{ active: activePage === 'heat-pump' }" @click="routeGo('heat-pump')">
-              <direction-icon v-if="activePage === 'heat-pump'" />
-              Warmtepomp
-            </li>
-            <li :class="{ active: activePage === 'airco' }" @click="routeGo('airco')">
-              <direction-icon v-if="activePage === 'airco'" />
-              Airconditioning
-            </li>
-            <li :class="{ active: activePage === 'floor-heating' }" @click="routeGo('floor-heating')">
-              <direction-icon v-if="activePage === 'floor-heating'" />
-              Vloerverwarming
-            </li>
-            <li :class="{ active: activePage === 'solar' }" @click="routeGo('solar')">
-              <direction-icon v-if="activePage === 'solar'" />
-              Zonnepanelen
-            </li>
-            <li :class="{ active: activePage === 'charge-points' }" @click="routeGo('charge-points')">
-              <direction-icon v-if="activePage === 'charge-points'" />
-              Laadpaal
-            </li>
-          </ul>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
         </li>
-        <li :class="{ active: isServiceActive }" id="dropdown-toggle">
-          <direction-icon v-if="isServiceActive" />
-          Onze diensten
-          <ul class="dropdown-menu">
-            <li :class="{ active: activePage === 'none' }" @click="routeGo('')">
-              <direction-icon v-if="activePage === 'none'" />
-              Thaiboks
-            </li>
-            <li :class="{ active: activePage === 'none' }" @click="routeGo('')">
-              <direction-icon v-if="activePage === 'none'" />
-              RS
-            </li>
-          </ul>
-        </li>
-        <!-- Andere items -->
-        <li :class="{ active: activePage === 'about' }" @click="routeGo('about')">
-          <direction-icon v-if="activePage === 'about'" />
-          Over ons
-        </li>
-        <li :class="{ active: activePage === 'jobs' }" @click="routeGo('jobs')">
-          <direction-icon v-if="activePage === 'jobs'" />
-          Werken bij
-        </li>
-        <li :class="{ active: activePage === 'service' }" @click="routeGo('service')">
-          <direction-icon v-if="activePage === 'service'" />
-          Service
-        </li>
+
+        <li :class="{ active: activePage === 'about' }" @click="routeGo('about')">Over ons</li>
+        <li :class="{ active: activePage === 'jobs' }" @click="routeGo('jobs')">Werken bij</li>
+        <li :class="{ active: activePage === 'service' }" @click="routeGo('service')">Service</li>
       </ul>
     </nav>
+
+    <!-- Mega dropdown die verschijnt bij hover -->
+    <div id="mega-dropdown">
+      <ul>
+        <li :class="{ active: activePage === 'heat-pump' }" @click="routeGo('heat-pump')">Warmtepomp</li>
+        <li :class="{ active: activePage === 'airco' }" @click="routeGo('airco')">Airconditioning</li>
+        <li :class="{ active: activePage === 'floor-heating' }" @click="routeGo('floor-heating')">Vloerverwarming</li>
+        <li :class="{ active: activePage === 'solar' }" @click="routeGo('solar')">Zonnepanelen</li>
+        <li :class="{ active: activePage === 'charge-points' }" @click="routeGo('charge-points')">Laadpaal</li>
+      </ul>
+    </div>
   </div>
-  <upper_content_container :boxTitlee="boxTitle" :boxDescriptionn="boxDescription" :mainImg="headerImg" :showBoxx=showBox>
-    <template v:slot:activePage></template>
+
+  <upper_content_container
+    :boxTitlee="boxTitle"
+    :boxDescriptionn="boxDescription"
+    :mainImg="headerImg"
+    :showBoxx="showBox"
+  >
+    <template v-slot:activePage></template>
   </upper_content_container>
 </template>
+
+
+
+
 
 <script>
 import upper_content_container from "./Upper-content-container.vue";
 import svgIcon from "./icon.vue";
-import directionIcon from "./direction-icon.vue";
 
 export default {
   name: "navigation-bar",
   computed: {
     isProductActive() {
-      // Controleer of een van de productpagina's actief is
       return ['heat-pump', 'airco', 'floor-heating', 'solar', 'charge-points'].includes(this.activePage);
     },
     isServiceActive() {
-      // Controleer of een van de productpagina's actief is
       return ['thaiboks', 'RS'].includes(this.activePage);
     }
   },
   components: {
     upper_content_container,
-    directionIcon,
     svgIcon,
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #nav-container {
   width: 100%;
   z-index: 999;
@@ -130,7 +113,6 @@ export default {
   transition: 0.5s ease all;
   position: fixed;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Schaduw aan de onderkant */
 }
 
 #label-main {
@@ -138,15 +120,15 @@ export default {
   background-color: #edf1f6ad;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .label-content {
   display: flex;
   justify-content: space-between;
-  /* Verdeel de ruimte tussen de twee elementen */
   width: 100%;
-  padding: 0 20px;
   align-items: center;
 }
 
@@ -154,28 +136,23 @@ export default {
   display: flex;
   align-items: center;
   gap: 10px;
-  /* Ruimte tussen het icoon en de tekst */
-  color: #222222;
-  font-size: 0.9rem;
-  font-weight: 400;
   color: #59b557;
-  /* Kleur voor zowel de tekst als het icoon */
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .left-content svg {
   fill: #59b557;
-  /* Kleur van het icoon */
 }
 
 .left-content span {
   font-weight: 600;
-  /* Font-weight voor de tekst */
 }
 
+/* Right content */
 .right-content {
   display: flex;
   gap: 20px;
-  /* Ruimte tussen telefoon en e-mail */
   align-items: center;
 }
 
@@ -183,72 +160,58 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  /* Ruimte tussen het icoon en de tekst */
   color: #222222;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
+.right-content a:hover {
+  color: #2071b5;
+}
+
 .right-content svg {
   fill: #222222;
-  /* Kleur van de iconen */
 }
 
-/* Hover-stijl voor elk afzonderlijk span-item */
-.right-content span:hover {
-  color: #2071b5;
-  /* Nieuwe kleur voor de tekst bij hover */
-}
-
-.right-content span:hover svg {
+.right-content a:hover svg {
   fill: #2071b5;
-  /* Nieuwe kleur voor het icoon bij hover */
 }
 
 .right-content a {
   text-decoration: none;
-  /* Verwijder de onderstreping van de link */
-  color: inherit;
-  /* Zorg dat de link de kleur erft van de omringende tekst */
+  color: #222222;
   display: flex;
   align-items: center;
   gap: 5px;
-  /* Ruimte tussen het icoon en de tekst binnen de link */
+}
+
+.right-content svg {
+  fill: #222222;
+}
+
+.right-content span:hover {
+  color: #2071b5;
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* Zorg ervoor dat alle items links beginnen */
   max-width: 1548px;
   width: 75%;
-  /* Zorg ervoor dat de navigatiebalk 100% breed is */
   margin: 0 auto;
-  padding: 0 20px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding: 20px 20px 10px;
+  z-index: 999;
 }
 
+/* Titel-items */
 #titles {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* Zorg ervoor dat de items in de ul aan de linkerkant staan */
   margin: 0;
   padding: 0;
   list-style: none;
-  flex-grow: 1;
-  margin-left: 0;
-  /* Verwijder eventuele extra marge aan de linkerkant */
-}
-
-// uppper-content-spans
-.overlay-text {
-  font-size: 60px;
-  font-weight: 800;
-  margin-bottom: 5px;
-  text-align: left;
 }
 
 #titles li {
@@ -257,61 +220,102 @@ nav {
   cursor: pointer;
   margin-right: 10px;
   font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.1rem;
   color: #222222;
-
-  &:hover {
-    color: #2071b5;
-  }
 }
 
-/* Styling voor de actieve link */
+#titles li:hover {
+  color: #2071b5;
+}
+
 #titles li.active {
   color: #2071b5;
-  /* Blauw voor actieve pagina */
 }
 
-/* Voor dropdown-menu-items */
-.dropdown-menu li.active {
-  color: #2071b5;
-  /* Blauw voor actieve dropdown-item */
-}
-
+/* Dropdown-menu */
 #dropdown-toggle {
   position: relative;
-  /* Zorg ervoor dat de dropdown ten opzichte van dit element is gepositioneerd */
+  display: flex;
+  align-items: center;
 }
 
-.dropdown-menu {
-  display: none;
-  /* Verberg standaard de dropdown */
+#dropdown-toggle svg {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+#dropdown-toggle:hover svg {
+  transform: rotate(180deg);
+}
+
+::v-deep .mega-dropdown {
+  background-color: red !important;
+  /* Andere stijlen */
+}
+
+/* Mega dropdown styling */
+.mega-dropdown {
   position: absolute;
-  /* Positioneer de dropdown absoluut ten opzichte van de ouder */
   top: 100%;
-  /* Plaats de dropdown direct onder het menu-item */
   left: 0;
-  z-index: 999;
-  /* Zorg ervoor dat de dropdown boven andere elementen wordt weergegeven */
-  background-color: white;
-  padding: 10px 0;
-  list-style: none;
-  margin: 0;
+  width: 100vw;
+  background-color: red !important;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Voeg schaduw toe voor zichtbaarheid */
+  z-index: 999;
+  display: none; /* Verberg de dropdown standaard */
+  justify-content: space-around;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  display:none !important;
 }
 
-/* Toon de dropdown bij hover */
-#dropdown-toggle:hover .dropdown-menu {
-  display: block;
-  /* Toon de dropdown wanneer er over het menu-item wordt gehoverd */
+/* Toon de mega-dropdown bij hover over #dropdown-toggle of .mega-dropdown */
+#dropdown-toggle:hover .mega-dropdown,
+#dropdown-toggle:hover + #mega-dropdown,
+#mega-dropdown:hover {
+  display: flex;
 }
 
-.dropdown-menu li {
+.mega-dropdown ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mega-dropdown li {
+  list-style: none;
   padding: 10px 20px;
+  font-size: 1rem;
   white-space: nowrap;
-  /* Zorg ervoor dat de tekst niet afbreekt */
-  text-align: left;
-  /* Uitlijning van de tekst naar links */
+  cursor: pointer;
 }
+
+.mega-dropdown li:hover {
+  color: #2071b5;
+  text-decoration: underline;
+}
+
+.mega-dropdown li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.mega-dropdown li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.mega-dropdown li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.mega-dropdown li:nth-child(4) {
+  transition-delay: 0.25s;
+}
+
+.mega-dropdown li:nth-child(5) {
+  transition-delay: 0.3s;
+}
+
 </style>
