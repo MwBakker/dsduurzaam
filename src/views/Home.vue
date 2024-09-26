@@ -1,11 +1,21 @@
 <template>
   <div id="home">
+    <div class="background-wrapper">
+      <IntroductionCardSub
+      title="Duurzaam wonen, slim geïnstalleerd" 
+      text="Bespaar op energiekosten en vergroot uw onafhankelijkheid met duurzame installaties. Door te investeren in oplossingen zoals warmtepompen, airco's, zonnepanelen en laadpalen verlaagt u uw energierekening en draagt u bij aan een groenere toekomst. Duurzame installaties verhogen de waarde van uw woning en bieden zekerheid in tijden van stijgende energieprijzen. Wij bieden oplossingen voor elk budget, zodat u direct kunt beginnen met verduurzamen." 
+      buttonText="Je knoptekst hier"
+      :showButton="false"
+    />
+    </div>
+
     <IntroductionCard
       title1="Uw duurzame installatie, ons vakmanschap – met persoonlijke service en maatwerk vanaf de eerste stap"
       text1="" title2="Wat wij doen"
       text2="We leveren en installeren duurzame installaties, afgestemd op de specifieke wensen van onze klanten. Van zonnepanelen tot warmtepompen, wij bieden maatwerkoplossingen die voldoen aan de hoogste normen voor energiezuinigheid en functionaliteit."
       title3="Waar wij voor staan"
       text3="We geloven in de kracht van duurzaamheid en maatwerk. Onze missie is om klanten oplossingen te bieden die bijdragen aan een beter milieu en volledig aansluiten op hun behoeften. Als betrouwbare partner streven we altijd naar de beste resultaten." />
+
     <div class="background-wrapper">
       <!-- Container voor de twee secties -->
       <div class="content-container">
@@ -33,12 +43,12 @@
           <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric."
             buttonText="Lees meer" />
           <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen"
-            buttonText="Ontdek meer" />
+            buttonText="Lees meer" />
           <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating"
-            subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Bekijk opties" />
+            subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Lees meer" />
           <ProductCard route="solar" title="Zonnepanelen" image="solar"
             subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie"
-            buttonText="Meer informatie" />
+            buttonText="Lees meer" />
           <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
             subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
           <ProductCard route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar"
@@ -98,7 +108,7 @@
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
       'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
+    ]" buttonText="Vraag adviesgesprek aan" imageSrc="heat-pump(oud).png" linkUrl="heat-pump" linkText="Lees meer" />
   </div>
 </template>
 
@@ -112,6 +122,7 @@ import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCard from '@/components/cards/Introduction.vue';
+import IntroductionCardSub from '@/components/cards/Introduction-card-sub.vue';
 
 export default {
   name: "Home",
@@ -124,7 +135,8 @@ export default {
     Accordion,
     AccordionItem,
     WhyCard,
-    IntroductionCard
+    IntroductionCard,
+    IntroductionCardSub
   }
 };
 </script>
@@ -459,6 +471,7 @@ export default {
   font-weight: 800;
   color: #222222;
   margin-bottom: 20px;
+  
 }
 
 .text-container p {

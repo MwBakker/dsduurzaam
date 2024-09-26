@@ -13,13 +13,15 @@
     <div id="overlay-square" v-if="showBox == 1">
       <h1>{{ boxTitle }}</h1>
       <p>{{ boxDescription }}</p>
-      <button @click="routeGoo(boxUrl)">
+      <!--
+            <button @click="routeGoo(boxUrl)">
         Klik hier
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           class="button-arrow">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </button>
+      -->
     </div>
   </div>
 </template>
@@ -106,11 +108,12 @@ h1 {
 
   // titles
   h2 {
-    width: 50%;
+    width: 75%;
     font-size: 60px;
     font-weight: 800;
     margin-bottom: 5px;
     text-align: left;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Donkere schaduw voor meer contrast */
   }
 
   // lees meer
@@ -132,15 +135,19 @@ h1 {
 
 /* Blauwe box */
 #overlay-square {
+  position: absolute; /* Zorgt ervoor dat de box zich absoluut positioneert binnen de container */
+  right: 75px; /* Plaatst de box tegen de rechterkant van de container */
+  top: 50%; /* Optioneel: plaats de box verticaal gecentreerd */
+  transform: translateY(-50%); /* Optioneel: houd de box verticaal gecentreerd */
   display: flex;
-  margin-right: 70px;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 50px;
-  /* Zorg ervoor dat de tekst boven de overlay staat */
-  width: 31.25vw;
-  height: 400px;
-  background-color: #2071b5;
+  justify-content: flex-start; /* Zorgt ervoor dat de inhoud aan de bovenkant van de container wordt uitgelijnd */
+  padding-top: 40px; /* Alleen padding bovenaan */
+  padding-left: 40px; /* Alleen padding aan de linkerkant */
+  padding-right: 20px;
+  width: 16vw; /* Zet de breedte op 1/6e van de totale schermbreedte */
+  height: 350px;
+  background-color: #3eaf3c;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px 0px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   color: white;
