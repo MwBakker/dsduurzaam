@@ -9,14 +9,14 @@
             <img :src="checkIconUrl" alt="Check" class="check-icon" /> {{ item }}
           </li>
         </ul>
-        <!-- CTA Button with Arrow -->
-        <button class="cta-button">
+        <!-- Optionele CTA Button with Arrow -->
+        <router-link v-if="showButton" :to="linkUrl" class="cta-button">
           <span>{{ buttonText }}</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
-        </button>
+        </router-link>
       </div>
       <!-- Afbeeldinggedeelte -->
       <div class="content-image">
@@ -25,6 +25,8 @@
     </div>
   </div>
 </template>
+
+
 
 
 
@@ -54,11 +56,11 @@ export default {
     },
     linkUrl: {
       type: String,
-      default: "#", // Default URL
+      default: "/", // Standaard URL voor router-link
     },
-    linkText: {
-      type: String,
-      default: "Lees meer", // Default text
+    showButton: {
+      type: Boolean, // Zorg ervoor dat de showButton een Boolean is
+      default: true, // Standaardwaarde is true (knop tonen)
     },
   },
   computed: {
@@ -70,6 +72,8 @@ export default {
     },
   },
 };
+
+
 </script>
 
 <style lang="scss" scoped>

@@ -1,34 +1,35 @@
 <template>
   <div id="home">
     <div class="background-wrapper">
-      <IntroductionCardSub title="Duurzaam wonen, slim geïnstalleerd"
-        text="Bespaar op energiekosten en vergroot uw onafhankelijkheid met duurzame installaties. Door te investeren in oplossingen zoals warmtepompen, airco's, zonnepanelen en laadpalen verlaagt u uw energierekening en draagt u bij aan een groenere toekomst. Duurzame installaties verhogen de waarde van uw woning en bieden zekerheid in tijden van stijgende energieprijzen. Wij bieden oplossingen voor elk budget, zodat u direct kunt beginnen met verduurzamen."
+      <IntroductionCardSub title="Duurzaam wonen, bespaar op gas en stroom"
+        text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties zoals warmtepompen, airco's, zonnepanelen, vloerverwarmingsystemen en laadpalen. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
+    <!--
     <IntroductionCard
       title1="Uw duurzame installatie, ons vakmanschap – met persoonlijke service en maatwerk vanaf de eerste stap"
       text1="" title2="Wat wij doen"
       text2="We leveren en installeren duurzame installaties, afgestemd op de specifieke wensen van onze klanten. Van zonnepanelen tot warmtepompen, wij bieden maatwerkoplossingen die voldoen aan de hoogste normen voor energiezuinigheid en functionaliteit."
       title3="Waar wij voor staan"
       text3="We geloven in de kracht van duurzaamheid en maatwerk. Onze missie is om klanten oplossingen te bieden die bijdragen aan een beter milieu en volledig aansluiten op hun behoeften. Als betrouwbare partner streven we altijd naar de beste resultaten." />
+    -->
+    
 
     <div class="background-wrapper">
       <!-- Container voor de twee secties -->
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
         <div class="text-container">
-          <h2>Onze diensten</h2>
+          <h2>Onze producten</h2>
           <p>
-            Onze professionals ontzorgen u volledig in het verduurzamen van uw woning.
-            Of u nu een zakelijke of particuliere klant bent. Het voordeel voor u? De hoogste
-            kwaliteit en één vast aanspreekpunt.
+            Onze professionals nemen de volledige verduurzaming van uw woning of bedrijfspand uit handen. Of u nu particulier of zakelijk klant bent, u profiteert altijd van de hoogste kwaliteit en persoonlijke service.
           </p>
           <p class="extra-margin">
-            Benieuwd wat we allemaal doen? We vertellen u graag over onze diensten.
+            Nieuwsgierig naar ons aanbod? We vertellen u er graag meer over!
           </p>
           <button class="cta-button">
-            <span>Vraag adviesgesprek aan</span>
+            <span>Neem contact op</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               class="button-arrow">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
@@ -52,59 +53,72 @@
         </div>
       </div>
     </div>
+
     <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
+    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
       'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
+    ]" buttonText="Vraag adviesgesprek aan" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer" showButton="true" />
+
+
     <div class="background-wrapper-white">
-      <Accordion title="Alles wat je moet weten">
+      <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Hybride warmtepomp"
-            paragraphText="Een hybride warmtepomp combineert een warmtepomp met een bestaande verwarmingsketel op gas. Dit systeem schakelt automatisch tussen de warmtepomp en de ketel op basis van de buitentemperatuur."
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Warmtepompen: Haal de warmte uit de lucht!"
+            paragraphText="Wist u dat een warmtepomp zelfs bij temperaturen rond het vriespunt warmte uit de lucht kan halen? Warmtepompen gebruiken energie uit de lucht, bodem of grondwater om uw woning efficiënt te verwarmen, zelfs bij koud weer. Hierdoor bespaart u aanzienlijk op uw gasverbruik en verlaagt u uw CO2-uitstoot. Daarnaast werken warmtepompen perfect samen met zonnepanelen en vloerverwarming voor een nog duurzamer resultaat."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Elektrische warmtepomp"
-            paragraphText="Een volledig elektrische warmtepomp zorgt voor zowel het opwarmen van uw huis als voor warm water. Dit betekent dat u geen gasaansluiting meer nodig heeft."
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Airco’s: Niet alleen voor de zomer!"
+            paragraphText="Airco’s kunnen tegenwoordig meer dan alleen koelen. Veel moderne airconditioningsystemen werken ook als verwarmingssysteem in de winter. Door gebruik te maken van dezelfde technologie als warmtepompen, kunt u met een airco energiezuinig verwarmen én koelen. Dit maakt het een slimme investering, want u bespaart op zowel de gas- als stroomrekening."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/water-warmtepomp"
-            paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Vloerverwarming: Comfort en efficiëntie"
+            paragraphText="Vloerverwarming verdeelt warmte gelijkmatig door de hele ruimte, waardoor u efficiënter kunt verwarmen en minder energie verbruikt. Wist u dat vloerverwarming ideaal is in combinatie met een warmtepomp? Doordat vloerverwarming op lagere temperaturen werkt, verbruikt u minder gas of stroom, wat uw energiekosten flink kan verlagen."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/lucht-warmtepomp"
-            paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Zonnepanelen: Slim gebruik voor andere duurzame installaties!"
+            paragraphText="Zonnepanelen wekken stroom op uit zonlicht, waardoor u direct kunt besparen op uw energiekosten. Wist u dat de opgewekte stroom perfect kan worden gebruikt om andere duurzame installaties zoals een warmtepomp, airco of laadpaal van energie te voorzien? Hierdoor verbruikt u minder netstroom en verlaagt u uw energierekening nog verder. Door slim gebruik te maken van uw eigen zonne-energie, maximaliseert u de voordelen van uw duurzame installaties en draagt u bij aan een schonere toekomst!"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Water/water-warmtepomp"
-            paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Laadpalen: Laad uw auto op met groene energie!"
+            paragraphText="Wist u dat het opladen van uw elektrische auto met eigen opgewekte zonne-energie bijna niets kost? Door een laadpaal thuis te installeren, kunt u uw auto opladen wanneer de zon schijnt. Met een slimme laadpaal kunt u het laadproces zelfs zo instellen dat het optimaal gebruik maakt van uw zonnepanelen, wat u nog meer bespaart op energiekosten."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
       </Accordion>
     </div>
+
     <div class="background-wrapper">
       <div class="why-cards-container">
-        <h2>Waarom kiest u voor Insteco?</h2>
+        <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
           <WhyCard title="Duurzaam totaaladvies"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+            description="Wij bieden advies op maat om uw woning of bedrijfspand duurzaam en comfortabel te maken, nu en in de toekomst."
             icon="sustainable" />
           <WhyCard title="Gecertificeerd"
-            description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
+            description="Onze experts combineren vakkennis met de juiste certificeringen, waardoor u altijd verzekerd bent van topkwaliteit."
             icon="certified" />
-          <WhyCard title="Hoge kwaliteit en garantie"
-            description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
+          <WhyCard title="Kwaliteit en garantie"
+            description="Wij werken voornamelijk met A-merken zoals Vaillant en LG, die garant staan voor uitstekende prestaties en duurzaamheid."
             icon="quality" />
           <WhyCard title="Direct leverbaar"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+            description="Onze producten en diensten zijn snel beschikbaar, zodat u direct kunt beginnen met het verduurzamen van uw woning of bedrijf."
             icon="delivery" />
         </div>
       </div>
     </div>
-    <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
-      'Je krijgt gratis advies en een offerte op maat',
-      'Installatie door vakbekwame en volledig gecertificeerde experts',
-      'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-      'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="heat-pump(oud).png" linkUrl="heat-pump" linkText="Lees meer" />
+
+    <!--
+        <ContentCardOne 
+      title="Betrouwbare service, altijd paraat" 
+      :listItems="['Van installatie tot onderhoud, wij begeleiden u in elke stap van het proces.',
+          'Installatie door vakbekwame en volledig gecertificeerde experts',
+          'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
+          'Wij handelen het gehele subsidietraject voor je af',
+          'Wij handelen het gehele subsidietraject voor je af',
+          'Wij handelen het gehele subsidietraject voor je af']" 
+      imageSrc="service.png" 
+      linkUrl="/advies" 
+      :showButton="false" 
+    />
+    -->
   </div>
 </template>
 
@@ -345,6 +359,7 @@ export default {
   /* Zorg ervoor dat de tekst gecentreerd is */
   transition: background-color 0.3s ease, opacity 0.3s ease;
   width: 400px;
+  margin-top: 50px;
 }
 
 .cta-button span {

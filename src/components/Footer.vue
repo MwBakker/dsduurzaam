@@ -103,7 +103,7 @@ export default {
 #contact-form-container {
     position: relative;
     width: 100%;
-    background-color: #edf1f6ad;
+    background-color: #ffffff;
     height: 800px;
     text-align: center;
     padding: 50px 20px;
