@@ -14,7 +14,7 @@
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
 
-    $to_email = 'info@dsduurzaam.nl';
+    $to_email = 'info@insteq.nl';
     $subject = 'Contactformulier - ' . $data['subject'];
     $message = '<html><body>';
     $message = '<p>'. $data['message'] . '</p>';
@@ -27,9 +27,7 @@
     $message .= '</body></html>';
     $secure_check = sanitize_email($to_email);
     if ($secure_check == false) {
-        echo "Invalid input";
     } else {
         mail($to_email, $subject, $message, $headers);
-        echo "This email is sent using PHP Mail";
     }
 ?>
