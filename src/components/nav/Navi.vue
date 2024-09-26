@@ -1,30 +1,34 @@
 <template>
   <div id="nav-container">
     <div id="label-main">
-      <div class="label-content">
-        <div class="left-content">
-          <svgIcon
-            iconPath="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z" />
-          <span>Uw partner voor duurzame installaties</span>
-        </div>
-        <div class="right-content">
-          <span>
-            <a href="tel:0599585010">
-              <svgIcon
-                iconPath="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
-              0599 585010
-            </a>
-          </span>
-          <span>
-            <a href="mailto:info@insteco.nl">
-              <svgIcon
-                iconPath="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-              info@insteco.nl
-            </a>
-          </span>
-        </div>
-      </div>
+  <div class="label-content">
+    <div class="left-content">
+      <svgIcon
+        iconPath="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z" />
+      <span>Uw partner voor duurzame installaties</span>
     </div>
+    <div class="center-content">
+    <span>Werken bij InsteQ? Bel of mail ons!</span>
+    </div>
+    <div class="right-content">
+      <span>
+        <a href="tel:0599585010">
+          <svgIcon
+            iconPath="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+          0599 585010
+        </a>
+      </span>
+      <span>
+        <a href="mailto:info@insteco.nl">
+          <svgIcon
+            iconPath="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+          info@insteco.nl
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+
 
     <!-- Overlay voor de rest van de pagina als de dropdown open is -->
     <div class="overlay" v-if="isDropdownVisible"></div>
@@ -273,6 +277,7 @@ display: flex;
   align-items: center;
   gap: 10px; /* Voeg een kleine ruimte tussen de knoppen toe */
   padding-right: 20px; /* Zorg voor 20px ruimte van de rechterkant */
+  margin-right: 75px;
 }
 
 /* Stijl voor een eventuele knop in de rechterkant */
@@ -507,6 +512,24 @@ display: flex;
 .nav-button:hover .button-arrow {
   transform: translateX(0); /* Schuift naar binnen */
   opacity: 1; /* Wordt zichtbaar */
+}
+
+.center-content {
+  flex: 1;
+  text-align: center;
+}
+
+.center-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #2071b5; /* Aangepaste kleur, je kunt deze aanpassen naar wens */
+}
+
+.center-content span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222222; /* Aangepaste kleur, indien gewenst */
 }
 </style>
 

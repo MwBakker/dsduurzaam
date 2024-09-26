@@ -1,6 +1,7 @@
 <template>
     <div id="footer">
         <div id="contact-form-container">
+            <h2>Wij komen graag in contact met u</h2>
             <Transition name="slide-fade-up" appear>
                 <CustomForm />
             </Transition>
@@ -97,8 +98,9 @@ function emitRoute(direction) {
     position: relative;
     width: 100%;
     background-color: #edf1f6ad;
-    height: 760px;
-
+    height: 800px;
+    text-align: center;
+    padding: 50px 20px;
 }
 
 #map {
@@ -318,6 +320,11 @@ a {
   width: 40px;
   height: 40px;
   fill: #2071b5; 
+}
+
+#contact-form-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
 }
 
 </style>
