@@ -1,12 +1,9 @@
 <template>
   <div id="home">
     <div class="background-wrapper">
-      <IntroductionCardSub
-      title="Duurzaam wonen, slim geïnstalleerd" 
-      text="Bespaar op energiekosten en vergroot uw onafhankelijkheid met duurzame installaties. Door te investeren in oplossingen zoals warmtepompen, airco's, zonnepanelen en laadpalen verlaagt u uw energierekening en draagt u bij aan een groenere toekomst. Duurzame installaties verhogen de waarde van uw woning en bieden zekerheid in tijden van stijgende energieprijzen. Wij bieden oplossingen voor elk budget, zodat u direct kunt beginnen met verduurzamen." 
-      buttonText="Je knoptekst hier"
-      :showButton="false"
-    />
+      <IntroductionCardSub title="Duurzaam wonen, slim geïnstalleerd"
+        text="Bespaar op energiekosten en vergroot uw onafhankelijkheid met duurzame installaties. Door te investeren in oplossingen zoals warmtepompen, airco's, zonnepanelen en laadpalen verlaagt u uw energierekening en draagt u bij aan een groenere toekomst. Duurzame installaties verhogen de waarde van uw woning en bieden zekerheid in tijden van stijgende energieprijzen. Wij bieden oplossingen voor elk budget, zodat u direct kunt beginnen met verduurzamen."
+        buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
     <IntroductionCard
@@ -47,8 +44,7 @@
           <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating"
             subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Lees meer" />
           <ProductCard route="solar" title="Zonnepanelen" image="solar"
-            subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie"
-            buttonText="Lees meer" />
+            subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Lees meer" />
           <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
             subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Lees meer" />
           <ProductCard route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar"
@@ -380,6 +376,63 @@ export default {
   /* Wordt zichtbaar */
 }
 
+.why-cards-container {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.why-cards-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 40px;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-button .btn-link {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #ffda00;
+  /* Kleur bij hover */
+}
+
+.text-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 20px;
+
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #222222;
+}
+
+.extra-margin {
+  margin-top: 40px;
+  /* Verhoog de waarde als je meer ruimte wilt */
+}
+
+.cta-button .button-arrow {
+  stroke: #222222 !important;
+  /* Zorg ervoor dat de pijl zwart wordt */
+}
 
 /* Media queries voor verschillende schermgroottes */
 @media (max-width: 1920px) {
@@ -427,66 +480,32 @@ export default {
 }
 
 @media (max-width: 1280px) {
+  .background-wrapper {
+    margin: 8px auto 0 auto;
+    padding: 0;
+
+    .text-container {
+      width: 90%;
+      padding: 16px;
+      text-align: center;
+    }
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .introduction-card {
+    width: 90%;
+  }
+
+  .cards-container {
+    width: 95%;
+  }
+
   .cta-button {
     font-size: 1.2rem;
   }
-}
-
-.why-cards-container {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 90%;
-}
-
-.why-cards-container h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #222222;
-  margin-bottom: 40px;
-}
-
-.why-cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.card-button .btn-link {
-  display: inline-flex;
-  align-items: center;
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.btn-link:hover {
-  color: #ffda00;
-  /* Kleur bij hover */
-}
-
-.text-container h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #222222;
-  margin-bottom: 20px;
-  
-}
-
-.text-container p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #222222;
-}
-
-.extra-margin {
-  margin-top: 40px;
-  /* Verhoog de waarde als je meer ruimte wilt */
-}
-
-.cta-button .button-arrow {
-  stroke: #222222 !important;
-  /* Zorg ervoor dat de pijl zwart wordt */
 }
 </style>

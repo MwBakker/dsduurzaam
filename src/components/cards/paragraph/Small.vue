@@ -5,7 +5,7 @@
       <h2 class="subtitle">{{ subtitle }}</h2>
       <p class="paragraph">{{ paragraphText }}</p>
       <div class="card-info" @mouseover="isHovered = true" @mouseleave="isHovered = false"
-        @click="routeGo(contactLink)">
+        @click="callMyMethod(contactLink)">
         <span class="info-text">{{ buttonText }}</span>
         <i class="fas fa-arrow-right"></i>
       </div>
@@ -18,6 +18,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import app from '@/App.vue';
 
 const isHovered = ref(false);
 

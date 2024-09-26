@@ -14,7 +14,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/producten/heat-pump',
+      path: '/producten/warmtepomp',
       name: 'heat-pump',
       component: () => import('../views/product/Heat-pump.vue')
     },
@@ -47,6 +47,11 @@ const router = createRouter({
       path: '/werken-bij',
       name: 'jobs',
       component: () => import('../views/Jobs.vue')
+    },
+    {
+      path: '/subsidie',
+      name: 'subsidy',
+      component: () => import('../views/Subsidy.vue')
     },
     {
       path: '/service',

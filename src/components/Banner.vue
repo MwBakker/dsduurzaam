@@ -13,11 +13,6 @@
 
 <script setup>
 
-function route(direction) {
-    this.$root.$refs.navBar.routeGo(direction);
-}
-
-
 const props = defineProps({
     text: String,
     fontSize: String,

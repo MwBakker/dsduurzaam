@@ -3,7 +3,7 @@
   <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
     <div id="titles-header">
       <h2>{{ mainTitle }}</h2>
-      <span id="link-with-arrow" @click="routeGoo(mainUrl)">
+      <span id="link-with-arrow" @click="goRoute(mainUrl)">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
@@ -14,7 +14,7 @@
       <h1>{{ boxTitle }}</h1>
       <p>{{ boxDescription }}</p>
       <!--
-            <button @click="routeGoo(boxUrl)">
+            <button @click="rout(boxUrl)">
         Klik hier
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           class="button-arrow">
@@ -67,11 +67,9 @@ export default {
     ServiceLine,
   },
   methods: {
-    routeGoo(url) {
-      console.log("yoooo");
-      this.routeGo(url);
-      this.$forceUpdate();
-    }
+    goRoute(page) {
+      this.$root.routeGo(page);
+    },
   }
 };
 </script>
@@ -113,7 +111,8 @@ h1 {
     font-weight: 800;
     margin-bottom: 5px;
     text-align: left;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Donkere schaduw voor meer contrast */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    /* Donkere schaduw voor meer contrast */
   }
 
   // lees meer
@@ -135,17 +134,25 @@ h1 {
 
 /* Blauwe box */
 #overlay-square {
-  position: absolute; /* Zorgt ervoor dat de box zich absoluut positioneert binnen de container */
-  right: 75px; /* Plaatst de box tegen de rechterkant van de container */
-  top: 50%; /* Optioneel: plaats de box verticaal gecentreerd */
-  transform: translateY(-50%); /* Optioneel: houd de box verticaal gecentreerd */
+  position: absolute;
+  /* Zorgt ervoor dat de box zich absoluut positioneert binnen de container */
+  right: 75px;
+  /* Plaatst de box tegen de rechterkant van de container */
+  top: 50%;
+  /* Optioneel: plaats de box verticaal gecentreerd */
+  transform: translateY(-50%);
+  /* Optioneel: houd de box verticaal gecentreerd */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Zorgt ervoor dat de inhoud aan de bovenkant van de container wordt uitgelijnd */
-  padding-top: 40px; /* Alleen padding bovenaan */
-  padding-left: 40px; /* Alleen padding aan de linkerkant */
+  justify-content: flex-start;
+  /* Zorgt ervoor dat de inhoud aan de bovenkant van de container wordt uitgelijnd */
+  padding-top: 40px;
+  /* Alleen padding bovenaan */
+  padding-left: 40px;
+  /* Alleen padding aan de linkerkant */
   padding-right: 20px;
-  width: 16vw; /* Zet de breedte op 1/6e van de totale schermbreedte */
+  width: 16vw;
+  /* Zet de breedte op 1/6e van de totale schermbreedte */
   height: 350px;
   background-color: #3eaf3c;
   box-sizing: border-box;
@@ -205,10 +212,8 @@ button:hover .button-arrow {
 @media (max-width: 1280px) {
   #header-content {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
     background-size: cover;
-    padding: 0;
+    padding-top: 40px;
   }
 
   #titles {
@@ -216,9 +221,30 @@ button:hover .button-arrow {
     width: 80%;
   }
 
+  #titles-header {
+    width: 97.5%;
+    margin: 0 auto;
+
+    h2 {
+      text-align: center;
+      font-size: 3.4em;
+      width: 100%;
+    }
+
+    #link-with-arrow {
+      justify-content: center;
+      margin: 24px 24px 0 0;
+    }
+  }
+
   #overlay-square {
     width: 80%;
-    margin: 0;
+    height: 320px;
+    right: 0;
+    left: 0;
+    margin: 160px auto 0 auto;
+    text-align: center;
+    padding: 24px;
   }
 }
 </style>

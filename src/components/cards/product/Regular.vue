@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card" @click="routeGo(route)">
+  <div class="product-card" @click="goRoute(route)">
     <div class="card-image">
       <img :src="imageUrl" alt="Product image">
       <div class="overlay">
@@ -10,7 +10,8 @@
           <span class="btn-link">
             {{ buttonText }} <!-- Dynamische tekst -->
             <span class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </span>
@@ -21,23 +22,32 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { computed } from 'vue';
 
-const props = defineProps({
-  title: String,
-  image: String,
-  route: String,
-  buttonText: {
-    type: String,
-    default: 'Lees meer' // Standaardtekst voor de knop
-  }
-});
-
-const imageUrl = computed(() => {
-  return new URL(`../../../assets/cards/${props.image}.png`, import.meta.url).href;
-});
+export default {
+  props: {
+    title: String,
+    image: String,
+    route: String,
+    buttonText: {
+      type: String,
+      default: 'Lees meer' // Standaardtekst voor de knop
+    }
+  },
+  computed: {
+    imageUrl() {
+      return new URL(`../../../assets/cards/${this.image}.png`, import.meta.url).href;
+    }
+  },
+  methods: {
+    goRoute(page) {
+      this.$root.routeGo(page);
+    },
+  },
+};
 </script>
+
 
 <style lang="scss" scoped>
 .product-card {

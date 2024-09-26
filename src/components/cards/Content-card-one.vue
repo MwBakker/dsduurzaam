@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     imageUrl() {
-      return new URL(`../../assets/tabs/${this.imageSrc}`, import.meta.url).href;
+      return new URL(`../../assets/cards/${this.imageSrc}`, import.meta.url).href;
     },
     checkIconUrl() {
       return new URL(`../../assets/icon/greencheck.png`, import.meta.url).href;

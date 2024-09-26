@@ -5,7 +5,7 @@
         </div>
         <nav>
             <div class="branding">
-                <img @click="routeGo('home')" src="@/assets/logo.png" alt="" />
+                <img @click="goRoute('home')" src="@/assets/testlogo.png" alt="" />
             </div>
             <div id="button-menu">
                 <Transition name="slide-fade-right" appear>
@@ -13,36 +13,33 @@
                         <div id="titles-img">
                             <div id="exit"><a @click="showNav = false" class="fa fa-arrow-left fa-2x"></a></div>
                         </div>
-                        <li id="upper-li" @click="routeGo('heat-pump')">
+                        <li id="upper-li" @click="goRoute('heat-pump')">
                             Warmtepomp
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
-                        <li @click="routeGo('airco')">Airconditioning
+                        <li @click="goRoute('airco')">Airconditioning
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
-                        <li @click="routeGo('floor-heating')">Vloerverwarming
+                        <li @click="goRoute('floor-heating')">Vloerverwarming
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
-                        <li @click="routeGo('solar')">Zonnepanelen
+                        <li @click="goRoute('solar')">Zonnepanelen
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
-                        <li @click="routeGo('charge-points')">Laadpaal
+                        <li @click="goRoute('charge-points')">Laadpaal
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
-                        <!-- <li @click="routeGo('isolation')">Isolatie</li> -->
-                        <!-- <li @click="routeGo('advice')">Energielabel</li> -->
-                        <li @click="routeGo('service')">Service
+                        <li @click="goRoute('service')">Service
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
                         <button>Offerte aanvragen</button>
                     </ul>
                 </Transition>
-                <button @click="routeGo('contact')">Neem contact op</button>
+                <button id="contact" @click="goRoute('contact')">Neem contact op</button>
                 <a @click="showNav = true" class="fa fa-bars fa-2x"></a>
             </div>
         </nav>
     </div>
-    <upper_content_container :title=title :description=description :backgroundImage=headerImg />
 </template>
 
 
@@ -54,19 +51,28 @@ export default {
     components: {
         upper_content_container
     },
+    methods: {
+        goRoute(page) {
+            this.$root.routeGo(page);
+        }
+    }
 };
 </script>
 
 <style lang="scss" scoped>
-a {
-    cursor: pointer;
-    float: left;
-    top: 32px;
-    right: 56px;
-}
-
 #nav-container {
     transition: 2s ease all;
+}
+
+.branding {
+    cursor: pointer;
+    text-align: center;
+    margin: 0 2.5%;
+
+    img {
+        width: 132px;
+        height: 28px;
+    }
 }
 
 #label-main {
@@ -126,6 +132,15 @@ nav {
     }
 }
 
+button {
+    background-color: #ffda00;
+    color: #222222;
+    width: 160px;
+    font-size: 0.8em;
+    font-weight: 800;
+    border: none;
+}
+
 #titles-img {
     position: relative;
     width: 100%;
@@ -145,16 +160,6 @@ nav {
         a {
             margin: auto;
         }
-    }
-}
-
-.branding {
-    cursor: pointer;
-    text-align: center;
-    margin: 0 7.5%;
-
-    img {
-        width: 75px;
     }
 }
 
