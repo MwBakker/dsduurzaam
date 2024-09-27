@@ -1,7 +1,7 @@
 <template>
   <navBar v-if="windowWidth > 1280" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
-  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
+  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="headerShowUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
     :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
   </upperContentContainer>
   <router-view />
@@ -22,23 +22,24 @@ export default {
       activePage: 'home',
       headerImg: 'home',
       headerTitle: 'Je huis verwarmen met een waterpomp',
+      headerShowUrl: 1,
       headerMainUrl: 'heat-pump',
       showHeaderBox: 0,
       headerBoxTitle: 'Tip: Subsidie',
       headerBoxDescription: 'Uw absolute partner voor een energiezuiniger leven en werken!',
       headerBoxUrl: 'heat-pump',
       headerContent: {
-        'home': ['Je huis verwarmen met een waterpomp', 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
-        'heat-pump': ['Pakkende slogan voor product', 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
-        'airco': ["Je bent nu op pagina Airco", 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
-        'floor-heating': ["Je bent nu op pagina Vloerverwarming", 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
-        'solar': ["Je bent nu op pagina Zonnepanelen", 'charge-points', 0, "Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties.", 'floor-heating'],
-        'charge-points': ["Stop met balen, neem laadpalen!", 'services', 0, "Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading.", 'about'],
-        'services ': ["Je bent nu op pagina diensten", 'about', 0, "Wat wij bieden", "Onze diensten helpen u verduurzamen en besparen.", 'jobs'],
-        'about': ["Ons bedrijf", 'jobs', 0, "Met ons valt niet te sollen, Ter Apel weetje", "Wij bieden deskundige ondersteuning en onderhoud.", 'service'],
-        'subsidy': ["Maximaal van de staat pakken!", 'jobs', 0, "Vis het meest uit de potjes!", "Het ligt er toch?", 'service'],
-        'jobs': ["Werken bij ons?", 'service', 0, "Je bent nu op pagina vacatures", "Wij bieden een geweldig wurgcontract.", 'airco'],
-        'service': ["Je bent nu op pagina Service", 'heat-pump', 0, "Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud.", 'heat-pump'],
+        'home': ['Je huis verwarmen met een waterpomp', 1, 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
+        'heat-pump': ['Pakkende slogan voor product', 0, 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
+        'airco': ["Je bent nu op pagina Airco", 1, 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
+        'floor-heating': ["Je bent nu op pagina Vloerverwarming", 0, 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
+        'solar': ["Je bent nu op pagina Zonnepanelen", 1, 'charge-points', 0, "Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties.", 'floor-heating'],
+        'charge-points': ["Stop met balen, neem laadpalen!", 0, 'services', 0, "Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading.", 'about'],
+        'services ': ["Je bent nu op pagina diensten", 1, 'about', 0, "Wat wij bieden", "Onze diensten helpen u verduurzamen en besparen.", 'jobs'],
+        'about': ["Ons bedrijf", 0, 'jobs', 0, "Met ons valt niet te sollen, Ter Apel weetje", "Wij bieden deskundige ondersteuning en onderhoud.", 'service'],
+        'subsidy': ["Maximaal van de staat pakken!", 1, 'jobs', 0, "Vis het meest uit de potjes!", "Het ligt er toch?", 'service'],
+        'jobs': ["Werken bij ons?", 0, 'service', 0, "Je bent nu op pagina vacatures", "Wij bieden een geweldig wurgcontract.", 'airco'],
+        'service': ["Je bent nu op pagina Service", 1, 'heat-pump', 0, "Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud.", 'heat-pump'],
       },
     };
   },
