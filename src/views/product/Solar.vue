@@ -1,7 +1,7 @@
 <template>
   <div id="solar">
     <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
+    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
@@ -11,8 +11,8 @@
     <div class="background-wrapper-white">
       <Accordion title="Alles wat je moet weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Hybride warmtepomp"
-            paragraphText="Een hybride warmtepomp combineert een warmtepomp met een bestaande verwarmingsketel op gas. Dit systeem schakelt automatisch tussen de warmtepomp en de ketel op basis van de buitentemperatuur."
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Warmtepompen: Haal de warmte uit de lucht!"
+            paragraphText="Wist u dat een warmtepomp zelfs bij temperaturen rond het vriespunt warmte uit de lucht kan halen? Warmtepompen gebruiken energie uit de lucht, bodem of grondwater om uw woning efficiënt te verwarmen, zelfs bij koud weer. Hierdoor bespaart u aanzienlijk op uw gasverbruik en verlaagt u uw CO2-uitstoot. Daarnaast werken warmtepompen perfect samen met vloerverwarming voor een nog duurzamer resultaat."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Elektrische warmtepomp"
             paragraphText="Een volledig elektrische warmtepomp zorgt voor zowel het opwarmen van uw huis als voor warm water. Dit betekent dat u geen gasaansluiting meer nodig heeft."
@@ -32,7 +32,7 @@
 
     <div class="background-wrapper">
       <div class="why-cards-container">
-        <h2>Waarom kiest u voor Insteco?</h2>
+        <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
           <WhyCard title="Duurzaam totaaladvies"
             description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
@@ -51,7 +51,7 @@
     </div>
 
 
-    <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
+    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',

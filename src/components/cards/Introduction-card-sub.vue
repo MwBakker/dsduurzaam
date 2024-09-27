@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 .introduction-card {
-  width: 50%;
+  width: 60%;
   max-width: 1548px;
   margin: 0 auto;
   padding-top: 20px;

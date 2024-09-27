@@ -19,10 +19,10 @@
             </a>
           </span>
           <span>
-            <a href="mailto:info@insteco.nl">
+            <a href="mailto:info@insteq.nl">
               <svgIcon
                 iconPath="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-              info@insteco.nl
+              info@insteq.nl
             </a>
           </span>
         </div>
@@ -51,22 +51,19 @@
             @mouseleave="checkIfShouldHideDropdown">
             <div class="cards-container">
               <ProductCard route="heat-pump" title="Warmtepomp" image="home"
-                subtitle="Van hybride tot en met all-electric." buttonText="Ga naar" />
+                subtitle="Van hybride tot en met all-electric." buttonText="Ga naar" @click="hideDropdown" />
               <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen"
-                buttonText="Ga naar" />
+                buttonText="Ga naar" @click="hideDropdown"/>
               <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating"
-                subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Ga naar" />
+                subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Ga naar" @click="hideDropdown"/>
               <ProductCard route="solar" title="Zonnepanelen" image="solar"
-                subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Ga naar" />
+                subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Ga naar" @click="hideDropdown"/>
               <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
-                subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Ga naar" />
+                subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Ga naar" @click="hideDropdown"/>
               <ProductCard route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar"
-                buttonText="Ga naar" />
+                buttonText="Ga naar" @click="hideDropdown"/>
             </div>
           </div>
-          <!--
-          <li :class="{ active: activePage === 'jobs' }" @click="rout('jobs')">Werken bij</li>
-          -->
           <li :class="{ active: activePage === 'subsidie' }" @click="goRoute('subsidy')">Subsidie</li>
           <li :class="{ active: activePage === 'service' }" @click="goRoute('service')">Service</li>
         </ul>
@@ -84,7 +81,6 @@
   </div>
 </template>
 
-
 <script>
 import upper_content_container from "./Upper-content-container.vue";
 import svgIcon from "./icon.vue";
@@ -94,7 +90,7 @@ export default {
   name: "navigation-bar",
   data() {
     return {
-      activePage: 'home',
+      activePage: 'home',  // Stel standaard de actieve pagina in op 'home'
       isDropdownVisible: false,
       hideDropdownTimer: null, // Timer om te voorkomen dat de dropdown te snel verdwijnt
     };
@@ -114,14 +110,15 @@ export default {
       this.isDropdownVisible = false;
     },
     goRoute(page) {
-      this.$root.routeGo(page);
-    },  
+      this.activePage = page;  // Werk de waarde van 'activePage' bij wanneer een nieuwe pagina wordt geselecteerd
+      this.$root.routeGo(page); // Navigeer naar de opgegeven pagina
+    },
     // Toegevoegde scrollToContactForm methode
     scrollToContactForm() {
       const contactForm = document.getElementById("contact-form-container");
       if (contactForm) {
         const elementPosition = contactForm.getBoundingClientRect().top + window.pageYOffset; // Positie van het element
-        const offset = 125; // Pas deze waarde aan naar hoeveel je naar boven wilt scrollen
+        const offset = 200; // Pas deze waarde aan naar hoeveel je naar boven wilt scrollen
         window.scrollTo({
           top: elementPosition - offset, // Verplaats de scrollpositie met de offset naar boven
           behavior: "smooth" // Zorg voor een vloeiende scroll
@@ -142,6 +139,8 @@ export default {
   },
 };
 </script>
+
+
 
 
 <style lang="scss" scoped>
@@ -234,7 +233,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
   position: relative;
   /* Zorg dat z-index werkt */
   z-index: 1100;
@@ -277,8 +276,6 @@ nav {
   gap: 10px;
   /* Voeg een kleine ruimte tussen de knoppen toe */
   padding-right: 20px;
-  /* Zorg voor 20px ruimte van de rechterkant */
-  margin-right: 75px;
 }
 
 /* Stijl voor een eventuele knop in de rechterkant */
@@ -321,9 +318,6 @@ nav {
   color: #2071b5;
 }
 
-#titles li.active {
-  color: #2071b5;
-}
 
 #dropdown-toggle {
   position: relative;
@@ -550,5 +544,10 @@ nav {
   font-weight: 600;
   color: #222222;
   /* Aangepaste kleur, indien gewenst */
+}
+
+.nav-right .contact-button {
+  position: relative;
+  z-index: 1200; /* Zorg dat de knop "Offerte op maat" boven de mega-dropdown komt */
 }
 </style>

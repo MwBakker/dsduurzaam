@@ -3,7 +3,7 @@
 
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
+    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
@@ -34,7 +34,7 @@
 
     <div class="background-wrapper">
       <div class="why-cards-container">
-        <h2>Waarom kiest u voor Insteco?</h2>
+        <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
           <WhyCard title="Duurzaam totaaladvies"
             description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
@@ -53,7 +53,7 @@
     </div>
 
 
-    <ContentCardOne title="Daarom een warmtepomp via Insteco" :listItems="[
+    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',

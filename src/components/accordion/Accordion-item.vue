@@ -97,7 +97,8 @@ export default {
 .accordion-header h3 {
   font-size: 1.5rem;
   color: #222222;
-  font-weight: 500;
+  font-weight: 600;
+
 }
 
 .accordion-header h3.open {
@@ -141,6 +142,7 @@ export default {
   font-size: 1.2rem;
   font-weight: 500;
   color: #222222;
+  line-height: 1.6;
 }
 
 .accordion-header:hover .accordion-icon svg {
