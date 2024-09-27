@@ -42,7 +42,7 @@ export default {
       required: true
     },
     showMainUrl: {
-      type: String,
+      type: Number,
       required: true
     },
     mainUrl: {

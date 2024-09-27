@@ -1,7 +1,7 @@
 <template>
   <navBar v-if="windowWidth > 1280" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
-  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="headerShowUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
+  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="showHeaderUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
     :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
   </upperContentContainer>
   <router-view />
@@ -22,7 +22,7 @@ export default {
       activePage: 'home',
       headerImg: 'home',
       headerTitle: 'Je huis verwarmen met een waterpomp',
-      headerShowUrl: 1,
+      showHeaderUrl: 1,
       headerMainUrl: 'heat-pump',
       showHeaderBox: 0,
       headerBoxTitle: 'Tip: Subsidie',
@@ -56,11 +56,12 @@ export default {
       var headerParams = this.headerContent[page];
       this.headerImg = page;
       this.headerTitle = headerParams[0];
-      this.headerMainUrl = headerParams[1];
-      this.showHeaderBox = headerParams[2]
-      this.headerBoxTitle = headerParams[3];
-      this.headerBoxDescription = headerParams[4];
-      this.headerBoxUrl = headerParams[5];
+      this.showHeaderUrl = headerParams[1]
+      this.headerMainUrl = headerParams[2];
+      this.showHeaderBox = headerParams[3];
+      this.headerBoxTitle = headerParams[4];
+      this.headerBoxDescription = headerParams[5];
+      this.headerBoxUrl = headerParams[6];
     },
   }
 };
