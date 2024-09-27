@@ -36,11 +36,24 @@
             <div id="certification-logos">
                 <h1>Gegarandeerde kwaliteit</h1>
                 <div id="certification-logos-content">
+                    <!--
                     <a href="#"><img class='cert-logo' src='../assets/icon/installq.png' alt="Certificering 1" /></a>
-                    <a href="#"><img class='cert-logo' src='../assets/icon/technieknederland1.png'
-                            alt="Certificering 2" /></a>
+                    -->
+
+
+                    
+
+                    <!--
+                         <a href="#"><img class='cert-logo' src='../assets/icon/technieknederland1.png'
+                            alt="Certificering 2" /></a>   
+                    -->        
+
                     <a href="#"><img class='cert-logo' src='../assets/icon/vca.png' alt="Certificering 3" /></a>
+
+                    
+                    <!--
                     <a href="#"><img class='cert-logo' src='../assets/icon/stek.png' alt="Certificering 4" /></a>
+                    -->
                 </div>
             </div>
             <div id='logos'>
@@ -106,7 +119,7 @@ export default {
     background-color: #ffffff;
     height: 800px;
     text-align: center;
-    padding: 50px 20px;
+    padding: 0px 20px;
 }
 
 #map {

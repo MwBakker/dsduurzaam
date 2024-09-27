@@ -36,6 +36,7 @@
             </svg>
           </button>
         </div>
+
         <!-- Productkaarten sectie (60% breedte) -->
         <div class="cards-container">
           <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric."
@@ -53,6 +54,23 @@
         </div>
       </div>
     </div>
+
+    <!-- TESTMEUK
+        <div class="background-wrapper-white">
+      <ContentCardTwo
+      imageSrc="content-card-two-test.png"
+      imageAlt="Voorbeeldafbeelding"
+      title="Heerlijk koel in de zomer en aangenaam warm in de winter"
+      feature1Title="Geen last van hete zomers"
+      feature1Description="Door gebruik te maken van een warmtepomp & airconditioning combinatie blijft het heerlijk koel in de zomer en bespaar je op de kosten."
+      feature2Title="Besparen in de winter"
+      feature2Description="Onze airconditioners kunnen ook verwarmen voor in de koude wintermaanden. Gemiddeld verdienen klanten hun investering terug in 2 tot 5 jaar."
+      iconSrc1="greencheck.png"
+      iconSrc2="greencheck.png"
+    />
+    </div>
+    -->
+
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
@@ -133,6 +151,7 @@ import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCard from '@/components/cards/Introduction.vue';
 import IntroductionCardSub from '@/components/cards/Introduction-card-sub.vue';
+import ContentCardTwo from '@/components/cards/Content-card-two.vue';
 
 export default {
   name: "Home",
@@ -146,7 +165,8 @@ export default {
     AccordionItem,
     WhyCard,
     IntroductionCard,
-    IntroductionCardSub
+    IntroductionCardSub,
+    ContentCardTwo
   }
 };
 </script>

@@ -87,7 +87,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
   /* Gradient van zwart naar transparant */
   color: white;
   padding: 20px;
@@ -99,7 +99,7 @@ export default {
 .card-title {
   h2 {
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 10px;
   }
 }

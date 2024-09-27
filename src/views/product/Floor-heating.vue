@@ -1,35 +1,41 @@
 <template>
   <div id="floor-heating">
 
-    <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-      'Je krijgt gratis advies en een offerte op maat',
-      'Installatie door vakbekwame en volledig gecertificeerde experts',
-      'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-      'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
+    <div class="background-wrapper">
+      <IntroductionCardSub title="Algemeen iets over product"
+        text="Verdere toelichting van titel."
+        buttonText="Je knoptekst hier" :showButton="false" />
+    </div>
 
     <div class="background-wrapper-white">
-      <Accordion title="Alles wat je moet weten">
+      <Accordion title="Soorten of als er geen soorten zijn dan 'wist u dat?' (weetjes)">
         <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Hybride warmtepomp"
-            paragraphText="Een hybride warmtepomp combineert een warmtepomp met een bestaande verwarmingsketel op gas. Dit systeem schakelt automatisch tussen de warmtepomp en de ketel op basis van de buitentemperatuur."
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 1"
+            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Elektrische warmtepomp"
-            paragraphText="Een volledig elektrische warmtepomp zorgt voor zowel het opwarmen van uw huis als voor warm water. Dit betekent dat u geen gasaansluiting meer nodig heeft."
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 2"
+            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/water-warmtepomp"
-            paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 3"
+            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/lucht-warmtepomp"
-            paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 4"
+            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Water/water-warmtepomp"
-            paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
+          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 5"
+            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
       </Accordion>
     </div>
+
+    <!-- Nieuwe container met content (zoals afbeelding) -->
+    <ContentCardOne title="Waarom ze voor ons moeten kiezen" :listItems="[
+      'Hierom 1',
+      'Hierom 2',
+      'Hierom 3',
+      'Hierom 4'
+    ]" buttonText="Text in knop" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
 
     <div class="background-wrapper">
       <div class="why-cards-container">
@@ -51,14 +57,6 @@
       </div>
     </div>
 
-
-    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-      'Je krijgt gratis advies en een offerte op maat',
-      'Installatie door vakbekwame en volledig gecertificeerde experts',
-      'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-      'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
-
   </div>
 </template>
 
@@ -71,6 +69,7 @@ import ContentCardOne from '@/components/cards/Content-card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
+import IntroductionCardSub from '@/components/cards/Introduction-card-sub.vue';
 
 export default {
   name: "floor-heating",
@@ -82,7 +81,8 @@ export default {
     ContentCardOne,
     Accordion,
     AccordionItem,
-    WhyCard
+    WhyCard,
+    IntroductionCardSub
   }
 };
 </script>
@@ -104,6 +104,7 @@ export default {
   box-sizing: border-box;
   margin: 0 auto 50px;
   position: relative;
+  margin-top: 20px;
 }
 
 .background-wrapper-grey {

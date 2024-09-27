@@ -33,7 +33,7 @@
     <nav>
       <div class="nav-left">
         <a href="/" class="logo">
-          <img src="@/assets/testlogo.png" alt="Logo" />
+          <img src="@/assets/logo insteq.png" alt="Logo" />
         </a>
       </div>
       <div class="nav-center">
@@ -252,7 +252,7 @@ nav {
 }
 
 .logo img {
-  height: 40px;
+  height: 60px;
   width: auto;
   margin-left: 20px;
   /* Logo iets naar links verschuiven */

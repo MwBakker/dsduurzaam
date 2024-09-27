@@ -42,6 +42,12 @@ export default {
       },
     };
   },
+  mounted() {
+    // Open alleen het eerste item bij het laden van de pagina
+    if (this.refs.length > 0) {
+      this.currentOpen = [this.refs[0].id]; // Zet alleen het eerste item in currentOpen
+    }
+  },
 };
 </script>
 

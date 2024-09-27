@@ -5,7 +5,7 @@
         </div>
         <nav>
             <div class="branding">
-                <img @click="goRoute('home')" src="@/assets/testlogo.png" alt="" />
+                <img @click="goRoute('home')" src="@/assets/logo insteq.png" alt="" />
             </div>
             <div id="button-menu">
                 <Transition name="slide-fade-right" appear>

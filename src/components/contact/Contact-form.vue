@@ -93,7 +93,6 @@ export default {
 
 <style scoped>
 #contact-form {
-    position: absolute;
     display: flex;
     width: 50%;
     justify-content: center;
@@ -108,6 +107,7 @@ export default {
     bottom: 0;
     margin: auto;
     height: 600px;
+    margin-top: 50px;
 }
 
 #info {
