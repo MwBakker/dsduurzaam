@@ -157,7 +157,8 @@ export default {
 
 #label-main {
   height: 36px;
-  background-color: #edf1f6ad;
+background-color: #fff;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,13 +177,13 @@ export default {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #59b557;
+  color: #2e8b57;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .left-content svg {
-  fill: #59b557;
+  fill: #2e8b57;
 }
 
 .left-content span {
@@ -200,7 +201,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #222222;
+  color: #08535e;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -210,7 +211,7 @@ export default {
 }
 
 .right-content svg {
-  fill: #222222;
+  fill: #08535e;
 }
 
 .right-content a:hover svg {
@@ -219,7 +220,7 @@ export default {
 
 .right-content a {
   text-decoration: none;
-  color: #222222;
+  color: #08535e;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -310,7 +311,7 @@ nav {
   margin-right: 0px;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #222222;
+  color: #08535e;
   padding: 20px;
 }
 
@@ -490,10 +491,10 @@ nav {
   /* Verticaal centreren van de tekst en de pijl */
   gap: 8px;
   /* Ruimte tussen de tekst en de pijl */
-  background-color: #ffda00;
-  color: #222222;
-  font-size: 1.2em;
-  font-weight: 800;
+  background-color: #2e8b57;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
   border: none;
   padding: 10px 20px;
   position: relative;
@@ -502,7 +503,7 @@ nav {
 }
 
 .nav-button:hover {
-  background-color: #ffe967;
+  background-color: #2e8b56dc;
 }
 
 
@@ -542,7 +543,7 @@ nav {
 .center-content span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #222222;
+  color: #08535e;
   /* Aangepaste kleur, indien gewenst */
 }
 

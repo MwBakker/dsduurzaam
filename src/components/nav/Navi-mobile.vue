@@ -92,7 +92,7 @@ export default {
 
 #label-main {
     height: 36px;
-    background-color: #222222;
+    background: linear-gradient(to right, #08535e, #49a3b5);
 
     p {
         text-align: center;
@@ -155,7 +155,7 @@ nav {
 
 button {
     background-color: #ffda00;
-    color: #222222;
+    color: #08535e;
     width: 160px;
     font-size: 0.8em;
     font-weight: 800;
@@ -190,7 +190,7 @@ button {
 
 ul,
 .link {
-    color: #222222;
+    color: #08535e;
     list-style: none;
     text-decoration: none;
 }

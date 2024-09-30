@@ -97,7 +97,7 @@ export default {
   left: 0;
   height: 100%;
   width: 60%;
-  background-color: #edf1f6ad;
+  background: linear-gradient(to right, #08535e, #49a3b5);;
   z-index: 0;
 }
 
@@ -112,7 +112,7 @@ export default {
 h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -123,7 +123,7 @@ ul {
   li {
     margin-bottom: 10px;
     font-size: 1.2rem;
-    color: #222222;
+    color: #ffffff;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -137,8 +137,8 @@ ul {
 }
 
 .cta-button {
-  background-color: #ffda00;
-  color: #222222;
+  background-color: #ffffff;
+  color: #08535e;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -179,7 +179,7 @@ ul {
 }
 
 .cta-button .button-arrow {
-  stroke: #222222 !important;
+  stroke: #08535e !important;
 }
 
 .content-image {

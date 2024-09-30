@@ -97,7 +97,8 @@ export default {
 #footer {
     width: 100%;
     position: relative;
-    color: #222222;
+    color: #08535e;
+    background-color: white;
 }
 
 h1 {
@@ -113,7 +114,7 @@ p {
 }
 
 a {
-    color: #222222;
+    color: #08535e;
     text-decoration: none;
 
     &:hover {
@@ -212,7 +213,7 @@ a {
 }
 
 #section-light {
-    background-color: #edf1f6ad;
+    background: linear-gradient(to right, #08535e, #49a3b5);
     padding: 15px 0;
     /* Voeg wat padding toe boven en onder de inhoud */
     width: 100%;
@@ -253,7 +254,7 @@ a {
 #section-dark {
     position: relative;
     height: 16px;
-    background-color: #222222;
+    background-color: #08535e;
     width: 100%;
     /* Zorg ervoor dat de section-dark de volledige breedte benut */
 }
@@ -314,5 +315,9 @@ a {
     .section-info {
         flex: 0;
     }
+}
+
+#section-light-content p {
+    color: white;
 }
 </style>

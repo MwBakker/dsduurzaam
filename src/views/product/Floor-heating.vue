@@ -2,42 +2,52 @@
   <div id="floor-heating">
 
     <div class="background-wrapper">
-      <IntroductionCardSub title="Algemeen iets over product"
-        text="Verdere toelichting van titel."
+      <IntroductionCardSub title="Confortabel en efficiënt"
+        text="Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door je hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen je huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
     <div class="background-wrapper-white">
-      <Accordion title="Soorten of als er geen soorten zijn dan 'wist u dat?' (weetjes)">
+      <Accordion title="Welke soorten vloerverwarming zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 1"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Vloerverwarming op netten"
+            paragraphText="Op netten gelegd vloerverwarming is een installatie waarbij verwarmingsbuizen op een speciaal gaasnet worden bevestigd. Dit zorgt voor een snelle en efficiënte installatie, ideaal voor renovaties. De netten bieden stabiliteit en maken het gemakkelijk om de buizen op de juiste afstand van elkaar te plaatsen voor optimale warmteverdeling. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 2"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Noppenplaat vloerverwarming "
+            paragraphText="Noppenplaat vloerverwarming maakt gebruik van speciale platen met noppen waarin verwarmingsbuizen eenvoudig kunnen worden geplaatst. Dit systeem zorgt voor een snelle installatie en optimale warmteverdeling. Het is lichtgewicht en perfect voor renovaties, omdat het de opbouwhoogte minimaliseert en goed samenwerkt met verschillende vloerbedekkingen. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 3"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 4"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 5"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Droogopbouw vloerverwarming"
+            paragraphText="Droogopbouw vloerverwarming is een snel en eenvoudig systeem waarbij verwarmingsbuizen in een droogbouwplaat worden gelegd, zonder natte mortel. Dit maakt het ideaal voor renovaties en verhoogt de snelheid van de installatie. Het zorgt voor een efficiënte warmteverdeling en minimaliseert de opbouwhoogte, waardoor het geschikt is voor verschillende vloerbedekkingen."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
       </Accordion>
     </div>
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Waarom ze voor ons moeten kiezen" :listItems="[
-      'Hierom 1',
-      'Hierom 2',
-      'Hierom 3',
-      'Hierom 4'
-    ]" buttonText="Text in knop" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
+    <ContentCardOne title="Daarom vloerverwarming via InsteQ" :listItems="[
+      'Je krijgt gratis deskundig advies en een offerte op maat',
+      'Installatie door vakbekwame en volledig gecertificeerde experts',
+      'Perfect in combinatie met onze andere duurzame installaties'
+    ]" buttonText="Gratis advies aanvragen" imageSrc="floor-heating.png" linkUrl="heat-pump" linkText="Lees meer" />
 
-    <div class="background-wrapper">
+    <div class="background-wrapper-white">
+      <Accordion title="Handig om te weten">
+        <template v-slot="{ currentOpen, setOpen, refs }">
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Je warmte gelijkmatig verdelen"
+            paragraphText="Vloerverwarming biedt een gelijkmatige warmteverdeling door de hele ruimte, waardoor koude plekken verleden tijd zijn. Dit betekent dat je altijd geniet van een constante, comfortabele temperatuur, zonder koude voeten. Dankzij de efficiënte werking van vloerverwarming ervaar je een aangename warmte in elke hoek van de kamer, het hele jaar door."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Koelen met vloerverwarming"
+            paragraphText="Wist u dat vloerverwarming niet alleen verwarmt, maar ook kan koelen? In combinatie met een warmtepomp kan vloerverwarming in de zomer de temperatuur verlagen, waardoor je woning heerlijk koel blijft. Zo geniet je het hele jaar door van optimaal comfort, zowel in de winter als in de zomer!"
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Meer warmte, minder energie"
+            paragraphText="Vloerverwarming werkt efficiënter dan traditionele radiatoren doordat het op lagere temperaturen functioneert. Dit betekent dat je minder energie verbruikt om je woning op een comfortabele temperatuur te houden, wat resulteert in lagere stookkosten. Door deze duurzame verwarmingsmethode bespaar je aanzienlijk op je energierekening, terwijl je geniet van constante warmte."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+        </template>
+      </Accordion>
+    </div>
+
+
+    <div class="background-wrapper products-background">
       <div class="why-cards-container">
         <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
@@ -99,7 +109,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #edf1f6ad;
+  background-color: #e0ebe8;
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -279,7 +289,7 @@ export default {
 
 .cta-button {
   background-color: #ffda00;
-  color: #222222;
+  color: #08535e;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -388,7 +398,7 @@ export default {
 .why-cards-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -416,14 +426,14 @@ export default {
 .text-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 20px;
 }
 
 .text-container p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #222222;
+  color: #08535e;
 }
 
 .extra-margin {
@@ -432,7 +442,11 @@ export default {
 }
 
 .cta-button .button-arrow {
-  stroke: #222222 !important;
+  stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
+}
+
+.products-background {
+  background-color: #eeeeee69;
 }
 </style>

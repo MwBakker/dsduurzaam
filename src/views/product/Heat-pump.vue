@@ -3,8 +3,8 @@
 
 
     <div class="background-wrapper">
-      <IntroductionCardSub title="Algemeen iets over product"
-        text="Verdere toelichting van titel."
+      <IntroductionCardSub title="Gasvrij wonen of werken met warmtepompen!"   
+        text="Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op je energiekosten en verminder je CO₂-uitstoot terwijl je geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning. "
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
@@ -12,33 +12,49 @@
       <Accordion title="Welke soorten warmtepompen zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
           <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Hybride warmtepomp"
-            paragraphText="Uitleg van soort warmtepomp - max 50 woorden."
+            paragraphText="Een hybride warmtepomp combineert een warmtepomp met een traditionele cv-ketel. Het systeem gebruikt de warmtepomp voor het grootste deel van de verwarming en schakelt over op de cv-ketel bij extreem koud weer. Dit zorgt voor efficiënter energieverbruik en lagere CO₂-uitstoot. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Elektrische warmtepomp"
-            paragraphText="Uitleg van soort warmtepomp - max 50 woorden."
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/water warmtepomp"
+            paragraphText="Een lucht/water warmtepomp haalt warmte uit de buitenlucht en zet deze om in energie voor verwarming en warm water in je woning. Dit duurzame systeem verlaagt je energiekosten aanzienlijk en werkt efficiënt, zelfs bij lage buitentemperaturen. Ideaal voor milieubewust en comfortabel wonen. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/water-warmtepomp"
-            paragraphText="Uitleg van soort warmtepomp - max 50 woorden."
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Ventilatie warmtepomp"
+            paragraphText="Een ventilatie warmtepomp hergebruikt de warmte uit afgevoerde binnenlucht om je woning te verwarmen of van warm water te voorzien. Dit energiezuinige systeem zorgt voor een gezond binnenklimaat door ventilatie te combineren met warmteterugwinning, wat resulteert in lagere energiekosten en een duurzamer huis. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/lucht-warmtepomp"
-            paragraphText="Uitleg van soort warmtepomp - max 50 woorden."
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Water/water-warmtepomp"
-            paragraphText="Uitleg van soort warmtepomp - max 50 woorden."
+          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Monoblock warmtepomp"
+            paragraphText="Een monoblock warmtepomp is een compact systeem waarbij alle componenten in één buitenunit zijn geïntegreerd. Het onttrekt warmte uit de lucht om je woning te verwarmen of te koelen. Dankzij de eenvoudige installatie en hoge energie-efficiëntie is het een ideale keuze voor zowel nieuwbouw als renovatie. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
       </Accordion>
     </div>
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Daarom een warmtepomp via InsteQs" :listItems="[
+    <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'Je krijgt gratis advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
       'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
+    ]" buttonText="Vraag adviesgesprek aan" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer" />
 
-    <div class="background-wrapper">
+<div class="background-wrapper-white">
+      <Accordion title="Handig om te weten">
+        <template v-slot="{ currentOpen, setOpen, refs }">
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Efficiënt verwarmen én koelen voor optimaal comfort"
+            paragraphText="Wist u dat warmtepompen niet alleen verwarmen, maar ook kunnen koelen? In de zomer kan een warmtepomp de werking omdraaien en warmte uit uw woning onttrekken, waardoor het heerlijk koel blijft. Dit maakt de warmtepomp een veelzijdige en energiezuinige oplossing voor zowel de warme als koude maanden."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Lever tot 4 keer meer energie dan je verbruikt"
+            paragraphText="Wist u dat warmtepompen maar liefst 3 tot 4 keer meer energie leveren dan ze verbruiken? Dit komt doordat ze warmte uit de buitenlucht, grond of ventilatielucht halen en deze efficiënt omzetten in bruikbare energie voor uw woning. Hierdoor zijn warmtepompen extreem efficiënt en kunt u aanzienlijk besparen op uw energiekosten, terwijl u op een duurzame manier verwarmt en koelt. Dit maakt het een van de meest milieuvriendelijke verwarmingsopties voor moderne huizen."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Verhoog de waarde van je woning en bespaar energie"
+            paragraphText="Wist u dat warmtepompen niet alleen de waarde van uw woning verhogen, maar ook uw energielabel verbeteren? Een energiezuinige woning is aantrekkelijker voor kopers, omdat het lagere energiekosten en een beter energielabel biedt. Bovendien kunt u momenteel nog subsidie krijgen op de installatie van een warmtepomp, wat de investering nog voordeliger maakt en de woningwaarde verder verhoogt. Dit maakt een warmtepomp een slimme keuze voor zowel uw portemonnee als de toekomst van uw huis."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Haal duurzame energie direct uit de lucht"
+            paragraphText="Wist u dat warmtepompen lucht kunnen gebruiken als energiebron? Luchtwarmtepompen onttrekken warmte uit de buitenlucht, zelfs bij lage temperaturen, en zetten deze om in energie voor het verwarmen van uw woning. Dit maakt ze niet alleen efficiënt en milieuvriendelijk, maar ook voordelig in gebruik. Daarnaast komt u in aanmerking voor subsidies, wat de investering in een luchtwarmtepomp nog aantrekkelijker maakt. Een slimme manier om duurzaam te verwarmen met behulp van de buitenlucht!"
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+        </template>
+      </Accordion>
+    </div>
+
+    <div class="background-wrapper products-background">
       <div class="why-cards-container">
         <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
@@ -99,7 +115,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #edf1f6ad;
+  background-color: #e0ebe8;
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -279,7 +295,7 @@ export default {
 
 .cta-button {
   background-color: #ffda00;
-  color: #222222;
+  color: #08535e;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -388,7 +404,7 @@ export default {
 .why-cards-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -416,14 +432,14 @@ export default {
 .text-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 20px;
 }
 
 .text-container p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #222222;
+  color: #08535e;
 }
 
 .extra-margin {
@@ -432,7 +448,11 @@ export default {
 }
 
 .cta-button .button-arrow {
-  stroke: #222222 !important;
+  stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
+}
+
+.products-background {
+  background-color: #eeeeee69;
 }
 </style>

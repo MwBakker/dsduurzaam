@@ -31,9 +31,9 @@ export default {
       headerBoxUrl: 'heat-pump',
       headerContent: {
         'home': ['Je huis verwarmen met een waterpomp', 1, 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
-        'heat-pump': ['Pakkende slogan voor product (warmtepomp)', 0, 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
+        'heat-pump': ['Duurzaam verwarmen met onze warmtepompen', 0, 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
         'airco': ["Pakkende slogan voor product (airco)", 0, 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
-        'floor-heating': ["Pakkende slogan voor product (vloerverwarming)", 0, 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
+        'floor-heating': ["Efficiënt verwarmen met vloerverwarming", 0, 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
         'solar': ["Pakkende slogan voor product (zonnepanelen)", 0, 'charge-points', 0, "Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties.", 'floor-heating'],
         'charge-points': ["Pakkende slogan voor product (laadpaal)", 0, 'services', 0, "Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading.", 'about'],
         'services ': ["Pakkende slogan voor product (service)", 0, 'about', 0, "Wat wij bieden", "Onze diensten helpen u verduurzamen en besparen.", 'jobs'],
@@ -79,7 +79,7 @@ export default {
 }
 
 p {
-  color: #222222;
+  color: #08535e;
   word-spacing: 0px !important;
 }
 
@@ -94,7 +94,7 @@ li {
   font-size: 0.9em;
   padding-bottom: 4px;
   padding: 10px;
-  color: #222222;
+  color: #08535e;
 }
 
 h1,
@@ -203,7 +203,7 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222222;
+  background: #08535e;;
 }
 
 .slide-fade-up-enter-active,

@@ -36,7 +36,7 @@
             <div v-if="!sent" class="contact-form-field">
                 <button id="button-send" type="submit" class="cta-button">
                     <span>Verzenden</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#222222" class="button-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#08535e" class="button-arrow">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </button>
@@ -163,7 +163,7 @@ label {
 
     #privacy-label {
         margin-left: 16px;
-        color: #222222;
+        color: #08535e;
         font-size: 0.9rem;
         font-weight: 100;
     }
@@ -175,7 +175,7 @@ label {
 }
 
 #button-send {
-    background-color: #222222;
+    background-color: #08535e;
     color: white;
     border: none;
 }
@@ -244,7 +244,7 @@ input::placeholder,
 textarea::placeholder {
     font-size: 1rem; /* Verander de grootte van de placeholder-tekst */
     font-weight: 500;  /* Maak de placeholder-tekst dikker */
-    color: #22222269;    /* Pas de kleur van de placeholder-tekst aan */
+    color: #08535e69;    /* Pas de kleur van de placeholder-tekst aan */
 }
 
 #privacy-field {
@@ -253,7 +253,7 @@ textarea::placeholder {
 
     #privacy-label {
         margin-left: 16px;
-        color: #222222;  /* Pas dezelfde kleur als de placeholder toe */
+        color: #08535e;  /* Pas dezelfde kleur als de placeholder toe */
         font-size: 1rem; /* Verander de grootte van de tekst */
         font-weight: 500;  /* Maak de tekst iets dikker */
     }
@@ -293,8 +293,8 @@ textarea::placeholder {
 
 
 #button-send {
-    background-color: #ffda00;
-    color: #222222;
+    background-color: #2e8b57;
+    color: #ffffff;
     padding: 15px 30px;
     border: none;
     cursor: pointer;
@@ -316,7 +316,7 @@ textarea::placeholder {
 }
 
 #button-send:hover {
-    background-color: #ffe967; /* Pas de achtergrondkleur aan bij hover */
+    background-color: #2e8b56dc; /* Pas de achtergrondkleur aan bij hover */
 }
 
 /* Zorg dat de pijl start buiten zicht, aan de rechterkant */
@@ -328,7 +328,7 @@ textarea::placeholder {
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateX(-30px); /* Start buiten de knop */
-    stroke: #222222 !important; /* Forceer de kleur van de pijl naar zwart */
+    stroke: #08535e !important; /* Forceer de kleur van de pijl naar zwart */
 }
 
 /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
