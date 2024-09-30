@@ -13,30 +13,30 @@
                         <div id="titles-img">
                             <div id="exit"><a @click="showNav = false" class="fa fa-arrow-left fa-2x"></a></div>
                         </div>
-                        <li id="upper-li" @click="goRoute('heat-pump')">
-                            Warmtepomp
+                        <li @click="showProductList = !showProductList">
+                            Onze producten
+                            <span
+                                :class="{ 'fa fa-angle-down fa-2x': !showProductList, 'fa fa-angle-up fa-2x': showProductList }"></span>
+                        </li>
+                        <!-- <Transition name="slide-fade-right" appear> -->
+                            <ul v-if="showProductList">
+                                <li class="sub-li" v-for="item in items" :key="item.id" @click="goRoute(item.route)">{{
+                                    item.text }}</li>
+                            </ul>
+                        <!-- </Transition> -->
+                        <li @click="goRoute('subsidy')">
+                            Subsidie
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
-                        <li @click="goRoute('airco')">Airconditioning
-                            <span class="fa fa-angle-right fa-2x"></span>
-                        </li>
-                        <li @click="goRoute('floor-heating')">Vloerverwarming
-                            <span class="fa fa-angle-right fa-2x"></span>
-                        </li>
-                        <li @click="goRoute('solar')">Zonnepanelen
-                            <span class="fa fa-angle-right fa-2x"></span>
-                        </li>
-                        <li @click="goRoute('charge-points')">Laadpaal
-                            <span class="fa fa-angle-right fa-2x"></span>
-                        </li>
-                        <li @click="goRoute('service')">Service
+                        <li @click="goRoute('service')">
+                            Service
                             <span class="fa fa-angle-right fa-2x"></span>
                         </li>
                         <button>Offerte aanvragen</button>
                     </ul>
                 </Transition>
                 <button id="contact" @click="goRoute('contact')">Neem contact op</button>
-                <a @click="showNav = true" class="fa fa-bars fa-2x"></a>
+                <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x"></div>
             </div>
         </nav>
     </div>
@@ -51,9 +51,25 @@ export default {
     components: {
         upper_content_container
     },
+    data() {
+        return {
+            showNav: true,
+            showProductList: false,
+            items: [
+                { id: 1, text: 'Warmtepomp', route: 'heat-pump' },
+                { id: 2, text: 'Airconditioning', route: 'airco' },
+                { id: 3, text: 'Vloerverwarming', route: 'floor-heating' },
+                { id: 4, text: 'Zonnepanelen', route: 'solar' },
+                { id: 5, text: 'Laadpaal', route: 'charge-point' },
+                { id: 6, text: 'Service', route: 'service' },
+            ]
+        };
+    },
     methods: {
         goRoute(page) {
             this.$root.routeGo(page);
+            this.showNav = false;
+            this.showProductList = false;
         }
     }
 };
@@ -70,8 +86,7 @@ export default {
     margin: 0 2.5%;
 
     img {
-        width: 132px;
-        height: 28px;
+        width: 120px;
     }
 }
 
@@ -98,7 +113,6 @@ nav {
 
 #button-menu {
     width: 60%;
-    margin: 0 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -118,8 +132,14 @@ nav {
         border-bottom: 1px solid rgb(220, 220, 220);
         padding: 16px;
         display: flex;
+        font-weight: 600;
+        font-size: 1rem;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .sub-li {
+        padding-left: 56px;
     }
 
     button {
@@ -128,6 +148,7 @@ nav {
         left: 0;
         right: 0;
         width: 95%;
+        font-size: 1rem;
         margin: 0 auto;
     }
 }
@@ -141,6 +162,10 @@ button {
     border: none;
 }
 
+#bars {
+    margin: 0 20px;
+}
+
 #titles-img {
     position: relative;
     width: 100%;
@@ -149,16 +174,16 @@ button {
     background-size: cover;
 
     #exit {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        top: 12px;
-        right: 24px;
-        border-radius: 25px;
-        background-color: #fbb536;
+        float: right;
+        margin: 8px;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 32px;
+        background-color: #ffda00;
 
         a {
-            margin: auto;
+            top: 14px;
         }
     }
 }

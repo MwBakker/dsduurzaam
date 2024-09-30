@@ -67,7 +67,7 @@ import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
 import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
 import ProductCard from '@/components/cards/product/Regular.vue';
 import QuoteCard from '@/components/cards/Quote.vue';
-import ContentCardOne from '@/components/cards/Content-card-one.vue';
+import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';

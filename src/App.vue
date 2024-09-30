@@ -1,8 +1,9 @@
 <template>
   <navBar v-if="windowWidth > 1280" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
-  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="showHeaderUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
-    :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
+  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="showHeaderUrl"
+    :mainUrl="headerMainUrl" :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription"
+    :boxUrl="headerBoxUrl">
   </upperContentContainer>
   <router-view />
   <customFooter />
@@ -11,7 +12,7 @@
 <script>
 import navBar from "./components/nav/Navi.vue";
 import navBarMobile from "./components/nav/Navi-mobile.vue";
-import customFooter from "./components/Footer.vue";
+import customFooter from "./components/footer/Footer.vue";
 import upperContentContainer from "./components/nav/Upper-content-container.vue";
 
 export default {
@@ -72,40 +73,33 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
   word-spacing: 0px !important;
   /*font-weight: 600;*/
 }
 
 p {
-  font-family: 'Montserrat', sans-serif !important;
   color: #222222;
   word-spacing: 0px !important;
 }
 
 a {
   text-decoration: none;
+  position: relative;
 }
 
 li {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif !important;
   word-spacing: 0px !important;
-  font-weight: 0;
   font-size: 0.9em;
   padding-bottom: 4px;
   padding: 10px;
   color: #222222;
-
-  &:hover {
-    color: #fbb536;
-  }
 }
 
 h1,
 .light,
 h2 {
-  font-family: 'Montserrat', sans-serif !important;
   font-size: 38px;
   font-weight: 550;
   word-spacing: 0px !important;
@@ -181,6 +175,25 @@ hr {
   margin: 64px 0;
 }
 
+#scroll-button {
+  position: fixed;
+  /* Zorg ervoor dat de knop altijd zichtbaar is */
+  bottom: 20px;
+  /* Plaats de knop 20px vanaf de onderkant van het scherm */
+  right: 20px;
+  /* Plaats de knop 20px vanaf de rechterkant van het scherm */
+  background-color: #5178a5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#scroll-button:hover {
+  background-color: #3e5b7a;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -194,12 +207,14 @@ hr {
 }
 
 .slide-fade-up-enter-active,
+.slide-fade-down-enter-active,
 .slide-fade-left-enter-active,
 .slide-fade-right-enter-active {
   transition: all 1s ease;
 }
 
 .slide-fade-up-leave-active,
+.slide-fade-down-enter-active,
 .slide-fade-left-leave-active {
   transition: all 1s;
 }
@@ -207,6 +222,12 @@ hr {
 .slide-fade-up-enter-from,
 .slide-fade-up-leave-to {
   transform: translateY(100%);
+  opacity: 0;
+}
+
+.slide-fade-down-enter-from,
+.slide-fade-down-leave-to {
+  transform: translateY(-100%);
   opacity: 0;
 }
 
@@ -234,29 +255,5 @@ hr {
     flex-direction: column;
     align-items: center;
   }
-}
-
-#scroll-button {
-  position: fixed;
-  /* Zorg ervoor dat de knop altijd zichtbaar is */
-  bottom: 20px;
-  /* Plaats de knop 20px vanaf de onderkant van het scherm */
-  right: 20px;
-  /* Plaats de knop 20px vanaf de rechterkant van het scherm */
-  background-color: #5178a5;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#scroll-button:hover {
-  background-color: #3e5b7a;
-}
-
-a {
-  position: relative;
-  /* Zorg ervoor dat de tooltip relatief is aan de link */
 }
 </style>

@@ -228,6 +228,7 @@ button:hover .button-arrow {
   #titles-header {
     width: 97.5%;
     margin: 0 auto;
+    justify-content: center;
 
     h2 {
       text-align: center;

@@ -70,13 +70,13 @@ export default {
   },
   computed: {
     imageUrl() {
-      return new URL(`../../assets/cards/${this.imageSrc}`, import.meta.url).href;
+      return new URL(`../../../assets/cards/${this.imageSrc}`, import.meta.url).href;
     },
     iconUrl1() {
-      return new URL(`../../assets/icons/${this.iconSrc1}`, import.meta.url).href;
+      return new URL(`../../../assets/icons/${this.iconSrc1}`, import.meta.url).href;
     },
     iconUrl2() {
-      return new URL(`../../assets/icons/${this.iconSrc2}`, import.meta.url).href;
+      return new URL(`../../../assets/icons/${this.iconSrc2}`, import.meta.url).href;
     },
   },
 };

@@ -72,7 +72,6 @@ const imageUrl = computed(
         padding-top: 48px;
         color: #222222;
         font-size: 1.4rem;
-        font-family: 'Montserrat', sans-serif !important;
         font-weight: 550;
         word-spacing: 0px !important;
     }

@@ -188,7 +188,7 @@ label {
 @media (max-width: 1024px) {
     #contact-form {
         bottom: initial;
-        height: 786px;
+        height: 842px;
         top: 24px;
         width: 96%;
         flex-direction: column;

@@ -20,7 +20,7 @@ const props = defineProps({
 })
 
 // Dynamische afbeelding URL op basis van de icon-prop
-const imageUrl = computed(() => new URL(`../../assets/icon/${props.icon}.png`, import.meta.url).href)
+const imageUrl = computed(() => new URL(`../../../assets/icon/${props.icon}.png`, import.meta.url).href)
 
 const handleClick = () => {
   if (props.icon === 'phone') {
