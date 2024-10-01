@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div class="background-wrapper">
-      <IntroductionCardSub title="Duurzaam wonen, bespaar op gas en stroom"
+      <IntroductionCardSub title="Duurzaam wonen: verlaag uw maandlasten"
         text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties zoals warmtepompen, airco's, zonnepanelen, vloerverwarmingsystemen en laadpalen. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
@@ -155,6 +155,7 @@ import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCard from '@/components/cards/introduction/Introduction.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 import ContentCardTwo from '@/components/cards/content/Card-two.vue';
+import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
 export default {
   name: "Home",
@@ -169,7 +170,8 @@ export default {
     WhyCard,
     IntroductionCard,
     IntroductionCardSub,
-    ContentCardTwo
+    ContentCardTwo,
+    ContentCardOneRed
   }
 };
 </script>
@@ -186,7 +188,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #e0ebe8;
+  background-color: rgba(238, 238, 238, 0.4117647059);
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;

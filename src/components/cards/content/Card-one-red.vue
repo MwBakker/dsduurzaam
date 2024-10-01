@@ -97,7 +97,9 @@ export default {
   left: 0;
   height: 100%;
   width: 60%;
-  background: linear-gradient(to right, #08535e, #49a3b5);;
+  background: linear-gradient(to right, #b33a3a 0%, #bb4a4a 30%, #c66060 50%, #d17a7a 70%, #e28a8a 100%);
+
+
   z-index: 0;
 }
 

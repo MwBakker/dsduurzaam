@@ -3,7 +3,7 @@
 
 
     <div class="background-wrapper">
-      <IntroductionCardSub title="Gasvrij wonen of werken met warmtepompen!"   
+      <IntroductionCardSub title="Gasvrij wonen of werken met een warmtepomp"   
         text="Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op je energiekosten en verminder je CO₂-uitstoot terwijl je geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning. "
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
@@ -29,7 +29,7 @@
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-      'Je krijgt gratis advies en een offerte op maat',
+      'Je krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
       'Wij handelen het gehele subsidietraject voor je af'
@@ -86,6 +86,7 @@ import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
+import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
 export default {
   name: "Heat-pump",
@@ -98,7 +99,8 @@ export default {
     Accordion,
     AccordionItem,
     WhyCard,
-    IntroductionCardSub
+    IntroductionCardSub,
+    ContentCardOneRed
   }
 };
 </script>
@@ -115,7 +117,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #e0ebe8;
+  background-color: rgba(238, 238, 238, 0.4117647059);
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;

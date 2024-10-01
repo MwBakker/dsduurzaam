@@ -12,26 +12,28 @@
         <div id="footer-content">
             <div class="section-info">
                 <h1>Insteq</h1>
-                <p>Service</p>
+                <p @click="goRoute('service')" class="clickable-route">Service</p>
                 <p><a href="./statements/heroepingsformulier.pdf">Herroepingsformulier</a></p>
                 <p><a href="./statements/privacyverklaring.pdf">Privacyverklaring</a></p>
                 <p><a href="./statements/disclaimer.pdf">Disclaimer</a></p>
             </div>
             <div class="section-info">
                 <h1>Adres</h1>
-                <p>Hoofdstraat 4</p>
-                <p>9561 JA</p>
-                <p>Ter Apel</p>
-                <p>088-7155733</p>
-                <p>info@duureco.nl</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hoofdstraat+4,+9561+JA,+Ter+Apel" target="_blank">
+                    <p>Hoofdstraat 4</p>
+                    <p>9561 JA</p>
+                    <p>Ter Apel</p>
+                </a>
+                <p><a href="tel:0887155733">088-7155733</a></p>
+                <p><a href="mailto:info@insteq.nl">info@insteq.nl</a></p>
             </div>
             <div id="services" class="section-info">
                 <h1>Diensten</h1>
-                <p @click="goRoute('heat-pump')">Waterpomp</p>
-                <p @click="goRoute('airco')">Airco</p>
-                <p @click="goRoute('floor-heating')">Vloerverwarming</p>
-                <p @click="goRoute('solar')">Zonnepanelen</p>
-                <p @click="goRoute('charge-point')">Laadpalen</p>
+                <p @click="goRoute('heat-pump')" class="clickable-route">Waterpomp</p>
+                <p @click="goRoute('airco')" class="clickable-route">Airco</p>
+                <p @click="goRoute('floor-heating')" class="clickable-route">Vloerverwarming</p>
+                <p @click="goRoute('solar')" class="clickable-route">Zonnepanelen</p>
+                <p @click="goRoute('charge-points')" class="clickable-route">Laadpalen</p>
             </div>
             <div id="logos-certification" class="logos">
                 <h1>Gegarandeerde kwaliteit</h1>
@@ -116,10 +118,6 @@ p {
 a {
     color: #08535e;
     text-decoration: none;
-
-    &:hover {
-        color: #2071b5;
-    }
 }
 
 #contact-form-container {
@@ -273,7 +271,7 @@ a {
 .social-logo {
     width: 40px;
     height: 40px;
-    fill: #2071b5;
+    fill: #08535e; /* Verander de vulkleur van de SVG naar de gewenste kleur */
 }
 
 #contact-form-container h2 {
@@ -319,5 +317,19 @@ a {
 
 #section-light-content p {
     color: white;
+}
+
+p a:hover {
+    font-size: 0.9rem; /* Pas de waarde aan naar wens */
+    font-weight: 700;
+}
+
+p.clickable-route:hover {
+    font-size: 0.9rem; /* Pas de waarde aan naar wens */
+    font-weight: 700;
+}
+
+.social-logo:hover {
+    transform: scale(1.1); /* Vergroot het logo iets bij hover */
 }
 </style>

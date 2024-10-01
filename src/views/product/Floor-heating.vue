@@ -80,6 +80,7 @@ import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
+import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
 export default {
   name: "floor-heating",
@@ -92,7 +93,8 @@ export default {
     Accordion,
     AccordionItem,
     WhyCard,
-    IntroductionCardSub
+    IntroductionCardSub,
+    ContentCardOneRed
   }
 };
 </script>
@@ -109,7 +111,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #e0ebe8;
+  background-color: rgba(238, 238, 238, 0.4117647059);
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;

@@ -328,7 +328,7 @@ textarea::placeholder {
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateX(-30px); /* Start buiten de knop */
-    stroke: #08535e !important; /* Forceer de kleur van de pijl naar zwart */
+    stroke: #ffffff !important; /* Forceer de kleur van de pijl naar zwart */
 }
 
 /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
