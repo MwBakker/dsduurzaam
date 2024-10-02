@@ -32,7 +32,7 @@ export default {
       headerContent: {
         'home': ['Je huis verwarmen met een waterpomp', 1, 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
         'heat-pump': ['Duurzaam verwarmen met onze warmtepompen', 0, 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
-        'airco': ["Pakkende slogan voor product (airco)", 0, 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
+        'airco': ["Uw huis koelen en verwarmen met airco's", 0, 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
         'floor-heating': ["Efficiënt verwarmen met vloerverwarming", 0, 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
         'solar': ["Uw huis voorzien van stroom met zonnepanelen", 0, 'charge-points', 0, "Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties.", 'floor-heating'],
         'charge-points': ["Uw voertuig(en) opladen met een laadpaal", 0, 'services', 0, "Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading.", 'about'],

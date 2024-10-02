@@ -2,7 +2,7 @@
   <div id="floor-heating">
 
     <div class="background-wrapper">
-      <IntroductionCardSub title="Confortabel en efficiënt"
+      <IntroductionCardSub title="Comfortabel en efficiënt"
         text="Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door je hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen je huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
