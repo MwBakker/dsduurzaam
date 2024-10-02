@@ -41,7 +41,7 @@ export default {
         'about': ["Ons bedrijf", 0, 'jobs', 0, "Met ons valt niet te sollen, Ter Apel weetje", "Wij bieden deskundige ondersteuning en onderhoud.", 'service'],
         'subsidy': ["Maximaal van de staat pakken!", 0, 'jobs', 0, "Vis het meest uit de potjes!", "Het ligt er toch?", 'service'],
         'jobs': ["Werken bij ons?", 0, 'service', 0, "Je bent nu op pagina vacatures", "Wij bieden een geweldig wurgcontract.", 'airco'],
-        'service': ["Je bent nu op pagina Service", 0, 'heat-pump', 0, "Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud.", 'heat-pump'],
+        'service': ["Nazorg aan onze installaties", 0, 'heat-pump', 0, "Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud.", 'heat-pump'],
       },
     };
   },
