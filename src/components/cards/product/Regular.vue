@@ -63,6 +63,12 @@ export default {
   max-height: 250px;
 }
 
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -96,32 +102,50 @@ export default {
   justify-content: space-between;
 }
 
-.card-title {
-  h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+
+  .arrow {
+    margin-left: 5px;
+    /* Verhoog de marge om meer ruimte te geven */
+    display: inline-flex;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke: white;
+      vertical-align: middle;
+    }
   }
 }
 
-.card-button {
+
+@media (max-width: 800px) {
+
+  .card-image .overlay {
+    padding: 4px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 0.8em;
+  }
+
   .btn-link {
-    display: inline-flex;
-    align-items: center;
-    /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    font-size: 0.6em;
 
     .arrow {
-      margin-left: 5px;
-      /* Verhoog de marge om meer ruimte te geven */
-      display: inline-flex;
 
       svg {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 20px;
+        height: 16px;
         stroke: white;
         vertical-align: middle;
       }
