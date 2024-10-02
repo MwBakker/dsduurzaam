@@ -98,7 +98,7 @@ export default {
 }
 
 .cta-button {
-  background-color: #ffda00;
+  background-color: #982434;
   color: #222;
   font-size: 1.2rem;
   font-weight: 600;
@@ -123,7 +123,7 @@ export default {
 .text-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 20px;
   padding-left: 50px; /* Consistente padding voor zowel titel als tekst */
   padding-right: 50px; 
@@ -132,7 +132,7 @@ export default {
 .text-container p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #222222;
+  color: #08535e;
   padding-left: 50px; /* Zelfde padding als de titel */
   padding-right: 50px;
   margin-bottom: 30px; /* Voeg wat extra ruimte toe onder de tekst indien nodig */

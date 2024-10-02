@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div class="background-wrapper">
-      <IntroductionCardSub title="Duurzaam wonen, bespaar op gas en stroom"
+      <IntroductionCardSub title="Duurzaam wonen: verlaag uw maandlasten"
         text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties zoals warmtepompen, airco's, zonnepanelen, vloerverwarmingsystemen en laadpalen. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
@@ -16,7 +16,7 @@
     -->
     
 
-    <div class="background-wrapper">
+    <div class="background-wrapper products-background">
       <!-- Container voor de twee secties -->
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
@@ -28,13 +28,16 @@
           <p class="extra-margin">
             Nieuwsgierig naar ons aanbod? We vertellen u er graag meer over!
           </p>
-          <button class="cta-button">
+          <!--
+                      <button class="cta-button">
             <span>Neem contact op</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               class="button-arrow">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
+          -->
+
         </div>
 
         <!-- Productkaarten sectie (60% breedte) -->
@@ -74,11 +77,11 @@
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-      'Je krijgt gratis advies en een offerte op maat',
+      'Je krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
       'Wij handelen het gehele subsidietraject voor je af'
-    ]" buttonText="Vraag adviesgesprek aan" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer" showButton="true" />
+    ]" buttonText="Gratis advies aanvragen" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer" showButton="true" />
 
 
     <div class="background-wrapper-white">
@@ -90,7 +93,7 @@
           <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Airco’s: Niet alleen voor de zomer!"
             paragraphText="Airco’s kunnen tegenwoordig meer dan alleen koelen. Veel moderne airconditioningsystemen werken ook als verwarmingssysteem in de winter. Door gebruik te maken van dezelfde technologie als warmtepompen, kunt u met een airco energiezuinig verwarmen én koelen. Dit maakt het een slimme investering, want u bespaart op zowel de gas- als stroomrekening."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Vloerverwarming: Comfort en efficiëntie"
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Vloerverwarming: Comfort en efficiëntie!"
             paragraphText="Vloerverwarming verdeelt warmte gelijkmatig door de hele ruimte, waardoor u efficiënter kunt verwarmen en minder energie verbruikt. Wist u dat vloerverwarming ideaal is in combinatie met een warmtepomp? Doordat vloerverwarming op lagere temperaturen werkt, verbruikt u minder gas of stroom, wat uw energiekosten flink kan verlagen."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Zonnepanelen: Slim gebruik voor andere duurzame installaties!"
@@ -103,7 +106,7 @@
       </Accordion>
     </div>
 
-    <div class="background-wrapper">
+    <div class="background-wrapper products-background">
       <div class="why-cards-container">
         <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
@@ -152,6 +155,7 @@ import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCard from '@/components/cards/introduction/Introduction.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 import ContentCardTwo from '@/components/cards/content/Card-two.vue';
+import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
 export default {
   name: "Home",
@@ -166,7 +170,8 @@ export default {
     WhyCard,
     IntroductionCard,
     IntroductionCardSub,
-    ContentCardTwo
+    ContentCardTwo,
+    ContentCardOneRed
   }
 };
 </script>
@@ -183,7 +188,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #edf1f6ad;
+  background-color: rgba(238, 238, 238, 0.4117647059);
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -361,8 +366,8 @@ export default {
 }
 
 .cta-button {
-  background-color: #ffda00;
-  color: #222222;
+  background-color: #2e8b57;
+  color: #ffffff;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -387,7 +392,7 @@ export default {
 }
 
 .cta-button:hover {
-  background-color: #ffe967;
+  background-color: #2e8b56dc;
   /* Pas de achtergrondkleur aan bij hover */
 }
 
@@ -420,7 +425,7 @@ export default {
 .why-cards-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -448,7 +453,7 @@ export default {
 .text-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 20px;
 
 }
@@ -456,7 +461,7 @@ export default {
 .text-container p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #222222;
+  color: #08535e;
 }
 
 .extra-margin {
@@ -465,7 +470,7 @@ export default {
 }
 
 .cta-button .button-arrow {
-  stroke: #222222 !important;
+  stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
 }
 
@@ -542,5 +547,9 @@ export default {
   .cta-button {
     font-size: 1.2rem;
   }
+}
+
+.products-background {
+  background-color: #eeeeee69;
 }
 </style>

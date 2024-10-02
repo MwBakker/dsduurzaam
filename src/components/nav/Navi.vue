@@ -71,7 +71,7 @@
       </div>
       <div class="nav-right">
         <button class="nav-button contact-button" @click="scrollToContactForm">
-          Offerte op maat
+          Offerte aanvragen
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
@@ -157,7 +157,8 @@ export default {
 
 #label-main {
   height: 36px;
-  background-color: #edf1f6ad;
+background-color: #fff;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,13 +177,13 @@ export default {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #59b557;
+  color: #2e8b57;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .left-content svg {
-  fill: #59b557;
+  fill: #2e8b57;
 }
 
 .left-content span {
@@ -200,33 +201,33 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #222222;
+  color: #08535e;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .right-content a:hover {
-  color: #2071b5;
+  font-size: 0.9rem; /* Pas de waarde aan naar wens */
+  font-weight: 700;
 }
 
 .right-content svg {
-  fill: #222222;
+  fill: #08535e;
 }
 
 .right-content a:hover svg {
-  fill: #2071b5;
 }
 
 .right-content a {
   text-decoration: none;
-  color: #222222;
+  color: #08535e;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
 .right-content span:hover {
-  color: #2071b5;
+  color: #2e8b57;
 }
 
 nav {
@@ -281,7 +282,7 @@ nav {
 
 /* Stijl voor een eventuele knop in de rechterkant */
 .contact-button {
-  background-color: #2071b5;
+  background-color: #2e8b57;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -310,12 +311,12 @@ nav {
   margin-right: 0px;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #222222;
+  color: #08535e;
   padding: 20px;
 }
 
 #titles li:hover {
-  color: #2071b5;
+  color: #2e8b57;
 }
 
 
@@ -338,7 +339,7 @@ nav {
 #dropdown-toggle.active,
 #dropdown-toggle.active svg,
 #mega-dropdown:hover svg {
-  color: #2071b5;
+  color: #2e8b57;
 }
 
 #dropdown-toggle:hover svg,
@@ -405,7 +406,7 @@ nav {
 }
 
 #mega-dropdown li:hover {
-  color: #2071b5;
+  color: #2e8b57;
   text-decoration: underline;
 }
 
@@ -490,10 +491,10 @@ nav {
   /* Verticaal centreren van de tekst en de pijl */
   gap: 8px;
   /* Ruimte tussen de tekst en de pijl */
-  background-color: #ffda00;
-  color: #222222;
-  font-size: 1.2em;
-  font-weight: 800;
+  background-color: #2e8b57;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
   border: none;
   padding: 10px 20px;
   position: relative;
@@ -502,7 +503,7 @@ nav {
 }
 
 .nav-button:hover {
-  background-color: #ffe967;
+  background-color: #2e8b56dc;
 }
 
 
@@ -535,14 +536,14 @@ nav {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  color: #2071b5;
+  color: #2e8b57;
   /* Aangepaste kleur, je kunt deze aanpassen naar wens */
 }
 
 .center-content span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #222222;
+  color: #08535e;
   /* Aangepaste kleur, indien gewenst */
 }
 

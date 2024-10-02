@@ -99,7 +99,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: calc(100% - 40px);
-  background-color: #edf1f6ad;
+  background-color: rgba(238, 238, 238, 0.4117647059);
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -279,7 +279,7 @@ export default {
 
 .cta-button {
   background-color: #ffda00;
-  color: #222222;
+  color: #08535e;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -388,7 +388,7 @@ export default {
 .why-cards-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -416,14 +416,14 @@ export default {
 .text-container h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin-bottom: 20px;
 }
 
 .text-container p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #222222;
+  color: #08535e;
 }
 
 .extra-margin {
@@ -432,7 +432,7 @@ export default {
 }
 
 .cta-button .button-arrow {
-  stroke: #222222 !important;
+  stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
 }
 </style>

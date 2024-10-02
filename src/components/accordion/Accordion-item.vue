@@ -101,7 +101,7 @@ export default {
 
 .accordion-header h3 {
   font-size: 1.5rem;
-  color: #222222;
+  color: #08535e;
   font-weight: 600;
 }
 
@@ -111,13 +111,13 @@ export default {
 
 .accordion-header:hover h3 {
   font-weight: 700;
-  color: #2071b5;
+  color: #08535e;
 }
 
 .accordion-icon svg {
   width: 24px;
   height: 24px;
-  stroke: #222222 !important;
+  stroke: #08535e !important;
 }
 
 .accordion-content-wrapper {
@@ -141,7 +141,7 @@ export default {
 .paragraph-text {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #222222;
+  color: #08535e;
   line-height: 1.6;
 }
 
