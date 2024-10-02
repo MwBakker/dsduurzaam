@@ -13,30 +13,19 @@
                         <div id="titles-img">
                             <div id="exit"><a @click="showNav = false" class="fa fa-arrow-left fa-2x"></a></div>
                         </div>
-                        <li @click="showProductList = !showProductList">
-                            Onze producten
-                            <span
-                                :class="{ 'fa fa-angle-down fa-2x': !showProductList, 'fa fa-angle-up fa-2x': showProductList }"></span>
-                        </li>
-                        <!-- <Transition name="slide-fade-right" appear> -->
-                            <ul v-if="showProductList">
-                                <li class="sub-li" v-for="item in items" :key="item.id" @click="goRoute(item.route)">{{
-                                    item.text }}</li>
-                            </ul>
-                        <!-- </Transition> -->
-                        <li @click="goRoute('subsidy')">
-                            Subsidie
-                            <span class="fa fa-angle-right fa-2x"></span>
-                        </li>
-                        <li @click="goRoute('service')">
-                            Service
-                            <span class="fa fa-angle-right fa-2x"></span>
-                        </li>
+                        <li @click="goRoute('heat-pump')">Warmtepomp<span class="fa fa-angle-right fa-2x"></span></li>
+                        <li @click="goRoute('airco')">Airconditioning<span class="fa fa-angle-right fa-2x"></span></li>
+                        <li @click="goRoute('floor-heating')">Vloerverwarming<span
+                                class="fa fa-angle-right fa-2x"></span></li>
+                        <li @click="goRoute('solar')">Zonnepanelen<span class="fa fa-angle-right fa-2x"></span></li>
+                        <li @click="goRoute('charge-point')">Laadpalen<span class="fa fa-angle-right fa-2x"></span></li>
+                        <li @click="goRoute('subsidy')">Subsidie<span class="fa fa-angle-right fa-2x"></span></li>
+                        <li @click="goRoute('service')">Service<span class="fa fa-angle-right fa-2x"></span></li>
                         <button>Offerte aanvragen</button>
                     </ul>
                 </Transition>
                 <button id="contact" @click="goRoute('contact')">Neem contact op</button>
-                <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x"></div>
+                <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x"><p>Menu</p></div>
             </div>
         </nav>
     </div>
@@ -53,7 +42,7 @@ export default {
     },
     data() {
         return {
-            showNav: true,
+            showNav: false,
             showProductList: false,
             items: [
                 { id: 1, text: 'Warmtepomp', route: 'heat-pump' },
@@ -164,6 +153,15 @@ button {
 
 #bars {
     margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        font-size: 0.4em;
+        font-weight: 600;
+        margin-top: 4px;
+    }
 }
 
 #titles-img {

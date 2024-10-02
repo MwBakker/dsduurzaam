@@ -97,10 +97,10 @@ export default {
     width: 50%;
     justify-content: center;
     background: white;
-    box-shadow: 
-  rgba(255, 255, 255, 0.9) 0px 1px 1px 0px inset, 
-  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
-  rgba(0, 0, 0, 0.3) 0px 30px 60px 0px;
+    box-shadow:
+        rgba(255, 255, 255, 0.9) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px 0px;
     top: 125px;
     left: 0;
     right: 0;
@@ -185,59 +185,27 @@ label {
     cursor: not-allowed;
 }
 
-@media (max-width: 1024px) {
-    #contact-form {
-        bottom: initial;
-        height: 842px;
-        top: 24px;
-        width: 96%;
-        flex-direction: column;
-    }
-
-    .contact-form-field {
-        width: 95%;
-        margin: 8px auto;
-    }
-
-    #info,
-    #vue-form {
-        width: 100%;
-        margin: 12px 0;
-    }
-
-    .double-field {
-        flex-direction: column;
-    }
-
-    .input-wrapper {
-        width: 100%;
-    }
-
-    #privacy-field {
-        justify-content: center;
-    }
-}
-
 .info-line {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
 .info-content {
-  margin-left: 12px;
+    margin-left: 12px;
 }
 
 .info-text {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0; /* Zorg ervoor dat er geen extra marges zijn */
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    /* Zorg ervoor dat er geen extra marges zijn */
 }
 
 .info-additional-text {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #555;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
 }
 
 input::placeholder,
@@ -272,23 +240,30 @@ textarea::placeholder {
     appearance: none;
     background-color: white;
     cursor: pointer;
-    display: flex; /* Gebruik flexbox */
-    align-items: center; /* Centreer verticaal */
-    justify-content: center; /* Centreer horizontaal */
+    display: flex;
+    /* Gebruik flexbox */
+    align-items: center;
+    /* Centreer verticaal */
+    justify-content: center;
+    /* Centreer horizontaal */
     position: relative;
 }
 
 #privacy-field input[type="checkbox"]:checked {
-    background-color: #2071b5; /* Achtergrondkleur als de checkbox is aangevinkt */
+    background-color: #2071b5;
+    /* Achtergrondkleur als de checkbox is aangevinkt */
     border-color: #2071b5;
 }
 
 #privacy-field input[type="checkbox"]:checked::after {
-    font-family: "Font Awesome 6 Free"; /* Specificeer Font Awesome */
-    content: "\f00c"; /* Unicode voor Font Awesome 'fa-check' icoon */
+    font-family: "Font Awesome 6 Free";
+    /* Specificeer Font Awesome */
+    content: "\f00c";
+    /* Unicode voor Font Awesome 'fa-check' icoon */
     color: white;
     font-weight: 900;
-    font-size: 18px; /* Pas de grootte aan indien nodig */
+    font-size: 18px;
+    /* Pas de grootte aan indien nodig */
 }
 
 
@@ -302,13 +277,17 @@ textarea::placeholder {
     font-weight: 800;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Verberg wat buiten de knop valt */
+    overflow: hidden;
+    /* Verberg wat buiten de knop valt */
     display: inline-flex;
     align-items: center;
-    justify-content: center; /* Zorg ervoor dat de tekst gecentreerd is */
+    justify-content: center;
+    /* Zorg ervoor dat de tekst gecentreerd is */
     transition: background-color 0.3s ease, opacity 0.3s ease;
-    width: 100%; /* Pas de breedte aan zoals je wilt */
-    max-width: 400px; /* Max breedte indien nodig */
+    width: 100%;
+    /* Pas de breedte aan zoals je wilt */
+    max-width: 400px;
+    /* Max breedte indien nodig */
 }
 
 #button-send span {
@@ -333,13 +312,18 @@ textarea::placeholder {
 
 /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
 #button-send:hover .button-arrow {
-    transform: translateX(0); /* Schuift naar binnen */
-    opacity: 1; /* Wordt zichtbaar */
+    transform: translateX(0);
+    /* Schuift naar binnen */
+    opacity: 1;
+    /* Wordt zichtbaar */
 }
 
-input, textarea {
-    font-size: 1rem; /* Zet de grootte van de ingevoerde tekst op 1.25rem */
-    width: 100%; /* Zorgt ervoor dat de invoervelden 100% breed zijn */
+input,
+textarea {
+    font-size: 1rem;
+    /* Zet de grootte van de ingevoerde tekst op 1.25rem */
+    width: 100%;
+    /* Zorgt ervoor dat de invoervelden 100% breed zijn */
     padding: 6px;
     border: solid 2px #6b76858f;
     background: none;
@@ -347,4 +331,35 @@ input, textarea {
     font-weight: 500;
 }
 
+@media (max-width: 1024px) {
+    #contact-form {
+        bottom: initial;
+        width: 100%;
+        height: 872px;
+        top: 24px;
+        flex-direction: column;
+    }
+
+    .contact-form-field {
+        margin: 8px auto;
+    }
+
+    #info,
+    #vue-form {
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    .double-field {
+        flex-direction: column;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    #privacy-field {
+        justify-content: center;
+    }
+}
 </style>

@@ -288,7 +288,7 @@ a {
     }
 
     #contact-form-container {
-        height: 1020px;
+        height: 1142px;
     }
 
     .section-info,
