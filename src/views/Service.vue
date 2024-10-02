@@ -2,60 +2,41 @@
   <div id="service">
 
     <div class="background-wrapper">
-      <IntroductionCardSub title="Algemeen iets over product"
-        text="Verdere toelichting van titel."
+      <IntroductionCardSub class="no-top-margin" title="Zorgeloos genieten door uitstekende service"
+        text="Goede service is essentieel voor het optimaal functioneren en de levensduur van uw duurzame installatie. Door het verlenen van onderhoud, verzekert u energiezuinig gebruik en maximaal rendement. Bij InsteQ staan vakprofessionals voor u klaar met diepgaande kennis en advies. Heeft u specifieke vragen over uw installatie of wilt u meer informatie over onze diensten? Neem gerust contact met ons op, wij helpen u graag verder om uw installatie in topconditie te houden."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
-    <div class="background-wrapper-white">
-      <Accordion title="Soorten of als er geen soorten zijn dan 'wist u dat?' (weetjes)">
-        <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 1"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 2"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 3"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 4"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 5"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-        </template>
-      </Accordion>
+    <div class="background-wrapper">
+      <IntroductionCardSubTwo
+      centerTitle="Onze service"
+      leftTitle="Op aanvraag"
+      leftText="Wij leveren service op aanvraag van de klant, precies wanneer u dat nodig heeft. Onze ervaren technici staan klaar om snel en efficiënt in te grijpen, zodat uw duurzame installaties optimaal blijven presteren. Of het nu gaat om onderhoud of reparatie, we zorgen ervoor dat uw systemen probleemloos blijven functioneren."
+      rightTitle="Op contractbasis"
+      rightText="Wij bieden service op contractbasis aan, waarbij uw duurzame installaties periodiek worden onderhouden voor optimale prestaties. Dit servicecontract wordt aangeboden bij de oplevering van uw installatie, of op aanvraag van de klant. Met een contract bent u verzekerd van regelmatige controles en snelle ondersteuning, wat zorgt voor een langere levensduur van uw systemen."
+    />
     </div>
-
-    <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Waarom ze voor ons moeten kiezen" :listItems="[
-      'Hierom 1',
-      'Hierom 2',
-      'Hierom 3',
-      'Hierom 4'
-    ]" buttonText="Text in knop" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
 
     <div class="background-wrapper">
       <div class="why-cards-container">
-        <h2>Waarom kiest u voor InsteQ?</h2>
+        <h2>Waarom is service belangrijk?</h2>
         <div class="why-cards">
-          <WhyCard title="Duurzaam totaaladvies"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+          <WhyCard title="Langere levensduur"
+            description="Regelmatig onderhoud verlengt de levensduur van de installatie en vermindert de kans op defecten."
             icon="sustainable" />
-          <WhyCard title="Gecertificeerd"
-            description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
+          <WhyCard title="Hoger rendement"
+            description="Goed onderhoud zorgt voor een efficiëntere werking, wat resulteert in hoger rendement en lagere energiekosten."
             icon="certified" />
-          <WhyCard title="Hoge kwaliteit en garantie"
-            description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
+          <WhyCard title="Voorkomt reparaties"
+            description="Regelmatige controles voorkomen onverwachte, dure reparaties door problemen vroegtijdig te detecteren en op te lossen."
             icon="quality" />
-          <WhyCard title="Direct leverbaar"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+          <WhyCard title="Garantiebehoud"
+            description="Regelmatige service is vaak vereist door fabrikanten om de garantie op de installatie te behouden."
             icon="delivery" />
         </div>
       </div>
     </div>
+    
 
   </div>
 </template>
@@ -70,6 +51,7 @@ import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
+import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
 
 export default {
   name: "Service",
@@ -82,7 +64,8 @@ export default {
     Accordion,
     AccordionItem,
     WhyCard,
-    IntroductionCardSub
+    IntroductionCardSub,
+    IntroductionCardSubTwo
   }
 };
 </script>
@@ -434,5 +417,9 @@ export default {
 .cta-button .button-arrow {
   stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
+}
+
+.no-top-margin {
+  top: 0 !important; /* Dit overschrijft de top: -150px; */
 }
 </style>

@@ -253,6 +253,11 @@ nav {
   align-items: center;
 }
 
+.logo {
+  z-index: 1101; /* Zorg ervoor dat het boven de mega-dropdown (z-index: 1000) komt */
+  position: relative; /* Zorg ervoor dat de z-index correct wordt toegepast */
+}
+
 .logo img {
   height: 60px;
   width: auto;
@@ -336,8 +341,6 @@ nav {
 /* Zorg dat de hover-kleur blauw wordt op het menu-item en mega-dropdown */
 #dropdown-toggle:hover,
 #mega-dropdown:hover,
-#dropdown-toggle.active,
-#dropdown-toggle.active svg,
 #mega-dropdown:hover svg {
   color: #2e8b57;
 }
