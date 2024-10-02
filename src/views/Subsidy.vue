@@ -1,61 +1,60 @@
 <template>
     <div id="subsidy">
-   
+
         <div class="background-wrapper">
-      <IntroductionCardSub title="Algemeen iets over product"
-        text="Verdere toelichting van titel."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
-
-    <div class="background-wrapper-white">
-      <Accordion title="Soorten of als er geen soorten zijn dan 'wist u dat?' (weetjes)">
-        <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 1"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 2"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 3"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 4"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen" title="Soort of wist u dat 5"
-            paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
-            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-        </template>
-      </Accordion>
-    </div>
-
-    <!-- Nieuwe container met content (zoals afbeelding) -->
-    <ContentCardOne title="Waarom ze voor ons moeten kiezen" :listItems="[
-      'Hierom 1',
-      'Hierom 2',
-      'Hierom 3',
-      'Hierom 4'
-    ]" buttonText="Text in knop" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
-
-    <div class="background-wrapper">
-      <div class="why-cards-container">
-        <h2>Waarom kiest u voor InsteQ?</h2>
-        <div class="why-cards">
-          <WhyCard title="Duurzaam totaaladvies"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-            icon="sustainable" />
-          <WhyCard title="Gecertificeerd"
-            description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
-            icon="certified" />
-          <WhyCard title="Hoge kwaliteit en garantie"
-            description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
-            icon="quality" />
-          <WhyCard title="Direct leverbaar"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-            icon="delivery" />
+            <IntroductionCardSub title="Algemeen iets over product" text="Verdere toelichting van titel."
+                buttonText="Je knoptekst hier" :showButton="false" />
         </div>
-      </div>
-    </div>
+
+        <div class="background-wrapper-white">
+            <Accordion title="Soorten of als er geen soorten zijn dan 'wist u dat?' (weetjes)">
+                <template v-slot="{ currentOpen, setOpen, refs }">
+                    <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen"
+                        title="Soort of wist u dat 1" paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+                    <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen"
+                        title="Soort of wist u dat 2" paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+                    <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen"
+                        title="Soort of wist u dat 3" paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+                    <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen"
+                        title="Soort of wist u dat 4" paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+                    <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen"
+                        title="Soort of wist u dat 5" paragraphText="Uitleg van soort of wist u dat - max 50 woorden"
+                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+                </template>
+            </Accordion>
+        </div>
+
+        <!-- Nieuwe container met content (zoals afbeelding) -->
+        <ContentCardOne title="Waarom ze voor ons moeten kiezen" :listItems="[
+            'Hierom 1',
+            'Hierom 2',
+            'Hierom 3',
+            'Hierom 4'
+        ]" buttonText="Text in knop" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
+
+        <div class="background-wrapper">
+            <div class="why-cards-container">
+                <h2>Waarom kiest u voor InsteQ?</h2>
+                <div class="why-cards">
+                    <WhyCard title="Duurzaam totaaladvies"
+                        description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+                        icon="sustainable" />
+                    <WhyCard title="Gecertificeerd"
+                        description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
+                        icon="certified" />
+                    <WhyCard title="Hoge kwaliteit en garantie"
+                        description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
+                        icon="quality" />
+                    <WhyCard title="Direct leverbaar"
+                        description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
+                        icon="delivery" />
+                </div>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -64,7 +63,7 @@
 import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
 import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
 import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
+import QuoteCard from '@/components/unused/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
@@ -326,58 +325,6 @@ export default {
     /* Wordt zichtbaar */
 }
 
-
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-    .product-cards-container {
-        max-width: 1548px;
-        width: 200px;
-    }
-
-    .cta-button {
-        width: 400px;
-    }
-}
-
-@media (max-width: 1750px) {
-    .product-cards-container {
-        max-width: 1548px;
-        width: 85%;
-    }
-
-    .cta-button {
-        width: 400px;
-    }
-}
-
-@media (max-width: 1600px) {
-    .product-cards-container {
-        max-width: 1548px;
-        width: 85%;
-    }
-
-    .cta-button {
-        width: 350px;
-    }
-}
-
-@media (max-width: 1380px) {
-    .product-cards-container {
-        width: 85%;
-    }
-
-    .cta-button {
-        width: 100%;
-        /* Standaard vaste breedte */
-    }
-}
-
-@media (max-width: 1280px) {
-    .cta-button {
-        font-size: 1.2rem;
-    }
-}
-
 .why-cards-container {
     padding: 40px 20px;
     text-align: center;
@@ -433,5 +380,11 @@ export default {
 .cta-button .button-arrow {
     stroke: #08535e !important;
     /* Zorg ervoor dat de pijl zwart wordt */
+}
+
+@media (max-width: 1280px) {
+    .cta-button {
+        font-size: 1.2rem;
+    }
 }
 </style>

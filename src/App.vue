@@ -1,10 +1,11 @@
 <template>
   <navBar v-if="windowWidth > 1280" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
-  <upperContentContainer :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="showHeaderUrl"
-    :mainUrl="headerMainUrl" :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription"
-    :boxUrl="headerBoxUrl">
+  <upperContentContainer v-if="activePage != 'subsidy' && activePage != 'service'" :mainImg="headerImg"
+    :mainTitle="headerTitle" :showMainUrl="showHeaderUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
+    :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
   </upperContentContainer>
+  <div style="height:200px" v-else></div>
   <router-view />
   <customFooter />
 </template>
@@ -203,7 +204,8 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #08535e;;
+  background: #08535e;
+  ;
 }
 
 .slide-fade-up-enter-active,
@@ -243,7 +245,7 @@ hr {
   opacity: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .product {
     width: 100%;
   }

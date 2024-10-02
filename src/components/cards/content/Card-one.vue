@@ -12,7 +12,8 @@
         <!-- Optionele CTA Button with Arrow -->
         <router-link v-if="showButton" :to="linkUrl" class="cta-button">
           <span>{{ buttonText }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="button-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </router-link>
@@ -77,7 +78,8 @@ export default {
   display: flex;
   justify-content: center;
   padding: 0 20px;
-  margin-top: 150px; /* Dit verplaatst de hele container naar beneden */
+  margin-top: 150px;
+  /* Dit verplaatst de hele container naar beneden */
 }
 
 .content-wrapper {
@@ -87,7 +89,8 @@ export default {
   width: 100%;
   position: relative;
   margin-bottom: 100px;
-  margin-top: 50px; /* Verplaats de gehele content-wrapper naar beneden */
+  margin-top: 50px;
+  /* Verplaats de gehele content-wrapper naar beneden */
 }
 
 .content-wrapper::before {
@@ -97,13 +100,15 @@ export default {
   left: 0;
   height: 100%;
   width: 60%;
-  background: linear-gradient(to right, #08535e, #49a3b5);;
+  background: linear-gradient(to right, #08535e, #49a3b5);
+  ;
   z-index: 0;
 }
 
 .content-text {
   flex-basis: 50%;
-  padding: 50px 20px; /* Verhoog de padding-top om de tekst naar beneden te verplaatsen */
+  padding: 50px 20px;
+  /* Verhoog de padding-top om de tekst naar beneden te verplaatsen */
   padding-right: 50px;
   position: relative;
   z-index: 1;
@@ -189,7 +194,8 @@ ul {
   justify-content: flex-end;
   align-items: flex-start;
   z-index: 2;
-  margin-top: -150px; /* Schuif de afbeelding omhoog */
+  margin-top: -150px;
+  /* Schuif de afbeelding omhoog */
 }
 
 .content-card-image {
@@ -197,37 +203,6 @@ ul {
   height: auto;
   object-fit: cover;
   max-width: 100%;
-}
-
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .content-image {
-    margin-top: -200px;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .content-image {
-    margin-top: -325px;
-  }
-
-  .cta-button {
-    width: 350px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .content-image {
-    margin-top: -375px;
-  }
-
-  .cta-button {
-    width: 100%;
-  }
 }
 
 @media (max-width: 1280px) {
@@ -258,43 +233,16 @@ ul {
     align-items: center;
   }
 
+  .content-text {
+    padding: 50px;
+  }
+
   .content-wrapper::before {
     width: 100%;
   }
 
   .content-image {
     display: none;
-  }
-}
-
-@media (max-width: 1024px) {
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  .cta-button {
-    font-size: 1.2rem;
-    width: 90%;
-  }
-
-  .content-image {
-    margin-top: -150px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cta-button {
-    font-size: 1.2rem;
-    width: 100%;
-  }
-
-  .content-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .content-image {
-    margin-top: -150px;
   }
 }
 </style>

@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import titleIcon from "../Title-icon.vue";
-import ServiceLine from "@/components/Service-line.vue";
+import titleIcon from "../unused/Title-icon.vue";
+import ServiceLine from "@/components/unused/Service-line.vue";
 
 export default {
   name: "upper_content_container",

@@ -95,6 +95,7 @@ export default {
 #contact-form {
     display: flex;
     width: 50%;
+    min-width: 750px;
     justify-content: center;
     background: white;
     box-shadow:
@@ -331,9 +332,10 @@ textarea {
     font-weight: 500;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     #contact-form {
         bottom: initial;
+        min-width: initial;
         width: 100%;
         height: 872px;
         top: 24px;

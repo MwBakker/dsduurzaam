@@ -224,7 +224,7 @@ const imageUrl = computed(() => {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   #paragraphcard-right {
     margin: 12px 0;
   }

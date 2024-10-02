@@ -157,7 +157,7 @@ export default {
 
 #label-main {
   height: 36px;
-background-color: #fff;
+  background-color: #fff;
 
   display: flex;
   align-items: center;
@@ -207,7 +207,8 @@ background-color: #fff;
 }
 
 .right-content a:hover {
-  font-size: 0.9rem; /* Pas de waarde aan naar wens */
+  font-size: 0.9rem;
+  /* Pas de waarde aan naar wens */
   font-weight: 700;
 }
 
@@ -215,8 +216,7 @@ background-color: #fff;
   fill: #08535e;
 }
 
-.right-content a:hover svg {
-}
+.right-content a:hover svg {}
 
 .right-content a {
   text-decoration: none;

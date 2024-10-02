@@ -147,7 +147,7 @@
 import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
 import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
 import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
+import QuoteCard from '@/components/unused/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
@@ -474,50 +474,6 @@ export default {
   /* Zorg ervoor dat de pijl zwart wordt */
 }
 
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 200px;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1750px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 350px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .product-cards-container {
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 100%;
-    /* Standaard vaste breedte */
-  }
-}
 
 @media (max-width: 1280px) {
   .background-wrapper {

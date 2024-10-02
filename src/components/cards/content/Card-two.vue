@@ -148,7 +148,7 @@ h2 {
 }
 
 /* Media queries voor verdere aanpassingen op kleinere schermen */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .content-card-two {
     flex-direction: column;
     align-items: center;
@@ -163,20 +163,6 @@ h2 {
   .feature-icon img {
     width: 30px;
     height: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .feature-text h3 {
-    font-size: 1rem;
-  }
-
-  .feature-text p {
-    font-size: 0.8rem;
   }
 }
 </style>

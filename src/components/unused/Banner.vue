@@ -2,9 +2,7 @@
     <div id="banner" :style="{ height: height }">
         <div id="content">
             <p :style="{ fontSize: fontSize }" v-if="text != null">{{ text }}</p>
-            <p v-else>Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die
-                het beste
-                bij u past.</p>
+            <p v-else>Weten wat u kunt besparen? Tijdens een vrijblijvend gesprek bespreken we samen de oplossing die het beste bij u past.</p>
             <button @click="scrollTo('contact-form-container')">Maak een afspraak</button>
         </div>
         <img src=" ../assets/tabs/contact.png" />
@@ -59,25 +57,25 @@ img {
     height: 480px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     #banner {
         display: block;
         text-align: center;
     }
 
-   img,
-   #content {
-    width: 100%;
-   }
+    img,
+    #content {
+        width: 100%;
+    }
 
-   #content {
-    padding: 0 16px;
-   }
+    #content {
+        padding: 0 16px;
+    }
 
-   img {
-    height: 200px;
-    border-radius: initial;
-    border-radius: 50% 50% 0 0;
-   }
+    img {
+        height: 200px;
+        border-radius: initial;
+        border-radius: 50% 50% 0 0;
+    }
 }
 </style>

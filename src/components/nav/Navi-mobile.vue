@@ -13,24 +13,19 @@
                         <div id="titles-img">
                             <div id="exit"><a @click="showNav = false" class="fa fa-arrow-left fa-2x"></a></div>
                         </div>
-                        <li @click="goRoute('heat-pump')">Warmtepomp<span class="fa fa-angle-right fa-2x"></span></li>
-                        <li @click="goRoute('airco')">Airconditioning<span class="fa fa-angle-right fa-2x"></span></li>
-                        <li @click="goRoute('floor-heating')">Vloerverwarming<span
+                        <li v-for="item in items" :key="item.id" @click="goRoute(item.route)">{{ item.text }}<span
                                 class="fa fa-angle-right fa-2x"></span></li>
-                        <li @click="goRoute('solar')">Zonnepanelen<span class="fa fa-angle-right fa-2x"></span></li>
-                        <li @click="goRoute('charge-point')">Laadpalen<span class="fa fa-angle-right fa-2x"></span></li>
-                        <li @click="goRoute('subsidy')">Subsidie<span class="fa fa-angle-right fa-2x"></span></li>
-                        <li @click="goRoute('service')">Service<span class="fa fa-angle-right fa-2x"></span></li>
                         <button>Offerte aanvragen</button>
                     </ul>
                 </Transition>
                 <button id="contact" @click="goRoute('contact')">Neem contact op</button>
-                <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x"><p>Menu</p></div>
+                <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x">
+                    <p>Menu</p>
+                </div>
             </div>
         </nav>
     </div>
 </template>
-
 
 <script>
 import upper_content_container from "./Upper-content-container.vue"
@@ -49,8 +44,9 @@ export default {
                 { id: 2, text: 'Airconditioning', route: 'airco' },
                 { id: 3, text: 'Vloerverwarming', route: 'floor-heating' },
                 { id: 4, text: 'Zonnepanelen', route: 'solar' },
-                { id: 5, text: 'Laadpaal', route: 'charge-point' },
-                { id: 6, text: 'Service', route: 'service' },
+                { id: 5, text: 'Laadpalen', route: 'charge-points' },
+                { id: 6, text: 'Subsidie', route: 'subsidy' },
+                { id: 7, text: 'Service', route: 'service' },
             ]
         };
     },
@@ -101,10 +97,8 @@ nav {
 }
 
 #button-menu {
-    width: 60%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 #titles {

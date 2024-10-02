@@ -199,37 +199,6 @@ ul {
   max-width: 100%;
 }
 
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .content-image {
-    margin-top: -200px;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .content-image {
-    margin-top: -325px;
-  }
-
-  .cta-button {
-    width: 350px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .content-image {
-    margin-top: -375px;
-  }
-
-  .cta-button {
-    width: 100%;
-  }
-}
-
 @media (max-width: 1280px) {
   .container-content-card-one {
     width: 100%;
@@ -264,37 +233,6 @@ ul {
 
   .content-image {
     display: none;
-  }
-}
-
-@media (max-width: 1024px) {
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  .cta-button {
-    font-size: 1.2rem;
-    width: 90%;
-  }
-
-  .content-image {
-    margin-top: -150px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cta-button {
-    font-size: 1.2rem;
-    width: 100%;
-  }
-
-  .content-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .content-image {
-    margin-top: -150px;
   }
 }
 </style>

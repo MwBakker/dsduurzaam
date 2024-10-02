@@ -130,7 +130,7 @@ const imageUrl = computed(
     text-align: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .card-sub-product {
         width: 320px;
     }

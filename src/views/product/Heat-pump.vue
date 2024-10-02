@@ -3,7 +3,7 @@
 
 
     <div class="background-wrapper">
-      <IntroductionCardSub title="Gasvrij wonen of werken met een warmtepomp"   
+      <IntroductionCardSub title="Gasvrij wonen of werken met een warmtepomp"
         text="Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op je energiekosten en verminder je CO₂-uitstoot terwijl je geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning. "
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
@@ -35,19 +35,23 @@
       'Wij handelen het gehele subsidietraject voor je af'
     ]" buttonText="Vraag adviesgesprek aan" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer" />
 
-<div class="background-wrapper-white">
+    <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Efficiënt verwarmen én koelen voor optimaal comfort"
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Efficiënt verwarmen én koelen voor optimaal comfort"
             paragraphText="Wist u dat warmtepompen niet alleen verwarmen, maar ook kunnen koelen? In de zomer kan een warmtepomp de werking omdraaien en warmte uit uw woning onttrekken, waardoor het heerlijk koel blijft. Dit maakt de warmtepomp een veelzijdige en energiezuinige oplossing voor zowel de warme als koude maanden."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Lever tot 4 keer meer energie dan je verbruikt"
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Lever tot 4 keer meer energie dan je verbruikt"
             paragraphText="Wist u dat warmtepompen maar liefst 3 tot 4 keer meer energie leveren dan ze verbruiken? Dit komt doordat ze warmte uit de buitenlucht, grond of ventilatielucht halen en deze efficiënt omzetten in bruikbare energie voor uw woning. Hierdoor zijn warmtepompen extreem efficiënt en kunt u aanzienlijk besparen op uw energiekosten, terwijl u op een duurzame manier verwarmt en koelt. Dit maakt het een van de meest milieuvriendelijke verwarmingsopties voor moderne huizen."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Verhoog de waarde van je woning en bespaar energie"
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Verhoog de waarde van je woning en bespaar energie"
             paragraphText="Wist u dat warmtepompen niet alleen de waarde van uw woning verhogen, maar ook uw energielabel verbeteren? Een energiezuinige woning is aantrekkelijker voor kopers, omdat het lagere energiekosten en een beter energielabel biedt. Bovendien kunt u momenteel nog subsidie krijgen op de installatie van een warmtepomp, wat de investering nog voordeliger maakt en de woningwaarde verder verhoogt. Dit maakt een warmtepomp een slimme keuze voor zowel uw portemonnee als de toekomst van uw huis."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Haal duurzame energie direct uit de lucht"
+          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Haal duurzame energie direct uit de lucht"
             paragraphText="Wist u dat warmtepompen lucht kunnen gebruiken als energiebron? Luchtwarmtepompen onttrekken warmte uit de buitenlucht, zelfs bij lage temperaturen, en zetten deze om in energie voor het verwarmen van uw woning. Dit maakt ze niet alleen efficiënt en milieuvriendelijk, maar ook voordelig in gebruik. Daarnaast komt u in aanmerking voor subsidies, wat de investering in een luchtwarmtepomp nog aantrekkelijker maakt. Een slimme manier om duurzaam te verwarmen met behulp van de buitenlucht!"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
@@ -80,7 +84,7 @@
 import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
 import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
 import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
+import QuoteCard from '@/components/unused/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
@@ -248,13 +252,13 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-}
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Zorg ervoor dat de afbeelding zich aanpast aan de container */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Zorg ervoor dat de afbeelding zich aanpast aan de container */
+  }
 }
 
 .product-cards-container .button {
@@ -345,72 +349,20 @@ export default {
   /* Wordt zichtbaar */
 }
 
-
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 200px;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1750px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 350px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .product-cards-container {
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 100%;
-    /* Standaard vaste breedte */
-  }
-}
-
-@media (max-width: 1280px) {
-  .cta-button {
-    font-size: 1.2rem;
-  }
-}
-
 .why-cards-container {
   padding: 40px 20px;
   text-align: center;
   max-width: 90%;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #08535e;
+    margin-bottom: 40px;
+  }
 }
 
-.why-cards-container h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #08535e;
-  margin-bottom: 40px;
-}
-
-.why-cards {
+.why-cards-container .why-cards {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -431,20 +383,23 @@ export default {
   /* Kleur bij hover */
 }
 
-.text-container h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #08535e;
-  margin-bottom: 20px;
+.text-container {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #08535e;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #08535e;
+  }
+
 }
 
-.text-container p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #08535e;
-}
-
-.extra-margin {
+.text-container .text-container .extra-margin {
   margin-top: 40px;
   /* Verhoog de waarde als je meer ruimte wilt */
 }
@@ -456,5 +411,11 @@ export default {
 
 .products-background {
   background-color: #eeeeee69;
+}
+
+@media (max-width: 1280px) {
+  .cta-button {
+    font-size: 1.2rem;
+  }
 }
 </style>

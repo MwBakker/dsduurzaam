@@ -1,6 +1,6 @@
 <template>
   <div id="airco">
-  
+
 
     <div class="background-wrapper">
       <IntroductionCardSub title="Comfortabel in de zomer en in de winter"
@@ -20,7 +20,8 @@
           <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Cassette airconditioning"
             paragraphText="Een cassette airconditioning heeft een binnenunit die in het plafond wordt gemonteerd, vaak met vier luchtuitlaten voor een optimale luchtverdeling. Dit type airco wordt veel gebruikt in kantoren en grote open ruimtes met verlaagde plafonds. Het systeem is discreet, neemt weinig ruimte in beslag en zorgt voor een gelijkmatige luchtverspreiding in de ruimte, wat het ideaal maakt voor grotere ruimtes waar esthetiek en efficiëntie samenkomen."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Vloer- of wandmodel airconditioning"
+          <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Vloer- of wandmodel airconditioning"
             paragraphText="Een vloer- of wandmodel airconditioning wordt aan de muur of op de vloer gemonteerd en is geschikt voor ruimtes waar plafondruimte beperkt is, zoals woningen of commerciële omgevingen. Deze units zijn eenvoudig te installeren en bieden een efficiënte oplossing voor kleinere ruimtes. Dankzij hun flexibele plaatsing kunnen ze optimaal worden ingezet in situaties waar traditionele plafond- of cassette-installaties niet mogelijk zijn, zonder in te leveren op comfort en prestaties."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
@@ -35,7 +36,7 @@
       'Uitstekende service en onderhoud'
     ]" buttonText="Gratis advies aanvragen" imageSrc="airco.png" linkUrl="heat-pump" linkText="Lees meer" />
 
-<div class="background-wrapper-white">
+    <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
           <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Efficiënt koelen én verwarmen"
@@ -78,7 +79,7 @@
 import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
 import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
 import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
+import QuoteCard from '@/components/unused/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
@@ -341,58 +342,6 @@ export default {
   /* Wordt zichtbaar */
 }
 
-
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 200px;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1750px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 350px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .product-cards-container {
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 100%;
-    /* Standaard vaste breedte */
-  }
-}
-
-@media (max-width: 1280px) {
-  .cta-button {
-    font-size: 1.2rem;
-  }
-}
-
 .why-cards-container {
   padding: 40px 20px;
   text-align: center;
@@ -448,5 +397,11 @@ export default {
 .cta-button .button-arrow {
   stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
+}
+
+@media (max-width: 1280px) {
+  .cta-button {
+    font-size: 1.2rem;
+  }
 }
 </style>

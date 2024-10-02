@@ -30,7 +30,7 @@
 
 import SubProduct from './template.vue';
 import SubProductCard from '@/components/cards/product/Sub.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
+import QuoteCard from '@/components/unused/Quote.vue';
 
 export default {
     name: "Heat-pump",

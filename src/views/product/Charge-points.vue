@@ -38,20 +38,22 @@
     ]" buttonText="Gratis advies aanvragen" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
 
     <div class="background-wrapper-white">
-          <Accordion title="Handig om te weten">
-            <template v-slot="{ currentOpen, setOpen, refs }">
-              <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Nog meer besparen met slim opladen"
-                paragraphText="Slim opladen thuis met een slimme laadpaal biedt veel voordelen. Deze laadpalen kunnen communiceren met je smartphone, waardoor je het laadproces eenvoudig op afstand kunt beheren. Je kunt laadsessies plannen op basis van de laagste energietarieven, zodat je altijd op het voordeligste moment oplaadt. Dit helpt niet alleen om kosten te besparen, maar zorgt ook voor een efficiënter energieverbruik, vooral als je gebruik maakt van dynamische tarieven of eigen opgewekte zonne-energie."
-                :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-              <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Opladen met zonnne-energie"
-                paragraphText="Als je zonnepanelen hebt, kun je jouw laadpaal koppelen aan je zonnestroomsysteem, waardoor je je elektrische auto direct kunt opladen met 100% duurzame energie. Dit betekent niet alleen dat je kosten bespaart, maar ook dat je een stap zet richting een volledig groene energievoorziening. Zo maak je optimaal gebruik van de energie die je zelf opwekt en rijd je nog milieuvriendelijker."
-                :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-              <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Universele stekker voor elke elektrische auto"
-                paragraphText="Moderne laadpalen zijn voorzien van universele stekkers, zoals de Type 2-connector, die compatibel zijn met vrijwel alle elektrische voertuigen. Of je nu een compacte stadswagen of een luxe elektrische SUV rijdt, je kunt je auto eenvoudig en snel opladen. Deze veelzijdigheid maakt moderne laadpalen een ideale keuze voor elk type elektrische auto, waardoor je altijd verzekerd bent van een probleemloze laadervaring."
-                :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-            </template>
-          </Accordion>
-        </div>
+      <Accordion title="Handig om te weten">
+        <template v-slot="{ currentOpen, setOpen, refs }">
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Nog meer besparen met slim opladen"
+            paragraphText="Slim opladen thuis met een slimme laadpaal biedt veel voordelen. Deze laadpalen kunnen communiceren met je smartphone, waardoor je het laadproces eenvoudig op afstand kunt beheren. Je kunt laadsessies plannen op basis van de laagste energietarieven, zodat je altijd op het voordeligste moment oplaadt. Dit helpt niet alleen om kosten te besparen, maar zorgt ook voor een efficiënter energieverbruik, vooral als je gebruik maakt van dynamische tarieven of eigen opgewekte zonne-energie."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Opladen met zonnne-energie"
+            paragraphText="Als je zonnepanelen hebt, kun je jouw laadpaal koppelen aan je zonnestroomsysteem, waardoor je je elektrische auto direct kunt opladen met 100% duurzame energie. Dit betekent niet alleen dat je kosten bespaart, maar ook dat je een stap zet richting een volledig groene energievoorziening. Zo maak je optimaal gebruik van de energie die je zelf opwekt en rijd je nog milieuvriendelijker."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+          <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Universele stekker voor elke elektrische auto"
+            paragraphText="Moderne laadpalen zijn voorzien van universele stekkers, zoals de Type 2-connector, die compatibel zijn met vrijwel alle elektrische voertuigen. Of je nu een compacte stadswagen of een luxe elektrische SUV rijdt, je kunt je auto eenvoudig en snel opladen. Deze veelzijdigheid maakt moderne laadpalen een ideale keuze voor elk type elektrische auto, waardoor je altijd verzekerd bent van een probleemloze laadervaring."
+            :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
+        </template>
+      </Accordion>
+    </div>
 
 
 
@@ -82,7 +84,7 @@
 import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
 import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
 import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
+import QuoteCard from '@/components/unused/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
@@ -348,57 +350,6 @@ export default {
 }
 
 
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 200px;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1750px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .product-cards-container {
-    max-width: 1548px;
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 350px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .product-cards-container {
-    width: 85%;
-  }
-
-  .cta-button {
-    width: 100%;
-    /* Standaard vaste breedte */
-  }
-}
-
-@media (max-width: 1280px) {
-  .cta-button {
-    font-size: 1.2rem;
-  }
-}
-
 .why-cards-container {
   padding: 40px 20px;
   text-align: center;
@@ -454,5 +405,12 @@ export default {
 .cta-button .button-arrow {
   stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
+}
+
+
+@media (max-width: 1280px) {
+  .cta-button {
+    font-size: 1.2rem;
+  }
 }
 </style>

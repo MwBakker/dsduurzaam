@@ -89,9 +89,9 @@ h1 {
   text-align: left; /* Zorg ervoor dat de tweede paragraaftekst links wordt uitgelijnd */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   #info-line {
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
     padding: initial;
   }

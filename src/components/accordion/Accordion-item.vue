@@ -167,38 +167,4 @@ export default {
     height: 20px;
   }
 }
-
-@media (max-width: 768px) {
-  .accordion-item {
-    width: 100%;
-  }
-
-  .accordion-header h3 {
-    font-size: 1.2rem;
-  }
-
-  .accordion-content {
-    padding: 10px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .accordion-header {
-    padding: 10px 15px;
-  }
-
-  .accordion-header h3 {
-    font-size: 1.1rem;
-  }
-
-  .accordion-content {
-    font-size: 1rem;
-    padding: 8px 10px;
-  }
-
-  .accordion-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-}
 </style>

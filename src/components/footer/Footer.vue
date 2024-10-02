@@ -279,7 +279,7 @@ a {
     font-weight: 800;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     #footer-content {
         flex-direction: column;
         /* Zet secties onder elkaar op kleinere schermen */

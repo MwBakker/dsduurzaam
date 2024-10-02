@@ -225,7 +225,7 @@ const imageUrl = computed(() => {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   #paragaphcard {
     margin: 12px 0;
     display: block;
