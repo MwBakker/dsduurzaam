@@ -3,10 +3,12 @@
     <div class="accordion-header" @click="toggle">
       <h3 :class="{ 'open': isOpen }">{{ title }}</h3>
       <span class="accordion-icon">
-        <svg v-if="isOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg v-if="isOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
         </svg>
-        <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </span>
@@ -15,7 +17,7 @@
       <div v-show="isOpen" class="accordion-content-wrapper">
         <div class="accordion-content">
           <div class="left-section">
-            <p v-if="paragraphText" class="paragraph-text">{{ paragraphText }}</p>
+            <p v-if="paragraphText">{{ paragraphText }}</p>
           </div>
         </div>
       </div>
@@ -91,27 +93,34 @@ export default {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+h3 {
+  font-size: 1.5rem;
+  color: #08535e;
+  font-weight: 600;
+
+  &:hover {
+    font-weight: 700;
+    color: #08535e;
+  }
+
+  .open {
+    font-weight: 700;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #08535e;
+  line-height: 1.6;
+}
+
 .accordion-header {
   cursor: pointer;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.accordion-header h3 {
-  font-size: 1.5rem;
-  color: #08535e;
-  font-weight: 600;
-}
-
-.accordion-header h3.open {
-  font-weight: 700;
-}
-
-.accordion-header:hover h3 {
-  font-weight: 700;
-  color: #08535e;
 }
 
 .accordion-icon svg {
@@ -138,23 +147,16 @@ export default {
   width: 100%;
 }
 
-.paragraph-text {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #08535e;
-  line-height: 1.6;
-}
-
 .accordion-header:hover .accordion-icon svg {
   stroke: #2071b5 !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .accordion-item {
     width: 100%;
   }
 
-  .accordion-header h3 {
+  h3 {
     font-size: 2rem;
   }
 
@@ -165,6 +167,21 @@ export default {
   .accordion-icon svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  p {
+    text-align: center;
+  }
+
+  .accordion-header {
+    padding: 16px;
+  }
+
+  h3 {
+    font-size: 1.4em;
   }
 }
 </style>

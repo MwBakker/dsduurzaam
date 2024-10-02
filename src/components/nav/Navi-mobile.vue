@@ -65,10 +65,18 @@ export default {
     transition: 2s ease all;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 106px;
+    padding: 12px 0;
+}
+
 .branding {
     cursor: pointer;
     text-align: center;
-    margin: 0 2.5%;
+    margin-left: 10px;
 
     img {
         width: 120px;
@@ -86,14 +94,6 @@ export default {
         color: #ffffff;
         font-weight: 400;
     }
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 106px;
-    padding: 12px 0;
 }
 
 #button-menu {
@@ -139,7 +139,7 @@ nav {
 button {
     background-color: #ffda00;
     color: #08535e;
-    width: 160px;
+    width: 145px;
     font-size: 0.8em;
     font-weight: 800;
     border: none;
