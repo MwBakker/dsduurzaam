@@ -91,7 +91,7 @@ h1 {
 
 @media (max-width: 1280px) {
   #info-line {
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
     padding: initial;
   }

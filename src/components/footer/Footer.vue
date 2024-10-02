@@ -279,6 +279,27 @@ a {
     font-weight: 800;
 }
 
+#section-light-content p {
+    color: white;
+}
+
+p a:hover {
+    font-size: 0.9rem;
+    /* Pas de waarde aan naar wens */
+    font-weight: 700;
+}
+
+p.clickable-route:hover {
+    font-size: 0.9rem;
+    /* Pas de waarde aan naar wens */
+    font-weight: 700;
+}
+
+.social-logo:hover {
+    transform: scale(1.1);
+    /* Vergroot het logo iets bij hover */
+}
+
 @media (max-width: 1280px) {
     #footer-content {
         flex-direction: column;
@@ -288,7 +309,7 @@ a {
     }
 
     #contact-form-container {
-        height: 1142px;
+        height: 1100px;
     }
 
     .section-info,
@@ -308,28 +329,16 @@ a {
     #logos-certification {
         text-align: center;
         display: block;
+        flex: initial;
+    }
+
+    #certification-logos-content {
+        display: block;
+        margin-left: 14px;
     }
 
     .section-info {
         flex: 0;
     }
-}
-
-#section-light-content p {
-    color: white;
-}
-
-p a:hover {
-    font-size: 0.9rem; /* Pas de waarde aan naar wens */
-    font-weight: 700;
-}
-
-p.clickable-route:hover {
-    font-size: 0.9rem; /* Pas de waarde aan naar wens */
-    font-weight: 700;
-}
-
-.social-logo:hover {
-    transform: scale(1.1); /* Vergroot het logo iets bij hover */
 }
 </style>

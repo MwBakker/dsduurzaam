@@ -337,7 +337,7 @@ textarea {
         bottom: initial;
         min-width: initial;
         width: 100%;
-        height: 872px;
+        height: 856px;
         top: 24px;
         flex-direction: column;
     }
@@ -361,7 +361,11 @@ textarea {
     }
 
     #privacy-field {
+        width: 80%;
+        margin: 0 auto;
         justify-content: center;
+        text-align: left;
+
     }
 }
 </style>

@@ -18,7 +18,7 @@
                         <button>Offerte aanvragen</button>
                     </ul>
                 </Transition>
-                <button id="contact" @click="goRoute('contact')">Neem contact op</button>
+                <button id="contact" @click="goRoute('contact')">Contact</button>
                 <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x">
                     <p>Menu</p>
                 </div>
