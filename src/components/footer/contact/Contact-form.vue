@@ -36,8 +36,10 @@
             <div v-if="!sent" class="contact-form-field">
                 <button id="button-send" type="submit" class="cta-button">
                     <span>Verzenden</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#222222" class="button-arrow">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#222222"
+                        class="button-arrow">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </button>
             </div>
@@ -97,10 +99,10 @@ export default {
     width: 50%;
     justify-content: center;
     background: white;
-    box-shadow: 
-  rgba(255, 255, 255, 0.9) 0px 1px 1px 0px inset, 
-  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
-  rgba(0, 0, 0, 0.3) 0px 30px 60px 0px;
+    box-shadow:
+        rgba(255, 255, 255, 0.9) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px 0px;
     top: 125px;
     left: 0;
     right: 0;
@@ -185,17 +187,171 @@ label {
     cursor: not-allowed;
 }
 
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.info-content {
+    margin-left: 12px;
+}
+
+.info-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    /* Zorg ervoor dat er geen extra marges zijn */
+}
+
+.info-additional-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 1rem;
+    /* Verander de grootte van de placeholder-tekst */
+    font-weight: 500;
+    /* Maak de placeholder-tekst dikker */
+    color: #22222269;
+    /* Pas de kleur van de placeholder-tekst aan */
+}
+
+#privacy-field {
+    display: flex;
+    align-items: center;
+
+    #privacy-label {
+        margin-left: 16px;
+        color: #222222;
+        /* Pas dezelfde kleur als de placeholder toe */
+        font-size: 1rem;
+        /* Verander de grootte van de tekst */
+        font-weight: 500;
+        /* Maak de tekst iets dikker */
+    }
+
+    input {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+#privacy-field input[type="checkbox"] {
+    height: 24px;
+    width: 24px;
+    border: solid 2px #6b76858f;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    /* Gebruik flexbox */
+    align-items: center;
+    /* Centreer verticaal */
+    justify-content: center;
+    /* Centreer horizontaal */
+    position: relative;
+}
+
+#privacy-field input[type="checkbox"]:checked {
+    background-color: #2071b5;
+    /* Achtergrondkleur als de checkbox is aangevinkt */
+    border-color: #2071b5;
+}
+
+#privacy-field input[type="checkbox"]:checked::after {
+    font-family: "Font Awesome 6 Free";
+    /* Specificeer Font Awesome */
+    content: "\f00c";
+    /* Unicode voor Font Awesome 'fa-check' icoon */
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    /* Pas de grootte aan indien nodig */
+}
+
+
+#button-send {
+    background-color: #ffda00;
+    color: #222222;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Verberg wat buiten de knop valt */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Zorg ervoor dat de tekst gecentreerd is */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+    /* Pas de breedte aan zoals je wilt */
+    max-width: 400px;
+    /* Max breedte indien nodig */
+}
+
+#button-send span {
+    position: relative;
+}
+
+#button-send:hover {
+    background-color: #ffe967;
+    /* Pas de achtergrondkleur aan bij hover */
+}
+
+/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
+#button-send .button-arrow {
+    position: absolute;
+    right: 30px;
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(-30px);
+    /* Start buiten de knop */
+    stroke: #222222 !important;
+    /* Forceer de kleur van de pijl naar zwart */
+}
+
+/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
+#button-send:hover .button-arrow {
+    transform: translateX(0);
+    /* Schuift naar binnen */
+    opacity: 1;
+    /* Wordt zichtbaar */
+}
+
+input,
+textarea {
+    font-size: 1rem;
+    /* Zet de grootte van de ingevoerde tekst op 1.25rem */
+    width: 100%;
+    /* Zorgt ervoor dat de invoervelden 100% breed zijn */
+    padding: 6px;
+    border: solid 2px #6b76858f;
+    background: none;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
 @media (max-width: 1024px) {
     #contact-form {
         bottom: initial;
-        height: 842px;
+        width: 100%;
+        height: 872px;
         top: 24px;
-        width: 96%;
         flex-direction: column;
     }
 
     .contact-form-field {
-        width: 95%;
         margin: 8px auto;
     }
 
@@ -217,134 +373,4 @@ label {
         justify-content: center;
     }
 }
-
-.info-line {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.info-content {
-  margin-left: 12px;
-}
-
-.info-text {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0; /* Zorg ervoor dat er geen extra marges zijn */
-}
-
-.info-additional-text {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #555;
-}
-
-input::placeholder,
-textarea::placeholder {
-    font-size: 1rem; /* Verander de grootte van de placeholder-tekst */
-    font-weight: 500;  /* Maak de placeholder-tekst dikker */
-    color: #22222269;    /* Pas de kleur van de placeholder-tekst aan */
-}
-
-#privacy-field {
-    display: flex;
-    align-items: center;
-
-    #privacy-label {
-        margin-left: 16px;
-        color: #222222;  /* Pas dezelfde kleur als de placeholder toe */
-        font-size: 1rem; /* Verander de grootte van de tekst */
-        font-weight: 500;  /* Maak de tekst iets dikker */
-    }
-
-    input {
-        height: 24px;
-        width: 24px;
-    }
-}
-
-#privacy-field input[type="checkbox"] {
-    height: 24px;
-    width: 24px;
-    border: solid 2px #6b76858f;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: white;
-    cursor: pointer;
-    display: flex; /* Gebruik flexbox */
-    align-items: center; /* Centreer verticaal */
-    justify-content: center; /* Centreer horizontaal */
-    position: relative;
-}
-
-#privacy-field input[type="checkbox"]:checked {
-    background-color: #2071b5; /* Achtergrondkleur als de checkbox is aangevinkt */
-    border-color: #2071b5;
-}
-
-#privacy-field input[type="checkbox"]:checked::after {
-    font-family: "Font Awesome 6 Free"; /* Specificeer Font Awesome */
-    content: "\f00c"; /* Unicode voor Font Awesome 'fa-check' icoon */
-    color: white;
-    font-weight: 900;
-    font-size: 18px; /* Pas de grootte aan indien nodig */
-}
-
-
-#button-send {
-    background-color: #ffda00;
-    color: #222222;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Verberg wat buiten de knop valt */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center; /* Zorg ervoor dat de tekst gecentreerd is */
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    width: 100%; /* Pas de breedte aan zoals je wilt */
-    max-width: 400px; /* Max breedte indien nodig */
-}
-
-#button-send span {
-    position: relative;
-}
-
-#button-send:hover {
-    background-color: #ffe967; /* Pas de achtergrondkleur aan bij hover */
-}
-
-/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
-#button-send .button-arrow {
-    position: absolute;
-    right: 30px;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateX(-30px); /* Start buiten de knop */
-    stroke: #222222 !important; /* Forceer de kleur van de pijl naar zwart */
-}
-
-/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-#button-send:hover .button-arrow {
-    transform: translateX(0); /* Schuift naar binnen */
-    opacity: 1; /* Wordt zichtbaar */
-}
-
-input, textarea {
-    font-size: 1rem; /* Zet de grootte van de ingevoerde tekst op 1.25rem */
-    width: 100%; /* Zorgt ervoor dat de invoervelden 100% breed zijn */
-    padding: 6px;
-    border: solid 2px #6b76858f;
-    background: none;
-    margin-top: 5px;
-    font-weight: 500;
-}
-
 </style>
