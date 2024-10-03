@@ -102,15 +102,15 @@ h1 {
 
 /* de 4 titels + link onder elkaar */
 #titles-header {
-  margin: 24px 0 0 10.5%;
+  margin: 24px 0 0 17.5%;
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 35vw;
   color: white;
 
   // titles
   h2 {
-    width: 75%;
+    width: 65%;
     font-size: 60px;
     font-weight: 800;
     margin-bottom: 5px;

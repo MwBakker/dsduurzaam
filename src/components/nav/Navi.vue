@@ -57,16 +57,16 @@
               <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating"
                 subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Ga naar" @click="hideDropdown" />
               <ProductCard route="solar" title="Zonnepanelen" image="solar"
-                subtitle="Je andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Ga naar"
+                subtitle="Uw andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Ga naar"
                 @click="hideDropdown" />
               <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
-                subtitle="Je auto opladen met eigen opgewerkte energie" buttonText="Ga naar" @click="hideDropdown" />
+                subtitle="Uw auto opladen met eigen opgewerkte energie" buttonText="Ga naar" @click="hideDropdown" />
               <ProductCard route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar"
                 buttonText="Ga naar" @click="hideDropdown" />
             </div>
           </div>
           <li :class="{ active: activePage === 'subsidie' }" @click="goRoute('subsidy')">Subsidie</li>
-          <li :class="{ active: activePage === 'service' }" @click="goRoute('service')">Service</li>
+          <li :class="{ active: activePage === 'about' }" @click="goRoute('about')">Over ons</li>
         </ul>
       </div>
       <div class="nav-right">

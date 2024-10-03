@@ -58,6 +58,11 @@ const router = createRouter({
       name: 'service',
       component: () => import('../views/Service.vue')
     },
+    {
+      path: '/cookies',
+      name: 'manage-cookies',
+      component: () => import('../views/ManageCookies.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     // Altijd scroll naar boven bij navigeren naar een nieuwe pagina

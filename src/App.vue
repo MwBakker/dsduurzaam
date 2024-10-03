@@ -1,13 +1,14 @@
 <template>
   <navBar v-if="windowWidth > 1280" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
-  <upperContentContainer v-if="activePage != 'subsidy' && activePage != 'service'" :mainImg="headerImg"
+  <upperContentContainer v-if="activePage != 'subsidy' && activePage != 'service' && activePage != 'manage-cookies' && activePage != 'about'" :mainImg="headerImg"
     :mainTitle="headerTitle" :showMainUrl="showHeaderUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
     :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
   </upperContentContainer>
-  <div style="height:200px" v-else></div>
+  <div style="height:150px" v-else></div>
   <router-view />
   <customFooter />
+  <CookieConsent />
 </template>
 
 <script>
@@ -15,6 +16,7 @@ import navBar from "./components/nav/Navi.vue";
 import navBarMobile from "./components/nav/Navi-mobile.vue";
 import customFooter from "./components/footer/Footer.vue";
 import upperContentContainer from "./components/nav/Upper-content-container.vue";
+import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
   name: "App",
@@ -23,7 +25,7 @@ export default {
       windowWidth: window.innerWidth,
       activePage: 'home',
       headerImg: 'home',
-      headerTitle: 'Je huis verwarmen met een waterpomp',
+      headerTitle: 'Uw huis verwarmen met een waterpomp',
       showHeaderUrl: 1,
       headerMainUrl: 'heat-pump',
       showHeaderBox: 0,
@@ -31,7 +33,7 @@ export default {
       headerBoxDescription: 'Uw absolute partner voor een energiezuiniger leven en werken!',
       headerBoxUrl: 'heat-pump',
       headerContent: {
-        'home': ['Je huis verwarmen met een waterpomp', 1, 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
+        'home': ['Uw huis verwarmen met een waterpomp', 1, 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
         'heat-pump': ['Duurzaam verwarmen met onze warmtepompen', 0, 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
         'airco': ["Uw huis koelen en verwarmen met airco's", 0, 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
         'floor-heating': ["Efficiënt verwarmen met vloerverwarming", 0, 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
@@ -50,6 +52,7 @@ export default {
     navBarMobile,
     customFooter,
     upperContentContainer,
+    CookieConsent
   },
   methods: {
     routeGo(page) {

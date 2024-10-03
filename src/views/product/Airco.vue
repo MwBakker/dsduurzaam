@@ -30,7 +30,7 @@
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een airconditoning via InsteQ" :listItems="[
-      'Je krijgt gratis deskundig advies en een offerte op maat',
+      'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Innovatieve technologieën voor maximale efficiëntie',
       'Uitstekende service en onderhoud'

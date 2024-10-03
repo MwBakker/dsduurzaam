@@ -251,9 +251,9 @@ textarea::placeholder {
 }
 
 #privacy-field input[type="checkbox"]:checked {
-    background-color: #2071b5;
+    background-color: #08535e;
     /* Achtergrondkleur als de checkbox is aangevinkt */
-    border-color: #2071b5;
+    border-color: #08535e;
 }
 
 #privacy-field input[type="checkbox"]:checked::after {
@@ -326,10 +326,11 @@ textarea {
     width: 100%;
     /* Zorgt ervoor dat de invoervelden 100% breed zijn */
     padding: 6px;
-    border: solid 2px #6b76858f;
+    border: solid 2px #08535e;
     background: none;
     margin-top: 5px;
     font-weight: 500;
+    color: #08535e;
 }
 
 @media (max-width: 1280px) {

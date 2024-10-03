@@ -4,7 +4,7 @@
 
     <div class="background-wrapper">
       <IntroductionCardSub title="Gasvrij wonen of werken met een warmtepomp"
-        text="Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op je energiekosten en verminder je CO₂-uitstoot terwijl je geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning. "
+        text="Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op uw energiekosten en verminder uw CO₂-uitstoot terwijl u geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning. "
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
@@ -15,13 +15,13 @@
             paragraphText="Een hybride warmtepomp combineert een warmtepomp met een traditionele cv-ketel. Het systeem gebruikt de warmtepomp voor het grootste deel van de verwarming en schakelt over op de cv-ketel bij extreem koud weer. Dit zorgt voor efficiënter energieverbruik en lagere CO₂-uitstoot. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Lucht/water warmtepomp"
-            paragraphText="Een lucht/water warmtepomp haalt warmte uit de buitenlucht en zet deze om in energie voor verwarming en warm water in je woning. Dit duurzame systeem verlaagt je energiekosten aanzienlijk en werkt efficiënt, zelfs bij lage buitentemperaturen. Ideaal voor milieubewust en comfortabel wonen. "
+            paragraphText="Een lucht/water warmtepomp haalt warmte uit de buitenlucht en zet deze om in energie voor verwarming en warm water in uw woning. Dit duurzame systeem verlaagt uw energiekosten aanzienlijk en werkt efficiënt, zelfs bij lage buitentemperaturen. Ideaal voor milieubewust en comfortabel wonen. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Ventilatie warmtepomp"
-            paragraphText="Een ventilatie warmtepomp hergebruikt de warmte uit afgevoerde binnenlucht om je woning te verwarmen of van warm water te voorzien. Dit energiezuinige systeem zorgt voor een gezond binnenklimaat door ventilatie te combineren met warmteterugwinning, wat resulteert in lagere energiekosten en een duurzamer huis. "
+            paragraphText="Een ventilatie warmtepomp hergebruikt de warmte uit afgevoerde binnenlucht om uw woning te verwarmen of van warm water te voorzien. Dit energiezuinige systeem zorgt voor een gezond binnenklimaat door ventilatie te combineren met warmteterugwinning, wat resulteert in lagere energiekosten en een duurzamer huis. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen" title="Monoblock warmtepomp"
-            paragraphText="Een monoblock warmtepomp is een compact systeem waarbij alle componenten in één buitenunit zijn geïntegreerd. Het onttrekt warmte uit de lucht om je woning te verwarmen of te koelen. Dankzij de eenvoudige installatie en hoge energie-efficiëntie is het een ideale keuze voor zowel nieuwbouw als renovatie. "
+            paragraphText="Een monoblock warmtepomp is een compact systeem waarbij alle componenten in één buitenunit zijn geïntegreerd. Het onttrekt warmte uit de lucht om uw woning te verwarmen of te koelen. Dankzij de eenvoudige installatie en hoge energie-efficiëntie is het een ideale keuze voor zowel nieuwbouw als renovatie. "
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
       </Accordion>
@@ -29,10 +29,10 @@
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-      'Je krijgt gratis deskundig advies en een offerte op maat',
+      'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
-      'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-      'Wij handelen het gehele subsidietraject voor je af'
+      'Wij handelen het gehele subsidietraject voor u af',
+      'Uitstekende service en onderhoud'
     ]" buttonText="Vraag adviesgesprek aan" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer" />
 
     <div class="background-wrapper-white">

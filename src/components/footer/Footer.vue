@@ -12,10 +12,10 @@
         <div id="footer-content">
             <div class="section-info">
                 <h1>Insteq</h1>
-                <p @click="goRoute('service')" class="clickable-route">Service</p>
                 <p><a href="./statements/heroepingsformulier.pdf">Herroepingsformulier</a></p>
                 <p><a href="./statements/privacyverklaring.pdf">Privacyverklaring</a></p>
                 <p><a href="./statements/disclaimer.pdf">Disclaimer</a></p>
+                <p @click="goRoute('manage-cookies')" class="clickable-route">Cookies</p>
             </div>
             <div class="section-info">
                 <h1>Adres</h1>
@@ -340,5 +340,15 @@ p.clickable-route:hover {
     .section-info {
         flex: 0;
     }
+}
+
+.clickable-route {
+    cursor: pointer; /* Zorgt voor het handje-icoon */
+    color: #08535e;  /* Optioneel: Houd de stijl consistent met links */
+}
+
+p.clickable-route:hover {
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 </style>

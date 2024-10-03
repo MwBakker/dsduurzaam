@@ -3,7 +3,7 @@
 
     <div class="background-wrapper">
       <IntroductionCardSub title="Comfortabel en efficiënt"
-        text="Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door je hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen je huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis."
+        text="Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door uw hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen uw huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
@@ -25,7 +25,7 @@
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom vloerverwarming via InsteQ" :listItems="[
-      'Je krijgt gratis deskundig advies en een offerte op maat',
+      'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Perfect in combinatie met onze andere duurzame installaties'
     ]" buttonText="Gratis advies aanvragen" imageSrc="floor-heating.png" linkUrl="heat-pump" linkText="Lees meer" />
@@ -34,13 +34,13 @@
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
           <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Je warmte gelijkmatig verdelen"
-            paragraphText="Vloerverwarming biedt een gelijkmatige warmteverdeling door de hele ruimte, waardoor koude plekken verleden tijd zijn. Dit betekent dat je altijd geniet van een constante, comfortabele temperatuur, zonder koude voeten. Dankzij de efficiënte werking van vloerverwarming ervaar je een aangename warmte in elke hoek van de kamer, het hele jaar door."
+            paragraphText="Vloerverwarming biedt een gelijkmatige warmteverdeling door de hele ruimte, waardoor koude plekken verleden tijd zijn. Dit betekent dat u altijd geniet van een constante, comfortabele temperatuur, zonder koude voeten. Dankzij de efficiënte werking van vloerverwarming ervaart u een aangename warmte in elke hoek van de kamer, het hele jaar door."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Koelen met vloerverwarming"
-            paragraphText="Wist u dat vloerverwarming niet alleen verwarmt, maar ook kan koelen? In combinatie met een warmtepomp kan vloerverwarming in de zomer de temperatuur verlagen, waardoor je woning heerlijk koel blijft. Zo geniet je het hele jaar door van optimaal comfort, zowel in de winter als in de zomer!"
+            paragraphText="Wist u dat vloerverwarming niet alleen verwarmt, maar ook kan koelen? In combinatie met een warmtepomp kan vloerverwarming in de zomer de temperatuur verlagen, waardoor uw woning heerlijk koel blijft. Zo geniet u het hele jaar door van optimaal comfort, zowel in de winter als in de zomer!"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Meer warmte, minder energie"
-            paragraphText="Vloerverwarming werkt efficiënter dan traditionele radiatoren doordat het op lagere temperaturen functioneert. Dit betekent dat je minder energie verbruikt om je woning op een comfortabele temperatuur te houden, wat resulteert in lagere stookkosten. Door deze duurzame verwarmingsmethode bespaar je aanzienlijk op je energierekening, terwijl je geniet van constante warmte."
+            paragraphText="Vloerverwarming werkt efficiënter dan traditionele radiatoren doordat het op lagere temperaturen functioneert. Dit betekent dat u minder energie verbruikt om uw woning op een comfortabele temperatuur te houden, wat resulteert in lagere stookkosten. Door deze duurzame verwarmingsmethode bespaart u aanzienlijk op uw energierekening, terwijl u geniet van constante warmte."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
         </template>
       </Accordion>

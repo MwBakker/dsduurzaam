@@ -278,7 +278,7 @@ export default {
 
 .cta-button {
     background-color: #ffda00;
-    color: #222222;
+    color: #08535e;
     padding: 15px 30px;
     border: none;
     cursor: pointer;
@@ -326,6 +326,58 @@ export default {
     /* Wordt zichtbaar */
 }
 
+
+/* Media queries voor verschillende schermgroottes */
+@media (max-width: 1920px) {
+    .product-cards-container {
+        max-width: 1548px;
+        width: 200px;
+    }
+
+    .cta-button {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1750px) {
+    .product-cards-container {
+        max-width: 1548px;
+        width: 85%;
+    }
+
+    .cta-button {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .product-cards-container {
+        max-width: 1548px;
+        width: 85%;
+    }
+
+    .cta-button {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1380px) {
+    .product-cards-container {
+        width: 85%;
+    }
+
+    .cta-button {
+        width: 100%;
+        /* Standaard vaste breedte */
+    }
+}
+
+@media (max-width: 1280px) {
+    .cta-button {
+        font-size: 1.2rem;
+    }
+}
+
 .why-cards-container {
     padding: 40px 20px;
     text-align: center;
@@ -335,7 +387,7 @@ export default {
 .why-cards-container h2 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #222222;
+    color: #08535e;
     margin-bottom: 40px;
 }
 
@@ -363,14 +415,14 @@ export default {
 .text-container h2 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #222222;
+    color: #08535e;
     margin-bottom: 20px;
 }
 
 .text-container p {
     font-size: 1.2rem;
     font-weight: 500;
-    color: #222222;
+    color: #08535e;
 }
 
 .extra-margin {
@@ -379,13 +431,7 @@ export default {
 }
 
 .cta-button .button-arrow {
-    stroke: #222222 !important;
+    stroke: #08535e !important;
     /* Zorg ervoor dat de pijl zwart wordt */
-}
-
-@media (max-width: 1280px) {
-    .cta-button {
-        font-size: 1.2rem;
-    }
 }
 </style>
