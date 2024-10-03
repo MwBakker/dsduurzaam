@@ -5,7 +5,7 @@
       <h2>{{ mainTitle }}</h2>
       <span id="link-with-arrow" @click="goRoute(mainUrl)" v-if="showMainUrl == 1">
         <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
         <p>Lees meer</p>
       </span>
@@ -250,6 +250,13 @@ button:hover .button-arrow {
     margin: 160px auto 0 auto;
     text-align: center;
     padding: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  #header-content {
+    height: 560px;
+    padding: 0 0 40px 0;
   }
 }
 </style>

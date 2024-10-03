@@ -228,18 +228,9 @@ const imageUrl = computed(
 
 @media (max-width: 800px) {
   .why-card {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-    min-height: 350px;
-    /* Voeg een minimale hoogte toe om de kaart hoger te maken */
-    margin: 10px;
-  }
+        max-width: initial;
+      margin: 0;
+   }
 
   .why-card-icon {
     width: 60px;

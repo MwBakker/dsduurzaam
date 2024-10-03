@@ -5,7 +5,6 @@
         text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties zoals warmtepompen, airco's, zonnepanelen, vloerverwarmingsystemen en laadpalen. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
-
     <!--
     <IntroductionCard
       title1="Uw duurzame installatie, ons vakmanschap – met persoonlijke service en maatwerk vanaf de eerste stap"
@@ -14,8 +13,6 @@
       title3="Waar wij voor staan"
       text3="We geloven in de kracht van duurzaamheid en maatwerk. Onze missie is om klanten oplossingen te bieden die bijdragen aan een beter milieu en volledig aansluiten op hun behoeften. Als betrouwbare partner streven we altijd naar de beste resultaten." />
     -->
-
-
     <div class="background-wrapper products-background">
       <!-- Container voor de twee secties -->
       <div class="content-container">
@@ -38,9 +35,7 @@
             </svg>
           </button>
           -->
-
         </div>
-
         <!-- Productkaarten sectie (60% breedte) -->
         <div class="cards-container">
           <ProductCard route="heat-pump" title="Warmtepomp" image="home" subtitle="Van hybride tot en met all-electric."
@@ -58,7 +53,6 @@
         </div>
       </div>
     </div>
-
     <!-- TESTMEUK
         <div class="background-wrapper-white">
       <ContentCardTwo
@@ -74,8 +68,6 @@
     />
     </div>
     -->
-
-
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'U krijgt gratis deskundig advies en een offerte op maat',
@@ -84,8 +76,6 @@
       'Uitstekende service en onderhoud'
     ]" buttonText="Gratis advies aanvragen" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer"
       showButton="true" />
-
-
     <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -112,7 +102,6 @@
         </template>
       </Accordion>
     </div>
-
     <div class="background-wrapper products-background">
       <div class="why-cards-container">
         <h2>Waarom kiest u voor InsteQ?</h2>
@@ -159,7 +148,7 @@ import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCard from '@/components/cards/Why-card.vue';
-import IntroductionCard from '@/components/cards/introduction/Introduction.vue';
+// import IntroductionCard from '@/components/cards/introduction/Introduction.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 import ContentCardTwo from '@/components/cards/content/Card-two.vue';
 import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
@@ -175,7 +164,7 @@ export default {
     Accordion,
     AccordionItem,
     WhyCard,
-    IntroductionCard,
+    // IntroductionCard,
     IntroductionCardSub,
     ContentCardTwo,
     ContentCardOneRed
@@ -503,10 +492,6 @@ export default {
     align-items: center;
   }
 
-  .introduction-card {
-    width: 90%;
-  }
-
   .cards-container {
     width: 95%;
   }
@@ -517,8 +502,19 @@ export default {
 }
 
 @media (max-width: 800px) {
+  .background-wrapper {
+    width: initial;
+    height: 640px;
+  }
+
   .cards-container {
+    width: 98%;
+    padding: 0;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-cards-container {
+    padding: 0px;
   }
 }
 </style>

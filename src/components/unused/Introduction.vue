@@ -133,6 +133,13 @@ export default {
 }
 
 @media (max-width: 1280px) {
+
+  .text-container {
+      width: 90%;
+      padding: 16px;
+      text-align: center;
+    }
+
   .text-container-second-1 {
     padding-left: 50px;
     padding-right: 50px;
@@ -147,5 +154,15 @@ export default {
     width: 100%;
     margin-bottom: 20px;
   }
+}
+
+
+@media (max-width: 800px) {
+
+  .introduction-card {
+    width: 100%;
+  }
+
+
 }
 </style>
