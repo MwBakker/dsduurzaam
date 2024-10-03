@@ -67,7 +67,7 @@ img {
 h1 {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #222222;
+  color: #08535e;
   margin: 0; /* Verwijder eventuele standaard marges */
   text-align: left; /* Zorg ervoor dat de h1-tekst links wordt uitgelijnd */
 }
@@ -75,7 +75,7 @@ h1 {
 .primary-text {
   margin: 0; /* Verwijder eventuele standaard marges */
   padding-top: 15px; /* Voeg wat ruimte toe boven de paragraaf om deze naar beneden te verplaatsen */
-  color: #222222;
+  color: #08535e !important;
   font-size: 1.2rem; /* Pas de font-size aan */
   font-weight: 500; /* Pas de font-weight aan */
   text-align: left; /* Zorg ervoor dat de paragraaftekst links wordt uitgelijnd */
@@ -83,13 +83,13 @@ h1 {
 
 .secondary-text {
   margin: 0; /* Verwijder eventuele standaard marges */
-  color: #222222;
+  color: #08535e;
   font-size: 1.2rem; /* Pas de font-size aan */
   font-weight: 500; /* Pas de font-weight aan */
   text-align: left; /* Zorg ervoor dat de tweede paragraaftekst links wordt uitgelijnd */
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   #info-line {
     width: 80%;
     margin: 0 auto;

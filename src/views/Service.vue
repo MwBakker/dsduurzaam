@@ -2,7 +2,7 @@
   <div id="service">
 
     <div class="background-wrapper">
-      <IntroductionCardSub class="no-top-margin" title="Zorgeloos genieten door uitstekende service"
+      <IntroductionCardSub class="no-top-margin" title="Zorgeloos besparen door uitstekende service"
         text="Goede service is essentieel voor het optimaal functioneren en de levensduur van uw duurzame installatie. Door het verlenen van onderhoud, verzekert u energiezuinig gebruik en maximaal rendement. Bij InsteQ staan vakprofessionals voor u klaar met diepgaande kennis en advies. Heeft u specifieke vragen over uw installatie of wilt u meer informatie over onze diensten? Neem gerust contact met ons op, wij helpen u graag verder om uw installatie in topconditie te houden."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
@@ -20,16 +20,16 @@
         <div class="why-cards">
           <WhyCard title="Langere levensduur"
             description="Regelmatig onderhoud verlengt de levensduur van de installatie en vermindert de kans op defecten."
-            icon="sustainable" />
+            icon="lifetime" />
           <WhyCard title="Hoger rendement"
             description="Goed onderhoud zorgt voor een efficiëntere werking, wat resulteert in hoger rendement en lagere energiekosten."
-            icon="certified" />
+            icon="interest-rate" />
           <WhyCard title="Voorkomt reparaties"
             description="Regelmatige controles voorkomen onverwachte, dure reparaties door problemen vroegtijdig te detecteren en op te lossen."
-            icon="quality" />
+            icon="maintenance" />
           <WhyCard title="Garantiebehoud"
             description="Regelmatige service is vaak vereist door fabrikanten om de garantie op de installatie te behouden."
-            icon="delivery" />
+            icon="protection" />
         </div>
       </div>
     </div>

@@ -78,10 +78,10 @@
 
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-      'Je krijgt gratis deskundig advies en een offerte op maat',
+      'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
-      'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-      'Wij handelen het gehele subsidietraject voor je af'
+      'Wij handelen het gehele subsidietraject voor u af',
+      'Uitstekende service en onderhoud'
     ]" buttonText="Gratis advies aanvragen" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer"
       showButton="true" />
 

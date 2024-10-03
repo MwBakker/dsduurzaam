@@ -1,8 +1,8 @@
 <template>
   <div id="subsidy">
     <div class="background-wrapper">
-      <IntroductionCardSub class="no-top-margin" title="Wij berekenen uw voordeel"
-        text="Er zijn verschillende subsidies en financiële voordelen beschikbaar die helpen bij het verduurzamen van je woning of bedrijf. Hieronder vertellen we per duurzame installatie meer over de beschikbare subsidies en andere financiële voordelen, om zodoende de aanschaf van uw duurzame installatie te verlagen."
+      <IntroductionCardSub class="no-top-margin" title="Wij berekenen uw (subsidie)voordeel"
+        text="Er zijn verschillende subsidies en financiële voordelen beschikbaar die helpen bij het verduurzamen van uw woning of bedrijf. Hieronder vertellen we per duurzame installatie meer over de beschikbare subsidies en andere financiële voordelen, om zodoende de aanschaf van uw duurzame installatie te verlagen."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
 
@@ -28,7 +28,7 @@
               rightTitle="BTW-teruggave"
               rightText="Als particulier kunt u ook de btw op de aanschaf en installatie van zonnepanelen terugvragen van de Belastingdienst. Dit kan een besparing van 21% op uw totale investering opleveren, wat de terugverdientijd aanzienlijk verkort."
               thirdTitle="Energiebespaarlening"
-              thirdText="Via het Nationaal Warmtefonds kun je gebruik maken van de Energiebespaarlening, waarmee je tegen gunstige voorwaarden een lening kunt afsluiten voor de aanschaf van duurzame installaties zoals zonnepanelen."
+              thirdText="Via het Nationaal Warmtefonds kunt u gebruik maken van de Energiebespaarlening, waarmee u tegen gunstige voorwaarden een lening kunt afsluiten voor de aanschaf van duurzame installaties zoals zonnepanelen."
               fourthTitle="Subsidies voor bedrijven"
               fourthText="Voor bedrijven die willen investeren in zonnepanelen zijn er meerdere subsidies beschikbaar. De ISDE (Investeringssubsidie Duurzame Energie) biedt ondersteuning voor de aanschaf van zonnepanelen en andere duurzame energieprojecten. Daarnaast is de SDE++ (Stimulering Duurzame Energieproductie en Klimaattransitie) gericht op grotere installaties, zoals zonneparken. Via de MIA (Milieu-investeringsaftrek) en Vamil kunnen bedrijven fiscaal voordeel behalen op milieuvriendelijke investeringen, waardoor zonne-energie financieel aantrekkelijker wordt​."
               />

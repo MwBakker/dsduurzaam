@@ -29,7 +29,7 @@ const imageUrl = computed(
 
     p {
         margin: auto 0;
-        color: #222222;
+        color: #08535e;
         font-size: 0.9rem;
         font-weight: 600;
         text-align: center;
