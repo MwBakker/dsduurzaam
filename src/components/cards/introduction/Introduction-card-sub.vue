@@ -1,16 +1,9 @@
 <template>
   <div class="introduction-card">
-    <div class="background-wrapper-red">
-      <!-- Container voor de tekst sectie -->
-      <div class="content-container">
-        <!-- Tekst sectie met titel en tekst -->
-        <div class="text-container">
-          <h2 class="title">{{ title }}</h2>
-          <p class="text">{{ text }}</p>
-          <!-- Conditie om de knop weer te geven -->
-          <button v-if="showButton" class="cta-button">{{ buttonText }}</button>
-        </div>
-      </div>
+    <div id="content">
+      <h2>{{ title }}</h2>
+      <p>{{ text }}</p>
+      <button v-if="showButton" class="cta-button">{{ buttonText }}</button>
     </div>
   </div>
 </template>
@@ -46,96 +39,82 @@ export default {
 
 <style lang="scss" scoped>
 .introduction-card {
-  width: 60%;
-  max-width: 1548px;
-  margin: 0 auto;
-  padding-top: 20px;
-  position: relative;
-  top: -100px; /* Verplaatst het element 150px naar boven */
-}
-
-.background-wrapper-red {
   display: flex;
+  width: 60%;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: #ffffff; /* Rode achtergrond */
+  background-color: #ffffff;
+  /* Rode achtergrond */
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
   position: relative;
-}
-
-.content-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-container {
-  width: 100%;
-  padding: 10px 20px;
+  top: -80px;
   text-align: center;
+}
+
+#content {
   display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #08535e;
+    margin-bottom: 20px;
+    padding: 0 50px;
+  }
 
-.text {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #08535e;
+    line-height: 1.6;
+    /* Zelfde padding als de titel */
+    padding: 0 50px;
+    margin-bottom: 30px;
+    /* Voeg wat extra ruimte toe onder de tekst indien nodig */
+  }
 
-.cta-button {
-  background-color: #982434;
-  color: #222;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  .cta-button {
+    background-color: #982434;
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-.cta-button:hover {
-  background-color: #ffe967;
-}
-
-@media (max-width: 1280px) {
-  .text-container {
-    padding-left: 50px;
-    padding-right: 50px;
+    &:hover {
+      background-color: #ffe967;
+    }
   }
 }
 
-.text-container h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #08535e;
-  margin-bottom: 20px;
-  padding-left: 50px; /* Consistente padding voor zowel titel als tekst */
-  padding-right: 50px; 
+@media (max-width: 1280px) {
+  .introduction-card {}
 }
 
-.text-container p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #08535e;
-  padding-left: 50px; /* Zelfde padding als de titel */
-  padding-right: 50px;
-  margin-bottom: 30px; /* Voeg wat extra ruimte toe onder de tekst indien nodig */
-}
+@media (max-width: 800px) {
+  .introduction-card {
+    width: 95%;
+    margin-bottom: 160px;
+  }
 
+  #content {
+    padding: 0 12px;
+    p,
+    h2 {
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+
+}
 </style>

@@ -103,4 +103,11 @@ p {
     margin-bottom: 20px;
   }
 }
+
+@media (max-width: 800px) {
+  .why-card {
+      max-width: initial;
+      margin: 0;
+    }
+}
 </style>
