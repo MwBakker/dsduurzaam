@@ -79,7 +79,7 @@ export default {
             form.phone = this.phone;
             form.message = this.description;
             axios({
-                url: '../../../mail.php',
+                url: '../../../../mail.php',
                 method: "POST",
                 data: form
             }).then(() => {
