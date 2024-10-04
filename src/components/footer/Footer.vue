@@ -1,12 +1,12 @@
 <template>
     <div id="footer">
-        <div id="contact-form-container">
+        <div id="contact-form-container" v-if="route.name !== 'manage-cookies'">
             <h2>Wij komen graag in contact met u</h2>
-            <Transition name="slide-fade-up" appear>
-                <CustomForm />
-            </Transition>
+            <!-- <Transition name="slide-fade-up" appear> -->
+            <CustomForm />
+            <!-- </Transition> -->
         </div>
-        <div id="black-white">
+        <div id="black-white" v-if="route.name !== 'manage-cookies'">
             <CustomMap id="map" />
         </div>
         <div id="footer-content">
@@ -19,7 +19,8 @@
             </div>
             <div class="section-info">
                 <h1>Adres</h1>
-                <a href="https://www.google.com/maps/search/?api=1&query=Hoofdstraat+4,+9561+JA,+Ter+Apel" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=Hoofdstraat+4,+9561+JA,+Ter+Apel"
+                    target="_blank">
                     <p>Hoofdstraat 4</p>
                     <p>9561 JA</p>
                     <p>Ter Apel</p>
@@ -63,25 +64,31 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="section-light">
-        <!-- <img id='brand' src='../assets/logo.png' /> -->
-        <div id="section-light-content">
-            <div class="info">
-                <p>KVK 012345678910</p>
-                <p>BTW 012345678910</p>
+        <div id="section-light">
+            <!-- <img id='brand' src='../assets/logo.png' /> -->
+            <div id="section-light-content">
+                <div class="info">
+                    <p>KVK 012345678910</p>
+                    <p>BTW 012345678910</p>
+                </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
 
 import CustomForm from './contact/Contact-form.vue';
 import CustomMap from './Map.vue';
-import SocialIcon from './social-icon.vue'
+import SocialIcon from './social-icon.vue';
+import { useRoute } from 'vue-router';
 
 export default {
+    setup() {
+        const route = useRoute();
+        return { route };
+    },
     components: {
         CustomForm,
         CustomMap,
@@ -271,7 +278,8 @@ a {
 .social-logo {
     width: 40px;
     height: 40px;
-    fill: #08535e; /* Verander de vulkleur van de SVG naar de gewenste kleur */
+    fill: #08535e;
+    /* Verander de vulkleur van de SVG naar de gewenste kleur */
 }
 
 #contact-form-container h2 {
@@ -321,6 +329,7 @@ p.clickable-route:hover {
 
     #logos-content {
         display: block;
+
         a {
             margin: 0 6px;
         }
@@ -343,12 +352,9 @@ p.clickable-route:hover {
 }
 
 .clickable-route {
-    cursor: pointer; /* Zorgt voor het handje-icoon */
-    color: #08535e;  /* Optioneel: Houd de stijl consistent met links */
-}
-
-p.clickable-route:hover {
-    font-size: 0.9rem;
-    font-weight: 700;
+    cursor: pointer;
+    /* Zorgt voor het handje-icoon */
+    color: #08535e;
+    /* Optioneel: Houd de stijl consistent met links */
 }
 </style>

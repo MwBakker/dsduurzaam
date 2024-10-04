@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <div class="background-wrapper">
+    <div id="intro" class="background-wrapper">
       <IntroductionCardSub title="Duurzaam wonen: verlaag uw maandlasten"
         text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties zoals warmtepompen, airco's, zonnepanelen, vloerverwarmingsystemen en laadpalen. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
         buttonText="Je knoptekst hier" :showButton="false" />
@@ -13,7 +13,7 @@
       title3="Waar wij voor staan"
       text3="We geloven in de kracht van duurzaamheid en maatwerk. Onze missie is om klanten oplossingen te bieden die bijdragen aan een beter milieu en volledig aansluiten op hun behoeften. Als betrouwbare partner streven we altijd naar de beste resultaten." />
     -->
-    <div class="background-wrapper products-background">
+    <div id="products" class="background-wrapper">
       <!-- Container voor de twee secties -->
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
@@ -102,7 +102,7 @@
         </template>
       </Accordion>
     </div>
-    <div class="background-wrapper products-background">
+    <div id="whys" class="background-wrapper products-background">
       <div class="why-cards-container">
         <h2>Waarom kiest u voor InsteQ?</h2>
         <div class="why-cards">
@@ -502,9 +502,16 @@ export default {
 }
 
 @media (max-width: 800px) {
+  #intro {
+    height: 460px;
+  }
+
   .background-wrapper {
     width: initial;
-    height: 640px;
+  }
+
+  #products {
+    height: 1080px;
   }
 
   .cards-container {

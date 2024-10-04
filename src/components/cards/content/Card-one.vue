@@ -213,7 +213,6 @@ ul {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
     margin: 0 auto;
   }
 
@@ -243,6 +242,12 @@ ul {
 
   .content-image {
     display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .content-wrapper {
+    margin: 24px 0;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <div v-if="!isCookieAccepted" class="cookie-overlay"> <!-- Toon de container alleen als cookies niet geaccepteerd zijn -->
+  <div v-if="!isCookieAccepted" class="cookie-overlay">
+    <!-- Toon de container alleen als cookies niet geaccepteerd zijn -->
     <div class="cookie-container">
       <h2>Cookies instellen</h2>
       <p>Wij gebruiken cookies om u een betere ervaring te bieden en om gepersonaliseerde advertenties te tonen.</p>
@@ -77,7 +78,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparant zwart om de rest van de pagina af te schermen */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparant zwart om de rest van de pagina af te schermen */
   z-index: 9999;
   display: flex;
   justify-content: center;

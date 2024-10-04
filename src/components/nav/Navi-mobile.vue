@@ -137,8 +137,8 @@ nav {
 }
 
 button {
-    background-color: #ffda00;
-    color: #08535e;
+    background-color: #2e8b57;
+    color: white;
     width: 145px;
     font-size: 0.8em;
     font-weight: 800;
@@ -167,12 +167,13 @@ button {
 
     #exit {
         float: right;
+        color: white;
         margin: 8px;
         text-align: center;
         width: 60px;
         height: 60px;
         border-radius: 32px;
-        background-color: #ffda00;
+        background-color: #2e8b57;
 
         a {
             top: 14px;

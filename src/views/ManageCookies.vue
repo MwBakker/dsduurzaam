@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <!-- Voeg een beheeroptie toe voor cookies -->
+  <div id="manage-cookies">
     <button @click="openCookieSettings">Beheer uw cookies</button>
-
     <div v-if="showCookieSettings" class="cookie-overlay">
       <div class="cookie-container">
         <h2>Cookies instellen</h2>
@@ -45,24 +43,26 @@ export default {
     checkCookieConsent() {
       const cookies = document.cookie.split(';').map(cookie => cookie.trim());
       const consentCookie = cookies.find(cookie => cookie.startsWith('marketing_cookies='));
-      if (!consentCookie) {
-        this.lockScroll();
-      } else {
-        this.unlockScroll();
-      }
+      // if (!consentCookie) {
+      //   this.lockScroll();
+      // } else {
+      //   this.unlockScroll();
+      // }
     },
-    lockScroll() {
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-    },
-    unlockScroll() {
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-    }
   },
   mounted() {
     this.checkCookieConsent();
-    this.lockScroll();
+    //this.lockScroll();
   }
 };
 </script>
+
+<style scoped>
+  #manage-cookies {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
