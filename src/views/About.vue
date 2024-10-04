@@ -1,37 +1,29 @@
 <template>
     <div id="about">
       <div class="background-wrapper">
-        <IntroductionCardSub class="no-top-margin" title="Wij berekenen uw (subsidie)voordeel"
-          text="Er zijn verschillende subsidies en financiële voordelen beschikbaar die helpen bij het verduurzamen van uw woning of bedrijf. Hieronder vertellen we per duurzame installatie meer over de beschikbare subsidies en andere financiële voordelen, om zodoende de aanschaf van uw duurzame installatie te verlagen."
-          buttonText="Je knoptekst hier" :showButton="false" />
+        <IntroductionCardSubTwoParagraphs class="no-top-margin"  title="Leuk dat u er bent! Wij zijn InsteQ"
+          text1="Wij zijn een jong en dynamisch bedrijf dat zich inzet voor een duurzamere toekomst. Met jarenlange ervaring in de installatietechniek helpen we u graag met duurzame en slimme oplossingen. Ons doel? Uw woning of bedrijfspand energiezuiniger en comfortabeler maken, zonder in te leveren op kwaliteit."
+          text2="We geloven in een persoonlijke aanpak, waarbij we altijd met u meedenken om de beste oplossingen te vinden. Of u nu kiest voor een volledig duurzame installatie of stapsgewijs wilt verduurzamen, wij staan voor u klaar. Samen maken we de wereld een stukje groener, één installatie tegelijk."
+          buttonText="Je knoptekst hier"
+          :showButton="false"  />
       </div>
-  
+
         <div class="background-wrapper">
-            <IntroductionCardSubFour
-                centerTitle="Warmtepompen en verwarmende airco's"
-                leftTitle="Investeringssubsidie"
-                leftText="De belangrijkste subsidie is de Investeringssubsidie duurzame energie en energiebesparing (ISDE). Deze subsidie biedt een tegemoetkoming voor particulieren en bedrijven die een warmtepomp of een airconditioning met verwarmfunctie installeren, mits deze voldoen aan de eisen van de Rijksdienst voor Ondernemend Nederland (RVO). De subsidiebedragen variëren afhankelijk van het type systeem, zoals lucht-water of grond-water warmtepompen, en kunnen variëren tussen €1.000 en €4.500."
-                rightTitle="Verlaagd BTW-tarief"
-                rightText="U profiteert van een verlaagd btw-tarief van 9% op de installatiekosten van energiebesparende maatregelen, waaronder warmtepompen en airconditioning met verwarmfunctie. Dit verlaagt de totale installatiekosten aanzienlijk, waardoor de investering in duurzame installaties nog voordeliger wordt."
-                thirdTitle="Energiebespaarlening"
-                thirdText="U kunt, indien gewenst, gebruikmaken van de Energiebespaarlening via het Nationaal Warmtefonds. Deze lening biedt de mogelijkheid om tegen gunstige voorwaarden een financiering af te sluiten voor de aanschaf van duurzame installaties, zoals warmtepompen en airconditioning met verwarmfunctie."
-                fourthTitle="Fiscale voordelen voor bedrijven"
-                fourthText="Bedrijven kunnen profiteren van fiscale voordelen zoals de Energie-investeringsaftrek (EIA). Hiermee kan een deel van de investeringskosten van zowel warmtepompen als airconditioning met verwarmfunctie worden afgetrokken van de fiscale winst, waardoor de investering aantrekkelijker wordt."
-                />
-        </div>
-  
-        <div class="background-wrapper">
-            <IntroductionCardSubFour
-                centerTitle="Zonnepanelen"
-                leftTitle="Investeringssubsidie"
-                leftText="Airconditioningsystemen die zowel kunnen koelen als verwarmen als een warmtepomp, komen in aanmerking voor de Investeringssubsidie duurzame energie en energiebesparing (ISDE). De subsidiebedragen variëren afhankelijk van het type airco en de capaciteit van het systeem."
-                rightTitle="BTW-teruggave"
-                rightText="Als particulier kunt u ook de btw op de aanschaf en installatie van zonnepanelen terugvragen van de Belastingdienst. Dit kan een besparing van 21% op uw totale investering opleveren, wat de terugverdientijd aanzienlijk verkort."
-                thirdTitle="Energiebespaarlening"
-                thirdText="Via het Nationaal Warmtefonds kunt u gebruik maken van de Energiebespaarlening, waarmee u tegen gunstige voorwaarden een lening kunt afsluiten voor de aanschaf van duurzame installaties zoals zonnepanelen."
-                fourthTitle="Subsidies voor bedrijven"
-                fourthText="Voor bedrijven die willen investeren in zonnepanelen zijn er meerdere subsidies beschikbaar. De ISDE (Investeringssubsidie Duurzame Energie) biedt ondersteuning voor de aanschaf van zonnepanelen en andere duurzame energieprojecten. Daarnaast is de SDE++ (Stimulering Duurzame Energieproductie en Klimaattransitie) gericht op grotere installaties, zoals zonneparken. Via de MIA (Milieu-investeringsaftrek) en Vamil kunnen bedrijven fiscaal voordeel behalen op milieuvriendelijke investeringen, waardoor zonne-energie financieel aantrekkelijker wordt​."
-                />
+          <IntroductionCardSubTwo
+          centerTitle="Waar wij voor staan"
+          leftTitle="Samen werken aan uw duurzame installatie"
+          :leftText="[
+            'Bij InsteQ geloven we in een persoonlijke aanpak. We gaan samen met u een traject aan, waarbij we van begin tot eind nauw samenwerken. Het begint allemaal met een grondige opname van uw situatie. Hier bespreken we de gewenste installatie en kijken we naar de beste oplossing voor uw woning of bedrijfspand.',
+            'Daarnaast nemen we de tijd om samen de beschikbare subsidies en financiële voordelen te bespreken. We berekenen ook de terugverdientijd van de investering, zodat u een helder beeld hebt van wat u kunt verwachten op de lange termijn. Vanaf de planning tot de uiteindelijke oplevering en zelfs daarna met onze nazorg, staan wij voor u klaar.',
+            'Onze service stopt niet bij de installatie, maar gaat verder met advies en ondersteuning voor jarenlang optimaal gebruik van uw duurzame installatie.'
+          ]"
+          rightTitle="Hoogwaardige installaties voor de beste resultaten"
+          :rightText="[
+            'Bij InsteQ staat kwaliteit altijd voorop. Wij leveren enkel hoogwaardige installaties die voldoen aan de strengste normen op het gebied van duurzaamheid en efficiëntie. Of het nu gaat om een warmtepomp, laadpaal, airco, zonnepanelen of vloerverwarming, onze installaties zijn zorgvuldig geselecteerd om maximale prestaties en een lange levensduur te garanderen.',
+            'Onze ervaren monteurs en installatietechnici zorgen ervoor dat elk project met precisie en vakmanschap wordt uitgevoerd. We maken gebruik van de nieuwste technieken en materialen om ervoor te zorgen dat uw installatie betrouwbaar en energiezuinig is.',
+            'Na oplevering blijven wij beschikbaar voor onderhoud en eventuele vragen, zodat u kunt blijven vertrouwen op een systeem dat comfort en kostenbesparingen biedt, jaar in jaar uit.'
+          ]"
+        />
         </div>
   
     </div>
@@ -49,6 +41,7 @@
   import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
   import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
   import IntroductionCardSubFour from '@/components/cards/introduction/Introduction-card-sub-four.vue';
+  import IntroductionCardSubTwoParagraphs from '@/components/cards/introduction/Introduction-card-sub-two-paragraphs.vue';
   
   export default {
     name: "Service",
@@ -63,7 +56,8 @@
       WhyCard,
       IntroductionCardSub,
       IntroductionCardSubTwo,
-      IntroductionCardSubFour
+      IntroductionCardSubFour,
+      IntroductionCardSubTwoParagraphs
     }
   };
   </script>

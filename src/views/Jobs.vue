@@ -1,100 +1,88 @@
 <template>
     <div id="jobs">
-        <!-- Nieuwe container met content (zoals afbeelding) -->
-        <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-            'Je krijgt gratis advies en een offerte op maat',
-            'Installatie door vakbekwame en volledig gecertificeerde experts',
-            'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-            'Wij handelen het gehele subsidietraject voor je af'
-        ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump"
-            linkText="Lees meer" />
-        <div class="background-wrapper-white">
-            <Accordion title="Alles wat je moet weten">
-                <template v-slot="{ currentOpen, setOpen, refs }">
-                    <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Hybride warmtepomp"
-                        paragraphText="Een hybride warmtepomp combineert een warmtepomp met een bestaande verwarmingsketel op gas. Dit systeem schakelt automatisch tussen de warmtepomp en de ketel op basis van de buitentemperatuur."
-                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-                    <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen"
-                        title="Elektrische warmtepomp"
-                        paragraphText="Een volledig elektrische warmtepomp zorgt voor zowel het opwarmen van uw huis als voor warm water. Dit betekent dat u geen gasaansluiting meer nodig heeft."
-                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-                    <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen"
-                        title="Lucht/water-warmtepomp"
-                        paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
-                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-                    <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen"
-                        title="Lucht/lucht-warmtepomp"
-                        paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
-                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-                    <AccordionItem id="item5" :currentOpen="currentOpen" :setOpen="setOpen"
-                        title="Water/water-warmtepomp"
-                        paragraphText="Een buitenlucht warmtepomp haalt energie uit de buitenlucht en gebruikt deze om het verwarmingswater in uw cv-systeem op te warmen."
-                        :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-                </template>
-            </Accordion>
-        </div>
+      <div class="background-wrapper">
+        <IntroductionCardSubTwoParagraphs class="no-top-margin"  title="Leuk dat je er bent! Wij zijn InsteQ"
+          text1="Wij zijn een jong en dynamisch bedrijf dat zich inzet voor een duurzamere toekomst. Met jarenlange ervaring in de installatietechniek helpen we je graag met slimme oplossingen zoals warmtepompen, laadpalen, airco's, zonnepanelen en vloerverwarming. Ons doel? Jouw woning of bedrijfspand energiezuiniger en comfortabeler maken, zonder in te leveren op kwaliteit."
+          text2="We geloven in een persoonlijke aanpak, waarbij we altijd met jou meedenken om de beste oplossingen te vinden. Of je nu kiest voor een volledig duurzame installatie of stapsgewijs wilt verduurzamen, wij staan voor je klaar. Samen maken we de wereld een stukje groener, één installatie tegelijk."
+          buttonText="Je knoptekst hier"
+          :showButton="false"  />
+      </div>
+
         <div class="background-wrapper">
-            <div class="why-cards-container">
-                <h2>Waarom kiest u voor InsteQ?</h2>
-                <div class="why-cards">
-                    <WhyCard title="Duurzaam totaaladvies"
-                        description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-                        icon="sustainable" />
-                    <WhyCard title="Gecertificeerd"
-                        description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
-                        icon="certified" />
-                    <WhyCard title="Hoge kwaliteit en garantie"
-                        description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
-                        icon="quality" />
-                    <WhyCard title="Direct leverbaar"
-                        description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-                        icon="delivery" />
-                </div>
-            </div>
+          <IntroductionCardSubTwo
+  centerTitle="Waar wij voor staan"
+  leftTitle="Samen werken aan jouw duurzame installatie"
+  :leftText="[
+    'Bij InsteQ geloven we in een persoonlijke aanpak. We gaan samen met jou een traject aan, waarbij we van begin tot eind nauw samenwerken. Het begint allemaal met een grondige opname van jouw situatie. Hier bespreken we de gewenste installatie, zoals een warmtepomp, laadpaal, airco of zonnepanelen, en kijken we naar de beste oplossing voor jouw woning of bedrijfspand.',
+    'Daarnaast nemen we de tijd om samen de beschikbare subsidies en financiële voordelen te bespreken. We berekenen ook de terugverdientijd van de investering, zodat je een helder beeld hebt van wat je kunt verwachten op de lange termijn. Vanaf de planning tot de uiteindelijke oplevering en zelfs daarna met onze nazorg, staan wij voor je klaar.',
+    'Onze service stopt niet bij de installatie, maar gaat verder met advies en ondersteuning voor jarenlang optimaal gebruik van jouw duurzame installatie.'
+  ]"
+  rightTitle="Hoogwaardige installaties voor de beste resultaten"
+  :rightText="[
+    'Bij InsteQ staat kwaliteit altijd voorop. Wij leveren enkel hoogwaardige installaties die voldoen aan de strengste normen op het gebied van duurzaamheid en efficiëntie. Of het nu gaat om een warmtepomp, laadpaal, airco, zonnepanelen of vloerverwarming, onze installaties zijn zorgvuldig geselecteerd om maximale prestaties en een lange levensduur te garanderen.',
+    'Onze ervaren monteurs en installatietechnici zorgen ervoor dat elk project met precisie en vakmanschap wordt uitgevoerd. We maken gebruik van de nieuwste technieken en materialen om ervoor te zorgen dat jouw installatie betrouwbaar en energiezuinig is.',
+    'Na oplevering blijven wij beschikbaar voor onderhoud en eventuele vragen, zodat je kunt blijven vertrouwen op een systeem dat comfort en kostenbesparingen biedt, jaar in jaar uit.'
+  ]"
+/>
         </div>
-        <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
-            'Je krijgt gratis advies en een offerte op maat',
-            'Installatie door vakbekwame en volledig gecertificeerde experts',
-            'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-            'Wij handelen het gehele subsidietraject voor je af'
-        ]" buttonText="Vraag adviesgesprek aan" imageSrc="charge-points.png" linkUrl="heat-pump"
-            linkText="Lees meer" />
+  
     </div>
-</template>
-
-<script>
-import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
-import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
-import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
-import ContentCardOne from '@/components/cards/content/Card-one.vue';
-import Accordion from '@/components/accordion/Accordion.vue';
-import AccordionItem from '@/components/accordion/Accordion-item.vue';
-import WhyCard from '@/components/cards/Why-card.vue';
-
-export default {
-    name: "Jobs",
+  </template>
+  
+  <script>
+  import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
+  import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
+  import ProductCard from '@/components/cards/product/Regular.vue';
+  import QuoteCard from '@/components/cards/Quote.vue';
+  import ContentCardOne from '@/components/cards/content/Card-one.vue';
+  import Accordion from '@/components/accordion/Accordion.vue';
+  import AccordionItem from '@/components/accordion/Accordion-item.vue';
+  import WhyCard from '@/components/cards/Why-card.vue';
+  import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
+  import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
+  import IntroductionCardSubFour from '@/components/cards/introduction/Introduction-card-sub-four.vue';
+  import IntroductionCardSubTwoParagraphs from '@/components/cards/introduction/Introduction-card-sub-two-paragraphs.vue';
+  
+  export default {
+    name: "Service",
     components: {
-        ProductCard,
-        QuoteCard,
-        ParagraphCard,
-        ParagraphCardSmall,
-        ContentCardOne,
-        Accordion,
-        AccordionItem,
-        WhyCard
+      ProductCard,
+      QuoteCard,
+      ParagraphCard,
+      ParagraphCardSmall,
+      ContentCardOne,
+      Accordion,
+      AccordionItem,
+      WhyCard,
+      IntroductionCardSub,
+      IntroductionCardSubTwo,
+      IntroductionCardSubFour,
+      IntroductionCardSubTwoParagraphs
     }
-};
-</script>
-
-<style lang="scss" scoped>
-#home {
+  };
+  </script>
+  
+  <style lang="scss" scoped>
+  #home {
     margin: 0 auto;
     width: 100%;
     padding-top: 20px;
-}
-
-.background-wrapper {
+  }
+  
+  .background-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 40px);
+    background-color: rgba(238, 238, 238, 0.4117647059);
+    padding: 20px 0;
+    box-sizing: border-box;
+    margin: 0 auto 50px;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .background-wrapper-grey {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,27 +92,15 @@ export default {
     box-sizing: border-box;
     margin: 0 auto 50px;
     position: relative;
-}
-
-.background-wrapper-grey {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(100% - 40px);
-    background-color: #edf1f6ad;
-    padding: 20px 0;
-    box-sizing: border-box;
-    margin: 0 auto 50px;
-    position: relative;
-}
-
-.content-container {
+  }
+  
+  .content-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-}
-
-.background-wrapper-white {
+  }
+  
+  .background-wrapper-white {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,9 +110,9 @@ export default {
     box-sizing: border-box;
     margin: 0 auto 50px;
     position: relative;
-}
-
-.product-cards-container {
+  }
+  
+  .product-cards-container {
     display: flex;
     justify-content: space-between;
     max-width: 1548px;
@@ -144,18 +120,18 @@ export default {
     width: 75%;
     /* Zorg ervoor dat de breedte 75% van de beschikbare ruimte is */
     margin: 0 auto;
-}
-
-.text-container {
+  }
+  
+  .text-container {
     width: 50%;
     /* Zorgt ervoor dat de tekstcontainer 40% breed is */
     padding-top: 50px;
     padding-left: 170px;
     padding-right: 100px;
     line-height: 1.6;
-}
-
-.product-card {
+  }
+  
+  .product-card {
     position: relative;
     cursor: pointer;
     overflow: hidden;
@@ -166,31 +142,31 @@ export default {
     display: flex;
     flex-direction: column;
     /* Zorg ervoor dat de inhoud netjes gestapeld wordt */
-}
-
-.product-card:hover {
+  }
+  
+  .product-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.product-cards-container .card-image {
+  }
+  
+  .product-cards-container .card-image {
     width: 100%;
     height: auto;
-}
-
-.product-cards-container .button {
+  }
+  
+  .product-cards-container .button {
     display: flex;
     justify-content: flex-start;
-}
-
-.card-title h2 {
+  }
+  
+  .card-title h2 {
     font-size: 1.2rem;
     font-weight: 800;
     margin-bottom: 10px;
-}
-
-
-.cards-container {
+  }
+  
+  
+  .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* 3 kolommen */
@@ -200,9 +176,9 @@ export default {
     /* Zorg ervoor dat de kaartencontainer 60% breed is */
     padding-right: 20px;
     /* Voeg dezelfde padding toe als de bovenkant en onderkant */
-}
-
-.product-cards-container>* {
+  }
+  
+  .product-cards-container>* {
     flex: 1 1 calc(19.5% - 2px);
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -215,35 +191,35 @@ export default {
     z-index: 10;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.product-cards-container .card-image {
+  }
+  
+  .product-cards-container .card-image {
     width: 100%;
     height: auto;
     margin: 0;
     padding: 0;
     display: block;
-}
-
-.card-image {
+  }
+  
+  .card-image {
     position: relative;
     width: 100%;
     height: 100%;
-}
-
-.card-image img {
+  }
+  
+  .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     /* Zorg ervoor dat de afbeelding zich aanpast aan de container */
-}
-
-.product-cards-container .button {
+  }
+  
+  .product-cards-container .button {
     display: flex;
     justify-content: flex-start;
-}
-
-.overlay {
+  }
+  
+  .overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -255,9 +231,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.product-container {
+  }
+  
+  .product-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -266,17 +242,17 @@ export default {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
-}
-
-#quotes {
+  }
+  
+  #quotes {
     display: flex;
     width: 78.8%;
     justify-content: center;
     background-color: #eaeef3;
     margin-bottom: 50px;
-}
-
-.cta-button {
+  }
+  
+  .cta-button {
     background-color: #ffda00;
     color: #08535e;
     padding: 15px 30px;
@@ -295,19 +271,19 @@ export default {
     /* Zorg ervoor dat de tekst gecentreerd is */
     transition: background-color 0.3s ease, opacity 0.3s ease;
     width: 400px;
-}
-
-.cta-button span {
+  }
+  
+  .cta-button span {
     position: relative;
-}
-
-.cta-button:hover {
+  }
+  
+  .cta-button:hover {
     background-color: #ffe967;
     /* Pas de achtergrondkleur aan bij hover */
-}
-
-/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
-.button-arrow {
+  }
+  
+  /* Zorg dat de pijl start buiten zicht, aan de rechterkant */
+  .button-arrow {
     position: absolute;
     right: 30px;
     width: 1.5rem;
@@ -316,122 +292,81 @@ export default {
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateX(-30px);
     /* Start buiten de knop */
-}
-
-/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-.cta-button:hover .button-arrow {
+  }
+  
+  /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
+  .cta-button:hover .button-arrow {
     transform: translateX(0);
     /* Schuift naar binnen */
     opacity: 1;
     /* Wordt zichtbaar */
-}
-
-
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-    .product-cards-container {
-        max-width: 1548px;
-        width: 200px;
-    }
-
-    .cta-button {
-        width: 400px;
-    }
-}
-
-@media (max-width: 1750px) {
-    .product-cards-container {
-        max-width: 1548px;
-        width: 85%;
-    }
-
-    .cta-button {
-        width: 400px;
-    }
-}
-
-@media (max-width: 1600px) {
-    .product-cards-container {
-        max-width: 1548px;
-        width: 85%;
-    }
-
-    .cta-button {
-        width: 350px;
-    }
-}
-
-@media (max-width: 1380px) {
-    .product-cards-container {
-        width: 85%;
-    }
-
-    .cta-button {
-        width: 100%;
-        /* Standaard vaste breedte */
-    }
-}
-
-@media (max-width: 1280px) {
-    .cta-button {
-        font-size: 1.2rem;
-    }
-}
-
-.why-cards-container {
+  }
+  
+  .why-cards-container {
     padding: 40px 20px;
     text-align: center;
     max-width: 90%;
-}
-
-.why-cards-container h2 {
+  }
+  
+  .why-cards-container h2 {
     font-size: 2.5rem;
     font-weight: 800;
     color: #08535e;
     margin-bottom: 40px;
-}
-
-.why-cards {
+  }
+  
+  .why-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-}
-
-.card-button .btn-link {
+  }
+  
+  .card-button .btn-link {
     display: inline-flex;
     align-items: center;
     color: white;
     font-weight: 600;
     font-size: 1.1rem;
     transition: color 0.3s ease;
-}
-
-.btn-link:hover {
+  }
+  
+  .btn-link:hover {
     color: #ffda00;
     /* Kleur bij hover */
-}
-
-.text-container h2 {
+  }
+  
+  .text-container h2 {
     font-size: 2.5rem;
     font-weight: 800;
     color: #08535e;
     margin-bottom: 20px;
-}
-
-.text-container p {
+  }
+  
+  .text-container p {
     font-size: 1.2rem;
     font-weight: 500;
     color: #08535e;
-}
-
-.extra-margin {
+  }
+  
+  .extra-margin {
     margin-top: 40px;
     /* Verhoog de waarde als je meer ruimte wilt */
-}
-
-.cta-button .button-arrow {
+  }
+  
+  .cta-button .button-arrow {
     stroke: #08535e !important;
     /* Zorg ervoor dat de pijl zwart wordt */
-}
-</style>
+  }
+  
+  .no-top-margin {
+    top: 0 !important; /* Dit overschrijft de top: -150px; */
+  }
+  
+  @media (max-width: 1280px) {
+    .cta-button {
+      font-size: 1.2rem;
+    }
+  }
+  
+  </style>

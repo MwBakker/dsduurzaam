@@ -9,18 +9,19 @@
         <!-- Eerste witte kaart -->
         <div class="text-container left-card">
           <h2 class="title">{{ leftTitle }}</h2>
-          <p class="text">{{ leftText }}</p>
+          <!-- Loop door de leftText array en render elke tekst in een aparte paragraaf -->
+          <p class="text" v-for="(paragraph, index) in leftText" :key="index">{{ paragraph }}</p>
         </div>
         <!-- Tweede witte kaart -->
         <div class="text-container right-card">
           <h2 class="title">{{ rightTitle }}</h2>
-          <p class="text">{{ rightText }}</p>
+          <!-- Loop door de rightText array en render elke tekst in een aparte paragraaf -->
+          <p class="text" v-for="(paragraph, index) in rightText" :key="index">{{ paragraph }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -37,9 +38,9 @@ export default {
       default: "Onze producten",
     },
     leftText: {
-      type: String,
+      type: Array, // We verwachten een array van strings voor meerdere paragrafen
       required: true,
-      default: "Wij bieden een breed scala aan duurzame producten.",
+      default: () => ["Wij bieden een breed scala aan duurzame producten."],
     },
     rightTitle: {
       type: String,
@@ -47,13 +48,14 @@ export default {
       default: "Service en Onderhoud",
     },
     rightText: {
-      type: String,
+      type: Array, // We verwachten een array van strings voor meerdere paragrafen
       required: true,
-      default: "Wij bieden uitstekende service voor al uw duurzame installaties.",
+      default: () => ["Wij bieden uitstekende service voor al uw duurzame installaties."],
     },
   },
 };
 </script>
+
 
 
 <style lang="scss" scoped>
