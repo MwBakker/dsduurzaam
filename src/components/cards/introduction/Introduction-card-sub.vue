@@ -102,7 +102,7 @@ export default {
 
 @media (max-width: 800px) {
   .introduction-card {
-    top: -65px;
+    top: -60px;
     width: 95%;
   }
 

@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <div id="contact-form-container" v-if="route.name !== 'manage-cookies'">
-            <h2>Wij komen graag in contact met u</h2>
+            <h2>Wij komen graag met u in contact</h2>
             <!-- <Transition name="slide-fade-up" appear> -->
             <CustomForm />
             <!-- </Transition> -->
@@ -308,6 +308,13 @@ p.clickable-route:hover {
     /* Vergroot het logo iets bij hover */
 }
 
+.clickable-route {
+    cursor: pointer;
+    /* Zorgt voor het handje-icoon */
+    color: #08535e;
+    /* Optioneel: Houd de stijl consistent met links */
+}
+
 @media (max-width: 1280px) {
     #footer-content {
         flex-direction: column;
@@ -351,10 +358,13 @@ p.clickable-route:hover {
     }
 }
 
-.clickable-route {
-    cursor: pointer;
-    /* Zorgt voor het handje-icoon */
-    color: #08535e;
-    /* Optioneel: Houd de stijl consistent met links */
-}
+@media (max-width: 800px) {
+    
+    #contact-form-container {
+        height: 1160px;
+        h2 {
+            margin: 24px 0;
+        }
+    }
+} 
 </style>

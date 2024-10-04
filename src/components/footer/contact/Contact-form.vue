@@ -349,7 +349,7 @@ textarea {
         bottom: initial;
         min-width: initial;
         width: 100%;
-        height: 856px;
+        height: 942px;
         top: 24px;
         flex-direction: column;
     }
@@ -377,7 +377,12 @@ textarea {
         margin: 0 auto;
         justify-content: center;
         text-align: left;
+    }
+}
 
+@media (max-width: 800px) {
+    #contact-form {
+        margin-top: 0;
     }
 }
 </style>

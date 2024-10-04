@@ -36,7 +36,9 @@ const imageUrl = computed(
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 350px;
+  width: 350px;
+  /* max-width: 350px;
+  min-width: 260px; */
   /* Verhoog de maximale breedte van de kaart */
   min-height: 350px;
   /* Voeg een minimale hoogte toe om de kaart hoger te maken */
@@ -81,133 +83,10 @@ const imageUrl = computed(
   /* Voeg een schaduw toe bij hover */
 }
 
-
-/* Media queries voor verschillende schermgroottes */
-@media (max-width: 1920px) {
-  .why-card {
-    background-color: #fff;
-    padding: 30px;
-    /* Vergroot de padding */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Vergroot de schaduw voor meer diepte */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 350px;
-    /* Verhoog de maximale breedte van de kaart */
-    min-height: 350px;
-    /* Voeg een minimale hoogte toe om de kaart hoger te maken */
-    margin: 15px;
-    /* Voeg iets meer marge toe rondom de kaarten */
-  }
-
-  .why-card-icon {
-    width: 80px;
-    /* Vergroot de icoon */
-    height: 80px;
-    margin-bottom: 25px;
-    /* Iets meer ruimte tussen het icoon en de tekst */
-  }
-}
-
-@media (max-width: 1850px) {
-  .why-card {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 275px;
-    min-height: 350px;
-    /* Voeg een minimale hoogte toe om de kaart hoger te maken */
-    margin: 10px;
-  }
-
-  .why-card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-  }
-}
-
-
-@media (max-width: 1600px) {
-  .why-card {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 275px;
-    min-height: 350px;
-    /* Voeg een minimale hoogte toe om de kaart hoger te maken */
-    margin: 10px;
-  }
-
-  .why-card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-  }
-}
-
-
-@media (max-width: 1600px) {
-  .why-card {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 225px;
-    min-height: 350px;
-    /* Voeg een minimale hoogte toe om de kaart hoger te maken */
-    margin: 10px;
-  }
-
-  .why-card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 1380px) {
-  .why-card {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 350px;
-    min-height: 350px;
-    /* Voeg een minimale hoogte toe om de kaart hoger te maken */
-    margin: 10px;
-  }
-
-  .why-card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 1280px) {}
-
-
 @media (max-width: 800px) {
   .why-card {
       max-width: initial;
-      margin: 0;
+      margin: 12px 0;
    }
 
   .why-card-icon {
