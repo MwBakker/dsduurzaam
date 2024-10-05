@@ -71,7 +71,6 @@ const imageUrl = computed(
 }
 
 .why-card-content p {
-  font-size: 1.2rem;
   color: #08535e !important;
   font-weight: 500;
 }

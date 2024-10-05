@@ -422,9 +422,7 @@ export default {
   max-width: 90%;
 
   h2 {
-    font-size: 2.5rem;
     font-weight: 800;
-    color: #08535e;
     margin-bottom: 40px;
   }
 }
@@ -455,17 +453,13 @@ export default {
 }
 
 .text-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 20px;
 
 }
 
 .text-container p {
-  font-size: 1.2rem;
   font-weight: 500;
-  color: #08535e;
 }
 
 .extra-margin {
@@ -503,10 +497,6 @@ export default {
   .cards-container {
     width: 95%;
   }
-
-  .cta-button {
-    font-size: 1.2rem;
-  }
 }
 
 @media (max-width: 800px) {
@@ -534,10 +524,6 @@ export default {
     div {
       flex-direction: column;
     }
-  }
-
-  .why-cards-container {
-    padding: 0px;
   }
 }
 </style>

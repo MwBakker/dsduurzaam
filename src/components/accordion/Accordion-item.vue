@@ -109,9 +109,7 @@ h3 {
 }
 
 p {
-  font-size: 1.2rem;
   font-weight: 500;
-  color: #08535e;
   line-height: 1.6;
 }
 

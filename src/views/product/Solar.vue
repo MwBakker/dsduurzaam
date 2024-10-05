@@ -1,12 +1,10 @@
 <template>
   <div id="solar">
-   
     <div class="background-wrapper">
       <IntroductionCardSub title="Zelf stroom opwekken voor al uw apparaten en (duurzame) installaties"
         text="Zonnepanelen blijven een slimme investering, zelfs met de afbouw van de salderingsregeling. U hoeft minder stroom terug te leveren, omdat uw andere duurzame installaties zoals warmtepompen of elektrische auto's direct kunt voeden. Dit verlaagt uw energiekosten en maakt u minder afhankelijk van energieleveranciers. Ondanks de regeling verdienen zonnepanelen zich nog steeds snel terug door lagere kosten en duurzaamheid."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
-
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten zonnepanelen zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -28,21 +26,23 @@
         </template>
       </Accordion>
     </div>
-
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom zonnepanelen via InsteQ" :listItems="[
       'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Wij berekenen uw financiële voordeel'
-    ]" buttonText="Gratis advies aanvragen" imageSrc="zonnepanelen sub 4.png" linkUrl="heat-pump" linkText="Lees meer" />
+    ]" buttonText="Gratis advies aanvragen" imageSrc="zonnepanelen sub 4.png" linkUrl="heat-pump"
+      linkText="Lees meer" />
 
-<div class="background-wrapper-white">
+    <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
-          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen" title="Stroom opwekken op bewolkte dagen"
+          <AccordionItem id="item1" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Stroom opwekken op bewolkte dagen"
             paragraphText="Zonnepanelen werken ook op bewolkte dagen! 🌥️ Ze vangen niet alleen direct zonlicht, maar ook diffuus licht dat door de wolken heen komt. Hoewel de energieproductie wat lager is dan op zonnige dagen, blijven de zonnepanelen toch efficiënt stroom opwekken, zelfs zonder volle zon"
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
-          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen" title="Levensduur van 25 jaar of langer"
+          <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen"
+            title="Levensduur van 25 jaar of langer"
             paragraphText="Moderne zonnepanelen gaan 25 tot 30 jaar mee en behouden na twintig jaar nog steeds ongeveer 80% van hun oorspronkelijke capaciteit. Dit betekent dat ze op de lange termijn betrouwbaar energie blijven leveren, waardoor de investering in zonnepanelen een duurzame en rendabele keuze is voor de toekomst."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen" title="Duurzame investering"
@@ -344,12 +344,6 @@ export default {
   /* Wordt zichtbaar */
 }
 
-@media (max-width: 1280px) {
-  .cta-button {
-    font-size: 1.2rem;
-  }
-}
-
 .why-cards-container {
   padding: 40px 20px;
   text-align: center;
@@ -357,9 +351,7 @@ export default {
 }
 
 .why-cards-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -385,16 +377,12 @@ export default {
 }
 
 .text-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 20px;
 }
 
 .text-container p {
-  font-size: 1.2rem;
   font-weight: 500;
-  color: #08535e;
 }
 
 .extra-margin {
@@ -406,4 +394,6 @@ export default {
   stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
 }
+
+@media (max-width: 1280px) {}
 </style>

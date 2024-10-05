@@ -109,9 +109,7 @@ export default {
 }
 
 h2 {
-  font-size: 2.5rem; /* Verklein de hoofdtekst */
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 15px; /* Minder ruimte onder de titel */
 }
 
@@ -142,8 +140,6 @@ h2 {
 }
 
 .feature-text p {
-  font-size: 1.2rem; /* Verklein de feature beschrijving */
-  color: #08535e;
   font-weight: 500;
 }
 

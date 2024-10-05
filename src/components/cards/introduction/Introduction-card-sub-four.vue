@@ -3,7 +3,6 @@
     <div class="background-wrapper-red">
       <!-- Centrale titel boven de vier kaarten -->
       <h2 class="center-title">{{ centerTitle }}</h2>
-      
       <!-- Container voor de eerste twee secties naast elkaar -->
       <div class="content-container">
         <!-- Eerste witte kaart -->
@@ -17,7 +16,6 @@
           <p class="text">{{ rightText }}</p>
         </div>
       </div>
-      
       <!-- Container voor de tweede twee secties naast elkaar met extra ruimte -->
       <div class="content-container second-row">
         <!-- Derde witte kaart -->
@@ -110,9 +108,7 @@ export default {
 }
 
 .center-title {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -145,14 +141,12 @@ export default {
 }
 
 .text {
-  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #08535e;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .content-container {
     flex-direction: column;
   }
@@ -160,6 +154,7 @@ export default {
   .text-container {
     width: 100%;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 

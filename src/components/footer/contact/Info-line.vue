@@ -75,16 +75,12 @@ h1 {
 .primary-text {
   margin: 0; /* Verwijder eventuele standaard marges */
   padding-top: 15px; /* Voeg wat ruimte toe boven de paragraaf om deze naar beneden te verplaatsen */
-  color: #08535e !important;
-  font-size: 1.2rem; /* Pas de font-size aan */
   font-weight: 500; /* Pas de font-weight aan */
   text-align: left; /* Zorg ervoor dat de paragraaftekst links wordt uitgelijnd */
 }
 
 .secondary-text {
   margin: 0; /* Verwijder eventuele standaard marges */
-  color: #08535e;
-  font-size: 1.2rem; /* Pas de font-size aan */
   font-weight: 500; /* Pas de font-weight aan */
   text-align: left; /* Zorg ervoor dat de tweede paragraaftekst links wordt uitgelijnd */
 }

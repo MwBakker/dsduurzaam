@@ -65,6 +65,7 @@ export default {
 
 h2 {
   font-size: 1.2rem;
+  color: white;
   font-weight: 700;
   margin-bottom: 10px;
 }

@@ -3,6 +3,7 @@
     <div id="content">
       <h2>{{ title }}</h2>
       <p>{{ text }}</p>
+      <p v-if="text2 != ''">{{ text2 }}</p>
       <button v-if="showButton" class="cta-button">{{ buttonText }}</button>
     </div>
   </div>
@@ -16,12 +17,16 @@ export default {
     title: {
       type: String,
       required: true,
-      default: "Via slecht geïsoleerde ramen verliest je huis warmte.",
+      default: "Via slecht geïsoleerde ramen verliest uw huis warmte.",
     },
     text: {
       type: String,
       required: true,
-      default: "Glasisolatie kan dan een goed idee zijn. Heb jij interesse in het vervangen van je ramen? Doe dan nu onze check en ontvang gratis advies op maat van onze glasisolatie-partner Glaspunt. Als je klant van ons bent, ontvang je 5% korting.",
+      default: "Glasisolatie kan dan een goed idee zijn. Heeft u interesse in het vervangen van uw ramen? Doe dan nu onze check en ontvang gratis advies op maat van onze glasisolatie-partner Glaspunt. Als u klant van ons bent, ontvangt u 5% korting.",
+    },
+    text2: {
+      type: String,
+      required: false,
     },
     buttonText: {
       type: String,
@@ -61,17 +66,13 @@ export default {
   align-items: center;
 
   h2 {
-    font-size: 2.5rem;
     font-weight: 800;
-    color: #08535e;
     margin-bottom: 20px;
     padding: 0 50px;
   }
 
   p {
-    font-size: 1.2rem;
     font-weight: 500;
-    color: #08535e;
     line-height: 1.6;
     /* Zelfde padding als de titel */
     padding: 0 50px;
@@ -96,25 +97,24 @@ export default {
   }
 }
 
-@media (max-width: 1280px) {
-  .introduction-card {}
-}
-
 @media (max-width: 800px) {
   .introduction-card {
-    top: -60px;
+    top: 0;
     width: 95%;
   }
 
   #content {
     padding: 0 12px;
+
     p,
     h2 {
       padding: 0;
       text-align: center;
     }
+
+    h2 {
+      font-size: 2rem;
+    }
   }
-
-
 }
 </style>

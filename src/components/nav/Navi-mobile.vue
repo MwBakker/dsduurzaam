@@ -45,8 +45,9 @@ export default {
                 { id: 3, text: 'Vloerverwarming', route: 'floor-heating' },
                 { id: 4, text: 'Zonnepanelen', route: 'solar' },
                 { id: 5, text: 'Laadpalen', route: 'charge-points' },
-                { id: 6, text: 'Subsidie', route: 'subsidy' },
-                { id: 7, text: 'Service', route: 'service' },
+                { id: 6, text: 'Service', route: 'service' },
+                { id: 7, text: 'Subsidie', route: 'subsidy' },
+                { id: 8, text: 'Over ons', route: 'about' },
             ]
         };
     },

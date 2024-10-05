@@ -101,13 +101,11 @@ export default {
 }
 
 .title1 {
-  font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 10px;
 }
 
 .text {
-  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6;
 }

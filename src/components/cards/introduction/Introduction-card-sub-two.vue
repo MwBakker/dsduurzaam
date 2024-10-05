@@ -3,7 +3,6 @@
     <div class="background-wrapper-red">
       <!-- Centrale titel boven de twee kaarten -->
       <h2 class="center-title">{{ centerTitle }}</h2>
-      
       <!-- Container voor twee secties naast elkaar -->
       <div class="content-container">
         <!-- Eerste witte kaart -->
@@ -79,9 +78,7 @@ export default {
 }
 
 .center-title {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -90,8 +87,10 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-items: stretch; /* Zorgt ervoor dat beide containers dezelfde hoogte hebben */
-  gap: 20px; /* Voeg transparante ruimte toe tussen de kaarten */
+  align-items: stretch;
+  /* Zorgt ervoor dat beide containers dezelfde hoogte hebben */
+  gap: 20px;
+  /* Voeg transparante ruimte toe tussen de kaarten */
 }
 
 
@@ -110,14 +109,12 @@ export default {
 }
 
 .text {
-  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #08535e;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .content-container {
     flex-direction: column;
   }
@@ -127,5 +124,4 @@ export default {
     margin-bottom: 20px;
   }
 }
-
 </style>

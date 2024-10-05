@@ -357,9 +357,7 @@ export default {
 }
 
 .why-cards-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -385,16 +383,12 @@ export default {
 }
 
 .text-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 20px;
 }
 
 .text-container p {
-  font-size: 1.2rem;
   font-weight: 500;
-  color: #08535e;
 }
 
 .extra-margin {
@@ -405,12 +399,5 @@ export default {
 .cta-button .button-arrow {
   stroke: #08535e !important;
   /* Zorg ervoor dat de pijl zwart wordt */
-}
-
-
-@media (max-width: 1280px) {
-  .cta-button {
-    font-size: 1.2rem;
-  }
 }
 </style>

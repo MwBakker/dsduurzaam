@@ -112,6 +112,7 @@ h1 {
   h2 {
     width: 65%;
     font-size: 60px;
+    color: white;
     font-weight: 800;
     margin-bottom: 5px;
     text-align: left;
@@ -171,7 +172,6 @@ h1 {
 
   // description
   p {
-    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 20px;
   }
@@ -232,7 +232,7 @@ button:hover .button-arrow {
 
     h2 {
       text-align: center;
-      font-size: 3.4em;
+      font-size: 2.6em;
       width: 100%;
     }
 

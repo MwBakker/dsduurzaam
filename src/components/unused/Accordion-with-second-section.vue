@@ -59,9 +59,7 @@ export default {
 }
 
 .accordion-title {
-  font-size: 2.5rem;    /* Aangepaste grootte */
   font-weight: 800;     /* Aangepast gewicht */
-  color: #08535e;    /* Aangepaste kleur */
   text-align: center;
   margin-bottom: 20px;  /* Voeg ruimte onder de titel toe */
 }

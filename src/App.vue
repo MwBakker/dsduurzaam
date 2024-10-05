@@ -1,11 +1,11 @@
 <template>
   <navBar v-if="windowWidth > 1280" ref="navBar" />
   <navBarMobile v-else ref="navBar" />
-  <upperContentContainer v-if="activePage != 'subsidy' && activePage != 'service' && activePage != 'manage-cookies' && activePage != 'about'" :mainImg="headerImg"
-    :mainTitle="headerTitle" :showMainUrl="showHeaderUrl" :mainUrl="headerMainUrl" :showBox="showHeaderBox"
-    :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription" :boxUrl="headerBoxUrl">
+  <upperContentContainer v-if="showHeader()" :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="showHeaderUrl"
+    :mainUrl="headerMainUrl" :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription"
+    :boxUrl="headerBoxUrl">
   </upperContentContainer>
-  <div style="height:150px" v-else></div>
+  <div :style="{ height: (windowWidth > 1280) ? '150px' : '0px' }" v-else></div>
   <router-view />
   <customFooter />
   <CookieConsent />
@@ -55,6 +55,9 @@ export default {
     CookieConsent
   },
   methods: {
+    showHeader() {
+      return this.activePage != 'subsidy' && this.activePage != 'service' && this.activePage != 'manage-cookies' && this.activePage != 'about';
+    },
     routeGo(page) {
       this.activePage = page; // Update de actieve pagina
       this.$router.push({ name: page });
@@ -83,8 +86,17 @@ export default {
 }
 
 p {
-  color: #08535e;
+  font-size: 1.2rem;
   word-spacing: 0px !important;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p,
+h2 {
+  color: #08535e;
 }
 
 a {
@@ -95,23 +107,19 @@ a {
 li {
   cursor: pointer;
   word-spacing: 0px !important;
-  font-size: 0.9em;
+  font-size: 1.2em;
   padding-bottom: 4px;
   padding: 10px;
   color: #08535e;
 }
 
-h1,
-.light,
-h2 {
+.light {
   font-size: 38px;
   font-weight: 550;
   word-spacing: 0px !important;
 }
 
-h2 {
-  font-size: 1.2rem;
-}
+
 
 button,
 #button-send {

@@ -1,12 +1,10 @@
 <template>
   <div id="floor-heating">
-
     <div class="background-wrapper">
       <IntroductionCardSub title="Comfortabel en efficiënt"
         text="Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door uw hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen uw huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
-
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten vloerverwarming zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -22,14 +20,12 @@
         </template>
       </Accordion>
     </div>
-
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom vloerverwarming via InsteQ" :listItems="[
       'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
       'Perfect in combinatie met onze andere duurzame installaties'
     ]" buttonText="Gratis advies aanvragen" imageSrc="floor-heating.png" linkUrl="heat-pump" linkText="Lees meer" />
-
     <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -45,8 +41,6 @@
         </template>
       </Accordion>
     </div>
-
-
     <div class="background-wrapper products-background">
       <div class="why-cards-container">
         <h2>Waarom kiest u voor InsteQ?</h2>
@@ -346,9 +340,7 @@ export default {
 }
 
 .why-cards-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 40px;
 }
 
@@ -374,16 +366,12 @@ export default {
 }
 
 .text-container h2 {
-  font-size: 2.5rem;
   font-weight: 800;
-  color: #08535e;
   margin-bottom: 20px;
 }
 
 .text-container p {
-  font-size: 1.2rem;
   font-weight: 500;
-  color: #08535e;
 }
 
 .extra-margin {
@@ -398,11 +386,5 @@ export default {
 
 .products-background {
   background-color: #eeeeee69;
-}
-
-@media (max-width: 1280px) {
-  .cta-button {
-    font-size: 1.2rem;
-  }
 }
 </style>

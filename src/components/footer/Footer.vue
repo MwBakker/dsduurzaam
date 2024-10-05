@@ -283,7 +283,6 @@ a {
 }
 
 #contact-form-container h2 {
-    font-size: 2.5rem;
     font-weight: 800;
 }
 

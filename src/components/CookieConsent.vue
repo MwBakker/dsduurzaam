@@ -107,8 +107,6 @@ export default {
 }
 
 .cookie-container p {
-  font-size: 1.2rem;
-  color: #08535e;
   font-weight: 500;
   line-height: 1.6;
   margin-bottom: 30px;

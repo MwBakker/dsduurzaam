@@ -78,7 +78,6 @@ const imageUrl = computed(() => {
 
 .title {
   color: #222222;
-  font-size: 2.5rem;
   margin-bottom: 10px;
   font-weight: 600;
 }

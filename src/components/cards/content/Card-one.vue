@@ -115,7 +115,6 @@ export default {
 }
 
 h2 {
-  font-size: 2.5rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 20px;
@@ -216,12 +215,7 @@ ul {
     margin: 0 auto;
   }
 
-  h2 {
-    font-size: 2.5rem;
-  }
-
   .cta-button {
-    font-size: 1.2rem;
     width: 100%;
   }
 
