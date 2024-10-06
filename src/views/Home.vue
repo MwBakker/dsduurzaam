@@ -501,7 +501,7 @@ export default {
 
 @media (max-width: 800px) {
   #intro {
-    height: 500px;
+    height: 430px;
   }
 
   .background-wrapper {
