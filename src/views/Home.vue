@@ -308,7 +308,7 @@
   }
 
   .cta-button {
-    background-color: #2e8b57;
+    background-color: #8dc63f;
     color: #ffffff;
     padding: 15px 30px;
     border: none;
@@ -334,7 +334,7 @@
   }
 
   .cta-button:hover {
-    background-color: #2e8b56dc;
+    background-color: #8dc63f;
     /* Pas de achtergrondkleur aan bij hover */
   }
 

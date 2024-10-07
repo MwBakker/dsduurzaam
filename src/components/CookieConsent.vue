@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      isCookieAccepted: false, // Standaard is false totdat er cookies zijn geaccepteerd of geweigerd
+      isCookieAccepted: true, // Standaard is false totdat er cookies zijn geaccepteerd of geweigerd
     };
   },
   methods: {
@@ -127,7 +127,7 @@ button {
 }
 
 .accept-button {
-  background-color: #2e8b57;
+  background-color: #8dc63f;
   color: white;
 }
 
