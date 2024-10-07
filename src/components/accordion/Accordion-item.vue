@@ -170,16 +170,13 @@ p {
 
 @media (max-width: 800px) {
 
-  p {
-    text-align: center;
-  }
-
   .accordion-header {
     padding: 16px;
   }
 
   h3 {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    margin: 0 12px;
   }
 }
 </style>

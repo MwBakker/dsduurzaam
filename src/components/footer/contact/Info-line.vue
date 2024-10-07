@@ -32,12 +32,12 @@ const handleClick = () => {
   } else if (props.icon === 'map') {
     // Google Maps-link met het adres en eventuele extra informatie
     let query = encodeURIComponent(props.text);
-    
+
     // Voeg additionalText toe als het bestaat
     if (props.additionalText) {
       query += `%20${encodeURIComponent(props.additionalText)}`; // Voeg extra tekst toe met spatie (%20)
     }
-    
+
     // Open Google Maps in een nieuw tabblad
     window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
   }
@@ -47,9 +47,11 @@ const handleClick = () => {
 <style lang="scss" scoped>
 #info-line {
   display: flex;
-  align-items: center; /* Zorgt ervoor dat afbeelding en tekst op dezelfde hoogte zijn */
+  align-items: center;
+  /* Zorgt ervoor dat afbeelding en tekst op dezelfde hoogte zijn */
   padding: 28px;
-  cursor: pointer; /* Zorg ervoor dat het element aanklikbaar lijkt */
+  cursor: pointer;
+  /* Zorg ervoor dat het element aanklikbaar lijkt */
 }
 
 img {
@@ -60,29 +62,40 @@ img {
 
 #text {
   display: flex;
-  flex-direction: column; /* Zorg ervoor dat h1 en p onder elkaar worden weergegeven */
-  text-align: left; /* Zorgt ervoor dat alle teksten in de container links worden uitgelijnd */
+  flex-direction: column;
+  /* Zorg ervoor dat h1 en p onder elkaar worden weergegeven */
+  text-align: left;
+  /* Zorgt ervoor dat alle teksten in de container links worden uitgelijnd */
 }
 
 h1 {
   font-size: 1.4rem;
   font-weight: 800;
   color: #08535e;
-  margin: 0; /* Verwijder eventuele standaard marges */
-  text-align: left; /* Zorg ervoor dat de h1-tekst links wordt uitgelijnd */
+  margin: 0;
+  /* Verwijder eventuele standaard marges */
+  text-align: left;
+  /* Zorg ervoor dat de h1-tekst links wordt uitgelijnd */
 }
 
 .primary-text {
-  margin: 0; /* Verwijder eventuele standaard marges */
-  padding-top: 15px; /* Voeg wat ruimte toe boven de paragraaf om deze naar beneden te verplaatsen */
-  font-weight: 500; /* Pas de font-weight aan */
-  text-align: left; /* Zorg ervoor dat de paragraaftekst links wordt uitgelijnd */
+  margin: 0;
+  /* Verwijder eventuele standaard marges */
+  padding-top: 15px;
+  /* Voeg wat ruimte toe boven de paragraaf om deze naar beneden te verplaatsen */
+  font-weight: 500;
+  /* Pas de font-weight aan */
+  text-align: left;
+  /* Zorg ervoor dat de paragraaftekst links wordt uitgelijnd */
 }
 
 .secondary-text {
-  margin: 0; /* Verwijder eventuele standaard marges */
-  font-weight: 500; /* Pas de font-weight aan */
-  text-align: left; /* Zorg ervoor dat de tweede paragraaftekst links wordt uitgelijnd */
+  margin: 0;
+  /* Verwijder eventuele standaard marges */
+  font-weight: 500;
+  /* Pas de font-weight aan */
+  text-align: left;
+  /* Zorg ervoor dat de tweede paragraaftekst links wordt uitgelijnd */
 }
 
 @media (max-width: 1280px) {
@@ -91,6 +104,17 @@ h1 {
     height: 110px;
     margin: auto;
     padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  #info-line {
+    width: 232px;
+  }
+
+  img {
+    height: 48px;
+    width: 48px;
   }
 }
 </style>

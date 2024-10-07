@@ -15,10 +15,10 @@
                         </div>
                         <li v-for="item in items" :key="item.id" @click="goRoute(item.route)">{{ item.text }}<span
                                 class="fa fa-angle-right fa-2x"></span></li>
-                        <button>Offerte aanvragen</button>
+                        <button @click="goContact()">Offerte aanvragen</button>
                     </ul>
                 </Transition>
-                <button id="contact" @click="goRoute('contact')">Contact</button>
+                <button id="contact" @click="goContact()">Contact</button>
                 <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x">
                     <p>Menu</p>
                 </div>
@@ -52,6 +52,10 @@ export default {
         };
     },
     methods: {
+        goContact() {
+            this.showNav = false;
+            this.scrollTo('vue-form');
+        },
         goRoute(page) {
             this.$root.routeGo(page);
             this.showNav = false;
@@ -187,5 +191,13 @@ ul,
     color: #08535e;
     list-style: none;
     text-decoration: none;
+}
+
+@media (max-height: 765px) {
+    #titles {
+        li {
+            padding: 10px;
+        }
+    }
 }
 </style>

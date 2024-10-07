@@ -136,7 +136,7 @@ h2 {
 
   h2 {
     margin: 0;
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   .btn-link {

@@ -1,7 +1,7 @@
 <template>
   <div id="about">
     <div class="background-wrapper">
-      <IntroductionCardSub class="no-top-margin" title="Leuk dat u er bent! Wij zijn InsteQ"
+      <IntroductionCardSub id="about-intro" title="Leuk dat u er bent! Wij zijn InsteQ"
         text="Wij zijn een jong en dynamisch bedrijf dat zich inzet voor een duurzamere toekomst. Met jarenlange ervaring in de installatietechniek helpen we u graag met duurzame en slimme oplossingen. Ons doel? Uw woning of bedrijfspand energiezuiniger en comfortabeler maken, zonder in te leveren op kwaliteit."
         text2="We geloven in een persoonlijke aanpak, waarbij we altijd met u meedenken om de beste oplossingen te vinden. Of u nu kiest voor een volledig duurzame installatie of stapsgewijs wilt verduurzamen, wij staan voor u klaar. Samen maken we de wereld een stukje groener, één installatie tegelijk."
         buttonText="Je knoptekst hier" :showButton="false" />
@@ -23,17 +23,25 @@
 
 <script>
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
-// import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
+import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
 import IntroductionCardSubFour from '@/components/cards/introduction/Introduction-card-sub-four.vue';
 
 export default {
   name: "Service",
   components: {
     IntroductionCardSub,
-    // IntroductionCardSubTwo,
+    IntroductionCardSubTwo,
     IntroductionCardSubFour,
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media (max-width: 800px) {
+  #about-intro {
+    position: initial;
+    margin: 0;
+  }
+}
+
+</style>

@@ -1,10 +1,10 @@
 <template>
   <div class="why-card">
-    <div class="why-card-icon">
-      <img :src="imageUrl" alt="icon" />
-    </div>
+    <img :src="imageUrl" alt="icon" />
     <div class="why-card-content">
-      <h3>{{ title }}</h3>
+      <div id="title">
+        <h3>{{ title }}</h3>
+      </div>
       <p>{{ description }}</p>
     </div>
   </div>
@@ -46,21 +46,26 @@ const imageUrl = computed(
   /* Voeg iets meer marge toe rondom de kaarten */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* Maak transformatie en schaduw soepeler */
+
+  img {
+    height: 80px;
+    margin-bottom: 25px;
+  }
 }
 
-.why-card-icon {
-  width: 80px;
-  /* Vergroot de icoon */
-  height: 80px;
-  margin-bottom: 25px;
-  /* Iets meer ruimte tussen het icoon en de tekst */
-}
+/* .why-card-icon {
+  width: 80px; */
+/* Vergroot de icoon */
+/* height: 80px;
+  margin-bottom: 25px; */
+/* Iets meer ruimte tussen het icoon en de tekst */
+/* } */
 
-.why-card-icon img {
+/* .why-card-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
+} */
 
 .why-card-content h3 {
   font-size: 1.4rem;
@@ -84,14 +89,33 @@ const imageUrl = computed(
 
 @media (max-width: 800px) {
   .why-card {
-      max-width: initial;
-      margin: 12px 0;
-   }
+    width: 172px;
+    max-width: initial;
+    min-height: initial;
+    margin: 6px 4px;
+    padding: 28px 12px;
 
-  .why-card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
+    img {
+      height: 46px;
+      margin-bottom: 12px;
+    }
+
+    #title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 56px;
+      margin-bottom: 20px;
+
+      h3 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+    }
   }
 }
 </style>

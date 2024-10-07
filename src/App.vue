@@ -269,4 +269,24 @@ hr {
     align-items: center;
   }
 }
+
+@media (max-width: 800px) {
+
+  .background-wrapper {
+    width: initial;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  li,
+  p {
+    font-size: 1.1rem;
+  }
+}
 </style>

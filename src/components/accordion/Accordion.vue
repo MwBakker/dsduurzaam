@@ -76,8 +76,4 @@ h2 {
   margin-bottom: 20px;
   /* Voeg ruimte onder de titel toe */
 }
-
-@media (max-width: 800px) {
-  
-}
 </style>
