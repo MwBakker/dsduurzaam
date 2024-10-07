@@ -277,7 +277,7 @@ textarea::placeholder {
 
 
 #button-send {
-    background-color: #2e8b57;
+    background-color: #8dc63f;
     color: #ffffff;
     padding: 15px 30px;
     border: none;
@@ -304,7 +304,7 @@ textarea::placeholder {
 }
 
 #button-send:hover {
-    background-color: #2e8b56dc;
+    background-color: #8ec63fe5;;
     /* Pas de achtergrondkleur aan bij hover */
 }
 

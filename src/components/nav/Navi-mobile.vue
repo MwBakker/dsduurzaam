@@ -142,7 +142,7 @@ nav {
 }
 
 button {
-    background-color: #2e8b57;
+    background-color: #8dc63f;
     color: white;
     width: 145px;
     font-size: 0.8em;
@@ -178,7 +178,7 @@ button {
         width: 60px;
         height: 60px;
         border-radius: 32px;
-        background-color: #2e8b57;
+        background-color: #8dc63f;
 
         a {
             top: 14px;

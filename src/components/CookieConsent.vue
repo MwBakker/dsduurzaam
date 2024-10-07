@@ -127,12 +127,12 @@ button {
 }
 
 .accept-button {
-  background-color: #2e8b57;
+  background-color: #8dc63f;
   color: white;
 }
 
 .accept-button:hover {
-  background-color: #2e8b56dc;
+  background-color: #8dc63f;
 }
 
 .reject-button {

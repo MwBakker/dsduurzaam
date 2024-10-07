@@ -177,13 +177,13 @@ export default {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #2e8b57;
+  color: #8dc63f;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .left-content svg {
-  fill: #2e8b57;
+  fill: #8dc63f;
 }
 
 .left-content span {
@@ -201,7 +201,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #08535e;
+  color: #1b3a5d;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -213,7 +213,7 @@ export default {
 }
 
 .right-content svg {
-  fill: #08535e;
+  fill: #1b3a5d;
 }
 
 .right-content a:hover svg {}
@@ -227,7 +227,7 @@ export default {
 }
 
 .right-content span:hover {
-  color: #2e8b57;
+  color: #8dc63f;
 }
 
 nav {
@@ -287,7 +287,7 @@ nav {
 
 /* Stijl voor een eventuele knop in de rechterkant */
 .contact-button {
-  background-color: #2e8b57;
+  background-color: #8dc63f;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -314,14 +314,14 @@ nav {
   align-items: center;
   cursor: pointer;
   margin-right: 0px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
-  color: #08535e;
+  color: #1b3a5d;
   padding: 20px;
 }
 
 #titles li:hover {
-  color: #2e8b57;
+  color: #8dc63f;
 }
 
 
@@ -342,7 +342,7 @@ nav {
 #dropdown-toggle:hover,
 #mega-dropdown:hover,
 #mega-dropdown:hover svg {
-  color: #2e8b57;
+  color: #8dc63f;
 }
 
 #dropdown-toggle:hover svg,
@@ -409,7 +409,7 @@ nav {
 }
 
 #mega-dropdown li:hover {
-  color: #2e8b57;
+  color: #8dc63f;
   text-decoration: underline;
 }
 
@@ -494,7 +494,7 @@ nav {
   /* Verticaal centreren van de tekst en de pijl */
   gap: 8px;
   /* Ruimte tussen de tekst en de pijl */
-  background-color: #2e8b57;
+  background-color: #8dc63f;
   color: #fff;
   font-size: 1.3em;
   font-weight: 700;
@@ -506,7 +506,7 @@ nav {
 }
 
 .nav-button:hover {
-  background-color: #2e8b56dc;
+  background-color: #8ec63fe5;
 }
 
 
@@ -539,14 +539,14 @@ nav {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  color: #2e8b57;
+  color: #8dc63f;
   /* Aangepaste kleur, je kunt deze aanpassen naar wens */
 }
 
 .center-content span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #08535e;
+  color: #1b3a5d;
   /* Aangepaste kleur, indien gewenst */
 }
 

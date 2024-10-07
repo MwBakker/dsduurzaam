@@ -344,7 +344,7 @@
   }
 
   .cta-button {
-    background-color: #2e8b57;
+    background-color: #8dc63f;
     color: #ffffff;
     padding: 15px 30px;
     border: none;
@@ -370,7 +370,7 @@
   }
 
   .cta-button:hover {
-    background-color: #2e8b56dc;
+    background-color: #8ec63f48;
     /* Pas de achtergrondkleur aan bij hover */
   }
 
@@ -409,13 +409,15 @@
   }
 
   .text-container h2 {
+
     font-weight: 800;
     margin-bottom: 20px;
-
+    color: #1b3a5d;
   }
 
   .text-container p {
     font-weight: 500;
+    color: #4a4a4a;
   }
 
   .extra-margin {
