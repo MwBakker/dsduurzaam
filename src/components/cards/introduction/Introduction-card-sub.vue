@@ -101,12 +101,17 @@ export default {
   .introduction-card {
     position: absolute;
     top: -170px;
+    padding: 16px;
     // width: 364px;
-    width: 97.5%;
+    width: 90%;
   }
 
   #content {
     padding: 0 12px;
+
+    p {
+      margin-bottom: 6px;
+    }
 
     p,
     h2 {

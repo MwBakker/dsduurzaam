@@ -233,7 +233,7 @@ button:hover .button-arrow {
     h2 {
       text-align: center;
       font-size: 2.6em;
-      width: 100%;
+      width: initial;
     }
 
     #link-with-arrow {
@@ -254,9 +254,14 @@ button:hover .button-arrow {
 }
 
 @media (max-width: 800px) {
+  #titles-header {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   #header-content {
-    height: 560px;
-    padding: 0 0 40px 0;
+    height: 456px;
+    padding: 0 0 120px 0;
   }
 }
 </style>

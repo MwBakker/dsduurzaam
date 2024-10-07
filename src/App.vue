@@ -5,7 +5,7 @@
     :mainUrl="headerMainUrl" :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription"
     :boxUrl="headerBoxUrl">
   </upperContentContainer>
-  <div :style="{ height: (windowWidth > 1280) ? '150px' : '0px' }" v-else></div>
+  <div :style="{ height: getHeaderHeight() }" v-else></div>
   <router-view />
   <customFooter />
   <CookieConsent />
@@ -57,6 +57,14 @@ export default {
   methods: {
     showHeader() {
       return this.activePage != 'subsidy' && this.activePage != 'service' && this.activePage != 'manage-cookies' && this.activePage != 'about';
+    },
+    getHeaderHeight() {
+      var isMobile = (this.windowWidth > 1280);
+      var height = isMobile ? 150 : 0;
+      if (this.activePage == 'about' && isMobile) {
+        height += 80;
+      }
+      return height + 'px';
     },
     routeGo(page) {
       this.activePage = page; // Update de actieve pagina
@@ -119,8 +127,6 @@ li {
   word-spacing: 0px !important;
 }
 
-
-
 button,
 #button-send {
   width: 250px;
@@ -145,6 +151,40 @@ button,
 #app {
   min-height: 100vh;
   position: relative;
+}
+
+.background-wrapper {
+  margin-top: 20px;
+  background-color: rgba(238, 238, 238, 0.4117647059);
+}
+
+.background-wrapper,
+.background-wrapper-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 40px);
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+.background-wrapper-red {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #14121200;
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin: 0 auto 50px;
+}
+
+.background-wrapper-white {
+  background-color: #ffffff;
+  padding: 20px 0;
 }
 
 .container {
@@ -270,23 +310,37 @@ hr {
   }
 }
 
+@media (max-width: 1280px) {
+  .background-wrapper {
+    margin: 8px auto 0 auto;
+    padding: 0;
+  }
+}
+
 @media (max-width: 800px) {
 
-  .background-wrapper {
+  .background-wrapper,
+  .background-wrapper-white {
     width: initial;
+    margin: 0 12px;
   }
 
   h2 {
-    font-size: 2.1rem;
+    font-size: 1.6rem;
   }
 
   h3 {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 
   li,
-  p {
-    font-size: 1.1rem;
+  p,
+  a {
+    font-size: 1rem;
+  }
+
+  button {
+    height: 50px;
   }
 }
 </style>

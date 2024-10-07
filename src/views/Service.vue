@@ -49,18 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.background-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 40px);
-  background-color: rgba(238, 238, 238, 0.4117647059);
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-  position: relative;
-  margin-top: 20px;
-}
 
 .why-cards-container {
   padding: 40px 20px;

@@ -11,7 +11,7 @@
                 <Transition name="slide-fade-right" appear>
                     <ul v-if="showNav" id="titles">
                         <div id="titles-img">
-                            <div id="exit"><a @click="showNav = false" class="fa fa-arrow-left fa-2x"></a></div>
+                            <div id="exit"><a @click="toggleMenu()" class="fa fa-arrow-left fa-2x"></a></div>
                         </div>
                         <li v-for="item in items" :key="item.id" @click="goRoute(item.route)">{{ item.text }}<span
                                 class="fa fa-angle-right fa-2x"></span></li>
@@ -19,7 +19,7 @@
                     </ul>
                 </Transition>
                 <button id="contact" @click="goContact()">Contact</button>
-                <div id="bars" @click="showNav = true" class="fa fa-bars fa-2x">
+                <div id="bars" @click="toggleMenu()" class="fa fa-bars fa-2x">
                     <p>Menu</p>
                 </div>
             </div>
@@ -38,7 +38,6 @@ export default {
     data() {
         return {
             showNav: false,
-            showProductList: false,
             items: [
                 { id: 1, text: 'Warmtepomp', route: 'heat-pump' },
                 { id: 2, text: 'Airconditioning', route: 'airco' },
@@ -52,14 +51,20 @@ export default {
         };
     },
     methods: {
+        toggleMenu() {
+            this.showNav = !this.showNav;
+            const body = document.getElementById('app-body');
+            body.style.overflow = this.showNav ? 'hidden' : 'auto';
+        },
         goContact() {
             this.showNav = false;
             this.scrollTo('vue-form');
         },
         goRoute(page) {
             this.$root.routeGo(page);
-            this.showNav = false;
-            this.showProductList = false;
+            if (page != 'home') {
+                this.toggleMenu();
+            }
         }
     }
 };
@@ -193,10 +198,10 @@ ul,
     text-decoration: none;
 }
 
-@media (max-height: 765px) {
+@media (max-height: 768px) {
     #titles {
         li {
-            padding: 10px;
+            padding: 8px;
         }
     }
 }
