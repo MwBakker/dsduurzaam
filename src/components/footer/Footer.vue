@@ -360,7 +360,7 @@ p.clickable-route:hover {
 @media (max-width: 800px) {
     
     #contact-form-container {
-        height: 1080px;
+        height: 1000px;
         h2 {
             margin: 24px 0;
         }

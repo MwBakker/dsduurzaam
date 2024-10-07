@@ -110,11 +110,12 @@ h1 {
 @media (max-width: 800px) {
   #info-line {
     width: 232px;
+    height: 80px;
   }
 
   img {
-    height: 48px;
-    width: 48px;
+    height: 40px;
+    width: 40px;
   }
 }
 </style>

@@ -421,7 +421,7 @@
 
   @media (max-width: 800px) {
     #intro {
-      height: 340px;
+      height: 390px;
     }
 
     #products {

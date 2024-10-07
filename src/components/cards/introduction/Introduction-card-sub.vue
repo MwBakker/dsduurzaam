@@ -99,11 +99,11 @@ export default {
 
 @media (max-width: 800px) {
   .introduction-card {
-    position: absolute;
-    top: -170px;
-    padding: 16px;
+    top: -100px;
+    padding: 12px;
     // width: 364px;
     width: 90%;
+    margin: 0
   }
 
   #content {
@@ -120,7 +120,7 @@ export default {
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
 }

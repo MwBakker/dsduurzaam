@@ -382,7 +382,13 @@ textarea {
 
 @media (max-width: 800px) {
     #contact-form {
+        height: 872px;
         margin-top: 0;
+    }
+
+    #button-send {
+        font-size: 1em;
+        height: 50px;
     }
 }
 </style>

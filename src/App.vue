@@ -59,12 +59,13 @@ export default {
       return this.activePage != 'subsidy' && this.activePage != 'service' && this.activePage != 'manage-cookies' && this.activePage != 'about';
     },
     getHeaderHeight() {
-      var isMobile = (this.windowWidth > 1280);
-      var height = isMobile ? 150 : 0;
-      if (this.activePage == 'about' && isMobile) {
-        height += 80;
-      }
-      return height + 'px';
+      return (this.windowWidth < 1280) ? '0px' : '150px';
+      // var isMobile = (this.windowWidth > 1280);
+      // var height = isMobile ? 150 : 0;
+      // if (this.activePage == 'about' && isMobile) {
+      //   height += 80;
+      // }
+      // return height + 'px';
     },
     routeGo(page) {
       this.activePage = page; // Update de actieve pagina
