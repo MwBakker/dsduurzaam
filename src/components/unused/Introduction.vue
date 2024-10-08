@@ -1,14 +1,11 @@
-<template>
+<!-- <template>
   <div class="introduction-card">
     <div class="background-wrapper-white">
-      <!-- Container voor de twee secties -->
       <div class="content-container">
-        <!-- Tekst sectie (40% breedte) -->
         <div class="text-container-second-1">
           <h2 class="title1">{{ title1 }}</h2>
           <p class="text">{{ text1 }}</p>
         </div>
-        <!-- Tweede sectie met twee blokken naast elkaar -->
         <div class="text-container-second-2">
           <div class="card">
             <h2 class="title2-3">{{ title2 }}</h2>
@@ -63,92 +60,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.introduction-card {
-  width: 75%;
-  max-width: 1548px;
-  margin: 0 auto;
-  padding-top: 20px;
-}
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-container-second-1 {
-  width: 100%;
-  padding: 50px 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.title1 {
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.text {
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-.text-container-second-2 {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 20px;
-}
-
-.card {
-  width: 48%;
-  background-color: #fff;
-  padding: 20px;
-}
-
-.title2-3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 1280px) {
-
-  .text-container {
-      width: 90%;
-      padding: 16px;
-      text-align: center;
-    }
-
-  .text-container-second-1 {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .text-container-second-2 {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-
-@media (max-width: 800px) {
-
-  .introduction-card {
-    width: 100%;
-  }
-
-
-}
-</style>
+</style> -->

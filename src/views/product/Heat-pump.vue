@@ -61,7 +61,6 @@ import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
-import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
 export default {
   name: "Heat-pump",
@@ -70,7 +69,6 @@ export default {
     AccordionItem,
     WhyCards,
     IntroductionCardSub,
-    ContentCardOneRed
   }
 };
 </script>

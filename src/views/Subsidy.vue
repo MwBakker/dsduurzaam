@@ -30,14 +30,12 @@
 
 <script>
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
-// import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
 import IntroductionCardSubFour from '@/components/cards/introduction/Introduction-card-sub-four.vue';
 
 export default {
   name: "Service",
   components: {
     IntroductionCardSub,
-    // IntroductionCardSubTwo,
     IntroductionCardSubFour
   }
 };

@@ -1,12 +1,10 @@
 <template>
   <div id="charge-points">
-
     <div class="background-wrapper">
       <IntroductionCardSub title="Duurzaam rijden begint met een eigen laadpaal"
         text="Laadpalen zijn essentieel voor de transitie naar elektrisch rijden en dragen bij aan een duurzamere toekomst. Ze maken het mogelijk voertuigen op te laden met groene energie, zoals die van zonnepanelen, waardoor de CO₂-uitstoot aanzienlijk wordt verminderd. Door fossiele brandstoffen te vermijden, bieden laadpalen een milieuvriendelijke oplossing voor schonere lucht en minder vervuiling, zowel thuis als op het werk."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
-
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten laadpalen zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -28,7 +26,6 @@
         </template>
       </Accordion>
     </div>
-
     <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een laadpaal via InsteQ" :listItems="[
       'U krijgt gratis deskundig advies en een offerte op maat',
@@ -36,7 +33,6 @@
       'Innovatieve technologieën voor hoogwaardige laadoplossingen',
       'Uitstekende service en onderhoud'
     ]" buttonText="Gratis advies aanvragen" imageSrc="charge-points.png" linkUrl="heat-pump" linkText="Lees meer" />
-
     <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -59,267 +55,22 @@
 </template>
 
 <script>
-import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
-import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
-import ProductCard from '@/components/cards/product/Regular.vue';
-import QuoteCard from '@/components/cards/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
-import ContentCardOneGreen from '@/components/cards/content/Card-one-green.vue';
 
 export default {
   name: "Charge-points",
   components: {
-    ProductCard,
-    QuoteCard,
-    ParagraphCard,
-    ParagraphCardSmall,
     ContentCardOne,
     Accordion,
     AccordionItem,
     WhyCards,
     IntroductionCardSub,
-    ContentCardOneGreen
   }
 };
 </script>
 
-<style lang="scss" scoped>
-#home {
-  margin: 0 auto;
-  width: 100%;
-  padding-top: 20px;
-}
-
-.content-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.product-cards-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1548px;
-  /* Maximale breedte van de product-cards-container */
-  width: 75%;
-  /* Zorg ervoor dat de breedte 75% van de beschikbare ruimte is */
-  margin: 0 auto;
-}
-
-.text-container {
-  width: 50%;
-  /* Zorgt ervoor dat de tekstcontainer 40% breed is */
-  padding-top: 50px;
-  padding-left: 170px;
-  padding-right: 100px;
-  line-height: 1.6;
-}
-
-.product-card {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  /* Zorg ervoor dat de kaart vierkant blijft */
-  background-color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  /* Zorg ervoor dat de inhoud netjes gestapeld wordt */
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.product-cards-container .card-image {
-  width: 100%;
-  height: auto;
-}
-
-.product-cards-container .button {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.card-title h2 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3 kolommen */
-  grid-gap: 20px;
-  /* Ruimte tussen kaarten */
-  width: 50%;
-  /* Zorg ervoor dat de kaartencontainer 60% breed is */
-  padding-right: 20px;
-  /* Voeg dezelfde padding toe als de bovenkant en onderkant */
-}
-
-.product-cards-container>* {
-  flex: 1 1 calc(19.5% - 2px);
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: auto;
-  padding: 0;
-  position: relative;
-  z-index: 10;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.product-cards-container .card-image {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.card-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Zorg ervoor dat de afbeelding zich aanpast aan de container */
-}
-
-.product-cards-container .button {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  /* Semi-transparante zwarte achtergrond */
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: space-between;
-  max-width: 1548px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-#quotes {
-  display: flex;
-  width: 78.8%;
-  justify-content: center;
-  background-color: #eaeef3;
-  margin-bottom: 50px;
-}
-
-.cta-button {
-  background-color: #ffda00;
-  color: #08535e;
-  padding: 15px 30px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 800;
-  text-align: center;
-  margin-top: 20px;
-  position: relative;
-  overflow: hidden;
-  /* Verberg wat buiten de knop valt */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  /* Zorg ervoor dat de tekst gecentreerd is */
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-  width: 400px;
-}
-
-.cta-button span {
-  position: relative;
-}
-
-.cta-button:hover {
-  background-color: #ffe967;
-  /* Pas de achtergrondkleur aan bij hover */
-}
-
-/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
-.button-arrow {
-  position: absolute;
-  right: 30px;
-  width: 1.5rem;
-  height: 1.5rem;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateX(-30px);
-  /* Start buiten de knop */
-}
-
-/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-.cta-button:hover .button-arrow {
-  transform: translateX(0);
-  /* Schuift naar binnen */
-  opacity: 1;
-  /* Wordt zichtbaar */
-}
-
-.card-button .btn-link {
-  display: inline-flex;
-  align-items: center;
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.btn-link:hover {
-  color: #ffda00;
-  /* Kleur bij hover */
-}
-
-.text-container h2 {
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.text-container p {
-  font-weight: 500;
-}
-
-.extra-margin {
-  margin-top: 40px;
-  /* Verhoog de waarde als je meer ruimte wilt */
-}
-
-.cta-button .button-arrow {
-  stroke: #08535e !important;
-  /* Zorg ervoor dat de pijl zwart wordt */
-}
-</style>
+<style lang="scss" scoped></style>

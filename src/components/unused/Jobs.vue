@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="jobs">
     <div class="background-wrapper">
       <IntroductionCardSubTwoParagraphs class="no-top-margin" title="Leuk dat je er bent! Wij zijn InsteQ"
@@ -314,4 +314,4 @@ export default {
   top: 0 !important;
   /* Dit overschrijft de top: -150px; */
 }
-</style>
+</style> -->

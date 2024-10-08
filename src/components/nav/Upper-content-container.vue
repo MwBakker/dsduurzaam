@@ -27,9 +27,6 @@
 </template>
 
 <script>
-import titleIcon from "../unused/Title-icon.vue";
-import ServiceLine from "@/components/unused/Service-line.vue";
-
 export default {
   name: "upper_content_container",
   props: {
@@ -65,10 +62,6 @@ export default {
       type: String,
       required: true
     }
-  },
-  components: {
-    titleIcon,
-    ServiceLine,
   },
   methods: {
     goRoute(page) {

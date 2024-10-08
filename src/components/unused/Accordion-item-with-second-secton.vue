@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div :class="['accordion-item', { 'closed': !isOpen }]">
     <div class="accordion-header" @click="toggle">
       <h3 :class="{ 'open': isOpen }">{{ title }}</h3>
@@ -115,78 +115,4 @@ export default {
 </script>
 
 <style scoped>
-.accordion-item {
-  width: 60%;
-  max-width: 1548px; /* Limiteer de breedte van elke accordion-item tot 1548px */
-  margin: 0 auto;
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.082); /* Alleen een border onderaan */
-  overflow: hidden;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.accordion-header {
-  cursor: pointer;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.accordion-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.accordion-content-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.accordion-content {
-  padding: 20px 30px; /* Padding staat hier zodat de padding niet geanimeerd wordt */
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.content-sections {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  min-height: 150px;
-}
-
-.left-section,
-.right-section {
-  width: 50%;
-}
-
-.right-section {
-  padding: 0px 30px;
-}
-
-.section-title {
-  font-size: 1.25rem;
-  color: #222222;
-  font-weight: 600;
-  margin: 0 0 10px 0;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li {
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
-  }
-}
-</style>
+</style> -->

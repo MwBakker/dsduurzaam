@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="accordion-wrapper">
     <div class="accordion">
       <h2 class="accordion-title">{{ title }}</h2>
@@ -46,21 +46,5 @@ export default {
 </script>
 
 <style scoped>
-.accordion-wrapper {
-  display: flex;
-  justify-content: center; /* Centreer de accordion in zijn container */
-  width: 100%;
-  max-width: 1548px; /* Limiteer de breedte tot 1548px */
-  margin: 0 auto;
-}
 
-.accordion {
-  width: 100%; /* Gebruik de volledige breedte van de container */
-}
-
-.accordion-title {
-  font-weight: 800;     /* Aangepast gewicht */
-  text-align: center;
-  margin-bottom: 20px;  /* Voeg ruimte onder de titel toe */
-}
-</style>
+</style> -->

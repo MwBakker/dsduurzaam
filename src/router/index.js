@@ -43,11 +43,11 @@ const router = createRouter({
       name: 'about',
       component: () => import('../views/About.vue')
     },
-    {
-      path: '/werken-bij',
-      name: 'jobs',
-      component: () => import('../views/Jobs.vue')
-    },
+    // {
+    //   path: '/werken-bij',
+    //   name: 'jobs',
+    //   component: () => import('../views/Jobs.vue')
+    // },
     {
       path: '/subsidie',
       name: 'subsidy',

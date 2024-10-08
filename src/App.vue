@@ -122,12 +122,6 @@ li {
   color: #08535e;
 }
 
-.light {
-  font-size: 38px;
-  font-weight: 550;
-  word-spacing: 0px !important;
-}
-
 button,
 #button-send {
   width: 250px;
@@ -226,25 +220,6 @@ hr {
   display: flex;
   justify-content: space-around;
   margin: 64px 0;
-}
-
-#scroll-button {
-  position: fixed;
-  /* Zorg ervoor dat de knop altijd zichtbaar is */
-  bottom: 20px;
-  /* Plaats de knop 20px vanaf de onderkant van het scherm */
-  right: 20px;
-  /* Plaats de knop 20px vanaf de rechterkant van het scherm */
-  background-color: #5178a5;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#scroll-button:hover {
-  background-color: #3e5b7a;
 }
 
 ::-webkit-scrollbar {
