@@ -10,7 +10,6 @@
   <customFooter />
   <CookieConsent />
 </template>
-
 <script>
 import navBar from "./components/nav/Navi.vue";
 import navBarMobile from "./components/nav/Navi-mobile.vue";
@@ -23,7 +22,7 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
-      activePage: 'home',
+      activePage: 'home', // Default waarde, maar we gaan dit updaten op basis van de route
       headerImg: 'home',
       headerTitle: 'Uw huis verwarmen met een waterpomp',
       showHeaderUrl: 1,
@@ -54,35 +53,47 @@ export default {
     upperContentContainer,
     CookieConsent
   },
+  mounted() {
+    // Update de pagina inhoud op basis van de huidige route zodra de component gemount is
+    this.updatePageContent(this.$route.name);
+  },
+  watch: {
+    // Kijk naar routeveranderingen en update de inhoud bij elke wijziging
+    $route(to) {
+      this.updatePageContent(to.name);
+    }
+  },
   methods: {
     showHeader() {
-      return this.activePage != 'subsidy' && this.activePage != 'service' && this.activePage != 'manage-cookies' && this.activePage != 'about';
+      return this.activePage !== 'subsidy' && this.activePage !== 'service' && this.activePage !== 'manage-cookies' && this.activePage !== 'about';
     },
     getHeaderHeight() {
-      return (this.windowWidth < 1280) ? '0px' : '150px';
-      // var isMobile = (this.windowWidth > 1280);
-      // var height = isMobile ? 150 : 0;
-      // if (this.activePage == 'about' && isMobile) {
-      //   height += 80;
-      // }
-      // return height + 'px';
+      return this.windowWidth < 1280 ? '0px' : '150px';
+    },
+    updatePageContent(pageName) {
+      // Werk de actieve pagina en header content bij op basis van de route
+      const headerParams = this.headerContent[pageName];
+      if (headerParams) {
+        this.activePage = pageName;
+        this.headerImg = pageName;
+        this.headerTitle = headerParams[0];
+        this.showHeaderUrl = headerParams[1];
+        this.headerMainUrl = headerParams[2];
+        this.showHeaderBox = headerParams[3];
+        this.headerBoxTitle = headerParams[4];
+        this.headerBoxDescription = headerParams[5];
+        this.headerBoxUrl = headerParams[6];
+      }
     },
     routeGo(page) {
-      this.activePage = page; // Update de actieve pagina
       this.$router.push({ name: page });
-      var headerParams = this.headerContent[page];
-      this.headerImg = page;
-      this.headerTitle = headerParams[0];
-      this.showHeaderUrl = headerParams[1]
-      this.headerMainUrl = headerParams[2];
-      this.showHeaderBox = headerParams[3];
-      this.headerBoxTitle = headerParams[4];
-      this.headerBoxDescription = headerParams[5];
-      this.headerBoxUrl = headerParams[6];
-    },
+      this.updatePageContent(page); // Werk de inhoud bij na navigatie
+    }
   }
 };
 </script>
+
+
 
 <style lang="scss">
 * {

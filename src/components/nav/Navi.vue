@@ -197,7 +197,7 @@ export default {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #1b3a5d;
+    color: #08535e;
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -208,8 +208,9 @@ export default {
     font-weight: 700;
   }
 
+
   svg {
-    fill: #1b3a5d;
+    fill: #08535e;
   }
 }
 
@@ -304,7 +305,7 @@ nav {
   margin: 0;
   padding: 0;
   list-style: none;
-
+  
   li {
     display: flex;
     align-items: center;
@@ -312,7 +313,7 @@ nav {
     margin-right: 0px;
     font-weight: 700;
     font-size: 1.1rem;
-    color: #1b3a5d;
+    color: #08535e !important;
     padding: 20px;
 
     &:hover {
@@ -493,7 +494,7 @@ nav {
   span {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #1b3a5d;
+    color: #08535e;
     /* Aangepaste kleur, indien gewenst */
   }
 }
