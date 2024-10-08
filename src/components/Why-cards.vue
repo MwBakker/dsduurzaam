@@ -44,7 +44,6 @@ import WhyCard from './cards/Why-card.vue';
 .why-cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
 
     div {
@@ -56,6 +55,10 @@ import WhyCard from './cards/Why-card.vue';
     .why-cards {
         gap: 0;
         width: 97.5%;
+
+        div {
+            flex-direction: column;
+        }
     }
 }
 </style>

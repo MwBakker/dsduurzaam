@@ -197,7 +197,6 @@ export default {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #08535e;
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -216,7 +215,6 @@ export default {
 
 .right-content a {
   text-decoration: none;
-  color: #08535e;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -313,7 +311,6 @@ nav {
     margin-right: 0px;
     font-weight: 700;
     font-size: 1.1rem;
-    color: #08535e !important;
     padding: 20px;
 
     &:hover {
@@ -494,7 +491,6 @@ nav {
   span {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #08535e;
     /* Aangepaste kleur, indien gewenst */
   }
 }

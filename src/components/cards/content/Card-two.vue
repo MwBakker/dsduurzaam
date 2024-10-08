@@ -136,7 +136,6 @@ h2 {
 .feature-text h3 {
   font-size: 1.2rem; /* Verklein de feature titels */
   font-weight: 700;
-  color: #08535e;
 }
 
 .feature-text p {

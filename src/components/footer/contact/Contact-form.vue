@@ -166,7 +166,6 @@ label {
 
     #privacy-label {
         margin-left: 16px;
-        color: #08535e;
         font-size: 0.9rem;
         font-weight: 100;
     }
@@ -227,7 +226,6 @@ textarea::placeholder {
 
     #privacy-label {
         margin-left: 16px;
-        color: #08535e;
         /* Pas dezelfde kleur als de placeholder toe */
         font-size: 1rem;
         /* Verander de grootte van de tekst */
@@ -341,7 +339,6 @@ textarea {
     background: none;
     margin-top: 5px;
     font-weight: 500;
-    color: #08535e;
 }
 
 @media (max-width: 1280px) {

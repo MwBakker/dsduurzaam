@@ -125,7 +125,6 @@ export default {
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: #08535e;
 }
 
 .text {

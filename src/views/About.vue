@@ -1,7 +1,7 @@
 <template>
   <div id="about">
-    <div class="background-wrapper" id="intro">
-      <IntroductionCardSub id="about-intro-card" title="Leuk dat u er bent! Wij zijn InsteQ"
+    <div class="background-wrapper">
+      <IntroductionCardSub id="about-intro-card" class="no-top" title="Leuk dat u er bent! Wij zijn InsteQ"
         text="Wij zijn een jong en dynamisch bedrijf dat zich inzet voor een duurzamere toekomst. Met jarenlange ervaring in de installatietechniek helpen we u graag met duurzame en slimme oplossingen. Ons doel? Uw woning of bedrijfspand energiezuiniger en comfortabeler maken, zonder in te leveren op kwaliteit."
         text2="We geloven in een persoonlijke aanpak, waarbij we altijd met u meedenken om de beste oplossingen te vinden. Of u nu kiest voor een volledig duurzame installatie of stapsgewijs wilt verduurzamen, wij staan voor u klaar. Samen maken we de wereld een stukje groener, één installatie tegelijk."
         buttonText="Je knoptekst hier" :showButton="false" />
@@ -37,13 +37,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#intro {
-  padding: 80px;
-}
-
-#about-intro-card {
-  top: 80px;
-}
 
 @media (max-width: 800px) {
   #intro {

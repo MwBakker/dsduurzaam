@@ -310,12 +310,10 @@
 
     font-weight: 800;
     margin-bottom: 20px;
-    color: #08535e;
   }
 
   .text-container p {
     font-weight: 500;
-    color: #08535e !important;
   }
 
   .extra-margin {

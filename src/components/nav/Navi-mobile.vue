@@ -184,7 +184,6 @@ nav {
 #menu-header {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #08535e;
     margin: 0;
 }
 
@@ -196,7 +195,6 @@ nav {
     /* Zelfde waarde als het pijltje voor uitlijning */
     transform: translateY(-50%);
     /* Centreert het kruisje verticaal */
-    color: #08535e;
     background-color: transparent;
 
     a {
@@ -226,13 +224,10 @@ button {
         font-size: 0.8em;
         font-weight: 600;
         margin-top: 4px;
-        color: #08535e;
     }
 }
 
-ul,
-.link {
-    color: #08535e;
+ul {
     list-style: none;
     text-decoration: none;
 }

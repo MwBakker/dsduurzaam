@@ -120,7 +120,11 @@ h2 {
 }
 
 p,
-h2 {
+a,
+h1,
+h2,
+h3,
+li {
   color: #08535e;
 }
 
@@ -135,7 +139,6 @@ li {
   font-size: 1.2em;
   padding-bottom: 4px;
   padding: 10px;
-  color: #08535e;
 }
 
 hr {
@@ -191,6 +194,10 @@ button,
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
+}
+
+.no-top {
+  top: 0 !important;
 }
 
 .background-wrapper-white {

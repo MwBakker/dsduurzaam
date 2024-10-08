@@ -26,13 +26,7 @@ export default {
   methods: {
     setOpen(itemId) {
       const index = this.currentOpen.indexOf(itemId);
-      if (index > -1) {
-        // Item is al geopend, verwijder het om het te sluiten
-        this.currentOpen.splice(index, 1);
-      } else {
-        // Voeg het item toe om het te openen
-        this.currentOpen.push(itemId);
-      }
+      (index > -1) ? this.currentOpen.splice(index, 1) : this.currentOpen.push(itemId);
     },
   },
   provide() {
@@ -75,6 +69,5 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
   /* Voeg ruimte onder de titel toe */
-  color: #1b3a5d;
 }
 </style>

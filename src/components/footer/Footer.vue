@@ -30,11 +30,11 @@
             </div>
             <div id="services" class="section-info">
                 <h1>Diensten</h1>
-                <p @click="goRoute('heat-pump')" class="clickable-route">Waterpomp</p>
-                <p @click="goRoute('airco')" class="clickable-route">Airco</p>
-                <p @click="goRoute('floor-heating')" class="clickable-route">Vloerverwarming</p>
-                <p @click="goRoute('solar')" class="clickable-route">Zonnepanelen</p>
-                <p @click="goRoute('charge-points')" class="clickable-route">Laadpalen</p>
+                <p @click="goRoute('heat-pump')">Waterpomp</p>
+                <p @click="goRoute('airco')">Airco</p>
+                <p @click="goRoute('floor-heating')">Vloerverwarming</p>
+                <p @click="goRoute('solar')">Zonnepanelen</p>
+                <p @click="goRoute('charge-points')">Laadpalen</p>
             </div>
             <!--
                      <div id="logos-certification" class="logos">
@@ -48,7 +48,7 @@
                 </div>
             </div>
             -->
-   
+
             <div id='logos-social' class="logos">
                 <h1>Social media</h1>
                 <div id="logos-content">
@@ -109,7 +109,6 @@ export default {
 #footer {
     width: 100%;
     position: relative;
-    color: #08535e;
     background-color: white;
 }
 
@@ -126,7 +125,6 @@ p {
 }
 
 a {
-    color: #08535e;
     text-decoration: none;
 }
 
@@ -173,6 +171,12 @@ a {
 #services {
     p {
         cursor: pointer;
+
+        &:hover {
+            font-size: 0.9rem;
+            /* Pas de waarde aan naar wens */
+            font-weight: 700;
+        }
     }
 }
 
@@ -299,22 +303,9 @@ p a:hover {
     font-weight: 700;
 }
 
-p.clickable-route:hover {
-    font-size: 0.9rem;
-    /* Pas de waarde aan naar wens */
-    font-weight: 700;
-}
-
 .social-logo:hover {
     transform: scale(1.1);
     /* Vergroot het logo iets bij hover */
-}
-
-.clickable-route {
-    cursor: pointer;
-    /* Zorgt voor het handje-icoon */
-    color: #08535e;
-    /* Optioneel: Houd de stijl consistent met links */
 }
 
 @media (max-width: 1280px) {
@@ -361,12 +352,13 @@ p.clickable-route:hover {
 }
 
 @media (max-width: 800px) {
-    
+
     #contact-form-container {
         height: 1000px;
+
         h2 {
             margin: 24px 0;
         }
     }
-} 
+}
 </style>

@@ -89,8 +89,8 @@ const imageUrl = computed(
 
 @media (max-width: 800px) {
   .why-card {
-    width: 172px;
-    max-width: initial;
+    width: 97.5%;
+    max-width: 320px;
     min-height: initial;
     margin: 6px 4px;
     padding: 28px 12px;
@@ -104,8 +104,7 @@ const imageUrl = computed(
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 56px;
-      margin-bottom: 20px;
+      height: 46px;
 
       h3 {
         font-size: 1.25rem;
