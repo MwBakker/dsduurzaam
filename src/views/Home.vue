@@ -2,7 +2,7 @@
   <div id="home">
     <div id="intro" class="background-wrapper">
       <IntroductionCardSub title="Duurzaam wonen: verlaag uw maandlasten"
-        text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties zoals warmtepompen, airco's, zonnepanelen, vloerverwarmingsystemen en laadpalen. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
+        text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
     <!--
@@ -18,7 +18,7 @@
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
         <div class="text-container">
-          <h2>Onze producten</h2>
+          <h2>Onze productens</h2>
           <p>
             Onze professionals nemen de volledige verduurzaming van uw woning of bedrijfspand uit handen. Of u nu
             particulier of zakelijk klant bent, u profiteert altijd van de hoogste kwaliteit en persoonlijke service.
@@ -29,7 +29,7 @@
           <!--
                       <button class="cta-button">
             <span>Neem contact op</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               class="button-arrow">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -76,6 +76,7 @@
       'Uitstekende service en onderhoud'
     ]" buttonText="Gratis advies aanvragen" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer"
       showButton="true" />
+
     <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -334,7 +335,7 @@
   }
 
   .cta-button:hover {
-    background-color: #8dc63f;
+    background-color: #8ec63f48;
     /* Pas de achtergrondkleur aan bij hover */
   }
 
@@ -373,13 +374,15 @@
   }
 
   .text-container h2 {
+
     font-weight: 800;
     margin-bottom: 20px;
-
+    color: #1b3a5d;
   }
 
   .text-container p {
     font-weight: 500;
+    color: #4a4a4a;
   }
 
   .extra-margin {

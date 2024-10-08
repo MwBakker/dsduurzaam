@@ -42,7 +42,7 @@
           <li :class="{ active: isProductActive || isDropdownVisible }" id="dropdown-toggle" @mouseenter="showDropdown"
             @mouseleave="checkIfShouldHideDropdown">
             Onze producten
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+            <svg xmlns="https://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" :class="{ 'rotate-icon': isDropdownVisible }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -72,7 +72,7 @@
       <div class="nav-right">
         <button class="nav-button contact-button" @click="scrollToContactForm">
           Offerte aanvragen
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
@@ -201,7 +201,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #08535e;
+  color: #1b3a5d;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -213,7 +213,7 @@ export default {
 }
 
 .right-content svg {
-  fill: #08535e;
+  fill: #1b3a5d;
 }
 
 .right-content a:hover svg {}
@@ -316,7 +316,7 @@ nav {
   margin-right: 0px;
   font-weight: 700;
   font-size: 1.1rem;
-  color: #08535e;
+  color: #1b3a5d;
   padding: 20px;
 }
 
@@ -494,7 +494,7 @@ nav {
   /* Verticaal centreren van de tekst en de pijl */
   gap: 8px;
   /* Ruimte tussen de tekst en de pijl */
-  background-color: #8dc63f !important;
+  background-color: #8dc63f;
   color: #fff;
   font-size: 1.3em;
   font-weight: 700;
@@ -506,7 +506,7 @@ nav {
 }
 
 .nav-button:hover {
-  background-color: #8ec63fe3 !important;
+  background-color: #8ec63fe5;
 }
 
 
@@ -546,7 +546,7 @@ nav {
 .center-content span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #08535e;
+  color: #1b3a5d;
   /* Aangepaste kleur, indien gewenst */
 }
 
