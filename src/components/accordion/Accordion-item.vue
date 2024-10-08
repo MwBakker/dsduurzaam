@@ -3,11 +3,11 @@
     <div class="accordion-header" @click="toggle">
       <h3 :class="{ 'open': isOpen }">{{ title }}</h3>
       <span class="accordion-icon">
-        <svg v-if="isOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+        <svg v-if="isOpen" xmlns="https://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
         </svg>
-        <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+        <svg v-else xmlns="https://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
@@ -177,7 +177,7 @@ p {
 
   h3 {
     font-size: 1.1em;
-    margin: 0 12px;
+    margin: 0 3px;
   }
 }
 </style>
