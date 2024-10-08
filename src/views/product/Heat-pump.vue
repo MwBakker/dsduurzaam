@@ -42,11 +42,11 @@
             paragraphText="Wist u dat warmtepompen niet alleen verwarmen, maar ook kunnen koelen? In de zomer kan een warmtepomp de werking omdraaien en warmte uit uw woning onttrekken, waardoor het heerlijk koel blijft. Dit maakt de warmtepomp een veelzijdige en energiezuinige oplossing voor zowel de warme als koude maanden."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item2" :currentOpen="currentOpen" :setOpen="setOpen"
-            title="Lever tot 4 keer meer energie dan je verbruikt"
+            title="Lever tot 4 keer meer energie dan u verbruikt"
             paragraphText="Wist u dat warmtepompen maar liefst 3 tot 4 keer meer energie leveren dan ze verbruiken? Dit komt doordat ze warmte uit de buitenlucht, grond of ventilatielucht halen en deze efficiënt omzetten in bruikbare energie voor uw woning. Hierdoor zijn warmtepompen extreem efficiënt en kunt u aanzienlijk besparen op uw energiekosten, terwijl u op een duurzame manier verwarmt en koelt. Dit maakt het een van de meest milieuvriendelijke verwarmingsopties voor moderne huizen."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item3" :currentOpen="currentOpen" :setOpen="setOpen"
-            title="Verhoog de waarde van je woning en bespaar energie"
+            title="Verhoog de waarde van uw woning en bespaar energie"
             paragraphText="Wist u dat warmtepompen niet alleen de waarde van uw woning verhogen, maar ook uw energielabel verbeteren? Een energiezuinige woning is aantrekkelijker voor kopers, omdat het lagere energiekosten en een beter energielabel biedt. Bovendien kunt u momenteel nog subsidie krijgen op de installatie van een warmtepomp, wat de investering nog voordeliger maakt en de woningwaarde verder verhoogt. Dit maakt een warmtepomp een slimme keuze voor zowel uw portemonnee als de toekomst van uw huis."
             :voordelen="['Voordeel 1', 'Voordeel 2', 'Voordeel 3']" />
           <AccordionItem id="item4" :currentOpen="currentOpen" :setOpen="setOpen"

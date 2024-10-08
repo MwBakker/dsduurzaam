@@ -13,7 +13,9 @@
                         <div id="titles-header">
                             <p id="menu-header">Menu</p> <!-- Toegevoegd tekst "Menu" -->
                             <div id="exit">
-                                <a @click="toggleMenu()" :class="[showNav ? 'fa-times' : 'fa-arrow-left', 'fa', 'fa-2x']"></a> <!-- Dynamische klasse voor pijl of kruis -->
+                                <a @click="toggleMenu()"
+                                    :class="[showNav ? 'fa-times' : 'fa-arrow-left', 'fa', 'fa-2x']"></a>
+                                <!-- Dynamische klasse voor pijl of kruis -->
                             </div>
                         </div>
                         <li v-for="item in items" :key="item.id" @click="goRoute(item.route)">
@@ -97,7 +99,7 @@ nav {
 .branding {
     cursor: pointer;
     text-align: center;
-    margin-left: 10px;
+    margin: 6px 0 0 10px;
 
     img {
         width: 120px;
@@ -140,7 +142,14 @@ nav {
         font-size: 1rem;
         align-items: center;
         justify-content: space-between;
-        position: relative; /* Hiermee kunnen we de pijlen absoluut positioneren */
+        position: relative;
+        /* Hiermee kunnen we de pijlen absoluut positioneren */
+    }
+
+    li span.fa-angle-right {
+        position: absolute;
+        right: 20px;
+        font-size: 1.5rem;
     }
 
     .sub-li {
@@ -161,9 +170,12 @@ nav {
 /* Header met tekst "Menu" en kruisje in één lijn */
 #titles-header {
     display: flex;
-    justify-content: center; /* Centreer de tekst "Menu" */
-    align-items: center; /* Zorg ervoor dat de tekst en het kruisje verticaal gecentreerd zijn */
-    position: relative; /* Zorg dat we de positie van het kruisje rechts kunnen instellen */
+    justify-content: center;
+    /* Centreer de tekst "Menu" */
+    align-items: center;
+    /* Zorg ervoor dat de tekst en het kruisje verticaal gecentreerd zijn */
+    position: relative;
+    /* Zorg dat we de positie van het kruisje rechts kunnen instellen */
     padding: 16px;
     background-color: #f4f4f4;
     border-bottom: 1px solid #ccc;
@@ -180,8 +192,10 @@ nav {
 #exit {
     position: absolute;
     top: 50%;
-    right: 20px; /* Zelfde waarde als het pijltje voor uitlijning */
-    transform: translateY(-50%); /* Centreert het kruisje verticaal */
+    right: 20px;
+    /* Zelfde waarde als het pijltje voor uitlijning */
+    transform: translateY(-50%);
+    /* Centreert het kruisje verticaal */
     color: #08535e;
     background-color: transparent;
 
@@ -189,17 +203,6 @@ nav {
         cursor: pointer;
         font-size: 1.5rem;
     }
-}
-
-/* Pijltjes positioneren direct onder het kruisje */
-#titles li span.fa-angle-right {
-    position: absolute;
-    right: 20px; /* Zelfde waarde als het kruisje voor uitlijning */
-    top: 50%;
-    transform: translateY(-50%); /* Centreer verticaal in de li */
-
-    font-size: 1.5rem; /* Maak het icoon kleiner zodat het dunner lijkt */
-    color: #08535e; /* Houd de kleur consistent met de rest van de stijl */
 }
 
 button {
@@ -217,16 +220,13 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .fa-bars {
-        color: #08535e; /* Kleur van het bars-icoon */
-    }
+    color: #08535e;
 
     p {
-        font-size: 0.4em;
+        font-size: 0.8em;
         font-weight: 600;
         margin-top: 4px;
-        color: #08535e; /* Kleur van de "Menu" tekst */
+        color: #08535e;
     }
 }
 
@@ -244,5 +244,4 @@ ul,
         }
     }
 }
-
 </style>

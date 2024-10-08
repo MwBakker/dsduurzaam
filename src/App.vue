@@ -105,6 +105,11 @@ export default {
   /*font-weight: 600;*/
 }
 
+#app {
+  min-height: 100vh;
+  position: relative;
+}
+
 p {
   font-size: 1.2rem;
   word-spacing: 0px !important;
@@ -133,6 +138,11 @@ li {
   color: #08535e;
 }
 
+hr {
+  margin: 0;
+  border: 0.25px solid #00000013;
+}
+
 button,
 #button-send {
   width: 250px;
@@ -152,11 +162,6 @@ button,
   box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
   margin: 4px 2px;
   cursor: pointer;
-}
-
-#app {
-  min-height: 100vh;
-  position: relative;
 }
 
 .background-wrapper {
@@ -193,46 +198,6 @@ button,
   padding: 20px 0;
 }
 
-.container {
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-.product {
-  margin: 0 auto;
-  width: 1548px;
-}
-
-.sub-product-content {
-  max-width: 1548px;
-  margin: 0 auto;
-}
-
-.sub-product-quote {
-  margin-right: 5%;
-}
-
-.sub-product {
-  display: flex;
-  margin-top: 120px;
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-hr {
-  margin: 0;
-  border: 0.25px solid #00000013;
-}
-
-.quotes {
-  display: flex;
-  justify-content: space-around;
-  margin: 64px 0;
-}
-
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -246,55 +211,14 @@ hr {
   ;
 }
 
-.slide-fade-up-enter-active,
-.slide-fade-down-enter-active,
-.slide-fade-left-enter-active,
 .slide-fade-right-enter-active {
   transition: all 1s ease;
-}
-
-.slide-fade-up-leave-active,
-.slide-fade-down-enter-active,
-.slide-fade-left-leave-active {
-  transition: all 1s;
-}
-
-.slide-fade-up-enter-from,
-.slide-fade-up-leave-to {
-  transform: translateY(100%);
-  opacity: 0;
-}
-
-.slide-fade-down-enter-from,
-.slide-fade-down-leave-to {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.slide-fade-left-enter-from,
-.slide-fade-left-leave-to {
-  transform: translateX(80%);
-  opacity: 0;
 }
 
 .slide-fade-right-enter-from,
 .slide-fade-right-leave-to {
   transform: translateX(-80%);
   opacity: 0;
-}
-
-@media (max-width: 1280px) {
-  .product {
-    width: 100%;
-  }
-
-  .sub-product {
-    margin: 0;
-    margin-top: 64px;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 @media (max-width: 1280px) {

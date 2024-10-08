@@ -141,9 +141,6 @@ export default {
 };
 </script>
 
-
-
-
 <style lang="scss" scoped>
 #nav-container {
   width: 100%;
@@ -180,14 +177,14 @@ export default {
   color: #8dc63f;
   font-size: 0.9rem;
   font-weight: 600;
-}
 
-.left-content svg {
-  fill: #8dc63f;
-}
+  svg {
+    fill: #8dc63f;
+  }
 
-.left-content span {
-  font-weight: 600;
+  span {
+    font-weight: 600;
+  }
 }
 
 /* Right content */
@@ -195,28 +192,27 @@ export default {
   display: flex;
   gap: 20px;
   align-items: center;
-}
 
-.right-content span {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #08535e;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
+  span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #08535e;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
 
-.right-content a:hover {
-  font-size: 0.9rem;
-  /* Pas de waarde aan naar wens */
-  font-weight: 700;
-}
+  a:hover {
+    font-size: 0.9rem;
+    /* Pas de waarde aan naar wens */
+    font-weight: 700;
+  }
 
-.right-content svg {
-  fill: #08535e;
-}
 
-.right-content a:hover svg {}
+  svg {
+    fill: #08535e;
+  }
+}
 
 .right-content a {
   text-decoration: none;
@@ -254,15 +250,17 @@ nav {
 }
 
 .logo {
-  z-index: 1101; /* Zorg ervoor dat het boven de mega-dropdown (z-index: 1000) komt */
-  position: relative; /* Zorg ervoor dat de z-index correct wordt toegepast */
-}
+  z-index: 1101;
+  /* Zorg ervoor dat het boven de mega-dropdown (z-index: 1000) komt */
+  position: relative;
+  /* Zorg ervoor dat de z-index correct wordt toegepast */
 
-.logo img {
-  height: 60px;
-  width: auto;
-  margin-left: 20px;
-  /* Logo iets naar links verschuiven */
+  img {
+    height: 60px;
+    width: auto;
+    margin-left: 20px;
+    /* Logo iets naar links verschuiven */
+  }
 }
 
 /* Titel-items (ul/li's) in het midden van de navigatie */
@@ -293,10 +291,10 @@ nav {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
 
-.contact-button:hover {
-  background-color: #105490;
+  &:hover {
+    background-color: #105490;
+  }
 }
 
 /* Titel-items */
@@ -307,35 +305,34 @@ nav {
   margin: 0;
   padding: 0;
   list-style: none;
-}
+  
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 0px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #08535e !important;
+    padding: 20px;
 
-#titles li {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-right: 0px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #08535e !important;
-  padding: 20px;
+    &:hover {
+      color: #8dc63f;
+    }
+  }
 }
-
-#titles li:hover {
-  color: #8dc63f !important;
-}
-
 
 #dropdown-toggle {
   position: relative;
   display: flex;
   align-items: center;
   cursor: pointer;
-}
 
-#dropdown-toggle svg {
-  margin-left: 8px;
-  transition: transform 0.3s ease;
-  transform: rotate(0deg);
+  svg {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+  }
 }
 
 /* Zorg dat de hover-kleur blauw wordt op het menu-item en mega-dropdown */
@@ -394,43 +391,23 @@ nav {
 #mega-dropdown {
   margin-top: 0;
   /* Zorg ervoor dat het dropdown-menu naadloos aansluit */
-}
 
-#mega-dropdown ul {
-  list-style: none;
-  padding: 0;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
-#mega-dropdown li {
-  padding: 10px 20px;
-  font-size: 1rem;
-  white-space: nowrap;
-  cursor: pointer;
-}
+  li {
+    padding: 10px 20px;
+    font-size: 1rem;
+    white-space: nowrap;
+    cursor: pointer;
 
-#mega-dropdown li:hover {
-  color: #8dc63f;
-  text-decoration: underline;
-}
-
-#mega-dropdown li:nth-child(1) {
-  transition-delay: 0.1s;
-}
-
-#mega-dropdown li:nth-child(2) {
-  transition-delay: 0.15s;
-}
-
-#mega-dropdown li:nth-child(3) {
-  transition-delay: 0.2s;
-}
-
-#mega-dropdown li:nth-child(4) {
-  transition-delay: 0.25s;
-}
-
-#mega-dropdown li:nth-child(5) {
-  transition-delay: 0.3s;
+    &:hover {
+      color: #8dc63f;
+      text-decoration: underline;
+    }
+  }
 }
 
 .cards-container {
@@ -441,33 +418,6 @@ nav {
   padding: 0 20px;
   box-sizing: border-box;
   width: 100%;
-}
-
-.product-card {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  background-color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-}
-
-.card-title h2 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
 }
 
 .overlay {
@@ -503,12 +453,11 @@ nav {
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s ease, opacity 0.3s ease;
-}
 
-.nav-button:hover {
-  background-color: #8ec63fe5;
+  &:hover {
+    background-color: #8ec63fe5;
+  }
 }
-
 
 /* De pijl in de knop */
 .button-arrow {
@@ -533,21 +482,21 @@ nav {
 .center-content {
   flex: 1;
   text-align: center;
-}
 
-.center-content h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #8dc63f;
-  /* Aangepaste kleur, je kunt deze aanpassen naar wens */
-}
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #8dc63f;
+    /* Aangepaste kleur, je kunt deze aanpassen naar wens */
+  }
 
-.center-content span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #08535e;
-  /* Aangepaste kleur, indien gewenst */
+  span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #08535e;
+    /* Aangepaste kleur, indien gewenst */
+  }
 }
 
 .nav-right .contact-button {
