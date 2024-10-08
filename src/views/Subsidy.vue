@@ -1,7 +1,7 @@
 <template>
   <div id="subsidy">
-    <div class="background-wrapper">
-      <IntroductionCardSub class="no-top-margin" title="Wij berekenen uw (subsidie)voordeel"
+    <div class="background-wrapper" id="intro">
+      <IntroductionCardSub id="subdisy-intro-card" title="Wij berekenen uw (subsidie)voordeel"
         text="Er zijn verschillende subsidies en financiële voordelen beschikbaar die helpen bij het verduurzamen van uw woning of bedrijf. Hieronder vertellen we per duurzame installatie meer over de beschikbare subsidies en andere financiële voordelen, om zodoende de aanschaf van uw duurzame installatie te verlagen."
         buttonText="Je knoptekst hier" :showButton="false" />
     </div>
@@ -44,21 +44,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.background-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 40px);
-  background-color: rgba(238, 238, 238, 0.4117647059);
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-  position: relative;
-  margin-top: 20px;
+
+#intro {
+  padding: 80px;
 }
 
-.no-top-margin {
-  top: 0 !important;
-  /* Dit overschrijft de top: -150px; */
+#subdisy-intro-card {
+  top: 80px;
+}
+
+@media (max-width: 800px) {
+  #intro {
+    height: 440px;
+    padding: 0 16px;
+  }
+
+  #subdisy-intro-card {
+    width: 100%;
+    top: 0;
+  }
 }
 </style>

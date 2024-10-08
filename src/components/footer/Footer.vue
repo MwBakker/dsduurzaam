@@ -11,7 +11,7 @@
         </div>
         <div id="footer-content">
             <div class="section-info">
-                <h1>Insteq</h1>
+                <h1>InsteQ</h1>
                 <p><a href="./statements/heroepingsformulier.pdf">Herroepingsformulier</a></p>
                 <p><a href="./statements/privacyverklaring.pdf">Privacyverklaring</a></p>
                 <p><a href="./statements/disclaimer.pdf">Disclaimer</a></p>
@@ -36,18 +36,21 @@
                 <p @click="goRoute('solar')" class="clickable-route">Zonnepanelen</p>
                 <p @click="goRoute('charge-points')" class="clickable-route">Laadpalen</p>
             </div>
-            <div id="logos-certification" class="logos">
+            <!--
+                     <div id="logos-certification" class="logos">
                 <h1>Gegarandeerde kwaliteit</h1>
                 <div id="certification-logos-content">
-                    <!-- <a href="#"><img class='cert-logo' src='../assets/icon/installq.png' alt="Certificering 1" /></a> -->
-                    <!-- <a href="#"><img class='cert-logo' src='../assets/icon/technieknederland1.png'
-                           alt="Certificering 2" /></a>   -->
+                    <a href="#"><img class='cert-logo' src='../assets/icon/installq.png' alt="Certificering 1" /></a> 
+                     <a href="#"><img class='cert-logo' src='../assets/icon/technieknederland1.png'
+                           alt="Certificering 2" /></a>  
                     <a href="#"><img class='cert-logo' src='../../assets/icon/vca.png' alt="Certificering 3" /></a>
-                    <!-- <a href="#"><img class='cert-logo' src='../assets/icon/stek.png' alt="Certificering 4" /></a> -->
+                     <a href="#"><img class='cert-logo' src='../assets/icon/stek.png' alt="Certificering 4" /></a>
                 </div>
             </div>
+            -->
+   
             <div id='logos-social' class="logos">
-                <h1>Insteq media</h1>
+                <h1>Social media</h1>
                 <div id="logos-content">
                     <a href="https://www.facebook.com/dsduurzaam/">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-logo">
@@ -360,7 +363,7 @@ p.clickable-route:hover {
 @media (max-width: 800px) {
     
     #contact-form-container {
-        height: 1080px;
+        height: 1000px;
         h2 {
             margin: 24px 0;
         }

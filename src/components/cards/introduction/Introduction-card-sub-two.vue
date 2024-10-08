@@ -65,18 +65,6 @@ export default {
   padding-top: 20px;
 }
 
-.background-wrapper-red {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #ffffff00;
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-}
-
 .center-title {
   font-weight: 800;
   text-align: center;

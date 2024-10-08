@@ -41,26 +41,7 @@
         </template>
       </Accordion>
     </div>
-    <div class="background-wrapper products-background">
-      <div class="why-cards-container">
-        <h2>Waarom kiest u voor InsteQ?</h2>
-        <div class="why-cards">
-          <WhyCard title="Duurzaam totaaladvies"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-            icon="sustainable" />
-          <WhyCard title="Gecertificeerd"
-            description="Wij combineren kennis met vakmanschap en dat maakt onze collega's echte specialisten met de juiste certificering."
-            icon="certified" />
-          <WhyCard title="Hoge kwaliteit en garantie"
-            description="Wij werken met merken en fabrikanten die marktleider zijn in ons vakgebied. Denk aan; Vaillaint, LG, etc."
-            icon="quality" />
-          <WhyCard title="Direct leverbaar"
-            description="Met onze producten en diensten helpen wij u vandaag bij uw volgende stap in duurzaam comfortabel wonen en werken."
-            icon="delivery" />
-        </div>
-      </div>
-    </div>
-
+    <WhyCards />
   </div>
 </template>
 
@@ -72,7 +53,7 @@ import QuoteCard from '@/components/cards/Quote.vue';
 import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
-import WhyCard from '@/components/cards/Why-card.vue';
+import WhyCards from '@/components/Why-cards.vue';
 import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
@@ -86,7 +67,7 @@ export default {
     ContentCardOne,
     Accordion,
     AccordionItem,
-    WhyCard,
+    WhyCards,
     IntroductionCardSub,
     ContentCardOneRed
   }
@@ -100,47 +81,10 @@ export default {
   padding-top: 20px;
 }
 
-.background-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 40px);
-  background-color: rgba(238, 238, 238, 0.4117647059);
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-  position: relative;
-  margin-top: 20px;
-}
-
-.background-wrapper-grey {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 40px);
-  background-color: #edf1f6ad;
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-  position: relative;
-}
-
 .content-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-.background-wrapper-white {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 40px);
-  background-color: #ffffff;
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-  position: relative;
 }
 
 .product-cards-container {
@@ -331,24 +275,6 @@ export default {
   /* Schuift naar binnen */
   opacity: 1;
   /* Wordt zichtbaar */
-}
-
-.why-cards-container {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 90%;
-}
-
-.why-cards-container h2 {
-  font-weight: 800;
-  margin-bottom: 40px;
-}
-
-.why-cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
 .card-button .btn-link {

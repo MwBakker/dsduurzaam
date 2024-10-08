@@ -25,7 +25,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import WhyCard from './cards/Why-card.vue';
 
 </script>

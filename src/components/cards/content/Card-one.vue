@@ -124,7 +124,7 @@ ul {
 
   li {
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -144,7 +144,6 @@ ul {
   padding: 15px 30px;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem;
   font-weight: 800;
   text-align: center;
   margin-top: 20px;
@@ -241,5 +240,14 @@ ul {
   .content-wrapper {
     margin: 24px 0;
   }
+
+  .content-text {
+    padding: 16px;
+
+    h2 {
+      text-align: center;
+    }
+  }
+  
 }
 </style>

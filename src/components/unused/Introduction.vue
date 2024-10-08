@@ -70,18 +70,6 @@ export default {
   padding-top: 20px;
 }
 
-.background-wrapper-white {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #ffffff;
-  padding: 20px 0;
-  box-sizing: border-box;
-  margin: 0 auto 50px;
-  position: relative;
-}
-
 .content-container {
   display: flex;
   flex-direction: column;

@@ -3,7 +3,7 @@
   <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
     <div id="titles-header">
       <h2>{{ mainTitle }}</h2>
-      <span id="link-with-arrow" @click="goRoute(mainUrl)" v-if="showMainUrl == 1">
+      <span v-if="showMainUrl == 1" id="link-with-arrow" @click="goRoute(mainUrl)">
         <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
@@ -233,7 +233,7 @@ button:hover .button-arrow {
     h2 {
       text-align: center;
       font-size: 2.6em;
-      width: 100%;
+      width: initial;
     }
 
     #link-with-arrow {
@@ -254,9 +254,18 @@ button:hover .button-arrow {
 }
 
 @media (max-width: 800px) {
+  #titles-header {
+    width: 90%;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.3em;
+    }
+  }
+
   #header-content {
-    height: 560px;
-    padding: 0 0 40px 0;
+    height: 456px;
+    padding: 0 0 120px 0;
   }
 }
 </style>
