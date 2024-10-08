@@ -4,7 +4,7 @@
     <div id="titles-header">
       <h2>{{ mainTitle }}</h2>
       <span v-if="showMainUrl == 1" id="link-with-arrow" @click="goRoute(mainUrl)">
-        <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns=" https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
         <p>Lees meer</p>
@@ -16,7 +16,7 @@
       <!--
             <button @click="rout(boxUrl)">
         Klik hier
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           class="button-arrow">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>

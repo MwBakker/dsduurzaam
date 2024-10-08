@@ -15,7 +15,7 @@
     "vue": "^3.4.21",
     "vue-carousel": "^0.18.0",
     "vue-router": "^4.3.0",
-    "vue-slick-carousel": "^1.0.6",
+    "vue-slick-carousel": "^1.0.5",
     "vue2-collapse": "^1.0.15",
     "vue3-google-map": "^0.20.0",
     "vue3-slick-carousel": "^1.0.6",

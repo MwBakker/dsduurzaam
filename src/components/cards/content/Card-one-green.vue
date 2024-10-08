@@ -12,7 +12,7 @@
         <!-- Optionele CTA Button with Arrow -->
         <router-link v-if="showButton" :to="linkUrl" class="cta-button">
           <span>{{ buttonText }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="button-arrow">
+          <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </router-link>

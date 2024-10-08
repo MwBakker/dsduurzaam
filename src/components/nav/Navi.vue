@@ -42,7 +42,7 @@
           <li :class="{ active: isProductActive || isDropdownVisible }" id="dropdown-toggle" @mouseenter="showDropdown"
             @mouseleave="checkIfShouldHideDropdown">
             Onze producten
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+            <svg xmlns="https://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" :class="{ 'rotate-icon': isDropdownVisible }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -72,7 +72,7 @@
       <div class="nav-right">
         <button class="nav-button contact-button" @click="scrollToContactForm">
           Offerte aanvragen
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
