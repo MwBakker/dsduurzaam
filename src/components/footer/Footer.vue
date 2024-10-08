@@ -221,7 +221,7 @@ a {
 }
 
 #section-light {
-    background: linear-gradient(to right, #08535e, #49a3b5);
+    background-color: #1b3a5d;
     padding: 15px 0;
     /* Voeg wat padding toe boven en onder de inhoud */
     width: 100%;

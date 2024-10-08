@@ -201,7 +201,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #08535e;
+  color: #1b3a5d;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -213,7 +213,7 @@ export default {
 }
 
 .right-content svg {
-  fill: #08535e;
+  fill: #1b3a5d;
 }
 
 .right-content a:hover svg {}
@@ -316,7 +316,7 @@ nav {
   margin-right: 0px;
   font-weight: 700;
   font-size: 1.1rem;
-  color: #08535e;
+  color: #1b3a5d;
   padding: 20px;
 }
 
@@ -494,7 +494,7 @@ nav {
   /* Verticaal centreren van de tekst en de pijl */
   gap: 8px;
   /* Ruimte tussen de tekst en de pijl */
-  background-color: #8dc63f !important;
+  background-color: #8dc63f;
   color: #fff;
   font-size: 1.3em;
   font-weight: 700;
@@ -506,7 +506,7 @@ nav {
 }
 
 .nav-button:hover {
-  background-color: #8ec63fe3 !important;
+  background-color: #8ec63fe5;
 }
 
 
@@ -546,7 +546,7 @@ nav {
 .center-content span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #08535e;
+  color: #1b3a5d;
   /* Aangepaste kleur, indien gewenst */
 }
 

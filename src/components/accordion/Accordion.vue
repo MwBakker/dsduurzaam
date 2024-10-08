@@ -75,5 +75,6 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
   /* Voeg ruimte onder de titel toe */
+  color: #1b3a5d;
 }
 </style>

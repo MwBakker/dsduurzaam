@@ -334,7 +334,7 @@
   }
 
   .cta-button:hover {
-    background-color: #8dc63f;
+    background-color: #8ec63f48;
     /* Pas de achtergrondkleur aan bij hover */
   }
 
@@ -373,13 +373,15 @@
   }
 
   .text-container h2 {
+
     font-weight: 800;
     margin-bottom: 20px;
-
+    color: #1b3a5d;
   }
 
   .text-container p {
     font-weight: 500;
+    color: #4a4a4a;
   }
 
   .extra-margin {

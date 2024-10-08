@@ -304,7 +304,7 @@ textarea::placeholder {
 }
 
 #button-send:hover {
-    background-color: #8ec63fe3;
+    background-color: #8ec63fe5;;
     /* Pas de achtergrondkleur aan bij hover */
 }
 

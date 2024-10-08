@@ -100,15 +100,13 @@ export default {
   left: 0;
   height: 100%;
   width: 60%;
-  background: linear-gradient(to right, #08535e, #49a3b5);
-  ;
+  background: linear-gradient(to right, #1b3a5d, #49a3b5);
   z-index: 0;
 }
 
 .content-text {
   flex-basis: 50%;
   padding: 50px 20px;
-  /* Verhoog de padding-top om de tekst naar beneden te verplaatsen */
   padding-right: 50px;
   position: relative;
   z-index: 1;
@@ -142,7 +140,7 @@ ul {
 
 .cta-button {
   background-color: #ffffff;
-  color: #08535e;
+  color: #1b3a5d;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -182,7 +180,7 @@ ul {
 }
 
 .cta-button .button-arrow {
-  stroke: #08535e !important;
+  stroke: #1b3a5d !important;
 }
 
 .content-image {
