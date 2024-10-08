@@ -317,7 +317,7 @@ nav {
     padding: 20px;
 
     &:hover {
-      color: #8dc63f;
+      color: #8dc63f !important;
     }
   }
 }
