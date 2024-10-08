@@ -18,7 +18,7 @@
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
         <div class="text-container">
-          <h2>Onze productens</h2>
+          <h2>Onze producten</h2>
           <p>
             Onze professionals nemen de volledige verduurzaming van uw woning of bedrijfspand uit handen. Of u nu
             particulier of zakelijk klant bent, u profiteert altijd van de hoogste kwaliteit en persoonlijke service.
@@ -377,12 +377,12 @@
 
     font-weight: 800;
     margin-bottom: 20px;
-    color: #1b3a5d;
+    color: #08535e;
   }
 
   .text-container p {
     font-weight: 500;
-    color: #4a4a4a;
+    color: #08535e !important;
   }
 
   .extra-margin {

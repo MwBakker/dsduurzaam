@@ -12,7 +12,7 @@
         <!-- Optionele CTA Button with Arrow -->
         <router-link v-if="showButton" :to="linkUrl" class="cta-button">
           <span>{{ buttonText }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             class="button-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
           </svg>
@@ -100,13 +100,14 @@ export default {
   left: 0;
   height: 100%;
   width: 60%;
-  background: linear-gradient(to right, #1b3a5d, #49a3b5);
+  background: linear-gradient(to right, #08535e, #49a3b5);
   z-index: 0;
 }
 
 .content-text {
   flex-basis: 50%;
   padding: 50px 20px;
+  /* Verhoog de padding-top om de tekst naar beneden te verplaatsen */
   padding-right: 50px;
   position: relative;
   z-index: 1;
@@ -140,7 +141,7 @@ ul {
 
 .cta-button {
   background-color: #ffffff;
-  color: #1b3a5d;
+  color: #08535e;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -180,7 +181,7 @@ ul {
 }
 
 .cta-button .button-arrow {
-  stroke: #1b3a5d !important;
+  stroke: #08535e !important;
 }
 
 .content-image {

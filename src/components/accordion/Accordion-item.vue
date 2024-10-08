@@ -95,12 +95,12 @@ export default {
 
 h3 {
   font-size: 1.5rem;
-  color: #1b3a5d;
+  color: #08535e;
   font-weight: 600;
 
   &:hover {
     font-weight: 700;
-    color: #1b3a5d;
+    color: #08535e;
   }
 
   .open {
@@ -111,7 +111,7 @@ h3 {
 p {
   font-weight: 500;
   line-height: 1.6;
-  color: #4a4a4a;
+  color: #08535e !important;
 }
 
 .accordion-header {

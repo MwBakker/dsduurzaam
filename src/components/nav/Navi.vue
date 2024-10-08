@@ -201,7 +201,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #1b3a5d;
+  color: #08535e;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -213,7 +213,7 @@ export default {
 }
 
 .right-content svg {
-  fill: #1b3a5d;
+  fill: #08535e;
 }
 
 .right-content a:hover svg {}
@@ -316,12 +316,12 @@ nav {
   margin-right: 0px;
   font-weight: 700;
   font-size: 1.1rem;
-  color: #1b3a5d;
+  color: #08535e !important;
   padding: 20px;
 }
 
 #titles li:hover {
-  color: #8dc63f;
+  color: #8dc63f !important;
 }
 
 
@@ -546,7 +546,7 @@ nav {
 .center-content span {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1b3a5d;
+  color: #08535e;
   /* Aangepaste kleur, indien gewenst */
 }
 

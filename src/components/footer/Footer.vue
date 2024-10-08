@@ -53,13 +53,13 @@
                 <h1>Social media</h1>
                 <div id="logos-content">
                     <a href="https://www.facebook.com/dsduurzaam/">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-logo">
+                        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-logo">
                             <path
                                 d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.325 24H12.82V14.706H9.692v-3.59h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.312h3.588l-.467 3.59h-3.121V24h6.116c.728 0 1.325-.597 1.325-1.326V1.326C24 .597 23.403 0 22.675 0z" />
                         </svg>
                     </a>
                     <a href="https://www.linkedin.com/company/dsduurzaam/">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-logo">
+                        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-logo">
                             <path
                                 d="M22.23 0H1.77C.79 0 0 .774 0 1.729v20.543C0 23.225.79 24 1.77 24h20.46c.98 0 1.77-.774 1.77-1.728V1.729C24 .774 23.21 0 22.23 0zM7.07 20.452H3.56V9.047h3.51v11.405zM5.318 7.545a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zm15.13 12.907h-3.51v-5.518c0-1.315-.03-3.008-1.834-3.008-1.832 0-2.113 1.433-2.113 2.912v5.614h-3.51V9.047h3.264v1.564h.047c.454-.854 1.565-1.764 3.219-1.764 3.44 0 4.077 2.26 4.077 5.2v6.405z" />
                         </svg>
@@ -221,7 +221,7 @@ a {
 }
 
 #section-light {
-    background-color: #1b3a5d;
+    background: linear-gradient(to right, #08535e, #49a3b5) !important;
     padding: 15px 0;
     /* Voeg wat padding toe boven en onder de inhoud */
     width: 100%;
