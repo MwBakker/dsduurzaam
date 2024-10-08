@@ -141,9 +141,6 @@ export default {
 };
 </script>
 
-
-
-
 <style lang="scss" scoped>
 #nav-container {
   width: 100%;
@@ -412,7 +409,6 @@ nav {
   }
 }
 
-
 .cards-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -421,12 +417,6 @@ nav {
   padding: 0 20px;
   box-sizing: border-box;
   width: 100%;
-}
-
-.card-title h2 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
 }
 
 .overlay {
@@ -491,21 +481,21 @@ nav {
 .center-content {
   flex: 1;
   text-align: center;
-}
 
-.center-content h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #8dc63f;
-  /* Aangepaste kleur, je kunt deze aanpassen naar wens */
-}
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #8dc63f;
+    /* Aangepaste kleur, je kunt deze aanpassen naar wens */
+  }
 
-.center-content span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #1b3a5d;
-  /* Aangepaste kleur, indien gewenst */
+  span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1b3a5d;
+    /* Aangepaste kleur, indien gewenst */
+  }
 }
 
 .nav-right .contact-button {
