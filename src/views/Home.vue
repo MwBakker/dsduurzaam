@@ -18,7 +18,7 @@
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
         <div class="text-container">
-          <h2>Onze productens</h2>
+          <h2>Onze producten</h2>
           <p>
             Onze professionals nemen de volledige verduurzaming van uw woning of bedrijfspand uit handen. Of u nu
             particulier of zakelijk klant bent, u profiteert altijd van de hoogste kwaliteit en persoonlijke service.
@@ -26,15 +26,6 @@
           <p class="extra-margin">
             Nieuwsgierig naar ons aanbod? We vertellen u er graag meer over!
           </p>
-          <!--
-                      <button class="cta-button">
-            <span>Neem contact op</span>
-            <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              class="button-arrow">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
-          -->
         </div>
         <!-- Productkaarten sectie (60% breedte) -->
         <div class="cards-container">
@@ -60,7 +51,7 @@
       imageAlt="Voorbeeldafbeelding"
       title="Heerlijk koel in de zomer en aangenaam warm in de winter"
       feature1Title="Geen last van hete zomers"
-      feature1Description="Door gebruik te maken van een warmtepomp & airconditioning combinatie blijft het heerlijk koel in de zomer en bespaar je op de kosten."
+      feature1Description="Door gebruik te maken van een warmtepomp & airconditioning combinatie blijft het heerlijk koel in de zomer en bespaar uw op de kosten."
       feature2Title="Besparen in de winter"
       feature2Description="Onze airconditioners kunnen ook verwarmen voor in de koude wintermaanden. Gemiddeld verdienen klanten hun investering terug in 2 tot 5 jaar."
       iconSrc1="greencheck.png"
@@ -110,10 +101,10 @@
       title="Betrouwbare service, altijd paraat" 
       :listItems="['Van installatie tot onderhoud, wij begeleiden u in elke stap van het proces.',
           'Installatie door vakbekwame en volledig gecertificeerde experts',
-          'Ontvang tot € 500,-- korting als je bij ons je warmtepomp koopt',
-          'Wij handelen het gehele subsidietraject voor je af',
-          'Wij handelen het gehele subsidietraject voor je af',
-          'Wij handelen het gehele subsidietraject voor je af']" 
+          'Ontvang tot € 500,-- korting als u bij ons uw warmtepomp koopt',
+          'Wij handelen het gehele subsidietraject voor uw af',
+          'Wij handelen het gehele subsidietraject voor uw af',
+          'Wij handelen het gehele subsidietraject voor uw af']" 
       imageSrc="service.png" 
       linkUrl="/advies" 
       :showButton="false" 
@@ -123,34 +114,24 @@
 </template>
 
   <script>
-  import ParagraphCardSmall from '@/components/cards/paragraph/Small.vue';
-  import ParagraphCard from '@/components/cards/paragraph/Regular.vue';
   import ProductCard from '@/components/cards/product/Regular.vue';
-  import QuoteCard from '@/components/cards/Quote.vue';
   import ContentCardOne from '@/components/cards/content/Card-one.vue';
   import Accordion from '@/components/accordion/Accordion.vue';
   import AccordionItem from '@/components/accordion/Accordion-item.vue';
   import WhyCards from '@/components/Why-cards.vue';
-  // import IntroductionCard from '@/components/cards/introduction/Introduction.vue';
   import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
   import ContentCardTwo from '@/components/cards/content/Card-two.vue';
-  import ContentCardOneRed from '@/components/cards/content/Card-one-red.vue';
 
   export default {
     name: "Home",
     components: {
       ProductCard,
-      QuoteCard,
-      ParagraphCard,
-      ParagraphCardSmall,
       ContentCardOne,
       Accordion,
       AccordionItem,
       WhyCards,
-      // IntroductionCard,
       IntroductionCardSub,
       ContentCardTwo,
-      ContentCardOneRed
     }
   };
 </script>
@@ -220,7 +201,6 @@
     font-weight: 800;
     margin-bottom: 10px;
   }
-
 
   .cards-container {
     display: grid;
@@ -300,45 +280,6 @@
     padding: 20px;
   }
 
-  #quotes {
-    display: flex;
-    width: 78.8%;
-    justify-content: center;
-    background-color: #eaeef3;
-    margin-bottom: 50px;
-  }
-
-  .cta-button {
-    background-color: #8dc63f;
-    color: #ffffff;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-align: center;
-    margin-top: 20px;
-    position: relative;
-    overflow: hidden;
-    /* Verberg wat buiten de knop valt */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    /* Zorg ervoor dat de tekst gecentreerd is */
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    width: 400px;
-    margin-top: 50px;
-  }
-
-  .cta-button span {
-    position: relative;
-  }
-
-  .cta-button:hover {
-    background-color: #8ec63f48;
-    /* Pas de achtergrondkleur aan bij hover */
-  }
-
   /* Zorg dat de pijl start buiten zicht, aan de rechterkant */
   .button-arrow {
     position: absolute;
@@ -349,14 +290,6 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateX(-30px);
     /* Start buiten de knop */
-  }
-
-  /* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-  .cta-button:hover .button-arrow {
-    transform: translateX(0);
-    /* Schuift naar binnen */
-    opacity: 1;
-    /* Wordt zichtbaar */
   }
 
   .card-button .btn-link {
@@ -388,11 +321,6 @@
   .extra-margin {
     margin-top: 40px;
     /* Verhoog de waarde als je meer ruimte wilt */
-  }
-
-  .cta-button .button-arrow {
-    stroke: #08535e !important;
-    /* Zorg ervoor dat de pijl zwart wordt */
   }
 
   .products-background {
