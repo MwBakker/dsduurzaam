@@ -1,10 +1,5 @@
 <template>
   <div id="airco">
-    <div class="background-wrapper">
-      <IntroductionCardSub title="Comfortabel in de zomer en in de winter"
-        text="Airco's zijn systemen die zowel kunnen koelen als verwarmen, waardoor ze het hele jaar door voor een comfortabele temperatuur zorgen. Ze zijn steeds energiezuiniger en dragen bij aan duurzaamheid, vooral wanneer ze gecombineerd worden met zonnepanelen die de benodigde stroom leveren. Hierdoor zijn airco’s een milieuvriendelijke en kostenefficiënte keuze voor klimaatregeling in huis of op kantoor."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten airconditioners zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -55,7 +50,6 @@ import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
-import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 
 export default {
   name: "Airco",
@@ -64,7 +58,6 @@ export default {
     Accordion,
     AccordionItem,
     WhyCards,
-    IntroductionCardSub
   }
 };
 </script>

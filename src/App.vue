@@ -1,56 +1,33 @@
 <template>
-  <navBar v-if="windowWidth > 1280" ref="navBar" />
-  <navBarMobile v-else ref="navBar" />
-  <upperContentContainer v-if="showHeader()" :mainImg="headerImg" :mainTitle="headerTitle" :showMainUrl="showHeaderUrl"
-    :mainUrl="headerMainUrl" :showBox="showHeaderBox" :boxTitle="headerBoxTitle" :boxDescription="headerBoxDescription"
-    :boxUrl="headerBoxUrl">
-  </upperContentContainer>
-  <div :style="{ height: getHeaderHeight() }" v-else></div>
+  <NavBar v-if="windowWidth > 1280" ref="navBar" />
+  <NavBarMobile v-else ref="navBar" />
+  <CustomHeader :mainImg="activePage" :mainTitle="headerTitle" :mainUrl="headerMainUrl" />
+  <div id="intro-card" class="background-wrapper">
+    <IntroCard title="Duurzaam wonen: verlaag uw maandlasten"
+      text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
+      buttonText="Je knoptekst hier" :showButton="false" />
+  </div>
   <router-view />
-  <customFooter />
+  <CustomFooter />
   <!-- <CookieConsent /> -->
 </template>
 <script>
-import navBar from "./components/nav/Navi.vue";
-import navBarMobile from "./components/nav/Navi-mobile.vue";
-import customFooter from "./components/footer/Footer.vue";
-import upperContentContainer from "./components/nav/Upper-content-container.vue";
+import NavBar from "./components/nav/Navi.vue";
+import NavBarMobile from "./components/nav/Navi-mobile.vue";
+import CustomHeader from "./components/nav/Header-custom.vue";
+import IntroCard from "./components/cards/introduction/Introduction-card-sub.vue";
+import CustomFooter from "./components/footer/Footer.vue";
+
 // import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
   name: "App",
-  data() {
-    return {
-      windowWidth: window.innerWidth,
-      activePage: 'home', // Default waarde, maar we gaan dit updaten op basis van de route
-      headerImg: 'home',
-      headerTitle: 'Uw huis verwarmen met een waterpomp',
-      showHeaderUrl: 1,
-      headerMainUrl: 'heat-pump',
-      showHeaderBox: 0,
-      headerBoxTitle: 'Tip: Subsidie',
-      headerBoxDescription: 'Uw absolute partner voor een energiezuiniger leven en werken!',
-      headerBoxUrl: 'heat-pump',
-      headerContent: {
-        'home': ['Uw huis verwarmen met een waterpomp', 1, 'heat-pump', 0, "Subsidie", "Uw absolute partner voor een energiezuiniger leven en werken!", 'service'],
-        'heat-pump': ['Duurzaam verwarmen met onze warmtepompen', 0, 'airco', 0, "Verwarm en koel duurzaam met onze warmtepompen!", "Ontdek de toekomst van energie-efficiëntie.", 'about'],
-        'airco': ["Uw huis koelen en verwarmen met airco's", 0, 'floor-heating', 0, "Ervaar ultiem comfort met onze veelzijdige airco’s!", "Koel in de zomer, verwarm in de winter en bespaar.", 'jobs'],
-        'floor-heating': ["Efficiënt verwarmen met vloerverwarming", 0, 'solar', 0, "Ervaar luxe en comfort met onze vloerverwarming!", "Geniet van gelijkmatige warmte in de winter en koel in de zomer.", 'heat-pump'],
-        'solar': ["Uw huis voorzien van stroom met zonnepanelen", 0, 'charge-points', 0, "Maximaliseer uw besparingen met onze zonnepanelen!", "Combineer duurzame energie met andere installaties.", 'floor-heating'],
-        'charge-points': ["Uw voertuig(en) opladen met een laadpaal", 0, 'services', 0, "Laad uw elektrische voertuig gemakkelijk op!", "Onze op maat gemaakte oplossingen bieden snelle en betrouwbare oplading.", 'about'],
-        'services ': ["Pakkende slogan voor product (service)", 0, 'about', 0, "Wat wij bieden", "Onze diensten helpen u verduurzamen en besparen.", 'jobs'],
-        'about': ["Ons bedrijf", 0, 'jobs', 0, "Met ons valt niet te sollen, Ter Apel weetje", "Wij bieden deskundige ondersteuning en onderhoud.", 'service'],
-        'subsidy': ["Maximaal van de staat pakken!", 0, 'jobs', 0, "Vis het meest uit de potjes!", "Het ligt er toch?", 'service'],
-        'jobs': ["Werken bij ons?", 0, 'service', 0, "Je bent nu op pagina vacatures", "Wij bieden een geweldig wurgcontract.", 'airco'],
-        'service': ["Nazorg aan onze installaties", 0, 'heat-pump', 0, "Blijf zorgeloos genieten met onze snelle service en onderhoud!", "Wij bieden deskundige ondersteuning en onderhoud.", 'heat-pump'],
-      },
-    };
-  },
   components: {
-    navBar,
-    navBarMobile,
-    customFooter,
-    upperContentContainer,
+    NavBar,
+    NavBarMobile,
+    CustomHeader,
+    IntroCard,
+    CustomFooter,
     // CookieConsent
   },
   mounted() {
@@ -64,25 +41,18 @@ export default {
     }
   },
   methods: {
-    showHeader() {
-      return this.activePage !== 'subsidy' && this.activePage !== 'service' && this.activePage !== 'manage-cookies' && this.activePage !== 'about';
-    },
-    getHeaderHeight() {
-      return this.windowWidth < 1280 ? '0px' : '150px';
-    },
     updatePageContent(pageName) {
       // Werk de actieve pagina en header content bij op basis van de route
-      const headerParams = this.headerContent[pageName];
-      if (headerParams) {
-        this.activePage = pageName;
-        this.headerImg = pageName;
-        this.headerTitle = headerParams[0];
-        this.showHeaderUrl = headerParams[1];
-        this.headerMainUrl = headerParams[2];
-        this.showHeaderBox = headerParams[3];
-        this.headerBoxTitle = headerParams[4];
-        this.headerBoxDescription = headerParams[5];
-        this.headerBoxUrl = headerParams[6];
+      this.activePage = pageName;
+      this.headerImg = pageName;
+      var headerContent = this.headerMap[this.activePage];
+      if (this.headerMap.hasOwnProperty(this.activePage)) {
+        this.headerTitle = headerContent['title'];
+        this.headerMainUrl = headerContent['url'];
+      } else {
+        this.headerImg = '';
+        this.headerTitle = '';
+        this.headerMainUrl = '';
       }
     },
     routeGo(page) {

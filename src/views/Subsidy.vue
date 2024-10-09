@@ -1,11 +1,6 @@
 <template>
   <div id="subsidy">
     <div class="background-wrapper">
-      <IntroductionCardSub class="no-top" title="Wij berekenen uw (subsidie)voordeel"
-        text="Er zijn verschillende subsidies en financiële voordelen beschikbaar die helpen bij het verduurzamen van uw woning of bedrijf. Hieronder vertellen we per duurzame installatie meer over de beschikbare subsidies en andere financiële voordelen, om zodoende de aanschaf van uw duurzame installatie te verlagen."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
-    <div class="background-wrapper">
       <IntroductionCardSubFour centerTitle="Warmtepompen en verwarmende airco's" leftTitle="Investeringssubsidie"
         leftText="De belangrijkste subsidie is de Investeringssubsidie duurzame energie en energiebesparing (ISDE). Deze subsidie biedt een tegemoetkoming voor particulieren en bedrijven die een warmtepomp of een airconditioning met verwarmfunctie installeren, mits deze voldoen aan de eisen van de Rijksdienst voor Ondernemend Nederland (RVO). De subsidiebedragen variëren afhankelijk van het type systeem, zoals lucht-water of grond-water warmtepompen, en kunnen variëren tussen €1.000 en €4.500."
         rightTitle="Verlaagd BTW-tarief"
@@ -29,13 +24,11 @@
 </template>
 
 <script>
-import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 import IntroductionCardSubFour from '@/components/cards/introduction/Introduction-card-sub-four.vue';
 
 export default {
   name: "Service",
   components: {
-    IntroductionCardSub,
     IntroductionCardSubFour
   }
 };

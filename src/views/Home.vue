@@ -1,18 +1,5 @@
 <template>
   <div id="home">
-    <div id="intro" class="background-wrapper">
-      <IntroductionCardSub title="Duurzaam wonen: verlaag uw maandlasten"
-        text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
-    <!--
-    <IntroductionCard
-      title1="Uw duurzame installatie, ons vakmanschap – met persoonlijke service en maatwerk vanaf de eerste stap"
-      text1="" title2="Wat wij doen"
-      text2="We leveren en installeren duurzame installaties, afgestemd op de specifieke wensen van onze klanten. Van zonnepanelen tot warmtepompen, wij bieden maatwerkoplossingen die voldoen aan de hoogste normen voor energiezuinigheid en functionaliteit."
-      title3="Waar wij voor staan"
-      text3="We geloven in de kracht van duurzaamheid en maatwerk. Onze missie is om klanten oplossingen te bieden die bijdragen aan een beter milieu en volledig aansluiten op hun behoeften. Als betrouwbare partner streven we altijd naar de beste resultaten." />
-    -->
     <div id="products" class="background-wrapper">
       <!-- Container voor de twee secties -->
       <div class="content-container">
@@ -119,7 +106,6 @@
   import Accordion from '@/components/accordion/Accordion.vue';
   import AccordionItem from '@/components/accordion/Accordion-item.vue';
   import WhyCards from '@/components/Why-cards.vue';
-  import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
   import ContentCardTwo from '@/components/cards/content/Card-two.vue';
 
   export default {
@@ -130,7 +116,6 @@
       Accordion,
       AccordionItem,
       WhyCards,
-      IntroductionCardSub,
       ContentCardTwo,
     }
   };

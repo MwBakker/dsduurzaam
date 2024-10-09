@@ -1,29 +1,19 @@
 <template>
-  <!-- Container-main voor de bestaande content -->
-  <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
-    <div id="titles-header">
-      <h2>{{ mainTitle }}</h2>
-      <span v-if="showMainUrl == 1" id="link-with-arrow" @click="goRoute(mainUrl)">
-        <svg xmlns=" https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-        <p>Lees meer</p>
-      </span>
-    </div>
-    <div id="overlay-square" v-if="showBox == 1">
-      <h1>{{ boxTitle }}</h1>
-      <p>{{ boxDescription }}</p>
-      <!--
-            <button @click="rout(boxUrl)">
-        Klik hier
-        <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-          class="button-arrow">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </button>
-      -->
+  <!-- Check of the header een titel heeft, anders geen header -->
+  <div v-if="mainTitle != ''">
+    <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
+      <div id="titles-header">
+        <h2>{{ mainTitle }}</h2>
+        <span v-if="mainUrl != ''" id="link-with-arrow" @click="goRoute(mainUrl)">
+          <svg xmlns=" https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          <p>Lees meer</p>
+        </span>
+      </div>
     </div>
   </div>
+  <div :style="{ height: getHeaderHeight() }" v-else></div>
 </template>
 
 <script>
@@ -38,32 +28,15 @@ export default {
       type: String,
       required: true
     },
-    showMainUrl: {
-      type: Number,
-      required: true
-    },
     mainUrl: {
       type: String,
       required: true
     },
-    showBox: {
-      type: Number,
-      required: true,
-    },
-    boxTitle: {
-      type: String,
-      required: true,
-    },
-    boxDescription: {
-      type: String,
-      required: true,
-    },
-    boxUrl: {
-      type: String,
-      required: true
-    }
   },
   methods: {
+    getHeaderHeight() {
+      return this.windowWidth < 1280 ? '0px' : '150px';
+    },
     goRoute(page) {
       this.$root.routeGo(page);
     },

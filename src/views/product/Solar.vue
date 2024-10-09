@@ -1,10 +1,5 @@
 <template>
   <div id="solar">
-    <div class="background-wrapper">
-      <IntroductionCardSub title="Zelf stroom opwekken voor al uw apparaten en (duurzame) installaties"
-        text="Zonnepanelen blijven een slimme investering, zelfs met de afbouw van de salderingsregeling. U hoeft minder stroom terug te leveren, omdat uw andere duurzame installaties zoals warmtepompen of elektrische auto's direct kunt voeden. Dit verlaagt uw energiekosten en maakt u minder afhankelijk van energieleveranciers. Ondanks de regeling verdienen zonnepanelen zich nog steeds snel terug door lagere kosten en duurzaamheid."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten zonnepanelen zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -60,7 +55,6 @@ import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
-import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 
 export default {
   name: "Solar",
@@ -69,7 +63,6 @@ export default {
     Accordion,
     AccordionItem,
     WhyCards,
-    IntroductionCardSub,
   }
 };
 </script>

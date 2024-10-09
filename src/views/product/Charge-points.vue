@@ -1,10 +1,5 @@
 <template>
   <div id="charge-points">
-    <div class="background-wrapper">
-      <IntroductionCardSub title="Duurzaam rijden begint met een eigen laadpaal"
-        text="Laadpalen zijn essentieel voor de transitie naar elektrisch rijden en dragen bij aan een duurzamere toekomst. Ze maken het mogelijk voertuigen op te laden met groene energie, zoals die van zonnepanelen, waardoor de CO₂-uitstoot aanzienlijk wordt verminderd. Door fossiele brandstoffen te vermijden, bieden laadpalen een milieuvriendelijke oplossing voor schonere lucht en minder vervuiling, zowel thuis als op het werk."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten laadpalen zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -59,7 +54,6 @@ import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
-import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 
 export default {
   name: "Charge-points",
@@ -68,7 +62,6 @@ export default {
     Accordion,
     AccordionItem,
     WhyCards,
-    IntroductionCardSub,
   }
 };
 </script>

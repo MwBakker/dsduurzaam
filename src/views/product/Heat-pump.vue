@@ -1,10 +1,5 @@
 <template>
   <div id="heat-pump">
-    <div class="background-wrapper">
-      <IntroductionCardSub title="Gasvrij wonen of werken met een warmtepomp"
-        text="Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op uw energiekosten en verminder uw CO₂-uitstoot terwijl u geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning. "
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten warmtepompen zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -62,7 +57,6 @@ import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
-import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 
 export default {
   name: "Heat-pump",
@@ -71,7 +65,6 @@ export default {
     Accordion,
     AccordionItem,
     WhyCards,
-    IntroductionCardSub,
   }
 };
 </script>

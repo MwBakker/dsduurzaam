@@ -1,10 +1,5 @@
 <template>
   <div id="floor-heating">
-    <div class="background-wrapper">
-      <IntroductionCardSub title="Comfortabel en efficiënt"
-        text="Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door uw hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen uw huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis."
-        buttonText="Je knoptekst hier" :showButton="false" />
-    </div>
     <div class="background-wrapper-white">
       <Accordion title="Welke soorten vloerverwarming zijn er?">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -50,7 +45,6 @@ import ContentCardOne from '@/components/cards/content/Card-one.vue';
 import Accordion from '@/components/accordion/Accordion.vue';
 import AccordionItem from '@/components/accordion/Accordion-item.vue';
 import WhyCards from '@/components/Why-cards.vue';
-import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 
 export default {
   name: "floor-heating",
@@ -59,7 +53,6 @@ export default {
     Accordion,
     AccordionItem,
     WhyCards,
-    IntroductionCardSub,
   }
 };
 </script>

@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import upper_content_container from "./Upper-content-container.vue"
+import upper_content_container from "./Header-custom.vue"
 
 export default {
     name: "navigation-bar",

@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import upper_content_container from "./Upper-content-container.vue";
+import upper_content_container from "./Header-custom.vue";
 import svgIcon from "./icon.vue";
 import ProductCard from '@/components/cards/product/Regular.vue';
 
