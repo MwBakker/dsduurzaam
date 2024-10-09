@@ -8,14 +8,14 @@
   <div :style="{ height: getHeaderHeight() }" v-else></div>
   <router-view />
   <customFooter />
-  <CookieConsent />
+  <!-- <CookieConsent /> -->
 </template>
 <script>
 import navBar from "./components/nav/Navi.vue";
 import navBarMobile from "./components/nav/Navi-mobile.vue";
 import customFooter from "./components/footer/Footer.vue";
 import upperContentContainer from "./components/nav/Upper-content-container.vue";
-import CookieConsent from "@/components/CookieConsent.vue";
+// import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
   name: "App",
@@ -51,7 +51,7 @@ export default {
     navBarMobile,
     customFooter,
     upperContentContainer,
-    CookieConsent
+    // CookieConsent
   },
   mounted() {
     // Update de pagina inhoud op basis van de huidige route zodra de component gemount is

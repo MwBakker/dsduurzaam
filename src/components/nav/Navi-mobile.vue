@@ -65,19 +65,20 @@ export default {
             const body = document.getElementById('app-body');
             body.style.overflow = this.showNav ? 'hidden' : 'auto';
         },
-        closeMenu() {
-            this.showNav = false; // Sluit het menu
-            const body = document.getElementById('app-body');
-            body.style.overflow = 'auto'; // Zorg ervoor dat scrollen weer mogelijk is
+        goRoute(page) {
+            this.$root.routeGo(page);
+            this.closeMenu(); // Sluit het menu na het navigeren naar een nieuwe pagina
         },
         goContact() {
             this.closeMenu(); // Sluit het menu als contact wordt geselecteerd
             this.scrollTo('vue-form');
         },
-        goRoute(page) {
-            this.$root.routeGo(page);
-            this.closeMenu(); // Sluit het menu na het navigeren naar een nieuwe pagina
-        }
+        closeMenu() {
+            this.showNav = false; // Sluit het menu
+            const body = document.getElementById('app-body');
+            body.style.overflow = 'auto'; // Zorg ervoor dat scrollen weer mogelijk is
+        },
+
     }
 };
 </script>
