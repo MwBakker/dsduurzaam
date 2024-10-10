@@ -1,10 +1,8 @@
 <template>
   <div class="why-card">
     <img :src="imageUrl" alt="icon" />
-    <div class="why-card-content">
-      <div id="title">
-        <h3>{{ title }}</h3>
-      </div>
+    <div id="content">
+      <h3>{{ title }}</h3>
       <p>{{ description }}</p>
     </div>
   </div>
@@ -37,9 +35,6 @@ const imageUrl = computed(
   align-items: center;
   text-align: center;
   width: 350px;
-  /* max-width: 350px;
-  min-width: 260px; */
-  /* Verhoog de maximale breedte van de kaart */
   min-height: 350px;
   /* Voeg een minimale hoogte toe om de kaart hoger te maken */
   margin: 15px;
@@ -51,41 +46,30 @@ const imageUrl = computed(
     height: 80px;
     margin-bottom: 25px;
   }
+
+  &:hover {
+    transform: scale(1.05);
+    /* Vergroot de kaart met 5% bij hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    /* Voeg een schaduw toe bij hover */
+  }
 }
 
-/* .why-card-icon {
-  width: 80px; */
-/* Vergroot de icoon */
-/* height: 80px;
-  margin-bottom: 25px; */
-/* Iets meer ruimte tussen het icoon en de tekst */
-/* } */
+#content {
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #08535e !important;
+    margin-bottom: 10px;
+    margin-bottom: 50px;
+  }
 
-/* .why-card-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-} */
-
-.why-card-content h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #08535e !important;
-  margin-bottom: 10px;
-  margin-bottom: 50px;
+  p {
+    color: #08535e !important;
+    font-weight: 500;
+  }
 }
 
-.why-card-content p {
-  color: #08535e !important;
-  font-weight: 500;
-}
-
-.why-card:hover {
-  transform: scale(1.05);
-  /* Vergroot de kaart met 5% bij hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  /* Voeg een schaduw toe bij hover */
-}
 
 @media (max-width: 800px) {
   .why-card {
@@ -100,20 +84,20 @@ const imageUrl = computed(
       margin-bottom: 12px;
     }
 
-    #title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 46px;
-
-      h3 {
-        font-size: 1.25rem;
-        margin: 0;
-      }
-    }
-
     p {
       font-size: 1rem;
+    }
+  }
+
+  #title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 46px;
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 0;
     }
   }
 }

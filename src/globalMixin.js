@@ -5,6 +5,10 @@ export default {
             activePage: 'home', // Default waarde, maar we gaan dit updaten op basis van de route
             headerTitle: 'Uw huis verwarmen met een waterpomp',
             headerMainUrl: 'heat-pump',
+            introCardTitle: 'Duurzaam wonen: verlaag uw maandlasten',
+            introCardText: 'Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget.',
+            introCardText2: '',
+            introCardUrl: '',
             headerMap: {
                 'home': {
                     'title': 'Uw huis verwarmen met een waterpomp',

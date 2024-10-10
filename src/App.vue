@@ -2,10 +2,10 @@
   <NavBar v-if="windowWidth > 1280" ref="navBar" />
   <NavBarMobile v-else ref="navBar" />
   <CustomHeader :mainImg="activePage" :mainTitle="headerTitle" :mainUrl="headerMainUrl" />
+  <!-- introcard checkt hoe hoog top is op basis van of er een main header is of niet -->
   <div id="intro-card" class="background-wrapper">
-    <IntroCard title="Duurzaam wonen: verlaag uw maandlasten"
-      text="Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget."
-      buttonText="Je knoptekst hier" :showButton="false" />
+    <IntroCard :title=introCardTitle :text=introCardText :text2="introCardText2" :buttonText=introCardUrl
+      :style="{ top: (headerTitle == '') ? '20px' : '-60px' }" />
   </div>
   <router-view />
   <CustomFooter />
@@ -46,13 +46,13 @@ export default {
       this.activePage = pageName;
       this.headerImg = pageName;
       var headerContent = this.headerMap[this.activePage];
-      if (this.headerMap.hasOwnProperty(this.activePage)) {
+      if (headerContent != null) {
         this.headerTitle = headerContent['title'];
         this.headerMainUrl = headerContent['url'];
-      } else {
-        this.headerImg = '';
-        this.headerTitle = '';
-        this.headerMainUrl = '';
+        this.introCardTitle = headerContent['box']['title'];
+        this.introCardText = headerContent['box']['text'];
+        this.introCardText2 = headerContent['box']['text2'];
+        this.introCardUrl = headerContent['box']['url'];
       }
     },
     routeGo(page) {

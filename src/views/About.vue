@@ -17,13 +17,11 @@
 
 <script>
 import IntroductionCardSubTwo from '@/components/cards/introduction/Introduction-card-sub-two.vue';
-import IntroductionCardSubFour from '@/components/cards/introduction/Introduction-card-sub-four.vue';
 
 export default {
   name: "Service",
   components: {
     IntroductionCardSubTwo,
-    IntroductionCardSubFour,
   }
 };
 </script>

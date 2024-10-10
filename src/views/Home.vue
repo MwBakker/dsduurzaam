@@ -31,22 +31,6 @@
         </div>
       </div>
     </div>
-    <!-- TESTMEUK
-        <div class="background-wrapper-white">
-      <ContentCardTwo
-      imageSrc="content-card-two-test.png"
-      imageAlt="Voorbeeldafbeelding"
-      title="Heerlijk koel in de zomer en aangenaam warm in de winter"
-      feature1Title="Geen last van hete zomers"
-      feature1Description="Door gebruik te maken van een warmtepomp & airconditioning combinatie blijft het heerlijk koel in de zomer en bespaar uw op de kosten."
-      feature2Title="Besparen in de winter"
-      feature2Description="Onze airconditioners kunnen ook verwarmen voor in de koude wintermaanden. Gemiddeld verdienen klanten hun investering terug in 2 tot 5 jaar."
-      iconSrc1="greencheck.png"
-      iconSrc2="greencheck.png"
-    />
-    </div>
-    -->
-    <!-- Nieuwe container met content (zoals afbeelding) -->
     <ContentCardOne title="Daarom een warmtepomp via InsteQ" :listItems="[
       'U krijgt gratis deskundig advies en een offerte op maat',
       'Installatie door vakbekwame en volledig gecertificeerde experts',
@@ -54,7 +38,6 @@
       'Uitstekende service en onderhoud'
     ]" buttonText="Gratis advies aanvragen" imageSrc="home.png" linkUrl="heat-pump" linkText="Lees meer"
       showButton="true" />
-
     <div class="background-wrapper-white">
       <Accordion title="Handig om te weten">
         <template v-slot="{ currentOpen, setOpen, refs }">
@@ -82,8 +65,7 @@
       </Accordion>
     </div>
     <WhyCards />
-
-      <!--
+    <!--
         <ContentCardOne 
       title="Betrouwbare service, altijd paraat" 
       :listItems="['Van installatie tot onderhoud, wij begeleiden u in elke stap van het proces.',
@@ -100,252 +82,110 @@
   </div>
 </template>
 
-  <script>
-  import ProductCard from '@/components/cards/product/Regular.vue';
-  import ContentCardOne from '@/components/cards/content/Card-one.vue';
-  import Accordion from '@/components/accordion/Accordion.vue';
-  import AccordionItem from '@/components/accordion/Accordion-item.vue';
-  import WhyCards from '@/components/Why-cards.vue';
-  import ContentCardTwo from '@/components/cards/content/Card-two.vue';
+<script>
+import ProductCard from '@/components/cards/product/Regular.vue';
+import ContentCardOne from '@/components/cards/content/Card-one.vue';
+import Accordion from '@/components/accordion/Accordion.vue';
+import AccordionItem from '@/components/accordion/Accordion-item.vue';
+import WhyCards from '@/components/Why-cards.vue';
+import IntroductionCardSub from '@/components/cards/introduction/Introduction-card-sub.vue';
 
-  export default {
-    name: "Home",
-    components: {
-      ProductCard,
-      ContentCardOne,
-      Accordion,
-      AccordionItem,
-      WhyCards,
-      ContentCardTwo,
-    }
-  };
+export default {
+  name: "Home",
+  components: {
+    ProductCard,
+    ContentCardOne,
+    Accordion,
+    AccordionItem,
+    WhyCards,
+    IntroductionCardSub,
+  }
+};
 </script>
 
-  <style lang="scss" scoped>
-  #home {
-    margin: 0 auto;
-    width: 100%;
-    padding-top: 20px;
+<style lang="scss" scoped>
+#home {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text-container {
+  width: 50%;
+  /* Zorgt ervoor dat de tekstcontainer 40% breed is */
+  padding-top: 50px;
+  padding-left: 170px;
+  padding-right: 100px;
+  line-height: 1.6;
+
+  h2 {
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-weight: 500;
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 kolommen */
+  grid-gap: 20px;
+  /* Ruimte tussen kaarten */
+  width: 50%;
+  /* Zorg ervoor dat de kaartencontainer 60% breed is */
+  padding-right: 20px;
+  /* Voeg dezelfde padding toe als de bovenkant en onderkant */
+}
+
+.extra-margin {
+  margin-top: 40px;
+  /* Verhoog de waarde als je meer ruimte wilt */
+}
+
+@media (max-width: 1280px) {
+  .background-wrapper {
+    margin: 8px auto 0 auto;
+    padding: 0;
+
+    .text-container {
+      width: 90%;
+      padding: 16px;
+      text-align: center;
+    }
   }
 
   .content-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .product-cards-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1548px;
-    /* Maximale breedte van de product-cards-container */
-    width: 75%;
-    /* Zorg ervoor dat de breedte 75% van de beschikbare ruimte is */
-    margin: 0 auto;
-  }
-
-  .text-container {
-    width: 50%;
-    /* Zorgt ervoor dat de tekstcontainer 40% breed is */
-    padding-top: 50px;
-    padding-left: 170px;
-    padding-right: 100px;
-    line-height: 1.6;
-  }
-
-  .product-card {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    aspect-ratio: 1 / 1;
-    /* Zorg ervoor dat de kaart vierkant blijft */
-    background-color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
     flex-direction: column;
-    /* Zorg ervoor dat de inhoud netjes gestapeld wordt */
-  }
-
-  .product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .product-cards-container .card-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .product-cards-container .button {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .card-title h2 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin-bottom: 10px;
+    align-items: center;
   }
 
   .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 kolommen */
-    grid-gap: 20px;
-    /* Ruimte tussen kaarten */
-    width: 50%;
-    /* Zorg ervoor dat de kaartencontainer 60% breed is */
-    padding-right: 20px;
-    /* Voeg dezelfde padding toe als de bovenkant en onderkant */
+    width: 95%;
+  }
+}
+
+@media (max-width: 800px) {
+  #intro {
+    height: 390px;
   }
 
-  .product-cards-container>* {
-    flex: 1 1 calc(19.5% - 2px);
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: auto;
+  #products {
+    height: 880px;
+  }
+
+  .cards-container {
+    width: 90%;
     padding: 0;
-    position: relative;
-    z-index: 10;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .product-cards-container .card-image {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    display: block;
-  }
-
-  .card-image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Zorg ervoor dat de afbeelding zich aanpast aan de container */
-  }
-
-  .product-cards-container .button {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparante zwarte achtergrond */
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .product-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: space-between;
-    max-width: 1548px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  /* Zorg dat de pijl start buiten zicht, aan de rechterkant */
-  .button-arrow {
-    position: absolute;
-    right: 30px;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateX(-30px);
-    /* Start buiten de knop */
-  }
-
-  .card-button .btn-link {
-    display: inline-flex;
-    align-items: center;
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-  }
-
-  .btn-link:hover {
-    color: #ffda00;
-    /* Kleur bij hover */
-  }
-
-  .text-container h2 {
-
-    font-weight: 800;
-    margin-bottom: 20px;
-  }
-
-  .text-container p {
-    font-weight: 500;
-  }
-
-  .extra-margin {
-    margin-top: 40px;
-    /* Verhoog de waarde als je meer ruimte wilt */
-  }
-
-  .products-background {
-    background-color: #eeeeee69;
-  }
-
-
-  @media (max-width: 1280px) {
-    .background-wrapper {
-      margin: 8px auto 0 auto;
-      padding: 0;
-
-      .text-container {
-        width: 90%;
-        padding: 16px;
-        text-align: center;
-      }
-    }
-
-    .content-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .cards-container {
-      width: 95%;
-    }
-  }
-
-  @media (max-width: 800px) {
-    #intro {
-      height: 390px;
-    }
-
-    #products {
-      height: 880px;
-    }
-
-    .cards-container {
-      width: 90%;
-      padding: 0;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+}
 </style>

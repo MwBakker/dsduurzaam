@@ -4,7 +4,7 @@
       <h2>{{ title }}</h2>
       <p>{{ text }}</p>
       <p v-if="text2 != ''">{{ text2 }}</p>
-      <button v-if="showButton" class="cta-button">{{ buttonText }}</button>
+      <button v-if="buttonText != ''" class="cta-button">{{ buttonText }}</button>
     </div>
   </div>
 </template>
@@ -33,10 +33,6 @@ export default {
       required: true,
       default: "Start de check",
     },
-    showButton: {
-      type: Boolean,
-      default: true, // Standaard wordt de knop weergegeven
-    },
   },
 };
 
@@ -54,7 +50,7 @@ export default {
   box-sizing: border-box;
   margin: 0 auto 50px;
   position: relative;
-  top: -80px;
+  top: -60px;
   text-align: center;
 }
 
@@ -109,14 +105,14 @@ export default {
   #content {
     padding: 0 12px;
 
-    p {
-      margin-bottom: 6px;
-    }
-
     p,
     h2 {
       padding: 0;
       text-align: center;
+    }
+
+    p {
+      margin-bottom: 6px;
     }
 
     h2 {

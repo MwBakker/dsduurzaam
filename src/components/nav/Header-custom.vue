@@ -1,5 +1,5 @@
 <template>
-  <!-- Check of the header een titel heeft, anders geen header -->
+  <!-- Check of the header een titel heeft, anders geen header maar een vulop div -->
   <div v-if="mainTitle != ''">
     <div id="header-content" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
       <div id="titles-header">

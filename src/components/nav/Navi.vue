@@ -491,6 +491,7 @@ nav {
   span {
     font-size: 0.9rem;
     font-weight: 600;
+    color: #08535e;
     /* Aangepaste kleur, indien gewenst */
   }
 }
