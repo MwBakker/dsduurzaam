@@ -2,7 +2,7 @@
   <div class="introduction-card">
     <div class="background-wrapper-red">
       <!-- Centrale titel boven de twee kaarten -->
-      <h2 class="center-title">{{ centerTitle }}</h2>
+      <h1 class="center-title">{{ centerTitle }}</h1>
       <!-- Container voor twee secties naast elkaar -->
       <div class="content-container">
         <!-- Eerste witte kaart -->

@@ -49,14 +49,14 @@ const handleClick = () => {
   display: flex;
   align-items: center;
   /* Zorgt ervoor dat afbeelding en tekst op dezelfde hoogte zijn */
-  padding: 28px;
+  padding: 25px;
   cursor: pointer;
   /* Zorg ervoor dat het element aanklikbaar lijkt */
 }
 
 img {
-  height: 64px;
-  width: 64px;
+  height: 58px;
+  width: 58px;
   margin-right: 24px;
 }
 
@@ -69,7 +69,7 @@ img {
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #08535e;
   margin: 0;
@@ -109,7 +109,6 @@ h1 {
 
 @media (max-width: 800px) {
   #info-line {
-    width: 232px;
     height: 80px;
   }
 

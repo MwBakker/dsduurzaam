@@ -2,7 +2,7 @@
   <div class="why-card">
     <img :src="imageUrl" alt="icon" />
     <div id="content">
-      <h3>{{ title }}</h3>
+      <h2>{{ title }}</h2>
       <p>{{ description }}</p>
     </div>
   </div>
@@ -34,8 +34,8 @@ const imageUrl = computed(
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 350px;
-  min-height: 350px;
+  width: 315px;
+  min-height: 315px;
   /* Voeg een minimale hoogte toe om de kaart hoger te maken */
   margin: 15px;
   /* Voeg iets meer marge toe rondom de kaarten */
@@ -56,11 +56,9 @@ const imageUrl = computed(
 }
 
 #content {
-  h3 {
-    font-size: 1.4rem;
+  h2 {
+    font-size: 1.25rem;
     font-weight: 800;
-    color: #08535e !important;
-    margin-bottom: 10px;
     margin-bottom: 50px;
   }
 

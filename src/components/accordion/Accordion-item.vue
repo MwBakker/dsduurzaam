@@ -1,7 +1,7 @@
 <template>
   <div :class="['accordion-item', { 'closed': !isOpen }]">
     <div class="accordion-header" @click="toggle">
-      <h3 :class="{ 'open': isOpen }">{{ title }}</h3>
+      <h2 :class="{ 'open': isOpen }">{{ title }}</h2>
       <span class="accordion-icon">
         <svg v-if="isOpen" xmlns="https://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
@@ -93,9 +93,8 @@ export default {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+h2 {
+  font-size: 1.35rem;
 
   &:hover {
     font-weight: 700;
@@ -129,7 +128,6 @@ p {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
-  font-size: 1.2rem;
   font-weight: 500;
 }
 

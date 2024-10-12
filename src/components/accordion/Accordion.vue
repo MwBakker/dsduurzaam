@@ -1,7 +1,7 @@
 <template>
   <div class="accordion-wrapper">
     <div class="accordion">
-      <h2>{{ title }}</h2>
+      <h1>{{ title }}</h1>
       <slot :currentOpen="currentOpen" :setOpen="setOpen" :refs="refs"></slot>
     </div>
   </div>
@@ -61,13 +61,8 @@ export default {
   /* Gebruik de volledige breedte van de container */
 }
 
-h2 {
-  /* Aangepaste grootte */
-  font-weight: 800;
-  /* Aangepast gewicht */
-  /* Aangepaste kleur */
+h1 {
   text-align: center;
   margin-bottom: 20px;
-  /* Voeg ruimte onder de titel toe */
 }
 </style>

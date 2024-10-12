@@ -27,16 +27,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@media (max-width: 800px) {
-  #intro {
-    height: 650px;
-    padding: 0 16px;
-  }
-
-  #about-intro-card {
-    width: 100%;
-    top: 10px;
-  }
-}
 </style>

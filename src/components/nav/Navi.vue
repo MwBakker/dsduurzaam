@@ -70,13 +70,7 @@
         </ul>
       </div>
       <div class="nav-right">
-        <button class="nav-button contact-button" @click="scrollToContactForm">
-          Offerte aanvragen
-          <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="button-arrow">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
+        <ButtonArrow text="Offerte aanvragen" />
       </div>
     </nav>
   </div>
@@ -86,6 +80,7 @@
 import upper_content_container from "./Header-custom.vue";
 import svgIcon from "./icon.vue";
 import ProductCard from '@/components/cards/product/Regular.vue';
+import ButtonArrow from "../Button-arrow.vue";
 
 export default {
   name: "navigation-bar",
@@ -137,6 +132,7 @@ export default {
     upper_content_container,
     svgIcon,
     ProductCard,
+    ButtonArrow,
   },
 };
 </script>
@@ -152,10 +148,19 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#label-main {
-  height: 36px;
-  background-color: #fff;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+  border-bottom: 1px solid #d3d3d3;
+}
 
+#label-main {
+  height: 33px;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,7 +180,7 @@ export default {
   align-items: center;
   gap: 10px;
   color: #8dc63f;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
 
   svg {
@@ -197,7 +202,7 @@ export default {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
   }
 
@@ -206,7 +211,6 @@ export default {
     /* Pas de waarde aan naar wens */
     font-weight: 700;
   }
-
 
   svg {
     fill: #08535e;
@@ -224,21 +228,6 @@ export default {
   color: #8dc63f;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px 0;
-  position: relative;
-  /* Zorg dat z-index werkt */
-  z-index: 1100;
-  /* Hoger dan de z-index van de mega-dropdown */
-  border-bottom: 1px solid #d3d3d3;
-  /* Lichtgrijze border aan de onderkant */
-
-}
-
 /* Logo in het linkerdeel van de navigatie */
 .nav-left {
   flex: 1;
@@ -254,7 +243,7 @@ nav {
   /* Zorg ervoor dat de z-index correct wordt toegepast */
 
   img {
-    height: 60px;
+    height: 54px;
     width: auto;
     margin-left: 20px;
     /* Logo iets naar links verschuiven */
@@ -281,20 +270,6 @@ nav {
   padding-right: 20px;
 }
 
-/* Stijl voor een eventuele knop in de rechterkant */
-.contact-button {
-  background-color: #8dc63f;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #105490;
-  }
-}
-
 /* Titel-items */
 #titles {
   display: flex;
@@ -303,15 +278,14 @@ nav {
   margin: 0;
   padding: 0;
   list-style: none;
-  
+
   li {
     display: flex;
     align-items: center;
     cursor: pointer;
     margin-right: 0px;
     font-weight: 700;
-    font-size: 1.1rem;
-    padding: 20px;
+    padding: 18px;
 
     &:hover {
       color: #8dc63f !important;
@@ -396,7 +370,6 @@ nav {
 
   li {
     padding: 10px 20px;
-    font-size: 1rem;
     white-space: nowrap;
     cursor: pointer;
 
@@ -432,56 +405,11 @@ nav {
   /* Overlay blokkeert geen interacties */
 }
 
-.nav-button {
-  display: flex;
-  width: 50%;
-  justify-content: center;
-  /* Zorgt ervoor dat de tekst en pijl horizontaal gecentreerd worden */
-  align-items: center;
-  /* Verticaal centreren van de tekst en de pijl */
-  gap: 8px;
-  /* Ruimte tussen de tekst en de pijl */
-  background-color: #8dc63f;
-  color: #fff;
-  font-size: 1.3em;
-  font-weight: 700;
-  border: none;
-  padding: 10px 20px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-
-  &:hover {
-    background-color: #8ec63fe5;
-  }
-}
-
-/* De pijl in de knop */
-.button-arrow {
-  position: absolute;
-  right: 20px;
-  width: 1.5rem;
-  height: 1.5rem;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateX(-30px);
-  /* Startpositie buiten de knop */
-}
-
-/* Animatie bij hover */
-.nav-button:hover .button-arrow {
-  transform: translateX(0);
-  /* Schuift naar binnen */
-  opacity: 1;
-  /* Wordt zichtbaar */
-}
-
 .center-content {
   flex: 1;
   text-align: center;
 
   h2 {
-    font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
     color: #8dc63f;
@@ -489,16 +417,10 @@ nav {
   }
 
   span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: #08535e;
     /* Aangepaste kleur, indien gewenst */
   }
-}
-
-.nav-right .contact-button {
-  position: relative;
-  z-index: 1200;
-  /* Zorg dat de knop "Offerte op maat" boven de mega-dropdown komt */
 }
 </style>

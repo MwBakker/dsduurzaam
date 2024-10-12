@@ -5,7 +5,7 @@
       <div class="content-container">
         <!-- Tekst sectie (40% breedte) -->
         <div class="text-container">
-          <h2>Onze producten</h2>
+          <h1>Onze producten</h1>
           <p>
             Onze professionals nemen de volledige verduurzaming van uw woning of bedrijfspand uit handen. Of u nu
             particulier of zakelijk klant bent, u profiteert altijd van de hoogste kwaliteit en persoonlijke service.
@@ -124,8 +124,7 @@ export default {
   padding-right: 100px;
   line-height: 1.6;
 
-  h2 {
-    font-weight: 800;
+  h1 {
     margin-bottom: 20px;
   }
 
@@ -159,7 +158,7 @@ export default {
     .text-container {
       width: 90%;
       padding: 16px;
-      text-align: center;
+      // text-align: center;
     }
   }
 

@@ -1,24 +1,15 @@
 <template>
   <div class="container-content-card-one">
     <div class="content-wrapper">
-      <!-- Tekstgedeelte -->
       <div class="content-text">
-        <h2>{{ title }}</h2>
+        <h1>{{ title }}</h1>
         <ul>
           <li v-for="(item, index) in listItems" :key="index">
             <img :src="checkIconUrl" alt="Check" class="check-icon" /> {{ item }}
           </li>
         </ul>
-        <!-- Optionele CTA Button with Arrow -->
-        <router-link v-if="showButton" :to="linkUrl" class="cta-button">
-          <span>{{ buttonText }}</span>
-          <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="button-arrow">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </router-link>
+        <ButtonArrow :text=buttonText @click="goRoute(linkUrl)" />
       </div>
-      <!-- Afbeeldinggedeelte -->
       <div class="content-image">
         <img :src="imageUrl" :alt="imageAlt" class="content-card-image" />
       </div>
@@ -27,6 +18,8 @@
 </template>
 
 <script>
+import ButtonArrow from '@/components/Button-arrow.vue';
+
 export default {
   name: "ContentCardOne",
   props: {
@@ -67,6 +60,14 @@ export default {
       return new URL(`../../../assets/icon/greencheck.png`, import.meta.url).href;
     },
   },
+  method: {
+    goRoute(page) {
+      this.$root.routeGo(page);
+    },
+  },
+  components: {
+    ButtonArrow,
+  }
 };
 </script>
 
@@ -104,17 +105,7 @@ export default {
   z-index: 0;
 }
 
-.content-text {
-  flex-basis: 50%;
-  padding: 50px 20px;
-  /* Verhoog de padding-top om de tekst naar beneden te verplaatsen */
-  padding-right: 50px;
-  position: relative;
-  z-index: 1;
-}
-
-h2 {
-  font-weight: 800;
+h1 {
   color: #ffffff;
   margin-bottom: 20px;
 }
@@ -125,7 +116,7 @@ ul {
 
   li {
     margin-bottom: 10px;
-    // font-size: 1.2rem;
+    font-size: 1.075rem;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -134,54 +125,31 @@ ul {
     .check-icon {
       width: 20px;
       height: 20px;
-      margin-right: 10px;
+      margin-right: 14px;
     }
   }
 }
 
-.cta-button {
-  background-color: #ffffff;
-  color: #08535e;
-  padding: 15px 30px;
-  border: none;
-  cursor: pointer;
-  font-weight: 800;
-  text-align: center;
-  margin-top: 20px;
+button {
+  background-color: white;
+  font-size: 1em;
   width: 400px;
+  font-weight: 800;
+  margin-top: 24px;
+  color: #08535e;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.content-text {
+  flex-basis: 50%;
+  padding: 50px 20px;
+  /* Verhoog de padding-top om de tekst naar beneden te verplaatsen */
+  padding-right: 50px;
   position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.cta-button span {
-  position: relative;
-}
-
-.cta-button:hover {
-  background-color: #fff;
-}
-
-.button-arrow {
-  position: absolute;
-  right: 30px;
-  width: 1.5rem;
-  height: 1.5rem;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateX(-30px);
-}
-
-.cta-button:hover .button-arrow {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.cta-button .button-arrow {
-  stroke: #08535e !important;
+  z-index: 1;
 }
 
 .content-image {
@@ -211,6 +179,11 @@ ul {
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+
+    button {
+      width: 50%;
+      margin: 36px auto 0 auto;
+    }
   }
 
   .cta-button {
@@ -222,15 +195,18 @@ ul {
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-bottom: 36px;
+  }
+
+  .content-wrapper::before {
+    width: 100%;
   }
 
   .content-text {
     padding: 50px;
   }
 
-  .content-wrapper::before {
-    width: 100%;
-  }
+
 
   .content-image {
     display: none;
@@ -245,10 +221,10 @@ ul {
   .content-text {
     padding: 16px;
 
-    h2 {
+    h1 {
       text-align: center;
     }
   }
-  
+
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
     <div id="contact-form">
         <div id="info">
-            <infoLine icon="phone" title="Bel ons" text="0599 - 585010" />
+            <InfoLine icon="phone" title="Bel ons" text="0599 - 585010" />
             <hr>
-            <infoLine icon="mail" title="Mail ons" text="info@insteq.nl" />
+            <InfoLine icon="mail" title="Mail ons" text="info@insteq.nl" />
             <hr>
-            <infoLine icon="map" title="Bezoek ons" text="Straatnaam 1" additional-text="9999 XX Dorpnaam" />
+            <InfoLine icon="map" title="Bezoek ons" text="Straatnaam 1" additional-text="9999 XX Dorpnaam" />
         </div>
         <form id="vue-form" @submit.prevent="submit">
             <div class="contact-form-field double-field">
@@ -34,16 +34,8 @@
                 <label for="privacy-checkbox" id="privacy-label">Ik heb de privacyverklaring gelezen</label>
             </div>
             <div v-if="!sent" class="contact-form-field">
-                <button id="button-send" type="submit" class="cta-button">
-                    <span>Verzenden</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#08535e"
-                        class="button-arrow">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </button>
+                <ButtonArrow text="Verzenden" />
             </div>
-
             <div v-if="sent" class="contact-form-field">
                 <p>Uw vraag is verzonden</p>
             </div>
@@ -53,7 +45,8 @@
 
 <script>
 import axios from 'axios';
-import infoLine from './Info-line.vue';
+import InfoLine from './Info-line.vue';
+import ButtonArrow from '@/components/Button-arrow.vue';
 
 export default {
     name: "form",
@@ -88,7 +81,8 @@ export default {
         },
     },
     components: {
-        infoLine,
+        InfoLine,
+        ButtonArrow
     }
 };
 </script>
@@ -109,7 +103,7 @@ export default {
     right: 0;
     bottom: 0;
     margin: auto;
-    height: 600px;
+    height: 560px;
     margin-top: 50px;
 }
 
@@ -139,6 +133,12 @@ export default {
 
 .input-wrapper {
     width: 48%;
+}
+
+button {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 input,
@@ -176,43 +176,14 @@ label {
     }
 }
 
-#button-send {
-    background-color: #08535e;
-    color: white;
-    border: none;
-}
-
-#button-send:disabled {
+button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
 }
 
-.info-line {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.info-content {
-    margin-left: 12px;
-}
-
-.info-text {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-    /* Zorg ervoor dat er geen extra marges zijn */
-}
-
-.info-additional-text {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555;
-}
 
 input::placeholder,
 textarea::placeholder {
-    font-size: 1rem;
     /* Verander de grootte van de placeholder-tekst */
     font-weight: 500;
     /* Maak de placeholder-tekst dikker */
@@ -227,7 +198,6 @@ textarea::placeholder {
     #privacy-label {
         margin-left: 16px;
         /* Pas dezelfde kleur als de placeholder toe */
-        font-size: 1rem;
         /* Verander de grootte van de tekst */
         font-weight: 500;
         /* Maak de tekst iets dikker */
@@ -269,73 +239,17 @@ textarea::placeholder {
     /* Unicode voor Font Awesome 'fa-check' icoon */
     color: white;
     font-weight: 900;
-    font-size: 18px;
     /* Pas de grootte aan indien nodig */
-}
-
-
-#button-send {
-    background-color: #8dc63f;
-    color: #ffffff;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    /* Verberg wat buiten de knop valt */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    /* Zorg ervoor dat de tekst gecentreerd is */
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    width: 100%;
-    /* Pas de breedte aan zoals je wilt */
-    max-width: 400px;
-    /* Max breedte indien nodig */
-}
-
-#button-send span {
-    position: relative;
-}
-
-#button-send:hover {
-    background-color: #8ec63fe5;;
-    /* Pas de achtergrondkleur aan bij hover */
-}
-
-/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
-#button-send .button-arrow {
-    position: absolute;
-    right: 30px;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateX(-30px);
-    /* Start buiten de knop */
-    stroke: #ffffff !important;
-    /* Forceer de kleur van de pijl naar zwart */
-}
-
-/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-#button-send:hover .button-arrow {
-    transform: translateX(0);
-    /* Schuift naar binnen */
-    opacity: 1;
-    /* Wordt zichtbaar */
 }
 
 input,
 textarea {
-    font-size: 1rem;
+    font-size: 0.9rem;
     /* Zet de grootte van de ingevoerde tekst op 1.25rem */
     width: 100%;
     /* Zorgt ervoor dat de invoervelden 100% breed zijn */
     padding: 6px;
-    border: solid 2px #08535e;
+    border: solid 1.5px #08535e;
     background: none;
     margin-top: 5px;
     font-weight: 500;
@@ -383,7 +297,7 @@ textarea {
         margin-top: 0;
     }
 
-    #button-send {
+    button {
         font-size: 1em;
         height: 50px;
     }

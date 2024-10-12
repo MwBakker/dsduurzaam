@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <div id="contact-form-container" v-if="route.name !== 'manage-cookies'">
-            <h2>Wij komen graag met u in contact</h2>
+            <h1>Wij komen graag met u in contact</h1>
             <!-- <Transition name="slide-fade-up" appear> -->
             <CustomForm />
             <!-- </Transition> -->
@@ -11,14 +11,14 @@
         </div>
         <div id="footer-content">
             <div class="section-info">
-                <h1>InsteQ</h1>
+                <h2>InsteQ</h2>
                 <p><a href="./statements/heroepingsformulier.pdf">Herroepingsformulier</a></p>
                 <p><a href="./statements/privacyverklaring.pdf">Privacyverklaring</a></p>
                 <p><a href="./statements/disclaimer.pdf">Disclaimer</a></p>
                 <p @click="goRoute('manage-cookies')" class="clickable-route">Cookies</p>
             </div>
             <div class="section-info">
-                <h1>Adres</h1>
+                <h2>Adres</h2>
                 <a href="https://www.google.com/maps/search/?api=1&query=Hoofdstraat+4,+9561+JA,+Ter+Apel"
                     target="_blank">
                     <p>Hoofdstraat 4</p>
@@ -29,7 +29,7 @@
                 <p><a href="mailto:info@insteq.nl">info@insteq.nl</a></p>
             </div>
             <div id="services" class="section-info">
-                <h1>Diensten</h1>
+                <h2>Diensten</h2>
                 <p @click="goRoute('heat-pump')">Waterpomp</p>
                 <p @click="goRoute('airco')">Airco</p>
                 <p @click="goRoute('floor-heating')">Vloerverwarming</p>
@@ -48,9 +48,8 @@
                 </div>
             </div>
             -->
-
             <div id='logos-social' class="logos">
-                <h1>Social media</h1>
+                <h2>Social media</h2>
                 <div id="logos-content">
                     <a href="https://www.facebook.com/Insteqdi/">
                         <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-logo">
@@ -110,14 +109,12 @@ export default {
     background-color: white;
 }
 
-h1 {
-    font-size: 1.25rem;
-    font-weight: 600;
+h2 {
     margin: 32px 0 18px 0;
 }
 
 p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     margin: 6px 0;
 }
@@ -134,7 +131,7 @@ a {
 
 #map {
     width: 100%;
-    height: 440px;
+    height: 400px;
 }
 
 #footer-content {
@@ -278,8 +275,8 @@ a {
 }
 
 .social-logo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     fill: #08535e;
     /* Verander de vulkleur van de SVG naar de gewenste kleur */
 }
@@ -313,6 +310,10 @@ p a:hover {
 
     #contact-form-container {
         height: 1100px;
+
+        h1 {
+            margin: 28px 0;
+        }
     }
 
     .section-info,
@@ -353,7 +354,7 @@ p a:hover {
         width: 90%;
         margin: 0 auto;
 
-        h2 {
+        h1 {
             margin: 24px 0;
         }
     }

@@ -33,18 +33,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-
-@media (max-width: 800px) {
-  #intro {
-    height: 440px;
-    padding: 0 16px;
-  }
-
-  #subdisy-intro-card {
-    width: 100%;
-    top: 0;
-  }
-}
-</style>

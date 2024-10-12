@@ -2,7 +2,7 @@
   <div class="introduction-card">
     <div class="background-wrapper-red">
       <!-- Centrale titel boven de vier kaarten -->
-      <h2 class="center-title">{{ centerTitle }}</h2>
+      <h1 class="center-title">{{ centerTitle }}</h1>
       <!-- Container voor de eerste twee secties naast elkaar -->
       <div class="content-container">
         <!-- Eerste witte kaart -->
@@ -139,7 +139,8 @@ export default {
   }
 
   .text-container {
-    width: 100%;
+    width: 75%;
+    margin: 0 auto;
     margin-bottom: 20px;
     text-align: center;
   }

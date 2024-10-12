@@ -1,7 +1,7 @@
 <template>
     <div id="whys" class="background-wrapper products-background">
         <div class="why-cards-container">
-            <h2>Waarom kiest u voor InsteQ?</h2>
+            <h1>Waarom kiest u voor InsteQ?</h1>
             <div class="why-cards">
                 <div>
                     <WhyCard title="Duurzaam totaaladvies"
@@ -35,7 +35,7 @@ import WhyCard from './cards/Why-card.vue';
     text-align: center;
     max-width: 90%;
 
-    h2 {
+    h1 {
         font-weight: 800;
         margin-bottom: 40px;
     }

@@ -4,7 +4,7 @@
       <img :src="imageUrl" alt="Product image">
       <div class="overlay">
         <div class="card-title">
-          <h2>{{ title }}</h2>
+          <h3>{{ title }}</h3>
         </div>
         <div class="card-button">
           <span class="btn-link">
@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import { computed } from 'vue';
 
 export default {
   props: {
@@ -59,12 +58,11 @@ export default {
   aspect-ratio: 1 / 1;
   /* Houd de kaarten vierkant */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px;
-  max-height: 250px;
+  max-width: 315px;
+  max-height: 225px;
 }
 
-h2 {
-  font-size: 1.2rem;
+h3 {
   color: white;
   font-weight: 700;
   margin-bottom: 10px;

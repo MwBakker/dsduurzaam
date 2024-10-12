@@ -3,9 +3,9 @@
   <NavBarMobile v-else ref="navBar" />
   <CustomHeader :mainImg="activePage" :mainTitle="headerTitle" :mainUrl="headerMainUrl" />
   <!-- introcard checkt hoe hoog top is op basis van of er een main header is of niet -->
-  <div id="intro-card" class="background-wrapper">
-    <IntroCard :title=introCardTitle :text=introCardText :text2="introCardText2" :buttonText=introCardUrl
-      :style="{ top: (headerTitle == '') ? '20px' : '-60px' }" />
+  <div class="background-wrapper" id="intro" :style="{ marginTop: (headerTitle == '') ? '0' : '24px' }">
+    <IntroCard :title="introCardTitle" :text="introCardText" :text2="introCardText2" :buttonText="introCardUrl"
+      :style="{ top: (headerTitle == '') ? '10px' : '-110px' }" />
   </div>
   <router-view />
   <CustomFooter />
@@ -17,7 +17,6 @@ import NavBarMobile from "./components/nav/Navi-mobile.vue";
 import CustomHeader from "./components/nav/Header-custom.vue";
 import IntroCard from "./components/cards/introduction/Introduction-card-sub.vue";
 import CustomFooter from "./components/footer/Footer.vue";
-
 // import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
@@ -58,12 +57,10 @@ export default {
     routeGo(page) {
       this.$router.push({ name: page });
       this.updatePageContent(page); // Werk de inhoud bij na navigatie
-    }
+    },
   }
 };
 </script>
-
-
 
 <style lang="scss">
 * {
@@ -80,13 +77,23 @@ export default {
   position: relative;
 }
 
-p {
-  font-size: 1.2rem;
-  word-spacing: 0px !important;
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.075em;
+}
+
+p {
+  font-size: 1.075rem;
+  word-spacing: 0px !important;
 }
 
 p,
@@ -106,7 +113,6 @@ a {
 li {
   cursor: pointer;
   word-spacing: 0px !important;
-  font-size: 1.2em;
   padding-bottom: 4px;
   padding: 10px;
 }
@@ -116,25 +122,8 @@ hr {
   border: 0.25px solid #00000013;
 }
 
-button,
-#button-send {
-  width: 250px;
-  background-color: #5178a5;
-  border-radius: 0px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  height: 56px;
-  border-color: rgba(0, 0, 0, 0.15);
-  border-width: 1px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 600;
-  box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 18%);
-  margin: 4px 2px;
-  cursor: pointer;
+#intro {
+  padding: 0;
 }
 
 .background-wrapper {
@@ -145,9 +134,9 @@ button,
 .background-wrapper,
 .background-wrapper-white {
   display: flex;
+  width: 98%;
   justify-content: center;
   align-items: center;
-  width: calc(100% - 40px);
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -199,6 +188,11 @@ button,
 }
 
 @media (max-width: 1280px) {
+
+  button {
+    height: 46px;
+  }
+
   .background-wrapper {
     margin: 8px auto 0 auto;
     padding: 0;

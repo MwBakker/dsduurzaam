@@ -66,8 +66,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-
-@media (max-width: 1280px) {}
-</style>
