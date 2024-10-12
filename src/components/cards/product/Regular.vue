@@ -132,13 +132,13 @@ h3 {
     padding: 4px;
   }
 
-  h2 {
+  h3 {
     margin: 0;
     font-size: 1em;
   }
 
   .btn-link {
-    font-size: 0.6em;
+    font-size: 0.8em;
 
     .arrow {
 

@@ -150,7 +150,7 @@ p {
     width: 100%;
   }
 
-  h3 {
+  h2 {
     font-size: 2rem;
   }
 
@@ -170,7 +170,7 @@ p {
     padding: 16px;
   }
 
-  h3 {
+  h2 {
     font-size: 1.1em;
     margin: 0 3px;
   }

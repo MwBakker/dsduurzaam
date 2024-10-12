@@ -202,13 +202,22 @@ hr {
 @media (max-width: 800px) {
 
   .background-wrapper,
-  .background-wrapper-white {
+  .background-wrapper-white .background-wrapper-red {
     width: initial;
     margin: 0 12px;
   }
 
-  h2 {
+  .background-wrapper-red {
+    padding: 8px;
+    margin: 0;
+  }
+
+  h1 {
     font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
   }
 
   h3 {

@@ -32,7 +32,7 @@ export default {
   methods: {
     getHeight() {
       if (window.innerWidth < 1280) {
-        return (this.text2 == '') ? '380px' : '540px';
+        return (this.text2 == '') ? '390px' : '710px';
       }
       return (this.text2 == '') ? '260px' : '320px';
     }

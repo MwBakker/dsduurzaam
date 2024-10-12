@@ -179,11 +179,11 @@ button {
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+  }
 
-    button {
-      width: 50%;
-      margin: 36px auto 0 auto;
-    }
+  button {
+    width: 50%;
+    margin: 36px auto 0 auto;
   }
 
   .cta-button {
@@ -206,8 +206,6 @@ button {
     padding: 50px;
   }
 
-
-
   .content-image {
     display: none;
   }
@@ -216,6 +214,10 @@ button {
 @media (max-width: 800px) {
   .content-wrapper {
     margin: 24px 0;
+  }
+
+  button {
+    width: 100%;
   }
 
   .content-text {

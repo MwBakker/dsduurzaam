@@ -52,9 +52,13 @@ import WhyCard from './cards/Why-card.vue';
 }
 
 @media (max-width: 800px) {
+    .why-cards-container {
+        max-width: initial;
+    }
+
     .why-cards {
         gap: 0;
-        width: 97.5%;
+        width: 100%;
 
         div {
             flex-direction: column;
