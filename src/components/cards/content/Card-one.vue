@@ -213,7 +213,7 @@ button {
 
 @media (max-width: 800px) {
   .content-wrapper {
-    margin: 24px 0;
+    margin: 48px 0 24px 0;
   }
 
   button {

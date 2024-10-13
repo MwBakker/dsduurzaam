@@ -3,9 +3,9 @@
   <NavBarMobile v-else ref="navBar" />
   <CustomHeader :mainImg="activePage" :mainTitle="headerTitle" :mainUrl="headerMainUrl" />
   <!-- introcard checkt hoe hoog top is op basis van of er een main header is of niet -->
-  <div class="background-wrapper" id="intro" :style="{ marginTop: (headerTitle == '') ? '0' : '24px' }">
+  <div class="background-wrapper" id="intro" :style="{ padding: getPadding() }">
     <IntroCard :title="introCardTitle" :text="introCardText" :text2="introCardText2" :buttonText="introCardUrl"
-      :style="{ top: (headerTitle == '') ? '10px' : '-110px' }" />
+      :style="{ top: getCardTop() }" />
   </div>
   <router-view />
   <CustomFooter />
@@ -58,6 +58,12 @@ export default {
       this.$router.push({ name: page });
       this.updatePageContent(page); // Werk de inhoud bij na navigatie
     },
+    getPadding() {
+      return (this.headerTitle == '') ? '12px 0' : '0';
+    },
+    getCardTop() {
+      return (this.headerTitle == '') ? '0' : '-86px';
+    }
   }
 };
 </script>
@@ -133,10 +139,7 @@ hr {
 
 .background-wrapper,
 .background-wrapper-white {
-  display: flex;
   width: 98%;
-  justify-content: center;
-  align-items: center;
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto 50px;
@@ -204,7 +207,6 @@ hr {
   .background-wrapper,
   .background-wrapper-white .background-wrapper-red {
     width: initial;
-    margin: 0 12px;
   }
 
   .background-wrapper-red {
@@ -214,10 +216,12 @@ hr {
 
   h1 {
     font-size: 1.6rem;
+    text-align: center;
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
+    text-align: center;
   }
 
   h3 {

@@ -1,5 +1,5 @@
 <template>
-  <div class="introduction-card" :style="{ height: getHeight() }">
+  <div class="introduction-card">
     <h1>{{ title }}</h1>
     <p>{{ text }}</p>
     <p>{{ text2 }}</p>
@@ -29,14 +29,6 @@ export default {
       required: true,
     },
   },
-  methods: {
-    getHeight() {
-      if (window.innerWidth < 1280) {
-        return (this.text2 == '') ? '64vh' : '640px';
-      }
-      return (this.text2 == '') ? '330px' : '420px';
-    }
-  }
 };
 
 </script>
@@ -85,21 +77,20 @@ p {
 
 @media (max-width: 1280px) {
   .introduction-card {
-    height: 320px;
+    margin: auto;
+    width: 80%;
   }
 }
 
 @media (max-width: 800px) {
   .introduction-card {
-    top: -100px;
-    padding: 0 12px;
-    // width: 364px;
     width: 95%;
-    margin: 0 0 24px 0;
+    padding: 2px 2% 16px 2%;
   }
 
   h1 {
     text-align: center;
+    margin: 12px 1% 24px 1%;
   }
 
   p,

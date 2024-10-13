@@ -138,6 +138,7 @@ svg {
   #custom-header {
     height: 670px;
     padding-top: 160px;
+    background-size: cover;
   }
 
   #content {
@@ -179,7 +180,6 @@ svg {
     width: 100%;
     height: 420px;
     padding-top: 80px;
-    background-size: 100% 100%;
   }
 
   #content {

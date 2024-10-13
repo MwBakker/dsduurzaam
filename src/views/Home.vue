@@ -154,12 +154,12 @@ export default {
   .background-wrapper {
     margin: 8px auto 0 auto;
     padding: 0;
+  }
 
-    .text-container {
-      width: 90%;
-      padding: 16px;
-      // text-align: center;
-    }
+  .text-container {
+    width: 90%;
+    padding: 16px;
+    // text-align: center;
   }
 
   .content-container {
@@ -175,6 +175,10 @@ export default {
 @media (max-width: 800px) {
   #intro {
     height: 390px;
+  }
+
+  .text-container {
+    padding: 16px 0;
   }
 
   #products {

@@ -310,6 +310,8 @@ p a:hover {
 
     #contact-form-container {
         height: 1100px;
+        width: 90%;
+        margin: 0 auto;
 
         h1 {
             margin: 28px 0;
@@ -351,8 +353,6 @@ p a:hover {
 
     #contact-form-container {
         height: 1000px;
-        width: 90%;
-        margin: 0 auto;
 
         h1 {
             margin: 24px 0;

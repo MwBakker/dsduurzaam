@@ -118,7 +118,6 @@ export default {
   width: 48%;
   padding: 10px 20px;
   background-color: #fff;
-  text-align: left;
 }
 
 .title {
@@ -142,16 +141,13 @@ export default {
     width: 75%;
     margin: 0 auto;
     margin-bottom: 20px;
-    text-align: center;
   }
 }
 
 @media (max-width: 800px) {
   .text-container {
-    width: 95%;
-    margin: 0 auto;
+    width: 97.5%;
     margin-bottom: 0px;
-    text-align: center;
   }
 }
 

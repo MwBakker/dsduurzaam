@@ -57,7 +57,6 @@ const imageUrl = computed(
 
 #content {
   h2 {
-    font-size: 1.25rem;
     font-weight: 800;
     margin-bottom: 50px;
   }
@@ -90,7 +89,6 @@ const imageUrl = computed(
     height: 140px;
 
     h2 {
-      font-size: 1.25rem;
       margin: 12px 0;
     }
   }

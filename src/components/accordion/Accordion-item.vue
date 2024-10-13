@@ -93,12 +93,9 @@ export default {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-h2 {
-  font-size: 1.35rem;
+h2:hover {
+  font-weight: 700;
 
-  &:hover {
-    font-weight: 700;
-  }
 }
 
 .open {
@@ -150,10 +147,6 @@ p {
     width: 100%;
   }
 
-  h2 {
-    font-size: 2rem;
-  }
-
   .accordion-content {
     padding: 15px 20px;
   }
@@ -171,8 +164,8 @@ p {
   }
 
   h2 {
-    font-size: 1.1em;
-    margin: 0 3px;
+    margin: 0 12px;
+    text-align: left;
   }
 }
 </style>
