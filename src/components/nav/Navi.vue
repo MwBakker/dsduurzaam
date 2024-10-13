@@ -65,7 +65,7 @@
                 buttonText="Ga naar" @click="hideDropdown" />
             </div>
           </div>
-          <li :class="{ active: activePage === 'subsidie' }" @click="goRoute('subsidy')">Subsidie</li>
+          <li :class="{ active: activePage === 'subsidy' }" @click="goRoute('subsidy')">Subsidie</li>
           <li :class="{ active: activePage === 'about' }" @click="goRoute('about')">Over ons</li>
         </ul>
       </div>

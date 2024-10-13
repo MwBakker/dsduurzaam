@@ -33,7 +33,7 @@
                 <input type="checkbox" id="privacy-checkbox" v-model="isPrivacyChecked" />
                 <label for="privacy-checkbox" id="privacy-label">Ik heb de privacyverklaring gelezen</label>
             </div>
-            <div v-if="!sent" class="contact-form-field">
+            <div v-if="!sent" class="contact-form-field" @click="submitForm()">
                 <ButtonArrow text="Verzenden" />
             </div>
             <div v-if="sent" class="contact-form-field">
@@ -63,22 +63,21 @@ export default {
         };
     },
     methods: {
-        submit: function () {
-            let form = {};
-            form.firstName = this.firstName;
-            form.lastName = this.lastName;
-            form.subject = this.subject;
-            form.email = this.email;
-            form.phone = this.phone;
-            form.message = this.description;
-            axios({
-                url: '../../../../mail.php',
-                method: "POST",
-                data: form
-            }).then(() => {
-                this.sent = true;
+       async submitForm() {
+            const response = await axios.post('https://insteq.nl/mail2.php', {
+                name: this.firstName,
+                email: this.email,
+                message: this.description
             });
         },
+        clearForm() {
+            this.firstName = '';
+            this.lastName = '';
+            this.subject = '';
+            this.email = '';
+            this.phone = '';
+            this.description = '';
+        }
     },
     components: {
         InfoLine,

@@ -6,9 +6,9 @@
     <button v-if="buttonText != ''" class=" cta-button">{{ buttonText }}</button>
   </div>
 </template>
-
-
 <script>
+
+
 export default {
   name: "IntroductionCard",
   props: {
@@ -32,9 +32,9 @@ export default {
   methods: {
     getHeight() {
       if (window.innerWidth < 1280) {
-        return (this.text2 == '') ? '390px' : '710px';
+        return (this.text2 == '') ? '64vh' : '640px';
       }
-      return (this.text2 == '') ? '260px' : '320px';
+      return (this.text2 == '') ? '330px' : '420px';
     }
   }
 };
@@ -56,6 +56,7 @@ h1 {
   font-weight: 800;
   margin: 20px 0 24px 0;
   padding: 0 50px;
+  text-align: center;
 }
 
 p {
@@ -93,8 +94,8 @@ p {
     top: -100px;
     padding: 0 12px;
     // width: 364px;
-    width: 90%;
-    margin: 0
+    width: 95%;
+    margin: 0 0 24px 0;
   }
 
   h1 {

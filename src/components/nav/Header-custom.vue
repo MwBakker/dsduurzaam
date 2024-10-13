@@ -176,6 +176,7 @@ svg {
 @media (max-width: 800px) {
 
   #custom-header {
+    width: 100%;
     height: 420px;
     padding-top: 80px;
     background-size: 100% 100%;

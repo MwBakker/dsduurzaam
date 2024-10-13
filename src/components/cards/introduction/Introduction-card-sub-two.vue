@@ -90,7 +90,7 @@ export default {
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 10px;
   color: #08535e;
@@ -111,5 +111,7 @@ export default {
     width: 100%;
     margin-bottom: 20px;
   }
+
+  
 }
 </style>
