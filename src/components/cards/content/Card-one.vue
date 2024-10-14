@@ -8,7 +8,7 @@
             <img :src="checkIconUrl" alt="Check" class="check-icon" /> {{ item }}
           </li>
         </ul>
-        <ButtonArrow :text=buttonText @click="goRoute(linkUrl)" />
+        <ButtonArrow :text="buttonText" @click="scrollTo('vue-form')" />
       </div>
       <div class="content-image">
         <img :src="imageUrl" :alt="imageAlt" class="content-card-image" />
@@ -60,9 +60,17 @@ export default {
       return new URL(`../../../assets/icon/greencheck.png`, import.meta.url).href;
     },
   },
-  method: {
-    goRoute(page) {
-      this.$root.routeGo(page);
+  methods: {
+    scrollTo(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offset = 225; // Pas deze waarde aan voor je offset
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: "smooth",
+        });
+      }
     },
   },
   components: {
@@ -70,6 +78,7 @@ export default {
   }
 };
 </script>
+
 
 <style lang="scss" scoped>
 .container-content-card-one {

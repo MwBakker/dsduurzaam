@@ -71,6 +71,7 @@
       </div>
       <div class="nav-right">
         <ButtonArrow @click="scrollTo('vue-form')" text="Offerte aanvragen" />
+
       </div>
     </nav>
   </div>
@@ -109,19 +110,18 @@ export default {
       this.activePage = page;  // Werk de waarde van 'activePage' bij wanneer een nieuwe pagina wordt geselecteerd
       this.$root.routeGo(page); // Navigeer naar de opgegeven pagina
     },
-    // Toegevoegde scrollToContactForm methode
-    scrollToContactForm() {
-      const contactForm = document.getElementById("contact-form-container");
-      if (contactForm) {
-        const elementPosition = contactForm.getBoundingClientRect().top + window.pageYOffset; // Positie van het element
-        const offset = 200; // Pas deze waarde aan naar hoeveel je naar boven wilt scrollen
+    // Generieke scrollfunctie die naar een doel scrolt met offset
+    scrollTo(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offset = 225; // Pas deze waarde aan naar hoeveel je naar boven wilt scrollen
         window.scrollTo({
           top: elementPosition - offset, // Verplaats de scrollpositie met de offset naar boven
-          behavior: "smooth" // Zorg voor een vloeiende scroll
+          behavior: "smooth", // Zorg voor een vloeiende scroll
         });
       }
     }
-
   },
   computed: {
     isProductActive() {
@@ -136,6 +136,7 @@ export default {
   },
 };
 </script>
+
 
 <style lang="scss" scoped>
 #nav-container {

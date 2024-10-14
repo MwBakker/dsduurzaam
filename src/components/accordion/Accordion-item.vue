@@ -148,7 +148,7 @@ p {
   }
 
   .accordion-content {
-    padding: 15px 20px;
+    padding: 0px 17.5px;
   }
 
   .accordion-icon svg {

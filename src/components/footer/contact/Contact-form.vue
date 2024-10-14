@@ -1,13 +1,15 @@
 <template>
     <div id="contact-form">
         <div id="info">
-            <InfoLine icon="phone" title="Bel ons" text="0599 - 585010" />
+            <infoLine icon="phone" title="Bel ons" text="0599 - 585010" />
             <hr>
-            <InfoLine icon="mail" title="Mail ons" text="info@insteq.nl" />
+            <infoLine icon="mail" title="Mail ons" text="info@insteq.nl" />
             <hr>
-            <InfoLine icon="map" title="Bezoek ons" text="Straatnaam 1" additional-text="9999 XX Dorpnaam" />
+            <infoLine icon="map" title="Bezoek ons" text="Straatnaam 1" additional-text="9999 XX Dorpnaam" />
         </div>
         <form id="vue-form" @submit.prevent="submit">
+            <!-- Toevoegen van h2 titel boven de velden -->
+            <h2>Stel ons een vraag</h2>
             <div class="contact-form-field double-field">
                 <div class="input-wrapper">
                     <input v-model="firstName" placeholder="Voornaam" />
@@ -33,9 +35,17 @@
                 <input type="checkbox" id="privacy-checkbox" v-model="isPrivacyChecked" />
                 <label for="privacy-checkbox" id="privacy-label">Ik heb de privacyverklaring gelezen</label>
             </div>
-            <div v-if="!sent" class="contact-form-field" @click="submitForm()">
-                <ButtonArrow text="Verzenden" />
+            <div v-if="!sent" class="contact-form-field">
+                <button id="button-send" type="submit" class="cta-button">
+                    <span>Verzenden</span>
+                    <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#08535e"
+                        class="button-arrow">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
+
             <div v-if="sent" class="contact-form-field">
                 <p>Uw vraag is verzonden</p>
             </div>
@@ -43,10 +53,10 @@
     </div>
 </template>
 
+
 <script>
 import axios from 'axios';
-import InfoLine from './Info-line.vue';
-import ButtonArrow from '@/components/Button-arrow.vue';
+import infoLine from './Info-line.vue';
 
 export default {
     name: "form",
@@ -63,28 +73,25 @@ export default {
         };
     },
     methods: {
-       async submitForm() {
-            const response = await axios.post('/mail2.php', {
-                name: this.firstName,
-                email: this.email,
-                subject: this.subject,
-                message: this.description
-            }).then(response => {
-                this.clearForm();
-            })
+        submit: function () {
+            let form = {};
+            form.firstName = this.firstName;
+            form.lastName = this.lastName;
+            form.subject = this.subject;
+            form.email = this.email;
+            form.phone = this.phone;
+            form.message = this.description;
+            axios({
+                url: '../../../../mail.php',
+                method: "POST",
+                data: form
+            }).then(() => {
+                this.sent = true;
+            });
         },
-        clearForm() {
-            this.firstName = '';
-            this.lastName = '';
-            this.subject = '';
-            this.email = '';
-            this.phone = '';
-            this.description = '';
-        }
     },
     components: {
-        InfoLine,
-        ButtonArrow
+        infoLine,
     }
 };
 </script>
@@ -105,7 +112,7 @@ export default {
     right: 0;
     bottom: 0;
     margin: auto;
-    height: 560px;
+    height: 600px;
     margin-top: 50px;
 }
 
@@ -125,7 +132,7 @@ export default {
 .contact-form-field {
     width: 90%;
     text-align: center;
-    margin: 25px 0;
+    margin: 10px 0;
 }
 
 .double-field {
@@ -135,12 +142,6 @@ export default {
 
 .input-wrapper {
     width: 48%;
-}
-
-button {
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
 }
 
 input,
@@ -168,6 +169,7 @@ label {
 
     #privacy-label {
         margin-left: 16px;
+        color: #08535e;
         font-size: 0.9rem;
         font-weight: 100;
     }
@@ -178,18 +180,47 @@ label {
     }
 }
 
-button:disabled {
+#button-send {
+    background-color: #08535e;
+    color: white;
+    border: none;
+}
+
+#button-send:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
 }
 
+.info-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.info-content {
+    margin-left: 12px;
+}
+
+.info-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    /* Zorg ervoor dat er geen extra marges zijn */
+}
+
+.info-additional-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+}
 
 input::placeholder,
 textarea::placeholder {
+    font-size: 1rem;
     /* Verander de grootte van de placeholder-tekst */
     font-weight: 500;
     /* Maak de placeholder-tekst dikker */
-    color: #08535e69;
+    color: #cccccc;;
     /* Pas de kleur van de placeholder-tekst aan */
 }
 
@@ -199,7 +230,9 @@ textarea::placeholder {
 
     #privacy-label {
         margin-left: 16px;
+        color: #08535e;
         /* Pas dezelfde kleur als de placeholder toe */
+        font-size: 1rem;
         /* Verander de grootte van de tekst */
         font-weight: 500;
         /* Maak de tekst iets dikker */
@@ -214,7 +247,7 @@ textarea::placeholder {
 #privacy-field input[type="checkbox"] {
     height: 24px;
     width: 24px;
-    border: solid 2px #6b76858f;
+    border: solid 2px #6b76852d;
     -webkit-appearance: none;
     appearance: none;
     background-color: white;
@@ -241,20 +274,77 @@ textarea::placeholder {
     /* Unicode voor Font Awesome 'fa-check' icoon */
     color: white;
     font-weight: 900;
+    font-size: 18px;
     /* Pas de grootte aan indien nodig */
+}
+
+
+#button-send {
+    background-color: #8dc63f;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Verberg wat buiten de knop valt */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Zorg ervoor dat de tekst gecentreerd is */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+    /* Pas de breedte aan zoals je wilt */
+    max-width: 400px;
+    /* Max breedte indien nodig */
+}
+
+#button-send span {
+    position: relative;
+}
+
+#button-send:hover {
+    background-color: #8ec63fe3;
+    /* Pas de achtergrondkleur aan bij hover */
+}
+
+/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
+#button-send .button-arrow {
+    position: absolute;
+    right: 30px;
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(-30px);
+    /* Start buiten de knop */
+    stroke: #ffffff !important;
+    /* Forceer de kleur van de pijl naar zwart */
+}
+
+/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
+#button-send:hover .button-arrow {
+    transform: translateX(0);
+    /* Schuift naar binnen */
+    opacity: 1;
+    /* Wordt zichtbaar */
 }
 
 input,
 textarea {
-    font-size: 0.9rem;
+    font-size: 1rem;
     /* Zet de grootte van de ingevoerde tekst op 1.25rem */
     width: 100%;
     /* Zorgt ervoor dat de invoervelden 100% breed zijn */
     padding: 6px;
-    border: solid 1.5px #08535e;
+    border: solid 2px #cccccc;
     background: none;
     margin-top: 5px;
     font-weight: 500;
+    color: #08535e;
 }
 
 @media (max-width: 1280px) {
@@ -299,9 +389,18 @@ textarea {
         margin-top: 0;
     }
 
-    button {
+    #button-send {
         font-size: 1em;
         height: 50px;
     }
+}
+
+h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #08535e; /* Kleur passend bij je ontwerp */
+    font-weight: 800;
+    margin-top: 30px; /* Voeg ruimte toe aan de bovenkant */
+    margin-bottom: 15px; /* Ruimte tussen de titel en het eerste veld */
 }
 </style>

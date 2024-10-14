@@ -49,7 +49,7 @@ const handleClick = () => {
   display: flex;
   align-items: center;
   /* Zorgt ervoor dat afbeelding en tekst op dezelfde hoogte zijn */
-  padding: 25px;
+  padding: 35px;
   cursor: pointer;
   /* Zorg ervoor dat het element aanklikbaar lijkt */
 }
