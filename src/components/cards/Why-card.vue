@@ -62,7 +62,7 @@ const imageUrl = computed(
   }
 
   p {
-    color: #08535e !important;
+    color: #222222 !important;
     font-weight: 500;
   }
 }

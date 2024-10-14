@@ -169,7 +169,7 @@ label {
 
     #privacy-label {
         margin-left: 16px;
-        color: #08535e;
+        color: #222222;
         font-size: 0.9rem;
         font-weight: 100;
     }
@@ -230,7 +230,7 @@ textarea::placeholder {
 
     #privacy-label {
         margin-left: 16px;
-        color: #08535e;
+        color: #222222;
         /* Pas dezelfde kleur als de placeholder toe */
         font-size: 1rem;
         /* Verander de grootte van de tekst */
@@ -344,7 +344,7 @@ textarea {
     background: none;
     margin-top: 5px;
     font-weight: 500;
-    color: #08535e;
+    color: #222222;
 }
 
 @media (max-width: 1280px) {
@@ -403,4 +403,5 @@ h2 {
     margin-top: 30px; /* Voeg ruimte toe aan de bovenkant */
     margin-bottom: 15px; /* Ruimte tussen de titel en het eerste veld */
 }
+
 </style>

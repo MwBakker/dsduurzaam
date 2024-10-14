@@ -100,10 +100,13 @@ h3 {
 p {
   font-size: 1.075rem;
   word-spacing: 0px !important;
+  color: #222222;
 }
 
-p,
-a,
+a {
+  color: #222222;
+}
+
 h1,
 h2,
 h3,

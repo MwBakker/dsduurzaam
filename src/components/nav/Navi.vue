@@ -71,7 +71,6 @@
       </div>
       <div class="nav-right">
         <ButtonArrow @click="scrollTo('vue-form')" text="Offerte aanvragen" />
-
       </div>
     </nav>
   </div>
@@ -269,6 +268,7 @@ nav {
   gap: 10px;
   /* Voeg een kleine ruimte tussen de knoppen toe */
   padding-right: 20px;
+  z-index: 1100; /* Zorg ervoor dat de button boven de mega-dropdown blijft */
 }
 
 /* Titel-items */
@@ -287,6 +287,7 @@ nav {
     margin-right: 0px;
     font-weight: 700;
     padding: 18px;
+    font-size: 1.075rem;
 
     &:hover {
       color: #8dc63f !important;
@@ -423,5 +424,9 @@ nav {
     color: #08535e;
     /* Aangepaste kleur, indien gewenst */
   }
+}
+
+.right-content a {
+  color: #08535e;
 }
 </style>

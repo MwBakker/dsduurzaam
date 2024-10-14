@@ -24,10 +24,11 @@
           <p class="text">{{ thirdText }}</p>
         </div>
         <!-- Vierde witte kaart -->
-        <div class="text-container right-card">
-          <h2 class="title">{{ fourthTitle }}</h2>
-          <p class="text">{{ fourthText }}</p>
-        </div>
+        <!-- Vierde witte kaart -->
+      <div class="text-container right-card" v-if="fourthTitle && fourthText">
+        <h2 class="title">{{ fourthTitle }}</h2>
+        <p class="text">{{ fourthText }}</p>
+      </div>
       </div>
     </div>
   </div>
