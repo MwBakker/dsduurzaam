@@ -1,7 +1,8 @@
 <template>
   <!-- Check of the header een titel heeft, anders geen header maar een vulop div -->
   <div v-if="mainTitle != ''">
-    <div id="custom-header" :style="{ backgroundImage: `url(../src/assets/tabs/${mainImg}.png)` }">
+    <div id="custom-header"
+      :style="{ backgroundImage: getBackgroundImg(), backgroundPositionX: getBackgroundOffset() }">
       <div id="content">
         <h1>{{ mainTitle }}</h1>
         <span v-if="mainUrl != ''" id="link-with-arrow" @click="goRoute(mainUrl)">
@@ -22,15 +23,19 @@ export default {
   props: {
     mainImg: {
       type: String,
-      required: true,
+      default: '',
+    },
+    mobileImgOffset: {
+      type: String,
+      default: '',
     },
     mainTitle: {
       type: String,
-      required: true
+      default: '',
     },
     mainUrl: {
       type: String,
-      required: true
+      default: '',
     },
   },
   methods: {
@@ -40,6 +45,14 @@ export default {
     goRoute(page) {
       this.$root.routeGo(page);
     },
+    getBackgroundImg() {
+      return `url(../src/assets/tabs/${this.mainImg}.png)`
+    },
+    getBackgroundOffset() {
+      if (window.innerWidth < 900) {
+        return this.mobileImgOffset;
+      }
+    }
   }
 };
 </script>

@@ -93,9 +93,11 @@ export default {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-h2:hover {
-  font-weight: 700;
-
+h2 {
+  font-weight: 600;
+  &:hover {
+    font-weight: 700;
+  }
 }
 
 .open {

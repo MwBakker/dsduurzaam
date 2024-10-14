@@ -14,19 +14,19 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      default: '',
     },
     text: {
       type: String,
-      required: true,
+      default: '',
     },
     text2: {
       type: String,
-      required: false,
+      default: '',
     },
     buttonText: {
       type: String,
-      required: true,
+      default: '',
     },
   },
 };

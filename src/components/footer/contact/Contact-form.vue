@@ -116,6 +116,15 @@ export default {
     margin-top: 50px;
 }
 
+h2 {
+    width: 90%;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
 #info {
     margin: 32px auto;
     width: 40%;
@@ -220,7 +229,8 @@ textarea::placeholder {
     /* Verander de grootte van de placeholder-tekst */
     font-weight: 500;
     /* Maak de placeholder-tekst dikker */
-    color: #cccccc;;
+    color: #cccccc;
+    ;
     /* Pas de kleur van de placeholder-tekst aan */
 }
 
@@ -352,9 +362,13 @@ textarea {
         bottom: initial;
         min-width: initial;
         width: 100%;
-        height: 942px;
-        top: 24px;
+        height: 1000px;
         flex-direction: column;
+    }
+    
+    h2 {
+        margin: 32px 0;
+        width: 100%;
     }
 
     .contact-form-field {
@@ -385,7 +399,7 @@ textarea {
 
 @media (max-width: 800px) {
     #contact-form {
-        height: 872px;
+        height: 932px;
         margin-top: 0;
     }
 
@@ -394,14 +408,4 @@ textarea {
         height: 50px;
     }
 }
-
-h2 {
-    font-size: 1.25rem;
-    text-align: center;
-    color: #08535e; /* Kleur passend bij je ontwerp */
-    font-weight: 800;
-    margin-top: 30px; /* Voeg ruimte toe aan de bovenkant */
-    margin-bottom: 15px; /* Ruimte tussen de titel en het eerste veld */
-}
-
 </style>

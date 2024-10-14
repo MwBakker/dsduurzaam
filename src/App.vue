@@ -1,11 +1,12 @@
 <template>
   <NavBar v-if="windowWidth > 1280" ref="navBar" />
   <NavBarMobile v-else ref="navBar" />
-  <CustomHeader :mainImg="activePage" :mainTitle="headerTitle" :mainUrl="headerMainUrl" />
+  <CustomHeader :mainImg="activePage" :mainTitle="getHeaderMapVal('title')" :mainUrl="getHeaderMapVal('url')"
+    :mobileImgOffset="getHeaderMapVal('img-offset')" />
   <!-- introcard checkt hoe hoog top is op basis van of er een main header is of niet -->
   <div class="background-wrapper" id="intro" :style="{ padding: getPadding() }">
-    <IntroCard :title="introCardTitle" :text="introCardText" :text2="introCardText2" :buttonText="introCardUrl"
-      :style="{ top: getCardTop() }" />
+    <IntroCard :title="getHeaderMapBoxVal('title')" :text="getHeaderMapBoxVal('text')"
+      :text2="getHeaderMapBoxVal('text2')" :buttonText="getHeaderMapBoxVal('url')" :style="{ top: getCardTop() }" />
   </div>
   <router-view />
   <CustomFooter />
@@ -29,40 +30,41 @@ export default {
     CustomFooter,
     // CookieConsent
   },
+  data() {
+    return {
+      activePage: 'home',
+    };
+  },
   mounted() {
-    // Update de pagina inhoud op basis van de huidige route zodra de component gemount is
-    this.updatePageContent(this.$route.name);
+    this.activePage = this.$route.name;
   },
   watch: {
-    // Kijk naar routeveranderingen en update de inhoud bij elke wijziging
     $route(to) {
-      this.updatePageContent(to.name);
+      this.activePage = to.name;
     }
   },
   methods: {
-    updatePageContent(pageName) {
-      // Werk de actieve pagina en header content bij op basis van de route
-      this.activePage = pageName;
-      this.headerImg = pageName;
-      var headerContent = this.headerMap[this.activePage];
-      if (headerContent != null) {
-        this.headerTitle = headerContent['title'];
-        this.headerMainUrl = headerContent['url'];
-        this.introCardTitle = headerContent['box']['title'];
-        this.introCardText = headerContent['box']['text'];
-        this.introCardText2 = headerContent['box']['text2'];
-        this.introCardUrl = headerContent['box']['url'];
-      }
+    getHeaderMapVal(value) {
+      if (this.checkMapEntry())
+        return this.headerMap[this.activePage][value];
+    },
+    getHeaderMapBoxVal(value) {
+      if (this.checkMapEntry())
+        return this.headerMap[this.activePage]['box'][value];
+    },
+    checkMapEntry() {
+      var mapEntry = this.headerMap[this.activePage];
+      return (mapEntry != null)
     },
     routeGo(page) {
       this.$router.push({ name: page });
-      this.updatePageContent(page); // Werk de inhoud bij na navigatie
+      this.activePage = page; // Werk de inhoud bij na navigatie
     },
     getPadding() {
-      return (this.headerTitle == '') ? '12px 0' : '0';
+      return (this.getHeaderMapVal('title') == '') ? '12px 0' : '0';
     },
     getCardTop() {
-      return (this.headerTitle == '') ? '0' : '-86px';
+      return (this.getHeaderMapVal('title') == '') ? '0' : '-86px';
     }
   }
 };
@@ -90,7 +92,7 @@ h1 {
 
 h2 {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h3 {

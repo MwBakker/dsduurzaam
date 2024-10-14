@@ -125,8 +125,8 @@ a {
 
 #contact-form-container {
     position: relative;
-    height: 800px;
     text-align: center;
+    padding-bottom: 76px;
 }
 
 #map {
@@ -134,25 +134,35 @@ a {
     height: 400px;
 }
 
+#black-white {
+    filter: grayscale(100%);
+}
+
 #footer-content {
     display: flex;
     width: 75%;
+    height: 212px;
     margin: 32px auto 24px auto;
+
+    p,
+    a {
+        cursor: pointer;
+
+        &:hover {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+    }
 }
 
 .section-info,
 #logos-social,
 #logos-certification {
     flex: 1 1 200px;
-    /* Flex-grow en flex-shrink instellen met een basis breedte van 200px */
     margin: 0 10px;
-    /* Zorg voor ruimte tussen de secties */
     min-width: 150px;
-    /* Zorg ervoor dat secties niet te smal worden */
     display: flex;
-    /* Voeg flex toe voor alignment binnen deze secties */
     flex-direction: column;
-    /* Zorg ervoor dat de items verticaal gestapeld worden */
 }
 
 #logos-social {
@@ -160,40 +170,17 @@ a {
     margin-left: 2.5%;
 }
 
-#services {
-    p {
-        cursor: pointer;
-
-        &:hover {
-            font-size: 0.9rem;
-            /* Pas de waarde aan naar wens */
-            font-weight: 700;
-        }
-    }
-}
-
-#black-white {
-    filter: grayscale(100%);
-}
-
 .logos {
     display: flex;
     flex-direction: column;
-    /* Zorg ervoor dat de h1 boven de knoppen en logo's staat */
     align-items: flex-start;
-    /* Uitlijnen van de inhoud naar links */
 
     div {
         display: grid;
-        /* Gebruik grid voor het layouten van logo's */
         grid-template-columns: repeat(2, 1fr);
-        /* Twee kolommen */
         gap: 10px;
-        /* Ruimte tussen de logo's */
         width: 100%;
-        /* Zorg ervoor dat de grid de volledige breedte benut */
         justify-items: start;
-        /* Zorg ervoor dat de logo's links uitgelijnd zijn */
     }
 }
 
@@ -201,7 +188,6 @@ a {
 #logos-certification {
     margin-top: 0;
 
-    /* Verwijder eventuele extra margin boven de #certification-logos sectie */
     h1 {
         margin-bottom: 10px;
     }
@@ -209,43 +195,35 @@ a {
 
 .cert-logo {
     width: 60%;
-    /* Verklein de breedte met 25% van 80% */
     height: 74px;
-    /* Verklein de hoogte met 25% van 80% */
     object-fit: contain;
-    /* Zorg ervoor dat de afbeelding wordt geschaald zodat deze binnen de container past zonder afgesneden te worden */
 }
 
 #section-light {
     background: linear-gradient(to right, #08535e, #49a3b5) !important;
     padding: 15px 0;
-    /* Voeg wat padding toe boven en onder de inhoud */
     width: 100%;
-    /* Zorg ervoor dat de section-light de volledige breedte benut */
 }
 
 #section-light-content {
     display: flex;
     justify-content: center;
-    /* Centreer de inhoud horizontaal binnen de sectie */
     align-items: center;
-    /* Centreer de inhoud verticaal binnen de sectie */
     width: 100%;
-    /* Zorg ervoor dat de section-light-content de volledige breedte benut */
     max-width: 1548px;
-    /* Maximaliseer de breedte van de inhoud binnen section-light */
     margin: 0 auto;
-    /* Centreer de inhoud binnen deze sectie */
+
+    p,
+    a {
+        color: white;
+    }
 }
 
 .info {
     display: flex;
     flex-direction: row;
-    /* Zet de items naast elkaar */
     justify-content: center;
-    /* Centreer de items horizontaal binnen .info */
     gap: 20px;
-    /* Voeg ruimte toe tussen de items */
 }
 
 #brand {
@@ -260,18 +238,13 @@ a {
     height: 16px;
     background-color: #08535e;
     width: 100%;
-    /* Zorg ervoor dat de section-dark de volledige breedte benut */
 }
 
 #logos-content {
     display: flex;
-    /* Zorg ervoor dat de logo's naast elkaar worden weergegeven */
     gap: 15px;
-    /* Zorg ervoor dat de logo's verticaal uitgelijnd zijn */
     justify-content: flex-start;
-    /* Zorg ervoor dat de logo's links uitgelijnd zijn */
     padding: 10px 0;
-    /* Voeg wat padding toe boven en onder de logo's */
 }
 
 .social-logo {
@@ -279,20 +252,6 @@ a {
     height: 36px;
     fill: #08535e;
     /* Verander de vulkleur van de SVG naar de gewenste kleur */
-}
-
-#contact-form-container h2 {
-    font-weight: 800;
-}
-
-#section-light-content p {
-    color: white;
-}
-
-p a:hover {
-    font-size: 0.9rem;
-    /* Pas de waarde aan naar wens */
-    font-weight: 700;
 }
 
 .social-logo:hover {
@@ -303,13 +262,12 @@ p a:hover {
 @media (max-width: 1280px) {
     #footer-content {
         flex-direction: column;
-        /* Zet secties onder elkaar op kleinere schermen */
         align-items: center;
         margin: 0 auto;
+        height: 660px;
     }
 
     #contact-form-container {
-        height: 1100px;
         width: 90%;
         margin: 0 auto;
 
@@ -351,16 +309,14 @@ p a:hover {
 
 @media (max-width: 800px) {
 
-    p, a {
-        font-size : 0.8rem;
+    p,
+    a {
+        font-size: 0.8rem;
     }
 
-    #contact-form-container {
-        height: 1000px;
-
-        h1 {
-            margin: 24px 0;
-        }
+    h1 {
+        margin: 24px 0;
     }
+
 }
 </style>

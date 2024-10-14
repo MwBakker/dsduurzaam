@@ -412,7 +412,6 @@ nav {
   text-align: center;
 
   h2 {
-    font-weight: 700;
     margin: 0;
     color: #8dc63f;
     /* Aangepaste kleur, je kunt deze aanpassen naar wens */

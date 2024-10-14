@@ -2,17 +2,11 @@ export default {
     data() {
         return {
             windowWidth: window.innerWidth,
-            activePage: 'home', // Default waarde, maar we gaan dit updaten op basis van de route
-            headerTitle: 'Uw huis verwarmen met een waterpomp',
-            headerMainUrl: 'heat-pump',
-            introCardTitle: 'Duurzaam wonen: verlaag uw maandlasten',
-            introCardText: 'Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget.',
-            introCardText2: '',
-            introCardUrl: '',
             headerMap: {
                 'home': {
                     'title': 'Uw huis verwarmen met een waterpomp',
                     'url': 'heat-pump',
+                    'img-offset': '75%',
                     'box': {
                         'title': 'Duurzaam wonen: verlaag uw maandlasten',
                         'text': 'Bespaar op uw gas- en stroomkosten en vergroot uw onafhankelijkheid met onze duurzame installaties. Verlaag uw energierekening, verhoog de waarde van uw woning en bescherm uzelf tegen stijgende energieprijzen. Wij bieden oplossingen voor elk budget.',
@@ -23,6 +17,7 @@ export default {
                 'heat-pump': {
                     'title': 'Duurzaam verwarmen met onze warmtepompen',
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Gasvrij wonen of werken met een warmtepomp',
                         'text': 'Ontdek de toekomst van energiezuinig wonen met onze warmtepompen. Bespaar flink op uw energiekosten en verminder uw CO₂-uitstoot terwijl u geniet van optimaal comfort in huis. Of het nu gaat om verwarmen, koelen of warm water, onze innovatieve warmtepompen bieden de perfecte, duurzame oplossing voor elke woning.',
@@ -33,6 +28,7 @@ export default {
                 'airco': {
                     'title': "Uw huis koelen en verwarmen met airco's",
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Comfortabel in de zomer en in de winter',
                         'text': "Airco's zijn systemen die zowel kunnen koelen als verwarmen, waardoor ze het hele jaar door voor een comfortabele temperatuur zorgen.Ze zijn steeds energiezuiniger en dragen bij aan duurzaamheid, vooral wanneer ze gecombineerd worden met zonnepanelen die de benodigde stroom leveren.Hierdoor zijn airco’s een milieuvriendelijke en kostenefficiënte keuze voor klimaatregeling in huis of op kantoor.",
@@ -43,6 +39,7 @@ export default {
                 'floor-heating': {
                     'title': "Efficiënt verwarmen met vloerverwarming",
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Comfortabel en efficiënt',
                         'text': 'Ervaar het ultieme comfort van vloerverwarming! Deze moderne verwarmingsoplossing werkt op lage temperaturen, waardoor het uiterst efficiënt is. Het zorgt voor een gelijkmatige warmteverdeling door uw hele huis, zonder koude plekken. Vloerverwarming is niet alleen energiezuinig, maar ook subtiel weggewerkt en geschikt voor verschillende soorten vloeren. Ontdek hoe deze duurzame manier van verwarmen uw huis aangenamer maakt en geniet het hele jaar door van een warm, comfortabel thuis.',
@@ -53,6 +50,7 @@ export default {
                 'solar': {
                     'title': 'Uw huis voorzien van stroom met zonnepanelen',
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Zelf stroom opwekken voor al uw apparaten en (duurzame) installaties',
                         'text': "Zonnepanelen blijven een slimme investering, zelfs met de afbouw van de salderingsregeling. U hoeft minder stroom terug te leveren, omdat uw andere duurzame installaties zoals warmtepompen of elektrische auto's direct kunt voeden. Dit verlaagt uw energiekosten en maakt u minder afhankelijk van energieleveranciers. Ondanks de regeling verdienen zonnepanelen zich nog steeds snel terug door lagere kosten en duurzaamheid.",
@@ -62,8 +60,9 @@ export default {
                 },
                 'charge-points':
                 {
-                    'title': '',
+                    'title': 'Uw auto laden met eigen opgewekte stroom',
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Duurzaam rijden begint met een eigen laadpaal',
                         'text': 'Laadpalen zijn essentieel voor de transitie naar elektrisch rijden en dragen bij aan een duurzamere toekomst. Ze maken het mogelijk voertuigen op te laden met groene energie, zoals die van zonnepanelen, waardoor de CO₂-uitstoot aanzienlijk wordt verminderd. Door fossiele brandstoffen te vermijden, bieden laadpalen een milieuvriendelijke oplossing voor schonere lucht en minder vervuiling, zowel thuis als op het werk.',
@@ -75,6 +74,7 @@ export default {
                 {
                     'title': '',
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Zorgeloos besparen door uitstekende service',
                         'text': 'Goede service is essentieel voor het optimaal functioneren en de levensduur van uw duurzame installatie. Door het verlenen van onderhoud, verzekert u energiezuinig gebruik en maximaal rendement. Bij InsteQ staan vakprofessionals voor u klaar met diepgaande kennis en advies.',
@@ -86,6 +86,7 @@ export default {
                 {
                     'title': '',
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Wij berekenen uw (subsidie)voordeel',
                         'text': 'Er zijn verschillende subsidies en financiële voordelen beschikbaar die helpen bij het verduurzamen van uw woning of bedrijf. Hieronder vertellen we per duurzame installatie meer over de beschikbare subsidies en andere financiële voordelen, om zodoende de aanschaf van uw duurzame installatie te verlagen.',
@@ -97,6 +98,7 @@ export default {
                 {
                     'title': '',
                     'url': '',
+                    'img-offset': '',
                     'box': {
                         'title': 'Leuk dat u er bent! Wij zijn InsteQ',
                         'text': 'Wij zijn een jong en dynamisch bedrijf dat zich inzet voor een duurzamere toekomst. Met jarenlange ervaring in de installatietechniek helpen we u graag met duurzame en slimme oplossingen. Ons doel? Uw woning of bedrijfspand energiezuiniger en comfortabeler maken, zonder in te leveren op kwaliteit.',

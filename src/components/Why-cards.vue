@@ -31,8 +31,7 @@ import WhyCard from './cards/Why-card.vue';
 
 <style lang="scss" scoped>
 .why-cards-container {
-    max-width: 90%;
-    padding: 40px 4%;
+    padding: 40px 2%;
     text-align: center;
     margin: 0 auto;
 
