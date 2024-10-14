@@ -351,6 +351,10 @@ p a:hover {
 
 @media (max-width: 800px) {
 
+    p, a {
+        font-size : 0.8rem;
+    }
+
     #contact-form-container {
         height: 1000px;
 
