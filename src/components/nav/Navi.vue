@@ -70,7 +70,7 @@
         </ul>
       </div>
       <div class="nav-right">
-        <ButtonArrow text="Offerte aanvragen" />
+        <ButtonArrow @click="scrollTo('vue-form')" text="Offerte aanvragen" />
       </div>
     </nav>
   </div>

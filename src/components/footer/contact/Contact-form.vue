@@ -64,11 +64,14 @@ export default {
     },
     methods: {
        async submitForm() {
-            const response = await axios.post('https://insteq.nl/mail2.php', {
+            const response = await axios.post('/mail2.php', {
                 name: this.firstName,
                 email: this.email,
+                subject: this.subject,
                 message: this.description
-            });
+            }).then(response => {
+                this.clearForm();
+            })
         },
         clearForm() {
             this.firstName = '';

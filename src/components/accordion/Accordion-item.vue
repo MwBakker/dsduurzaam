@@ -164,7 +164,7 @@ p {
   }
 
   h2 {
-    margin: 0 12px;
+    margin-right: 8px;
     text-align: left;
   }
 }
