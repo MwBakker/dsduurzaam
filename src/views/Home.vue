@@ -169,6 +169,7 @@ export default {
 
   .cards-container {
     width: 95%;
+    padding: 0;
   }
 }
 
@@ -179,10 +180,6 @@ export default {
 
   .text-container {
     padding: 16px 0;
-  }
-
-  #products {
-    height: 880px;
   }
 
   .cards-container {

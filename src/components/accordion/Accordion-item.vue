@@ -95,6 +95,7 @@ export default {
 
 h2 {
   font-weight: 600;
+
   &:hover {
     font-weight: 700;
   }
@@ -149,17 +150,9 @@ p {
     width: 100%;
   }
 
-  .accordion-content {
-    padding: 0px 17.5px;
+  p {
+    margin-bottom: 16px;
   }
-
-  .accordion-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 800px) {
 
   .accordion-header {
     padding: 16px;
@@ -168,6 +161,15 @@ p {
   h2 {
     margin-right: 8px;
     text-align: left;
+  }
+
+  .accordion-content {
+    padding: 0px 17.5px;
+  }
+
+  .accordion-icon svg {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>

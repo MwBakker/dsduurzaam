@@ -87,7 +87,7 @@ export default {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 3.25%;
   margin-top: 150px;
   /* Dit verplaatst de hele container naar beneden */
 }
@@ -188,6 +188,8 @@ button {
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+
+
   }
 
   button {
@@ -222,7 +224,7 @@ button {
 
 @media (max-width: 800px) {
   .content-wrapper {
-    margin: 48px 0 24px 0;
+    margin: 24px 0;
   }
 
   button {
