@@ -1,14 +1,15 @@
 <template>
     <button id="button-arrow" @click="scrollToContactForm">
         {{ text }}
-        <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
+        <Arrow id="arrow" />
     </button>
 </template>
 
 
 <script>
+
+import Arrow from './arrow.vue';
+
 export default {
     name: "IntroductionCard",
     props: {
@@ -17,12 +18,14 @@ export default {
             required: true,
         },
     },
+    components: {
+        Arrow,
+    }
 };
 
 </script>
 
 <style lang="scss" scoped>
-
 button {
     display: flex;
     width: 50%;
@@ -47,7 +50,7 @@ button {
 }
 
 /* Animatie bij hover */
-button:hover svg {
+button:hover #arrow {
     transform: translateX(0);
     /* Schuift naar binnen */
     opacity: 1;
@@ -56,7 +59,7 @@ button:hover svg {
 
 
 /* De pijl in de knop */
-svg {
+#arrow {
     position: absolute;
     right: 20px;
     width: 1.5rem;
