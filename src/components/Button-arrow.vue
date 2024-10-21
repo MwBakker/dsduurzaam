@@ -1,7 +1,7 @@
 <template>
     <button id="button-arrow" @click="scrollToContactForm">
         {{ text }}
-        <Arrow id="arrow" />
+        <Arrow v-if="buttonDisabled" id="arrow" />
     </button>
 </template>
 
@@ -17,6 +17,9 @@ export default {
             type: String,
             required: true,
         },
+        buttonDisabled: {
+            type: Boolean,
+        }
     },
     components: {
         Arrow,

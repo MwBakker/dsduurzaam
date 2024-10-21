@@ -8,7 +8,6 @@
             <infoLine icon="map" title="Bezoek ons" text="Straatnaam 1" additional-text="9999 XX Dorpnaam" />
         </div>
         <form id="vue-form" @submit.prevent="submit">
-            <!-- Toevoegen van h2 titel boven de velden -->
             <h2>Stel ons een vraag</h2>
             <div class="contact-form-field double-field">
                 <div class="input-wrapper">
@@ -36,16 +35,8 @@
                 <label for="privacy-checkbox" id="privacy-label">Ik heb de privacyverklaring gelezen</label>
             </div>
             <div v-if="!sent" class="contact-form-field">
-                <button id="button-send" type="submit" class="cta-button">
-                    <span>Verzenden</span>
-                    <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#08535e"
-                        class="button-arrow">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </button>
+                <buttonArrow id="button-send" text="Verzenden" type="submit" :disabled="!isPrivacyChecked" />
             </div>
-
             <div v-if="sent" class="contact-form-field">
                 <p>Uw vraag is verzonden</p>
             </div>
@@ -57,6 +48,7 @@
 <script>
 import axios from 'axios';
 import infoLine from './Info-line.vue';
+import buttonArrow from '@/components/Button-arrow.vue';
 
 export default {
     name: "form",
@@ -75,6 +67,13 @@ export default {
     methods: {
         submit: function () {
             let form = {};
+            if (this.firstName == null
+                && (this.email == null && this.phone == null)
+                && this.subject == null
+                && this.message == null) {
+                alert('Niet alle nodige velden zijn ingevuld!');
+                return;
+            }
             form.firstName = this.firstName;
             form.lastName = this.lastName;
             form.subject = this.subject;
@@ -82,7 +81,7 @@ export default {
             form.phone = this.phone;
             form.message = this.description;
             axios({
-                url: '../../../../mail.php',
+                url: '/mail.php',
                 method: "POST",
                 data: form
             }).then(() => {
@@ -92,6 +91,7 @@ export default {
     },
     components: {
         infoLine,
+        buttonArrow,
     }
 };
 </script>
@@ -190,9 +190,9 @@ label {
 }
 
 #button-send {
-    background-color: #08535e;
-    color: white;
-    border: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 #button-send:disabled {
@@ -288,61 +288,6 @@ textarea::placeholder {
     /* Pas de grootte aan indien nodig */
 }
 
-
-#button-send {
-    background-color: #8dc63f;
-    color: #ffffff;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    /* Verberg wat buiten de knop valt */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    /* Zorg ervoor dat de tekst gecentreerd is */
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    width: 100%;
-    /* Pas de breedte aan zoals je wilt */
-    max-width: 400px;
-    /* Max breedte indien nodig */
-}
-
-#button-send span {
-    position: relative;
-}
-
-#button-send:hover {
-    background-color: #8ec63fe3;
-    /* Pas de achtergrondkleur aan bij hover */
-}
-
-/* Zorg dat de pijl start buiten zicht, aan de rechterkant */
-#button-send .button-arrow {
-    position: absolute;
-    right: 30px;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateX(-30px);
-    /* Start buiten de knop */
-    stroke: #ffffff !important;
-    /* Forceer de kleur van de pijl naar zwart */
-}
-
-/* Laat de pijl naar binnen schuiven en zichtbaar worden bij hover */
-#button-send:hover .button-arrow {
-    transform: translateX(0);
-    /* Schuift naar binnen */
-    opacity: 1;
-    /* Wordt zichtbaar */
-}
-
 input,
 textarea {
     font-size: 1rem;
@@ -365,7 +310,7 @@ textarea {
         height: 1000px;
         flex-direction: column;
     }
-    
+
     h2 {
         margin: 32px 0;
         width: 100%;
