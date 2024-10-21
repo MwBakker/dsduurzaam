@@ -50,18 +50,18 @@
           <div id="mega-dropdown" v-if="isDropdownVisible" @mouseenter="showDropdown"
             @mouseleave="checkIfShouldHideDropdown">
             <div class="cards-container">
-              <ProductCard route="heat-pump" title="Warmtepomp" image="home"
+              <ProductCard maxWidth="315" route="heat-pump" title="Warmtepomp" image="home"
                 subtitle="Van hybride tot en met all-electric." buttonText="Ga naar" @click="hideDropdown" />
-              <ProductCard route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen"
+              <ProductCard maxWidth="315" route="airco" title="Airconditioning" image="airco" subtitle="Zowel koelen als verwarmen"
                 buttonText="Ga naar" @click="hideDropdown" />
-              <ProductCard route="floor-heating" title="Vloerverwarming" image="floor-heating"
+              <ProductCard maxWidth="315" route="floor-heating" title="Vloerverwarming" image="floor-heating"
                 subtitle="Nog duurzamer in combinatie met een warmtepomp" buttonText="Ga naar" @click="hideDropdown" />
-              <ProductCard route="solar" title="Zonnepanelen" image="solar"
+              <ProductCard maxWidth="315" route="solar" title="Zonnepanelen" image="solar"
                 subtitle="Uw andere duurzame installaties voeden met eigen opgewerkte energie" buttonText="Ga naar"
                 @click="hideDropdown" />
-              <ProductCard route="charge-points" title="Laadpaal" image="charge-points"
+              <ProductCard maxWidth="315" route="charge-points" title="Laadpaal" image="charge-points"
                 subtitle="Uw auto opladen met eigen opgewerkte energie" buttonText="Ga naar" @click="hideDropdown" />
-              <ProductCard route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar"
+              <ProductCard maxWidth="315" route="service" title="Service" image="service" subtitle="Wij staan altijd voor u klaar"
                 buttonText="Ga naar" @click="hideDropdown" />
             </div>
           </div>

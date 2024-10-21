@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card" :style="{ backgroundImage: `url(${imageUrl})` }" @click="goRoute(route)">
+  <div class="product-card" :style="{ maxWidth: maxWidth + `px`, backgroundImage: `url(${imageUrl})` }" @click="goRoute(route)">
     <div class="overlay">
       <h3>{{ title }}</h3>
       <span class="btn-link">
@@ -16,8 +16,7 @@ import Arrow from '@/components/arrow.vue';
 
 export default {
   props: {
-    width: String,
-    height: String,
+    maxWidth: String, // VOOR DE NAVI
     image: String,
     title: String,
     route: String,
