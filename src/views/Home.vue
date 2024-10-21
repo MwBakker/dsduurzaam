@@ -135,7 +135,7 @@ export default {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto auto auto;
   /* 3 kolommen */
   grid-gap: 20px;
   /* Ruimte tussen kaarten */
@@ -169,6 +169,7 @@ export default {
 
   .cards-container {
     width: 95%;
+    height: 520px;
     padding: 0;
   }
 }
@@ -185,7 +186,8 @@ export default {
   .cards-container {
     width: 90%;
     padding: 0;
-    grid-template-columns: repeat(2, 1fr);
+    height: 560px;
+    grid-template-columns: auto auto;
   }
 }
 </style>

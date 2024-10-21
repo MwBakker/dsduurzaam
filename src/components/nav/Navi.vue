@@ -268,7 +268,8 @@ nav {
   gap: 10px;
   /* Voeg een kleine ruimte tussen de knoppen toe */
   padding-right: 20px;
-  z-index: 1100; /* Zorg ervoor dat de button boven de mega-dropdown blijft */
+  z-index: 1100;
+  /* Zorg ervoor dat de button boven de mega-dropdown blijft */
 }
 
 /* Titel-items */
@@ -384,7 +385,8 @@ nav {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  // grid-template-columns: auto auto auto auto auto auto;
   /* 6 kolommen voor de productcards */
   grid-gap: 20px;
   padding: 0 20px;
@@ -420,8 +422,7 @@ nav {
   span {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #08535e;
-    /* Aangepaste kleur, indien gewenst */
+    color: #08535e;   /* Aangepaste kleur, indien gewenst */
   }
 }
 

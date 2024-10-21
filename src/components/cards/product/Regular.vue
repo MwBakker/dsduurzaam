@@ -1,38 +1,33 @@
 <template>
-  <div class="product-card" @click="goRoute(route)">
-    <div class="card-image">
-      <img :src="imageUrl" alt="Product image">
-      <div class="overlay">
-        <div class="card-title">
-          <h3>{{ title }}</h3>
-        </div>
-        <div class="card-button">
-          <span class="btn-link">
-            {{ buttonText }} <!-- Dynamische tekst -->
-            <span class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </span>
-          </span>
-        </div>
-      </div>
+  <div class="product-card" :style="{ backgroundImage: `url(${imageUrl})` }" @click="goRoute(route)">
+    <div class="overlay">
+      <h3>{{ title }}</h3>
+      <span class="btn-link">
+        {{ buttonText }} <!-- Dynamische tekst -->
+        <Arrow id="arrow" height="20" />
+      </span>
     </div>
   </div>
 </template>
 
 <script>
 
+import Arrow from '@/components/arrow.vue';
+
 export default {
   props: {
-    title: String,
+    width: String,
+    height: String,
     image: String,
+    title: String,
     route: String,
     buttonText: {
       type: String,
       default: 'Lees meer' // Standaardtekst voor de knop
     }
+  },
+  components: {
+    Arrow,
   },
   computed: {
     imageUrl() {
@@ -50,103 +45,70 @@ export default {
 
 <style lang="scss" scoped>
 .product-card {
+  min-height: 225px;
   position: relative;
   cursor: pointer;
-  overflow: hidden;
-  width: 100%;
-  /* Zorg dat de breedte van de kaart 100% is binnen zijn container */
-  aspect-ratio: 1 / 1;
   /* Houd de kaarten vierkant */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 315px;
-  max-height: 225px;
-}
+  background-size: cover;
 
-h3 {
-  color: white;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    /* Zorg dat de afbeelding de volledige kaart vult */
-    object-fit: cover;
-    /* Behoud de verhoudingen van de afbeelding */
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 }
 
-.card-image .overlay {
+.overlay {
   position: absolute;
+  width: 100%;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
-  /* Gradient van zwart naar transparant */
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  padding: 16px;
+  background: linear-gradient(to top, #000000e6, #0000);
 
+  h3 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
 
-.btn-link {
-  display: inline-flex;
-  align-items: center;
-  /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-
-  .arrow {
-    margin-left: 5px;
-    /* Verhoog de marge om meer ruimte te geven */
+  .btn-link {
     display: inline-flex;
+    align-items: center;
+    /* Zorgt ervoor dat de items op het verticale middelpunt worden uitgelijnd */
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 
-    svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      stroke: white;
-      vertical-align: middle;
+    #arrow {
+      margin-left: 10px;
     }
   }
 }
 
+@media (max-width: 1280px) {
+  .product-card {
+    min-height: initial;
+  }
+}
 
 @media (max-width: 800px) {
 
-  .card-image .overlay {
-    padding: 4px;
-  }
+  .overlay {
 
-  h3 {
-    margin: 0;
-    font-size: 1em;
-  }
+    padding: 8px;
 
-  .btn-link {
-    font-size: 0.8em;
+    h3 {
+      margin: 0;
+      font-size: 0.8em;
+    }
 
-    .arrow {
+    .btn-link {
+      font-size: 0.7em;
 
-      svg {
-        width: 20px;
+      #arrow {
+        margin-left: 6px;
         height: 16px;
-        stroke: white;
-        vertical-align: middle;
       }
     }
   }

@@ -174,14 +174,6 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        width: 100%;
-        justify-items: start;
-    }
 }
 
 
@@ -244,7 +236,6 @@ a {
     display: flex;
     gap: 15px;
     justify-content: flex-start;
-    padding: 10px 0;
 }
 
 .social-logo {

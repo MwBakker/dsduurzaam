@@ -1,7 +1,7 @@
 <template>
     <button id="button-arrow" @click="scrollToContactForm">
         {{ text }}
-        <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="arrow">
+        <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
     </button>
@@ -47,7 +47,7 @@ button {
 }
 
 /* Animatie bij hover */
-button:hover #arrow {
+button:hover svg {
     transform: translateX(0);
     /* Schuift naar binnen */
     opacity: 1;
@@ -56,7 +56,7 @@ button:hover #arrow {
 
 
 /* De pijl in de knop */
-#arrow {
+svg {
     position: absolute;
     right: 20px;
     width: 1.5rem;

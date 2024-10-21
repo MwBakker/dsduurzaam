@@ -80,6 +80,10 @@ export default {
   /*font-weight: 600;*/
 }
 
+html {
+  -webkit-text-size-adjust: none;
+}
+
 #app {
   min-height: 100vh;
   position: relative;
